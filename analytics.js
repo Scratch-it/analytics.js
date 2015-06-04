@@ -15070,25 +15070,23 @@ var del = require('obj-case').del;
  */
 
 var ScratchIt = module.exports = integration('Scratch-it Analytics')
-  .global('ScratchIt')
+  .global('_ScratchIt')
+  .global('ScratchItAnalytics')
   .option('trkId', '')
+  .option('url', 'http://trk.scratch-it.com/trk')
+  .option('ajax', { get: function(){} })
   .tag('<script src="//static.scratch-it.com/public/scratch-it-analytics.min.js">');
 
 /**
  * Initialize.
  */
-
 ScratchIt.prototype.initialize = function() {
-  // Shim out the Scratchit library.
-  window.ScratchIt = {
-    track: function(event_type, event_name, parameters) {
-      // no-op
-      console.log(event_type);
-      console.log(event_name);
-      console.log(parameters);
-    }
-  }; // TODO: real object
-  this.load(this.ready);
+  var self = this;
+
+  this.load(function(){
+    window._ScratchIt = new window.ScratchItAnalytics(self.options.trkId, { url: self.options.url, ajax: self.options.ajax });
+    self.ready();
+  });
 };
 
 /**
@@ -15096,9 +15094,8 @@ ScratchIt.prototype.initialize = function() {
  *
  * @return {boolean}
  */
-
 ScratchIt.prototype.loaded = function() {
-  return is.fn(window.ScratchIt);
+  return is.object(window._ScratchIt);
 };
 
 /**
@@ -15106,12 +15103,22 @@ ScratchIt.prototype.loaded = function() {
  *
  * @param {Track} track
  */
-
 ScratchIt.prototype.track = function(track) {
   var parameters = track.properties();
   var event_type = parameters.event_type || 'track';
   del(parameters, 'event_type');
-  window.ScratchIt.track(event_type, track.event(), parameters);
+  window._ScratchIt.track(event_type, track.event(), parameters);
+};
+
+/**
+ * Page.
+ *
+ * @param {Page} page
+ */
+ScratchIt.prototype.page = function(page) {
+  var customProperties = page.properties();
+  del(customProperties, 'event_type');
+  window._ScratchIt.track('page_visit', 'page_visit', customProperties);
 };
 
 }, {"analytics.js-integration":95,"is":98,"obj-case":99}],
