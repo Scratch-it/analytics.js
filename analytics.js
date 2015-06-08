@@ -15074,7 +15074,6 @@ var ScratchIt = module.exports = integration('Scratch-it Analytics')
   .global('ScratchItAnalytics')
   .option('trkId', '')
   .option('url', 'http://trk.scratch-it.com/trk')
-  .option('ajax', { get: function(){} })
   .tag('<script src="//static.scratch-it.com/public/scratch-it-analytics.min.js">');
 
 /**
@@ -15084,7 +15083,7 @@ ScratchIt.prototype.initialize = function() {
   var self = this;
 
   this.load(function(){
-    window._ScratchIt = new window.ScratchItAnalytics(self.options.trkId, { url: self.options.url, ajax: self.options.ajax });
+    window._ScratchIt = new window.ScratchItAnalytics(self.options.trkId, { url: self.options.url });
     self.ready();
   });
 };
