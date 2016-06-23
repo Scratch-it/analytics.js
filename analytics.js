@@ -257,12 +257,24 @@ module.exports = function(val){
   if (val !== val) return 'nan';
   if (val && val.nodeType === 1) return 'element';
 
+  if (isBuffer(val)) return 'buffer';
+
   val = val.valueOf
     ? val.valueOf()
-    : Object.prototype.valueOf.apply(val)
+    : Object.prototype.valueOf.apply(val);
 
   return typeof val;
 };
+
+// code borrowed from https://github.com/feross/is-buffer/blob/master/index.js
+function isBuffer(obj) {
+  return !!(obj != null &&
+    (obj._isBuffer || // For Safari 5-7 (missing Object.prototype.constructor)
+      (obj.constructor &&
+      typeof obj.constructor.isBuffer === 'function' &&
+      obj.constructor.isBuffer(obj))
+    ))
+}
 
 }, {}],
 6: [function(require, module, exports) {
@@ -585,7 +597,7 @@ function bindMethods (obj, methods) {
   }
   return obj;
 }
-}, {"bind":108,"bind-all":109}],
+}, {"bind":108}],
 108: [function(require, module, exports) {
 /**
  * Slice reference.
@@ -612,24 +624,6 @@ module.exports = function(obj, fn){
 };
 
 }, {}],
-109: [function(require, module, exports) {
-
-try {
-  var bind = require('bind');
-  var type = require('type');
-} catch (e) {
-  var bind = require('bind-component');
-  var type = require('type-component');
-}
-
-module.exports = function (obj) {
-  for (var key in obj) {
-    var val = obj[key];
-    if (type(val) === 'function') obj[key] = bind(obj, obj[key]);
-  }
-  return obj;
-};
-}, {"bind":108,"type":7}],
 101: [function(require, module, exports) {
 
 /**
@@ -699,8 +693,8 @@ if ('undefined' == typeof window) {
   module.exports = require('./debug');
 }
 
-}, {"./lib/debug":110,"./debug":111}],
-110: [function(require, module, exports) {
+}, {"./lib/debug":109,"./debug":110}],
+109: [function(require, module, exports) {
 /**
  * Module dependencies.
  */
@@ -850,7 +844,7 @@ function coerce(val) {
 }
 
 }, {}],
-111: [function(require, module, exports) {
+110: [function(require, module, exports) {
 
 /**
  * Expose `debug()` as the module.
@@ -1488,8 +1482,8 @@ function render(template, locals){
   }, {}, template.attrs);
 }
 
-}, {"emitter":112,"after":113,"each":114,"analytics-events":115,"fmt":116,"foldl":117,"load-iframe":118,"load-script":119,"to-no-case":120,"next-tick":121,"type":122}],
-112: [function(require, module, exports) {
+}, {"emitter":111,"after":112,"each":113,"analytics-events":114,"fmt":115,"foldl":116,"load-iframe":117,"load-script":118,"to-no-case":119,"next-tick":120,"type":121}],
+111: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -1655,8 +1649,8 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-}, {"indexof":123}],
-123: [function(require, module, exports) {
+}, {"indexof":122}],
+122: [function(require, module, exports) {
 module.exports = function(arr, obj){
   if (arr.indexOf) return arr.indexOf(obj);
   for (var i = 0; i < arr.length; ++i) {
@@ -1665,7 +1659,7 @@ module.exports = function(arr, obj){
   return -1;
 };
 }, {}],
-113: [function(require, module, exports) {
+112: [function(require, module, exports) {
 
 module.exports = function after (times, func) {
   // After 0, really?
@@ -1679,7 +1673,7 @@ module.exports = function after (times, func) {
   };
 };
 }, {}],
-114: [function(require, module, exports) {
+113: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -1770,8 +1764,8 @@ function array(obj, fn, ctx) {
   }
 }
 
-}, {"type":122,"component-type":122,"to-function":124}],
-122: [function(require, module, exports) {
+}, {"type":121,"component-type":121,"to-function":123}],
+121: [function(require, module, exports) {
 
 /**
  * toString ref.
@@ -1806,7 +1800,7 @@ module.exports = function(val){
 };
 
 }, {}],
-124: [function(require, module, exports) {
+123: [function(require, module, exports) {
 
 /**
  * Module Dependencies
@@ -1960,8 +1954,8 @@ function stripNested (prop, str, val) {
   });
 }
 
-}, {"props":125,"component-props":125}],
-125: [function(require, module, exports) {
+}, {"props":124,"component-props":124}],
+124: [function(require, module, exports) {
 /**
  * Global Names
  */
@@ -2049,7 +2043,7 @@ function prefixed(str) {
 }
 
 }, {}],
-115: [function(require, module, exports) {
+114: [function(require, module, exports) {
 
 module.exports = {
   removedProduct: /^[ _]?removed[ _]?product[ _]?$/i,
@@ -2069,7 +2063,7 @@ module.exports = {
 };
 
 }, {}],
-116: [function(require, module, exports) {
+115: [function(require, module, exports) {
 
 /**
  * toString.
@@ -2114,7 +2108,7 @@ function fmt(str){
 }
 
 }, {}],
-117: [function(require, module, exports) {
+116: [function(require, module, exports) {
 'use strict';
 
 /**
@@ -2172,8 +2166,8 @@ var foldl = function foldl(iterator, accumulator, collection) {
 
 module.exports = foldl;
 
-}, {"each":126}],
-126: [function(require, module, exports) {
+}, {"each":125}],
+125: [function(require, module, exports) {
 'use strict';
 
 /**
@@ -2315,8 +2309,8 @@ var each = function each(iterator, collection) {
 
 module.exports = each;
 
-}, {"keys":127}],
-127: [function(require, module, exports) {
+}, {"keys":126}],
+126: [function(require, module, exports) {
 'use strict';
 
 /**
@@ -2496,7 +2490,7 @@ module.exports = function keys(source) {
 };
 
 }, {}],
-118: [function(require, module, exports) {
+117: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -2558,8 +2552,8 @@ module.exports = function loadIframe(options, fn){
   // give it an ID or attributes.
   return iframe;
 };
-}, {"script-onload":128,"next-tick":121,"type":7}],
-128: [function(require, module, exports) {
+}, {"script-onload":127,"next-tick":120,"type":7}],
+127: [function(require, module, exports) {
 
 // https://github.com/thirdpartyjs/thirdpartyjs-code/blob/master/examples/templates/02/loading-files/index.html
 
@@ -2615,7 +2609,7 @@ function attach(el, fn){
 }
 
 }, {}],
-121: [function(require, module, exports) {
+120: [function(require, module, exports) {
 "use strict"
 
 if (typeof setImmediate == 'function') {
@@ -2651,7 +2645,7 @@ else if (typeof window == 'undefined' || window.ActiveXObject || !window.postMes
 }
 
 }, {}],
-119: [function(require, module, exports) {
+118: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -2712,8 +2706,8 @@ module.exports = function loadScript(options, fn){
   // give it an ID or attributes.
   return script;
 };
-}, {"script-onload":128,"next-tick":121,"type":7}],
-120: [function(require, module, exports) {
+}, {"script-onload":127,"next-tick":120,"type":7}],
+119: [function(require, module, exports) {
 
 /**
  * Expose `toNoCase`.
@@ -2950,8 +2944,8 @@ function objectify(str) {
   };
 }
 
-}, {"emitter":112,"domify":129,"each":114,"includes":130}],
-129: [function(require, module, exports) {
+}, {"emitter":111,"domify":128,"each":113,"includes":129}],
+128: [function(require, module, exports) {
 
 /**
  * Expose `parse`.
@@ -3062,7 +3056,7 @@ function parse(html, doc) {
 }
 
 }, {}],
-130: [function(require, module, exports) {
+129: [function(require, module, exports) {
 'use strict';
 
 /**
@@ -3152,7 +3146,7 @@ var includes = function includes(searchElement, collection) {
 
 module.exports = includes;
 
-}, {"each":126}],
+}, {"each":125}],
 96: [function(require, module, exports) {
 var toSpace = require('to-space-case');
 
@@ -3176,8 +3170,8 @@ function toSnakeCase (string) {
   return toSpace(string).replace(/\s/g, '_');
 }
 
-}, {"to-space-case":131}],
-131: [function(require, module, exports) {
+}, {"to-space-case":130}],
+130: [function(require, module, exports) {
 
 var clean = require('to-no-case');
 
@@ -3202,8 +3196,8 @@ function toSpaceCase (string) {
     return match ? ' ' + match : '';
   });
 }
-}, {"to-no-case":132}],
-132: [function(require, module, exports) {
+}, {"to-no-case":131}],
+131: [function(require, module, exports) {
 
 /**
  * Expose `toNoCase`.
@@ -3394,8 +3388,8 @@ function generate (type) {
     return type === typeOf(value);
   };
 }
-}, {"is-empty":133,"type":7,"component-type":7}],
-133: [function(require, module, exports) {
+}, {"is-empty":132,"type":7,"component-type":7}],
+132: [function(require, module, exports) {
 
 /**
  * Expose `isEmpty`.
@@ -3420,11 +3414,13 @@ var has = Object.prototype.hasOwnProperty;
 
 function isEmpty (val) {
   if (null == val) return true;
+  if ('boolean' == typeof val) return false;
   if ('number' == typeof val) return 0 === val;
   if (undefined !== val.length) return 0 === val.length;
   for (var key in val) if (has.call(val, key)) return false;
   return true;
 }
+
 }, {}],
 99: [function(require, module, exports) {
 
@@ -3886,8 +3882,8 @@ Amplitude.prototype.setDeviceId = function(deviceId) {
   if (deviceId) window.amplitude.setDeviceId(deviceId);
 };
 
-}, {"analytics.js-integration":95,"top-domain":134}],
-134: [function(require, module, exports) {
+}, {"analytics.js-integration":95,"top-domain":133}],
+133: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -3935,8 +3931,8 @@ function domain(url){
   return match ? match[0] : '';
 };
 
-}, {"url":135}],
-135: [function(require, module, exports) {
+}, {"url":134}],
+134: [function(require, module, exports) {
 
 /**
  * Parse the given `url`.
@@ -4097,8 +4093,8 @@ Appcues.prototype.identify = function(identify) {
   window.Appcues.identify(identify.userId(), identify.traits());
 };
 
-}, {"analytics.js-integration":95,"is":98,"load-script":136}],
-136: [function(require, module, exports) {
+}, {"analytics.js-integration":95,"is":98,"load-script":135}],
+135: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -4159,7 +4155,7 @@ module.exports = function loadScript(options, fn){
   // give it an ID or attributes.
   return script;
 };
-}, {"script-onload":128,"next-tick":121,"type":7}],
+}, {"script-onload":127,"next-tick":120,"type":7}],
 13: [function(require, module, exports) {
 
 /**
@@ -4585,8 +4581,8 @@ function removeBlankAttributes(obj) {
   }, {}, obj);
 }
 
-}, {"analytics.js-integration":95,"foldl":137}],
-137: [function(require, module, exports) {
+}, {"analytics.js-integration":95,"foldl":136}],
+136: [function(require, module, exports) {
 'use strict';
 
 /**
@@ -4643,7 +4639,7 @@ var foldl = function foldl(iterator, accumulator, collection) {
 
 module.exports = foldl;
 
-}, {"each":126}],
+}, {"each":125}],
 18: [function(require, module, exports) {
 
 /**
@@ -4745,8 +4741,8 @@ Bronto.prototype.completedOrder = function(track) {
   });
 };
 
-}, {"facade":138,"each":4,"analytics.js-integration":95,"querystring":139}],
-138: [function(require, module, exports) {
+}, {"facade":137,"each":4,"analytics.js-integration":95,"querystring":138}],
+137: [function(require, module, exports) {
 
 var Facade = require('./facade');
 
@@ -4767,8 +4763,8 @@ Facade.Track = require('./track');
 Facade.Page = require('./page');
 Facade.Screen = require('./screen');
 
-}, {"./facade":140,"./alias":141,"./group":142,"./identify":143,"./track":144,"./page":145,"./screen":146}],
-140: [function(require, module, exports) {
+}, {"./facade":139,"./alias":140,"./group":141,"./identify":142,"./track":143,"./page":144,"./screen":145}],
+139: [function(require, module, exports) {
 
 var traverse = require('isodate-traverse');
 var isEnabled = require('./is-enabled');
@@ -4791,6 +4787,7 @@ module.exports = Facade;
  */
 
 function Facade (obj) {
+  obj = clone(obj);
   if (!obj.hasOwnProperty('timestamp')) obj.timestamp = new Date();
   else obj.timestamp = newDate(obj.timestamp);
   traverse(obj);
@@ -5078,8 +5075,8 @@ function transform(obj){
   return cloned;
 }
 
-}, {"isodate-traverse":147,"./is-enabled":148,"./utils":149,"./address":150,"obj-case":99,"new-date":151}],
-147: [function(require, module, exports) {
+}, {"isodate-traverse":146,"./is-enabled":147,"./utils":148,"./address":149,"obj-case":99,"new-date":150}],
+146: [function(require, module, exports) {
 
 var is = require('is');
 var isodate = require('isodate');
@@ -5151,8 +5148,8 @@ function array (arr, strict) {
   return arr;
 }
 
-}, {"is":152,"isodate":153,"each":4}],
-152: [function(require, module, exports) {
+}, {"is":151,"isodate":152,"each":4}],
+151: [function(require, module, exports) {
 
 var isEmpty = require('is-empty');
 
@@ -5228,8 +5225,8 @@ function generate (type) {
     return type === typeOf(value);
   };
 }
-}, {"is-empty":133,"type":7,"component-type":7}],
-153: [function(require, module, exports) {
+}, {"is-empty":132,"type":7,"component-type":7}],
+152: [function(require, module, exports) {
 
 /**
  * Matcher, slightly modified from:
@@ -5301,7 +5298,7 @@ exports.is = function (string, strict) {
   return matcher.test(string);
 };
 }, {}],
-148: [function(require, module, exports) {
+147: [function(require, module, exports) {
 
 /**
  * A few integrations are disabled by default. They must be explicitly
@@ -5323,7 +5320,7 @@ module.exports = function (integration) {
   return ! disabled[integration];
 };
 }, {}],
-149: [function(require, module, exports) {
+148: [function(require, module, exports) {
 
 /**
  * TODO: use component symlink, everywhere ?
@@ -5339,8 +5336,8 @@ try {
   exports.type = require('type-component');
 }
 
-}, {"inherit":154,"clone":155,"type":7}],
-154: [function(require, module, exports) {
+}, {"inherit":153,"clone":154,"type":7}],
+153: [function(require, module, exports) {
 
 module.exports = function(a, b){
   var fn = function(){};
@@ -5349,7 +5346,7 @@ module.exports = function(a, b){
   a.prototype.constructor = a;
 };
 }, {}],
-155: [function(require, module, exports) {
+154: [function(require, module, exports) {
 /**
  * Module dependencies.
  */
@@ -5409,7 +5406,7 @@ function clone(obj){
 }
 
 }, {"component-type":7,"type":7}],
-150: [function(require, module, exports) {
+149: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -5448,7 +5445,7 @@ module.exports = function(proto){
 };
 
 }, {"obj-case":99}],
-151: [function(require, module, exports) {
+150: [function(require, module, exports) {
 
 var is = require('is');
 var isodate = require('isodate');
@@ -5488,8 +5485,8 @@ function toMs (num) {
   if (num < 31557600000) return num * 1000;
   return num;
 }
-}, {"is":156,"isodate":153,"./milliseconds":157,"./seconds":158}],
-156: [function(require, module, exports) {
+}, {"is":155,"isodate":152,"./milliseconds":156,"./seconds":157}],
+155: [function(require, module, exports) {
 
 var isEmpty = require('is-empty')
   , typeOf = require('type');
@@ -5560,8 +5557,8 @@ function generate (type) {
     return type === typeOf(value);
   };
 }
-}, {"is-empty":133,"type":7}],
-157: [function(require, module, exports) {
+}, {"is-empty":132,"type":7}],
+156: [function(require, module, exports) {
 
 /**
  * Matcher.
@@ -5594,7 +5591,7 @@ exports.parse = function (millis) {
   return new Date(millis);
 };
 }, {}],
-158: [function(require, module, exports) {
+157: [function(require, module, exports) {
 
 /**
  * Matcher.
@@ -5627,7 +5624,7 @@ exports.parse = function (seconds) {
   return new Date(millis);
 };
 }, {}],
-141: [function(require, module, exports) {
+140: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -5698,8 +5695,8 @@ Alias.prototype.userId = function(){
     || this.field('to');
 };
 
-}, {"./utils":149,"./facade":140}],
-142: [function(require, module, exports) {
+}, {"./utils":148,"./facade":139}],
+141: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -5828,8 +5825,8 @@ Group.prototype.properties = function(){
     || {};
 };
 
-}, {"./utils":149,"./address":150,"is-email":159,"new-date":151,"./facade":140}],
-159: [function(require, module, exports) {
+}, {"./utils":148,"./address":149,"is-email":158,"new-date":150,"./facade":139}],
+158: [function(require, module, exports) {
 
 /**
  * Expose `isEmail`.
@@ -5856,7 +5853,7 @@ function isEmail (string) {
   return matcher.test(string);
 }
 }, {}],
-143: [function(require, module, exports) {
+142: [function(require, module, exports) {
 
 var address = require('./address');
 var Facade = require('./facade');
@@ -6106,8 +6103,8 @@ Identify.prototype.address = Facade.proxy('traits.address');
 Identify.prototype.gender = Facade.proxy('traits.gender');
 Identify.prototype.birthday = Facade.proxy('traits.birthday');
 
-}, {"./address":150,"./facade":140,"is-email":159,"new-date":151,"./utils":149,"obj-case":99,"trim":160}],
-160: [function(require, module, exports) {
+}, {"./address":149,"./facade":139,"is-email":158,"new-date":150,"./utils":148,"obj-case":99,"trim":159}],
+159: [function(require, module, exports) {
 
 exports = module.exports = trim;
 
@@ -6127,7 +6124,7 @@ exports.right = function(str){
 };
 
 }, {}],
-144: [function(require, module, exports) {
+143: [function(require, module, exports) {
 
 var inherit = require('./utils').inherit;
 var clone = require('./utils').clone;
@@ -6417,8 +6414,8 @@ function currency(val) {
   if (!isNaN(val)) return val;
 }
 
-}, {"./utils":149,"./facade":140,"./identify":143,"is-email":159,"obj-case":99}],
-145: [function(require, module, exports) {
+}, {"./utils":148,"./facade":139,"./identify":142,"is-email":158,"obj-case":99}],
+144: [function(require, module, exports) {
 
 var inherit = require('./utils').inherit;
 var Facade = require('./facade');
@@ -6488,15 +6485,28 @@ Page.prototype.referrer = function(){
 /**
  * Get the page properties mixing `category` and `name`.
  *
+ * @param {Object} aliases
  * @return {Object}
  */
 
-Page.prototype.properties = function(){
+Page.prototype.properties = function(aliases) {
   var props = this.field('properties') || {};
   var category = this.category();
   var name = this.name();
+  aliases = aliases || {};
+
   if (category) props.category = category;
   if (name) props.name = name;
+
+  for (var alias in aliases) {
+    var value = null == this[alias]
+      ? this.proxy('properties.' + alias)
+      : this[alias]();
+    if (null == value) continue;
+    props[aliases[alias]] = value;
+    if (alias !== aliases[alias]) delete props[alias];
+  }
+
   return props;
 };
 
@@ -6543,8 +6553,8 @@ Page.prototype.track = function(name){
   });
 };
 
-}, {"./utils":149,"./facade":140,"./track":144}],
-146: [function(require, module, exports) {
+}, {"./utils":148,"./facade":139,"./track":143}],
+145: [function(require, module, exports) {
 
 var inherit = require('./utils').inherit;
 var Page = require('./page');
@@ -6620,8 +6630,8 @@ Screen.prototype.track = function(name){
   });
 };
 
-}, {"./utils":149,"./page":145,"./track":144}],
-139: [function(require, module, exports) {
+}, {"./utils":148,"./page":144,"./track":143}],
+138: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -6696,7 +6706,7 @@ exports.stringify = function(obj){
   return pairs.join('&');
 };
 
-}, {"trim":160,"type":7}],
+}, {"trim":159,"type":7}],
 19: [function(require, module, exports) {
 
 /**
@@ -6745,7 +6755,7 @@ BugHerd.prototype.loaded = function() {
   return !!window._bugHerd;
 };
 
-}, {"analytics.js-integration":95,"next-tick":121}],
+}, {"analytics.js-integration":95,"next-tick":120}],
 20: [function(require, module, exports) {
 
 /**
@@ -6826,8 +6836,8 @@ Bugsnag.prototype.identify = function(identify) {
   extend(window.Bugsnag.metaData, identify.traits());
 };
 
-}, {"analytics.js-integration":95,"is":98,"extend":161}],
-161: [function(require, module, exports) {
+}, {"analytics.js-integration":95,"is":98,"extend":160}],
+160: [function(require, module, exports) {
 
 module.exports = function extend (object) {
     // Takes an unlimited number of extenders.
@@ -7025,8 +7035,8 @@ Chartbeat.prototype.page = function(page) {
   window.pSUPERFLY.virtualPage(props.path, name || props.title);
 };
 
-}, {"defaults":162,"analytics.js-integration":95,"on-body":163}],
-162: [function(require, module, exports) {
+}, {"defaults":161,"analytics.js-integration":95,"on-body":162}],
+161: [function(require, module, exports) {
 /**
  * Expose `defaults`.
  */
@@ -7043,7 +7053,7 @@ function defaults (dest, defaults) {
 };
 
 }, {}],
-163: [function(require, module, exports) {
+162: [function(require, module, exports) {
 var each = require('each');
 
 
@@ -7097,7 +7107,7 @@ var interval = setInterval(function () {
 function call (callback) {
   callback(document.body);
 }
-}, {"each":114}],
+}, {"each":113}],
 23: [function(require, module, exports) {
 
 /**
@@ -7203,8 +7213,8 @@ ClickTale.prototype.track = function(track) {
   window.ClickTaleEvent(track.event());
 };
 
-}, {"load-date":164,"domify":129,"each":4,"analytics.js-integration":95,"is":98,"on-body":163,"use-https":97}],
-164: [function(require, module, exports) {
+}, {"load-date":163,"domify":128,"each":4,"analytics.js-integration":95,"is":98,"on-body":162,"use-https":97}],
+163: [function(require, module, exports) {
 
 
 /*
@@ -7323,7 +7333,7 @@ Clicky.prototype.track = function(track) {
   window.clicky.goal(track.event(), track.revenue());
 };
 
-}, {"facade":138,"extend":161,"analytics.js-integration":95,"is":98}],
+}, {"facade":137,"extend":160,"analytics.js-integration":95,"is":98}],
 25: [function(require, module, exports) {
 
 /**
@@ -7609,8 +7619,8 @@ Curebit.prototype.completedOrder = function(track) {
   });
 };
 
-}, {"facade":138,"bind":108,"each":4,"analytics.js-integration":95,"to-iso-string":165,"global-queue":166,"throttle":167,"when":168}],
-165: [function(require, module, exports) {
+}, {"facade":137,"bind":108,"each":4,"analytics.js-integration":95,"to-iso-string":164,"global-queue":165,"throttle":166,"when":167}],
+164: [function(require, module, exports) {
 
 /**
  * Expose `toIsoString`.
@@ -7652,7 +7662,7 @@ function pad (number) {
   return n.length === 1 ? '0' + n : n;
 }
 }, {}],
-166: [function(require, module, exports) {
+165: [function(require, module, exports) {
 
 /**
  * Expose `generate`.
@@ -7682,7 +7692,7 @@ function generate (name, options) {
   };
 }
 }, {}],
-167: [function(require, module, exports) {
+166: [function(require, module, exports) {
 
 /**
  * Module exports.
@@ -7715,7 +7725,7 @@ function throttle (func, wait) {
 }
 
 }, {}],
-168: [function(require, module, exports) {
+167: [function(require, module, exports) {
 
 var callback = require('callback');
 
@@ -7744,8 +7754,8 @@ function when (condition, fn, interval) {
     clearInterval(ref);
   }, interval || 10);
 }
-}, {"callback":169}],
-169: [function(require, module, exports) {
+}, {"callback":168}],
+168: [function(require, module, exports) {
 var next = require('next-tick');
 
 
@@ -7788,7 +7798,7 @@ callback.async = function (fn, wait) {
 
 callback.sync = callback;
 
-}, {"next-tick":121}],
+}, {"next-tick":120}],
 28: [function(require, module, exports) {
 
 /**
@@ -7901,8 +7911,8 @@ function convertDate(date) {
   return Math.floor(date.getTime() / 1000);
 }
 
-}, {"facade":138,"alias":170,"convert-dates":171,"analytics.js-integration":95}],
-170: [function(require, module, exports) {
+}, {"facade":137,"alias":169,"convert-dates":170,"analytics.js-integration":95}],
+169: [function(require, module, exports) {
 
 var type = require('type');
 
@@ -7965,8 +7975,8 @@ function aliasByFunction (obj, convert) {
   for (var key in obj) output[convert(key)] = obj[key];
   return output;
 }
-}, {"type":7,"clone":155}],
-171: [function(require, module, exports) {
+}, {"type":7,"clone":154}],
+170: [function(require, module, exports) {
 
 var is = require('is');
 
@@ -8075,7 +8085,7 @@ Drip.prototype.identify = function(identify) {
   push('identify', identify.traits());
 };
 
-}, {"analytics.js-integration":95,"is":98,"global-queue":166}],
+}, {"analytics.js-integration":95,"is":98,"global-queue":165}],
 30: [function(require, module, exports) {
 var integration = require('analytics.js-integration');
 var tick = require('next-tick');
@@ -8134,7 +8144,7 @@ Elevio.prototype.identify = function(identify) {
   window._elev.user = user;
 };
 
-}, {"analytics.js-integration":95,"next-tick":121}],
+}, {"analytics.js-integration":95,"next-tick":120}],
 31: [function(require, module, exports) {
 
 /**
@@ -8199,8 +8209,8 @@ Errorception.prototype.identify = function(identify) {
   extend(window._errs.meta, traits);
 };
 
-}, {"extend":161,"analytics.js-integration":95,"on-error":172,"global-queue":166}],
-172: [function(require, module, exports) {
+}, {"extend":160,"analytics.js-integration":95,"on-error":171,"global-queue":165}],
+171: [function(require, module, exports) {
 
 /**
  * Expose `onError`.
@@ -8374,7 +8384,7 @@ Evergage.prototype.track = function(track) {
   push('trackAction', track.event(), track.properties());
 };
 
-}, {"each":4,"analytics.js-integration":95,"global-queue":166}],
+}, {"each":4,"analytics.js-integration":95,"global-queue":165}],
 33: [function(require, module, exports) {
 'use strict';
 
@@ -8514,8 +8524,8 @@ Extole.prototype._createConversionTag = function(conversion) {
   return domify('<script type="extole/conversion">' + json.stringify(conversion) + '</script>');
 };
 
-}, {"bind":108,"domify":129,"each":4,"extend":161,"analytics.js-integration":95,"json":173}],
-173: [function(require, module, exports) {
+}, {"bind":108,"domify":128,"each":4,"extend":160,"analytics.js-integration":95,"json":172}],
+172: [function(require, module, exports) {
 
 var json = window.JSON || {};
 var stringify = json.stringify;
@@ -8525,8 +8535,8 @@ module.exports = parse && stringify
   ? JSON
   : require('json-fallback');
 
-}, {"json-fallback":174}],
-174: [function(require, module, exports) {
+}, {"json-fallback":173}],
+173: [function(require, module, exports) {
 /*
     json2.js
     2014-02-04
@@ -9095,7 +9105,7 @@ Facebook.prototype.track = function(track) {
   });
 };
 
-}, {"each":4,"analytics.js-integration":95,"global-queue":166}],
+}, {"each":4,"analytics.js-integration":95,"global-queue":165}],
 35: [function(require, module, exports) {
 
 /**
@@ -9293,7 +9303,7 @@ function ecommerce(event, track, arr) {
   ].concat(arr || []));
 }
 
-}, {"facade":138,"each":4,"analytics.js-integration":95,"global-queue":166}],
+}, {"facade":137,"each":4,"analytics.js-integration":95,"global-queue":165}],
 36: [function(require, module, exports) {
 
 /**
@@ -9633,8 +9643,8 @@ function isInt(n) {
   return n === +n && n === (n | 0);
 }
 
-}, {"to-camel-case":175,"foldl":137,"analytics.js-integration":95,"is":98}],
-175: [function(require, module, exports) {
+}, {"to-camel-case":174,"foldl":136,"analytics.js-integration":95,"is":98}],
+174: [function(require, module, exports) {
 
 var toSpace = require('to-space-case');
 
@@ -9659,7 +9669,7 @@ function toCamelCase (string) {
     return letter.toUpperCase();
   });
 }
-}, {"to-space-case":131}],
+}, {"to-space-case":130}],
 38: [function(require, module, exports) {
 
 /**
@@ -9714,7 +9724,7 @@ Gauges.prototype.page = function() {
   push('track');
 };
 
-}, {"analytics.js-integration":95,"global-queue":166}],
+}, {"analytics.js-integration":95,"global-queue":165}],
 39: [function(require, module, exports) {
 
 /**
@@ -9767,7 +9777,7 @@ GetSatisfaction.prototype.loaded = function() {
   return !!window.GSFN;
 };
 
-}, {"analytics.js-integration":95,"on-body":163}],
+}, {"analytics.js-integration":95,"on-body":162}],
 40: [function(require, module, exports) {
 
 /**
@@ -10656,8 +10666,8 @@ function createProductTrack(track, properties) {
   return new Track({ properties: properties });
 }
 
-}, {"facade":138,"defaults":162,"obj-case":99,"each":4,"analytics.js-integration":95,"is":98,"object":176,"global-queue":166,"select":177,"use-https":97}],
-176: [function(require, module, exports) {
+}, {"facade":137,"defaults":161,"obj-case":99,"each":4,"analytics.js-integration":95,"is":98,"object":175,"global-queue":165,"select":176,"use-https":97}],
+175: [function(require, module, exports) {
 
 /**
  * HOP ref.
@@ -10743,7 +10753,7 @@ exports.isEmpty = function(obj){
   return 0 == exports.length(obj);
 };
 }, {}],
-177: [function(require, module, exports) {
+176: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -10773,7 +10783,7 @@ module.exports = function(arr, fn){
   return ret;
 };
 
-}, {"to-function":124}],
+}, {"to-function":123}],
 41: [function(require, module, exports) {
 
 /**
@@ -10863,7 +10873,7 @@ GTM.prototype.track = function(track) {
   push(props);
 };
 
-}, {"analytics.js-integration":95,"global-queue":166}],
+}, {"analytics.js-integration":95,"global-queue":165}],
 42: [function(require, module, exports) {
 
 /**
@@ -11055,8 +11065,8 @@ function push() {
   window._gs.apply(null, arguments);
 }
 
-}, {"facade":138,"each":4,"analytics.js-integration":95,"omit":178,"pick":179}],
-178: [function(require, module, exports) {
+}, {"facade":137,"each":4,"analytics.js-integration":95,"omit":177,"pick":178}],
+177: [function(require, module, exports) {
 /**
  * Expose `omit`.
  */
@@ -11084,7 +11094,7 @@ function omit(keys, object){
   return ret;
 }
 }, {}],
-179: [function(require, module, exports) {
+178: [function(require, module, exports) {
 
 /**
  * Expose `pick`.
@@ -11376,7 +11386,7 @@ function convertDates(properties) {
   return convert(properties, function(date) { return date.getTime(); });
 }
 
-}, {"convert-dates":171,"analytics.js-integration":95,"global-queue":166}],
+}, {"convert-dates":170,"analytics.js-integration":95,"global-queue":165}],
 47: [function(require, module, exports) {
 
 /**
@@ -11551,7 +11561,7 @@ InsideVault.prototype.track = function(track) {
   });
 };
 
-}, {"each":4,"analytics.js-integration":95,"global-queue":166}],
+}, {"each":4,"analytics.js-integration":95,"global-queue":165}],
 49: [function(require, module, exports) {
 
 /**
@@ -11638,7 +11648,7 @@ Inspectlet.prototype.page = function() {
   push('virtualPage');
 };
 
-}, {"analytics.js-integration":95,"global-queue":166}],
+}, {"analytics.js-integration":95,"global-queue":165}],
 50: [function(require, module, exports) {
 
 /**
@@ -11835,7 +11845,7 @@ function api() {
   window.Intercom.apply(window.Intercom, arguments);
 }
 
-}, {"alias":170,"convert-dates":171,"defaults":162,"obj-case":99,"analytics.js-integration":95,"is":98}],
+}, {"alias":169,"convert-dates":170,"defaults":161,"obj-case":99,"analytics.js-integration":95,"is":98}],
 51: [function(require, module, exports) {
 
 /**
@@ -12114,7 +12124,7 @@ Kenshoo.prototype.track = function(track) {
   window.k_trackevent(params, this.options.subdomain);
 };
 
-}, {"includes":130,"analytics.js-integration":95,"is":98}],
+}, {"includes":129,"analytics.js-integration":95,"is":98}],
 53: [function(require, module, exports) {
 
 /**
@@ -12300,7 +12310,7 @@ function prefix(event, properties) {
   return prefixed;
 }
 
-}, {"each":4,"analytics.js-integration":95,"is":98,"global-queue":166}],
+}, {"each":4,"analytics.js-integration":95,"is":98,"global-queue":165}],
 54: [function(require, module, exports) {
 
 /**
@@ -12398,7 +12408,7 @@ Klaviyo.prototype.track = function(track) {
   }));
 };
 
-}, {"analytics.js-integration":95,"global-queue":166,"next-tick":121}],
+}, {"analytics.js-integration":95,"global-queue":165,"next-tick":120}],
 55: [function(require, module, exports) {
 
 /**
@@ -12547,7 +12557,7 @@ function convert(traits) {
   return arr;
 }
 
-}, {"facade":138,"clone":101,"each":4,"analytics.js-integration":95,"next-tick":121,"when":168}],
+}, {"facade":137,"clone":101,"each":4,"analytics.js-integration":95,"next-tick":120,"when":167}],
 56: [function(require, module, exports) {
 
 /**
@@ -12620,7 +12630,7 @@ LuckyOrange.prototype.identify = function(identify) {
   window.__wtw_custom_user_data = traits;
 };
 
-}, {"facade":138,"analytics.js-integration":95,"use-https":97}],
+}, {"facade":137,"analytics.js-integration":95,"use-https":97}],
 57: [function(require, module, exports) {
 
 /**
@@ -12714,7 +12724,7 @@ Lytics.prototype.track = function(track) {
   window.jstag.send(props);
 };
 
-}, {"alias":170,"analytics.js-integration":95}],
+}, {"alias":169,"analytics.js-integration":95}],
 58: [function(require, module, exports) {
 
 /**
@@ -12948,8 +12958,8 @@ function lowercase(arr) {
   return ret;
 }
 
-}, {"alias":170,"convert-dates":171,"obj-case":99,"each":4,"includes":130,"analytics.js-integration":95,"is":98,"to-iso-string":165,"some":180}],
-180: [function(require, module, exports) {
+}, {"alias":169,"convert-dates":170,"obj-case":99,"each":4,"includes":129,"analytics.js-integration":95,"is":98,"to-iso-string":164,"some":179}],
+179: [function(require, module, exports) {
 
 /**
  * some
@@ -13069,7 +13079,7 @@ Mojn.prototype.track = function(track) {
   return conv;
 };
 
-}, {"bind":108,"analytics.js-integration":95,"is":98,"when":168}],
+}, {"bind":108,"analytics.js-integration":95,"is":98,"when":167}],
 60: [function(require, module, exports) {
 
 /**
@@ -13171,7 +13181,7 @@ function set(obj) {
   });
 }
 
-}, {"each":4,"analytics.js-integration":95,"global-queue":166}],
+}, {"each":4,"analytics.js-integration":95,"global-queue":165}],
 61: [function(require, module, exports) {
 
 /**
@@ -13294,7 +13304,7 @@ Navilytics.prototype.track = function(track) {
   push('tagRecording', track.event());
 };
 
-}, {"analytics.js-integration":95,"global-queue":166}],
+}, {"analytics.js-integration":95,"global-queue":165}],
 63: [function(require, module, exports) {
 
 /**
@@ -13365,7 +13375,7 @@ Nudgespot.prototype.track = function(track) {
   window.nudgespot.track(track.event(), track.properties());
 };
 
-}, {"alias":170,"analytics.js-integration":95}],
+}, {"alias":169,"analytics.js-integration":95}],
 64: [function(require, module, exports) {
 
 /**
@@ -13575,7 +13585,7 @@ function api(action, value) {
   window.olark('api.' + action, value);
 }
 
-}, {"use-https":97,"analytics.js-integration":95,"next-tick":121}],
+}, {"use-https":97,"analytics.js-integration":95,"next-tick":120}],
 65: [function(require, module, exports) {
 
 /**
@@ -13755,7 +13765,7 @@ function getExperiments(options) {
   }, [], options.activeExperimentIds);
 }
 
-}, {"each":4,"foldl":137,"analytics.js-integration":95,"global-queue":166,"next-tick":121}],
+}, {"each":4,"foldl":136,"analytics.js-integration":95,"global-queue":165,"next-tick":120}],
 66: [function(require, module, exports) {
 
 /**
@@ -13868,7 +13878,7 @@ Outbound.prototype.alias = function(alias) {
   window.outbound.identify(alias.userId(), { previousId: alias.previousId() });
 };
 
-}, {"analytics.js-integration":95,"omit":178}],
+}, {"analytics.js-integration":95,"omit":177}],
 67: [function(require, module, exports) {
 
 /**
@@ -13972,7 +13982,7 @@ PerfectAudience.prototype.completedOrder = function(track) {
   push('track', track.event(), props);
 };
 
-}, {"analytics.js-integration":95,"global-queue":166}],
+}, {"analytics.js-integration":95,"global-queue":165}],
 68: [function(require, module, exports) {
 
 /**
@@ -14018,7 +14028,7 @@ Pingdom.prototype.loaded = function() {
   return !!(window._prum && window._prum.push !== Array.prototype.push);
 };
 
-}, {"load-date":164,"analytics.js-integration":95,"global-queue":166}],
+}, {"load-date":163,"analytics.js-integration":95,"global-queue":165}],
 69: [function(require, module, exports) {
 
 /**
@@ -14114,7 +14124,7 @@ Piwik.prototype.track = function(track) {
   push('trackEvent', category, action, name, value);
 };
 
-}, {"each":4,"analytics.js-integration":95,"is":98,"global-queue":166}],
+}, {"each":4,"analytics.js-integration":95,"is":98,"global-queue":165}],
 70: [function(require, module, exports) {
 
 /**
@@ -14231,7 +14241,7 @@ function convertDate(date) {
   return Math.floor(date / 1000);
 }
 
-}, {"convert-dates":171,"analytics.js-integration":95,"global-queue":166}],
+}, {"convert-dates":170,"analytics.js-integration":95,"global-queue":165}],
 71: [function(require, module, exports) {
 
 /**
@@ -14318,7 +14328,7 @@ Qualaroo.prototype.track = function(track) {
   this.identify(new Identify({ traits: traits }));
 };
 
-}, {"analytics.js-integration":95,"global-queue":166,"facade":138,"bind":108,"when":168}],
+}, {"analytics.js-integration":95,"global-queue":165,"facade":137,"bind":108,"when":167}],
 72: [function(require, module, exports) {
 
 /**
@@ -14526,8 +14536,8 @@ Quantcast.prototype._labels = function(type) {
   return [type, ret].join('.');
 };
 
-}, {"analytics.js-integration":95,"global-queue":166,"reduce":181,"use-https":97}],
-181: [function(require, module, exports) {
+}, {"analytics.js-integration":95,"global-queue":165,"reduce":180,"use-https":97}],
+180: [function(require, module, exports) {
 
 /**
  * Reduce `arr` with `fn`.
@@ -14637,7 +14647,7 @@ RollbarIntegration.prototype.identify = function(identify) {
   rollbar.configure({ payload: { person: person } });
 };
 
-}, {"extend":161,"analytics.js-integration":95,"is":98}],
+}, {"extend":160,"analytics.js-integration":95,"is":98}],
 74: [function(require, module, exports) {
 
 var integration = require('analytics.js-integration');
@@ -14899,7 +14909,7 @@ SatisMeter.prototype.identify = function(identify) {
   window.satismeter(traits);
 };
 
-}, {"analytics.js-integration":95,"when":168}],
+}, {"analytics.js-integration":95,"when":167}],
 77: [function(require, module, exports) {
 
 /**
@@ -14927,8 +14937,8 @@ var ScratchIt = module.exports = integration('Scratch-it Analytics')
 ScratchIt.prototype.initialize = function() {
   var self = this;
 
-  this.load(function(){
-    if(!window.ScratchItAnalytics) {
+  this.load(function() {
+    if (!window.ScratchItAnalytics) {
       return null;
     }
 
@@ -14947,10 +14957,12 @@ ScratchIt.prototype.loaded = function() {
 };
 
 /**
- * Track.
+ * Track an event.
  *
+ * @api public
  * @param {Track} track
  */
+
 ScratchIt.prototype.track = function(track) {
   var parameters = track.properties();
   var event_type = parameters.event_type || 'track';
@@ -14961,12 +14973,14 @@ ScratchIt.prototype.track = function(track) {
 /**
  * Page.
  *
+ * @api public
  * @param {Page} page
  */
+
 ScratchIt.prototype.page = function(page) {
   var customProperties = page.properties();
   del(customProperties, 'event_type');
-  window._ScratchIt.track('page_visit', 'page_visit', customProperties);
+  window._ScratchIt.track('track', 'page_visit', customProperties);
 };
 
 }, {"analytics.js-integration":95,"is":98,"obj-case":99}],
@@ -15245,8 +15259,8 @@ function scheme() {
 
 function noop() {}
 
-}, {"ad-params":182,"clone":101,"cookie":183,"extend":161,"analytics.js-integration":95,"segmentio/json@1.0.0":173,"store":184,"protocol":185,"send-json":186,"top-domain":134,"utm-params":187,"uuid":188}],
-182: [function(require, module, exports) {
+}, {"ad-params":181,"clone":101,"cookie":182,"extend":160,"analytics.js-integration":95,"segmentio/json@1.0.0":172,"store":183,"protocol":184,"send-json":185,"top-domain":133,"utm-params":186,"uuid":187}],
+181: [function(require, module, exports) {
 /**
  * Module dependencies.
  */
@@ -15289,19 +15303,49 @@ function ads(query){
     }
   }
 }
-}, {"querystring":189}],
-189: [function(require, module, exports) {
+}, {"querystring":188}],
+188: [function(require, module, exports) {
 
 /**
  * Module dependencies.
  */
 
-var encode = encodeURIComponent;
-var decode = decodeURIComponent;
 var trim = require('trim');
 var type = require('type');
 
 var pattern = /(\w+)\[(\d+)\]/
+
+/**
+ * Safely encode the given string
+ * 
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+var encode = function(str) {
+  try {
+    return encodeURIComponent(str);
+  } catch (e) {
+    return str;
+  }
+};
+
+/**
+ * Safely decode the string
+ * 
+ * @param {String} str
+ * @return {String}
+ * @api private
+ */
+
+var decode = function(str) {
+  try {
+    return decodeURIComponent(str.replace(/\+/g, ' '));
+  } catch (e) {
+    return str;
+  }
+}
 
 /**
  * Parse the given query `str`.
@@ -15367,8 +15411,45 @@ exports.stringify = function(obj){
   return pairs.join('&');
 };
 
-}, {"trim":160,"type":7}],
-183: [function(require, module, exports) {
+}, {"trim":159,"type":189}],
+189: [function(require, module, exports) {
+/**
+ * toString ref.
+ */
+
+var toString = Object.prototype.toString;
+
+/**
+ * Return the type of `val`.
+ *
+ * @param {Mixed} val
+ * @return {String}
+ * @api public
+ */
+
+module.exports = function(val){
+  switch (toString.call(val)) {
+    case '[object Date]': return 'date';
+    case '[object RegExp]': return 'regexp';
+    case '[object Arguments]': return 'arguments';
+    case '[object Array]': return 'array';
+    case '[object Error]': return 'error';
+  }
+
+  if (val === null) return 'null';
+  if (val === undefined) return 'undefined';
+  if (val !== val) return 'nan';
+  if (val && val.nodeType === 1) return 'element';
+
+  val = val.valueOf
+    ? val.valueOf()
+    : Object.prototype.valueOf.apply(val)
+
+  return typeof val;
+};
+
+}, {}],
+182: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -15791,7 +15872,7 @@ try {
 } catch(e){}
 
 }, {}],
-184: [function(require, module, exports) {
+183: [function(require, module, exports) {
 
 /**
  * dependencies.
@@ -15886,7 +15967,7 @@ function all(){
   return ret;
 }
 
-}, {"unserialize":193,"each":114}],
+}, {"unserialize":193,"each":113}],
 193: [function(require, module, exports) {
 
 /**
@@ -15905,7 +15986,7 @@ module.exports = function(val){
 };
 
 }, {}],
-185: [function(require, module, exports) {
+184: [function(require, module, exports) {
 
 /**
  * Convenience alias
@@ -15988,7 +16069,7 @@ function set (protocol) {
 }
 
 }, {}],
-186: [function(require, module, exports) {
+185: [function(require, module, exports) {
 /**
  * Module dependencies.
  */
@@ -16087,7 +16168,7 @@ function base64(url, obj, _, fn){
   });
 }
 
-}, {"base64-encode":194,"has-cors":195,"jsonp":196,"json":173}],
+}, {"base64-encode":194,"has-cors":195,"jsonp":196,"json":172}],
 194: [function(require, module, exports) {
 var utf8Encode = require('utf8-encode');
 var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -16262,7 +16343,7 @@ function jsonp(url, opts, fn){
 }
 
 }, {"debug":190}],
-187: [function(require, module, exports) {
+186: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -16302,8 +16383,8 @@ function utm(query){
   return ret;
 }
 
-}, {"querystring":189}],
-188: [function(require, module, exports) {
+}, {"querystring":188}],
+187: [function(require, module, exports) {
 
 /**
  * Taken straight from jed's gist: https://gist.github.com/982883
@@ -16505,7 +16586,7 @@ SnapEngage.prototype.attachListeners = function() {
   });
 };
 
-}, {"analytics.js-integration":95,"is":98,"next-tick":121}],
+}, {"analytics.js-integration":95,"is":98,"next-tick":120}],
 81: [function(require, module, exports) {
 
 /**
@@ -16553,7 +16634,7 @@ Spinnakr.prototype.loaded = function() {
   return !!window._spinnakr;
 };
 
-}, {"bind":108,"analytics.js-integration":95,"when":168}],
+}, {"bind":108,"analytics.js-integration":95,"when":167}],
 82: [function(require, module, exports) {
 /**
  * Module dependencies.
@@ -16744,7 +16825,7 @@ Taplytics.prototype.reset = function() {
   push('reset');
 };
 
-}, {"analytics.js-integration":95,"is":98,"keys":127,"global-queue":166}],
+}, {"analytics.js-integration":95,"is":98,"keys":126,"global-queue":165}],
 84: [function(require, module, exports) {
 
 /**
@@ -16832,7 +16913,7 @@ Tapstream.prototype.track = function(track) {
   push('fireHit', slug(track.event()), [props.url]);
 };
 
-}, {"analytics.js-integration":95,"global-queue":166,"slug":105}],
+}, {"analytics.js-integration":95,"global-queue":165,"slug":105}],
 85: [function(require, module, exports) {
 
 /**
@@ -16996,7 +17077,7 @@ Trakio.prototype.alias = function(alias) {
   }
 };
 
-}, {"alias":170,"analytics.js-integration":95}],
+}, {"alias":169,"analytics.js-integration":95}],
 86: [function(require, module, exports) {
 
 /**
@@ -17171,7 +17252,7 @@ Userlike.prototype.attachListeners = function() {
   };
 };
 
-}, {"facade":138,"clone":101,"analytics.js-integration":95}],
+}, {"facade":137,"clone":101,"analytics.js-integration":95}],
 88: [function(require, module, exports) {
 
 /**
@@ -17372,7 +17453,7 @@ function showClassicWidget(type, options) {
   push(type, 'classic_widget', options);
 }
 
-}, {"alias":170,"convert-dates":171,"analytics.js-integration":95,"global-queue":166,"to-unix-timestamp":198}],
+}, {"alias":169,"convert-dates":170,"analytics.js-integration":95,"global-queue":165,"to-unix-timestamp":198}],
 198: [function(require, module, exports) {
 
 /**
@@ -17514,7 +17595,7 @@ Vero.prototype.alias = function(alias) {
   }
 };
 
-}, {"component/cookie":183,"analytics.js-integration":95,"global-queue":166}],
+}, {"component/cookie":182,"analytics.js-integration":95,"global-queue":165}],
 90: [function(require, module, exports) {
 
 /**
@@ -17689,7 +17770,7 @@ function variation(id) {
   return variationId ? experiment.comb_n[variationId] : null;
 }
 
-}, {"each":4,"analytics.js-integration":95,"next-tick":121}],
+}, {"each":4,"analytics.js-integration":95,"next-tick":120}],
 91: [function(require, module, exports) {
 
 /**
@@ -17938,7 +18019,7 @@ Wootric.prototype.page = function(page) {
   });
 };
 
-}, {"analytics.js-integration":95,"omit":178}],
+}, {"analytics.js-integration":95,"omit":177}],
 94: [function(require, module, exports) {
 
 /**
@@ -18017,7 +18098,7 @@ function push(callback) {
   window.yandex_metrika_callbacks.push(callback);
 }
 
-}, {"bind":108,"analytics.js-integration":95,"next-tick":121,"when":168}],
+}, {"bind":108,"analytics.js-integration":95,"next-tick":120,"when":167}],
 3: [function(require, module, exports) {
 
 var _analytics = window.analytics;
@@ -18664,7 +18745,7 @@ Analytics.prototype.noConflict = function(){
 };
 
 
-}, {"after":113,"bind":199,"callback":169,"clone":101,"./cookie":200,"debug":190,"defaults":103,"each":4,"emitter":112,"./group":201,"is":98,"is-email":159,"is-meta":202,"new-date":151,"event":203,"./pageDefaults":204,"pick":205,"prevent":206,"querystring":207,"./normalize":208,"object":176,"./memory":209,"./store":210,"./user":211,"facade":138}],
+}, {"after":112,"bind":199,"callback":168,"clone":101,"./cookie":200,"debug":190,"defaults":103,"each":4,"emitter":111,"./group":201,"is":98,"is-email":158,"is-meta":202,"new-date":150,"event":203,"./pageDefaults":204,"pick":205,"prevent":206,"querystring":207,"./normalize":208,"object":175,"./memory":209,"./store":210,"./user":211,"facade":137}],
 199: [function(require, module, exports) {
 
 try {
@@ -18711,7 +18792,7 @@ function bindMethods (obj, methods) {
   }
   return obj;
 }
-}, {"bind":108,"bind-all":109}],
+}, {"bind":108}],
 200: [function(require, module, exports) {
 
 var debug = require('debug')('analytics.js:cookie');
@@ -18841,7 +18922,7 @@ module.exports = bind.all(new Cookie());
 
 module.exports.Cookie = Cookie;
 
-}, {"debug":190,"bind":199,"cookie":183,"clone":101,"defaults":103,"json":173,"top-domain":212}],
+}, {"debug":190,"bind":199,"cookie":182,"clone":101,"defaults":103,"json":172,"top-domain":212}],
 212: [function(require, module, exports) {
 
 /**
@@ -18946,7 +19027,7 @@ domain.levels = function(url){
   return levels;
 };
 
-}, {"url":135,"cookie":213}],
+}, {"url":134,"cookie":213}],
 213: [function(require, module, exports) {
 
 /**
@@ -19378,7 +19459,7 @@ Entity.prototype.load = function () {
 };
 
 
-}, {"debug":190,"isodate-traverse":147,"defaults":103,"./memory":209,"./cookie":200,"./store":210,"extend":161,"clone":101}],
+}, {"debug":190,"isodate-traverse":146,"defaults":103,"./memory":209,"./cookie":200,"./store":210,"extend":160,"clone":101}],
 209: [function(require, module, exports) {
 
 /**
@@ -19684,7 +19765,7 @@ try {
 store.enabled = !store.disabled
 
 module.exports = store;
-}, {"json":173}],
+}, {"json":172}],
 215: [function(require, module, exports) {
 
 module.exports = function(a, b){
@@ -19815,7 +19896,7 @@ function canonicalUrl (search) {
 
 module.exports = pageDefaults;
 
-}, {"canonical":217,"url":135}],
+}, {"canonical":217,"url":218}],
 217: [function(require, module, exports) {
 module.exports = function canonical () {
   var tags = document.getElementsByTagName('link');
@@ -19823,6 +19904,91 @@ module.exports = function canonical () {
     if ('canonical' == tag.getAttribute('rel')) return tag.getAttribute('href');
   }
 };
+}, {}],
+218: [function(require, module, exports) {
+
+/**
+ * Parse the given `url`.
+ *
+ * @param {String} str
+ * @return {Object}
+ * @api public
+ */
+
+exports.parse = function(url){
+  var a = document.createElement('a');
+  a.href = url;
+  return {
+    href: a.href,
+    host: a.host || location.host,
+    port: ('0' === a.port || '' === a.port) ? port(a.protocol) : a.port,
+    hash: a.hash,
+    hostname: a.hostname || location.hostname,
+    pathname: a.pathname.charAt(0) != '/' ? '/' + a.pathname : a.pathname,
+    protocol: !a.protocol || ':' == a.protocol ? location.protocol : a.protocol,
+    search: a.search,
+    query: a.search.slice(1)
+  };
+};
+
+/**
+ * Check if `url` is absolute.
+ *
+ * @param {String} url
+ * @return {Boolean}
+ * @api public
+ */
+
+exports.isAbsolute = function(url){
+  return 0 == url.indexOf('//') || !!~url.indexOf('://');
+};
+
+/**
+ * Check if `url` is relative.
+ *
+ * @param {String} url
+ * @return {Boolean}
+ * @api public
+ */
+
+exports.isRelative = function(url){
+  return !exports.isAbsolute(url);
+};
+
+/**
+ * Check if `url` is cross domain.
+ *
+ * @param {String} url
+ * @return {Boolean}
+ * @api public
+ */
+
+exports.isCrossDomain = function(url){
+  url = exports.parse(url);
+  var location = exports.parse(window.location.href);
+  return url.hostname !== location.hostname
+    || url.port !== location.port
+    || url.protocol !== location.protocol;
+};
+
+/**
+ * Return default port for `protocol`.
+ *
+ * @param  {String} protocol
+ * @return {String}
+ * @api private
+ */
+function port (protocol){
+  switch (protocol) {
+    case 'http:':
+      return 80;
+    case 'https:':
+      return 443;
+    default:
+      return location.port;
+  }
+}
+
 }, {}],
 205: [function(require, module, exports) {
 'use strict';
@@ -19998,7 +20164,7 @@ exports.stringify = function(obj){
   return pairs.join('&');
 };
 
-}, {"trim":160,"type":7}],
+}, {"trim":159,"type":7}],
 208: [function(require, module, exports) {
 
 /**
@@ -20092,8 +20258,8 @@ function normalize(msg, list){
       || ~indexof(lower, name.toLowerCase()));
   }
 }
-}, {"debug":190,"component/indexof":123,"defaults":103,"component/map":218,"each":4,"is":98}],
-218: [function(require, module, exports) {
+}, {"debug":190,"component/indexof":122,"defaults":103,"component/map":219,"each":4,"is":98}],
+219: [function(require, module, exports) {
 
 /**
  * Module dependencies.
@@ -20118,7 +20284,7 @@ module.exports = function(arr, fn){
   }
   return ret;
 };
-}, {"to-function":124}],
+}, {"to-function":123}],
 211: [function(require, module, exports) {
 
 var debug = require('debug')('analytics:user');
@@ -20288,7 +20454,7 @@ module.exports = bind.all(new User());
 
 module.exports.User = User;
 
-}, {"debug":190,"./entity":214,"inherit":215,"bind":199,"./cookie":200,"uuid":188,"cookie":183}],
+}, {"debug":190,"./entity":214,"inherit":215,"bind":199,"./cookie":200,"uuid":187,"cookie":182}],
 5: [function(require, module, exports) {
 module.exports = {
   "name": "analytics",
