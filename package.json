@@ -1,7 +1,7 @@
 {
   "name": "analytics.js",
   "author": "Segment.io <friends@segment.io>",
-  "version": "2.8.25",
+  "version": "2.11.0-si-1",
   "license": "MIT",
   "description": "The hassle-free way to integrate analytics into any web application.",
   "keywords": [
@@ -11,7 +11,7 @@
     "segment.io"
   ],
   "repository": {
-    "url": "https://github.com/segmentio/analytics.js.git",
+    "url": "https://github.com/Scratch-it/analytics.js.git",
     "type": "git"
   },
   "engines": {
