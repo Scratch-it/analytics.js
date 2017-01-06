@@ -3,3 +3,5 @@ test/server/pid.txt
 components
 build.js
 .idea
+coverage
+npm-debug.log
