@@ -1,4 +1,4 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.analytics = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.analytics = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 'use strict';
 /**
  * Analytics.js
@@ -35,7 +35,7 @@ Object.keys(Integrations).forEach(function(name) {
   analytics.use(Integrations[name]);
 });
 
-},{"../package.json":676,"./integrations":2,"@segment/analytics.js-core":24}],2:[function(require,module,exports){
+},{"../package.json":202,"./integrations":2,"@segment/analytics.js-core":24}],2:[function(require,module,exports){
 /* eslint quote-props: off */
 'use strict';
 
@@ -47,100 +47,26 @@ Object.keys(Integrations).forEach(function(name) {
 module.exports = {
   'adroll': require('@segment/analytics.js-integration-adroll'),
   'adwords': require('@segment/analytics.js-integration-adwords'),
-  'alexa': require('@segment/analytics.js-integration-alexa'),
-  'amplitude': require('@segment/analytics.js-integration-amplitude'),
-  'appcues': require('@segment/analytics.js-integration-appcues'),
-  'atatus': require('@segment/analytics.js-integration-atatus'),
-  'autosend': require('@segment/analytics.js-integration-autosend'),
-  'awesm': require('@segment/analytics.js-integration-awesm'),
-  'bing-ads': require('@segment/analytics.js-integration-bing-ads'),
-  'blueshift': require('@segment/analytics.js-integration-blueshift'),
-  'boomtrain': require('@segment/analytics.js-integration-boomtrain'),
   'bronto': require('@segment/analytics.js-integration-bronto'),
-  'bugherd': require('@segment/analytics.js-integration-bugherd'),
-  'bugsnag': require('@segment/analytics.js-integration-bugsnag'),
-  'chameleon': require('@segment/analytics.js-integration-chameleon'),
   'chartbeat': require('@segment/analytics.js-integration-chartbeat'),
-  'clicky': require('@segment/analytics.js-integration-clicky'),
-  'comscore': require('@segment/analytics.js-integration-comscore'),
-  'crazy-egg': require('@segment/analytics.js-integration-crazy-egg'),
-  'curebit': require('@segment/analytics.js-integration-curebit'),
-  'customerio': require('@segment/analytics.js-integration-customerio'),
-  'drift': require('@segment/analytics.js-integration-drift'),
   'drip': require('@segment/analytics.js-integration-drip'),
-  'elevio': require('@segment/analytics.js-integration-elevio'),
-  'errorception': require('@segment/analytics.js-integration-errorception'),
-  'evergage': require('@segment/analytics.js-integration-evergage'),
-  'extole': require('@segment/analytics.js-integration-extole'),
   'facebook-conversion-tracking': require('@segment/analytics.js-integration-facebook-conversion-tracking'),
   'facebook-custom-audiences': require('@segment/analytics.js-integration-facebook-custom-audiences'),
   'facebook-pixel': require('@segment/analytics.js-integration-facebook-pixel'),
-  'foxmetrics': require('@segment/analytics.js-integration-foxmetrics'),
-  'frontleaf': require('@segment/analytics.js-integration-frontleaf'),
-  'gauges': require('@segment/analytics.js-integration-gauges'),
-  'get-satisfaction': require('@segment/analytics.js-integration-get-satisfaction'),
   'google-analytics': require('@segment/analytics.js-integration-google-analytics'),
   'google-tag-manager': require('@segment/analytics.js-integration-google-tag-manager'),
-  'gosquared': require('@segment/analytics.js-integration-gosquared'),
-  'heap': require('@segment/analytics.js-integration-heap'),
-  'hellobar': require('@segment/analytics.js-integration-hellobar'),
-  'hittail': require('@segment/analytics.js-integration-hittail'),
   'hubspot': require('@segment/analytics.js-integration-hubspot'),
-  'improvely': require('@segment/analytics.js-integration-improvely'),
-  'inspectlet': require('@segment/analytics.js-integration-inspectlet'),
   'intercom': require('@segment/analytics.js-integration-intercom'),
-  'keen-io': require('@segment/analytics.js-integration-keen-io'),
-  'kenshoo': require('@segment/analytics.js-integration-kenshoo'),
   'kissmetrics': require('@segment/analytics.js-integration-kissmetrics'),
   'klaviyo': require('@segment/analytics.js-integration-klaviyo'),
-  'livechat': require('@segment/analytics.js-integration-livechat'),
-  'lucky-orange': require('@segment/analytics.js-integration-lucky-orange'),
-  'lytics': require('@segment/analytics.js-integration-lytics'),
-  'madkudu': require('@segment/analytics.js-integration-madkudu'),
   'mixpanel': require('@segment/analytics.js-integration-mixpanel'),
-  'mojn': require('@segment/analytics.js-integration-mojn'),
-  'mouseflow': require('@segment/analytics.js-integration-mouseflow'),
-  'mousestats': require('@segment/analytics.js-integration-mousestats'),
-  'navilytics': require('@segment/analytics.js-integration-navilytics'),
-  'nudgespot': require('@segment/analytics.js-integration-nudgespot'),
-  'olark': require('@segment/analytics.js-integration-olark'),
   'optimizely': require('@segment/analytics.js-integration-optimizely'),
-  'outbound': require('@segment/analytics.js-integration-outbound'),
-  'parsely': require('@segment/analytics.js-integration-parsely'),
-  'perfect-audience': require('@segment/analytics.js-integration-perfect-audience'),
-  'pingdom': require('@segment/analytics.js-integration-pingdom'),
-  'piwik': require('@segment/analytics.js-integration-piwik'),
-  'preact': require('@segment/analytics.js-integration-preact'),
-  'qualaroo': require('@segment/analytics.js-integration-qualaroo'),
-  'quantcast': require('@segment/analytics.js-integration-quantcast'),
-  'quanticmind': require('@segment/analytics.js-integration-quanticmind'),
-  'ramen': require('@segment/analytics.js-integration-ramen'),
-  'rollbar': require('@segment/analytics.js-integration-rollbar'),
-  'route': require('@segment/analytics.js-integration-route'),
-  'saasquatch': require('@segment/analytics.js-integration-saasquatch'),
-  'satismeter': require('@segment/analytics.js-integration-satismeter'),
-  'scratch-it': require('@segment/analytics.js-integration-scratch-it'),
   'segmentio': require('@segment/analytics.js-integration-segmentio'),
-  'sentry': require('@segment/analytics.js-integration-sentry'),
-  'simplereach': require('@segment/analytics.js-integration-simplereach'),
-  'snapengage': require('@segment/analytics.js-integration-snapengage'),
-  'spinnakr': require('@segment/analytics.js-integration-spinnakr'),
-  'supporthero': require('@segment/analytics.js-integration-supporthero'),
-  'taplytics': require('@segment/analytics.js-integration-taplytics'),
-  'tapstream': require('@segment/analytics.js-integration-tapstream'),
-  'trakio': require('@segment/analytics.js-integration-trakio'),
   'twitter-ads': require('@segment/analytics.js-integration-twitter-ads'),
-  'userlike': require('@segment/analytics.js-integration-userlike'),
-  'uservoice': require('@segment/analytics.js-integration-uservoice'),
-  'vero': require('@segment/analytics.js-integration-vero'),
-  'visual-website-optimizer': require('@segment/analytics.js-integration-visual-website-optimizer'),
-  'webengage': require('@segment/analytics.js-integration-webengage'),
-  'woopra': require('@segment/analytics.js-integration-woopra'),
-  'wootric': require('@segment/analytics.js-integration-wootric'),
-  'yandex-metrica': require('@segment/analytics.js-integration-yandex-metrica')
+  'scratch-it': require('@segment/analytics.js-integration-scratch-it')
 };
 
-},{"@segment/analytics.js-integration-adroll":35,"@segment/analytics.js-integration-adwords":36,"@segment/analytics.js-integration-alexa":43,"@segment/analytics.js-integration-amplitude":50,"@segment/analytics.js-integration-appcues":57,"@segment/analytics.js-integration-atatus":64,"@segment/analytics.js-integration-autosend":71,"@segment/analytics.js-integration-awesm":78,"@segment/analytics.js-integration-bing-ads":85,"@segment/analytics.js-integration-blueshift":92,"@segment/analytics.js-integration-boomtrain":99,"@segment/analytics.js-integration-bronto":106,"@segment/analytics.js-integration-bugherd":107,"@segment/analytics.js-integration-bugsnag":114,"@segment/analytics.js-integration-chameleon":121,"@segment/analytics.js-integration-chartbeat":128,"@segment/analytics.js-integration-clicky":135,"@segment/analytics.js-integration-comscore":142,"@segment/analytics.js-integration-crazy-egg":149,"@segment/analytics.js-integration-curebit":156,"@segment/analytics.js-integration-customerio":157,"@segment/analytics.js-integration-drift":164,"@segment/analytics.js-integration-drip":171,"@segment/analytics.js-integration-elevio":172,"@segment/analytics.js-integration-errorception":181,"@segment/analytics.js-integration-evergage":189,"@segment/analytics.js-integration-extole":196,"@segment/analytics.js-integration-facebook-conversion-tracking":203,"@segment/analytics.js-integration-facebook-custom-audiences":210,"@segment/analytics.js-integration-facebook-pixel":211,"@segment/analytics.js-integration-foxmetrics":212,"@segment/analytics.js-integration-frontleaf":213,"@segment/analytics.js-integration-gauges":220,"@segment/analytics.js-integration-get-satisfaction":227,"@segment/analytics.js-integration-google-analytics":234,"@segment/analytics.js-integration-google-tag-manager":235,"@segment/analytics.js-integration-gosquared":236,"@segment/analytics.js-integration-heap":237,"@segment/analytics.js-integration-hellobar":238,"@segment/analytics.js-integration-hittail":245,"@segment/analytics.js-integration-hubspot":252,"@segment/analytics.js-integration-improvely":259,"@segment/analytics.js-integration-inspectlet":266,"@segment/analytics.js-integration-intercom":273,"@segment/analytics.js-integration-keen-io":280,"@segment/analytics.js-integration-kenshoo":287,"@segment/analytics.js-integration-kissmetrics":294,"@segment/analytics.js-integration-klaviyo":301,"@segment/analytics.js-integration-livechat":302,"@segment/analytics.js-integration-lucky-orange":309,"@segment/analytics.js-integration-lytics":310,"@segment/analytics.js-integration-madkudu":317,"@segment/analytics.js-integration-mixpanel":324,"@segment/analytics.js-integration-mojn":331,"@segment/analytics.js-integration-mouseflow":338,"@segment/analytics.js-integration-mousestats":345,"@segment/analytics.js-integration-navilytics":352,"@segment/analytics.js-integration-nudgespot":359,"@segment/analytics.js-integration-olark":366,"@segment/analytics.js-integration-optimizely":373,"@segment/analytics.js-integration-outbound":382,"@segment/analytics.js-integration-parsely":390,"@segment/analytics.js-integration-perfect-audience":397,"@segment/analytics.js-integration-pingdom":398,"@segment/analytics.js-integration-piwik":405,"@segment/analytics.js-integration-preact":412,"@segment/analytics.js-integration-qualaroo":419,"@segment/analytics.js-integration-quantcast":426,"@segment/analytics.js-integration-quanticmind":427,"@segment/analytics.js-integration-ramen":434,"@segment/analytics.js-integration-rollbar":441,"@segment/analytics.js-integration-route":448,"@segment/analytics.js-integration-saasquatch":455,"@segment/analytics.js-integration-satismeter":462,"@segment/analytics.js-integration-scratch-it":469,"@segment/analytics.js-integration-segmentio":470,"@segment/analytics.js-integration-sentry":479,"@segment/analytics.js-integration-simplereach":486,"@segment/analytics.js-integration-snapengage":493,"@segment/analytics.js-integration-spinnakr":500,"@segment/analytics.js-integration-supporthero":507,"@segment/analytics.js-integration-taplytics":514,"@segment/analytics.js-integration-tapstream":521,"@segment/analytics.js-integration-trakio":528,"@segment/analytics.js-integration-twitter-ads":535,"@segment/analytics.js-integration-userlike":536,"@segment/analytics.js-integration-uservoice":543,"@segment/analytics.js-integration-vero":550,"@segment/analytics.js-integration-visual-website-optimizer":557,"@segment/analytics.js-integration-webengage":558,"@segment/analytics.js-integration-woopra":565,"@segment/analytics.js-integration-wootric":572,"@segment/analytics.js-integration-yandex-metrica":579}],3:[function(require,module,exports){
+},{"@segment/analytics.js-integration-adroll":32,"@segment/analytics.js-integration-adwords":33,"@segment/analytics.js-integration-bronto":40,"@segment/analytics.js-integration-chartbeat":41,"@segment/analytics.js-integration-drip":42,"@segment/analytics.js-integration-facebook-conversion-tracking":43,"@segment/analytics.js-integration-facebook-custom-audiences":50,"@segment/analytics.js-integration-facebook-pixel":51,"@segment/analytics.js-integration-google-analytics":52,"@segment/analytics.js-integration-google-tag-manager":53,"@segment/analytics.js-integration-hubspot":54,"@segment/analytics.js-integration-intercom":55,"@segment/analytics.js-integration-kissmetrics":62,"@segment/analytics.js-integration-klaviyo":69,"@segment/analytics.js-integration-mixpanel":70,"@segment/analytics.js-integration-optimizely":77,"@segment/analytics.js-integration-scratch-it":86,"@segment/analytics.js-integration-segmentio":87,"@segment/analytics.js-integration-twitter-ads":94}],3:[function(require,module,exports){
 'use strict';
 
 /*
@@ -432,7 +358,7 @@ var clone = function clone(obj) {
 
 module.exports = clone;
 
-},{"component-type":618}],6:[function(require,module,exports){
+},{"component-type":140}],6:[function(require,module,exports){
 'use strict';
 
 /*
@@ -1406,7 +1332,7 @@ function ads(query) {
 
 module.exports = ads;
 
-},{"component-querystring":616}],19:[function(require,module,exports){
+},{"component-querystring":138}],19:[function(require,module,exports){
 
 var type = require('component-type');
 var clone = require('component-clone');
@@ -1465,7 +1391,7 @@ function aliasByFunction (obj, convert) {
   return output;
 }
 
-},{"component-clone":609,"component-type":618}],20:[function(require,module,exports){
+},{"component-clone":127,"component-type":140}],20:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -1484,7 +1410,9 @@ var Track = require('segmentio-facade').Track;
 var after = require('@ndhoule/after');
 var bindAll = require('bind-all');
 var clone = require('@ndhoule/clone');
+var extend = require('extend');
 var cookie = require('./cookie');
+var metrics = require('./metrics');
 var debug = require('debug');
 var defaults = require('@ndhoule/defaults');
 var each = require('@ndhoule/each');
@@ -1569,7 +1497,10 @@ Analytics.prototype.addIntegration = function(Integration) {
  * @return {Analytics}
  */
 
-Analytics.prototype.init = Analytics.prototype.initialize = function(settings, options) {
+Analytics.prototype.init = Analytics.prototype.initialize = function(
+  settings,
+  options
+) {
   settings = settings || {};
   options = options || {};
 
@@ -1585,8 +1516,20 @@ Analytics.prototype.init = Analytics.prototype.initialize = function(settings, o
 
   // add integrations
   each(function(opts, name) {
+    // Don't load disabled integrations
+    if (options.integrations) {
+      if (
+        options.integrations[name] === false ||
+        (options.integrations.All === false && !options.integrations[name])
+      ) {
+        return;
+      }
+    }
+
     var Integration = self.Integrations[name];
-    var integration = new Integration(clone(opts));
+    var clonedOpts = {};
+    extend(true, clonedOpts, opts); // deep clone opts
+    var integration = new Integration(clonedOpts);
     self.log('initialize %o - %o', name, opts);
     self.add(integration);
   }, settings);
@@ -1610,14 +1553,35 @@ Analytics.prototype.init = Analytics.prototype.initialize = function(settings, o
   }
 
   // initialize integrations, passing ready
+  // create a list of any integrations that did not initialize - this will be passed with all events for replay support:
+  this.failedInitializations = [];
   each(function(integration) {
-    if (options.initialPageview && integration.options.initialPageview === false) {
+    if (
+      options.initialPageview &&
+      integration.options.initialPageview === false
+    ) {
       integration.page = after(2, integration.page);
     }
 
     integration.analytics = self;
     integration.once('ready', ready);
-    integration.initialize();
+    try {
+      metrics.increment('analytics_js.integration.invoke', {
+        method: 'initialize',
+        integration_name: integration.name
+      });
+      integration.initialize();
+    } catch (e) {
+      var integrationName = integration.name;
+      metrics.increment('analytics_js.integration.invoke.error', {
+        method: 'initialize',
+        integration_name: integration.name
+      });
+      self.failedInitializations.push(integrationName);
+      self.log('Error initializing %s integration: %o', integrationName, e);
+      // Mark integration as ready to prevent blocking of anyone listening to analytics.ready()
+      integration.ready();
+    }
   }, integrations);
 
   // backwards compat with angular plugin.
@@ -1663,9 +1627,9 @@ Analytics.prototype.add = function(integration) {
 Analytics.prototype.identify = function(id, traits, options, fn) {
   // Argument reshuffling.
   /* eslint-disable no-unused-expressions, no-sequences */
-  if (is.fn(options)) fn = options, options = null;
-  if (is.fn(traits)) fn = traits, options = null, traits = null;
-  if (is.object(id)) options = traits, traits = id, id = user.id();
+  if (is.fn(options)) (fn = options), (options = null);
+  if (is.fn(traits)) (fn = traits), (options = null), (traits = null);
+  if (is.object(id)) (options = traits), (traits = id), (id = user.id());
   /* eslint-enable no-unused-expressions, no-sequences */
 
   // clone traits before we manipulate so we don't do anything uncouth, and take
@@ -1677,6 +1641,11 @@ Analytics.prototype.identify = function(id, traits, options, fn) {
     traits: user.traits(),
     userId: user.id()
   });
+
+  // Add the initialize integrations so the server-side ones can be disabled too
+  if (this.options.integrations) {
+    defaults(msg.integrations, this.options.integrations);
+  }
 
   this._invoke('identify', new Identify(msg));
 
@@ -1710,11 +1679,10 @@ Analytics.prototype.user = function() {
 Analytics.prototype.group = function(id, traits, options, fn) {
   /* eslint-disable no-unused-expressions, no-sequences */
   if (!arguments.length) return group;
-  if (is.fn(options)) fn = options, options = null;
-  if (is.fn(traits)) fn = traits, options = null, traits = null;
-  if (is.object(id)) options = traits, traits = id, id = group.id();
+  if (is.fn(options)) (fn = options), (options = null);
+  if (is.fn(traits)) (fn = traits), (options = null), (traits = null);
+  if (is.object(id)) (options = traits), (traits = id), (id = group.id());
   /* eslint-enable no-unused-expressions, no-sequences */
-
 
   // grab from group again to make sure we're taking from the source
   group.identify(id, traits);
@@ -1724,6 +1692,11 @@ Analytics.prototype.group = function(id, traits, options, fn) {
     traits: group.traits(),
     groupId: group.id()
   });
+
+  // Add the initialize integrations so the server-side ones can be disabled too
+  if (this.options.integrations) {
+    defaults(msg.integrations, this.options.integrations);
+  }
 
   this._invoke('group', new Group(msg));
 
@@ -1745,13 +1718,15 @@ Analytics.prototype.group = function(id, traits, options, fn) {
 Analytics.prototype.track = function(event, properties, options, fn) {
   // Argument reshuffling.
   /* eslint-disable no-unused-expressions, no-sequences */
-  if (is.fn(options)) fn = options, options = null;
-  if (is.fn(properties)) fn = properties, options = null, properties = null;
+  if (is.fn(options)) (fn = options), (options = null);
+  if (is.fn(properties))
+    (fn = properties), (options = null), (properties = null);
   /* eslint-enable no-unused-expressions, no-sequences */
 
   // figure out if the event is archived.
   var plan = this.options.plan || {};
   var events = plan.track || {};
+  var planIntegrationOptions = {};
 
   // normalize
   var msg = this.normalize({
@@ -1764,9 +1739,25 @@ Analytics.prototype.track = function(event, properties, options, fn) {
   plan = events[event];
   if (plan) {
     this.log('plan %o - %o', event, plan);
-    if (plan.enabled === false) return this._callback(fn);
-    defaults(msg.integrations, plan.integrations || {});
+    if (plan.enabled === false) {
+      // Disabled events should always be sent to Segment.
+      planIntegrationOptions = { All: false, 'Segment.io': true };
+    } else {
+      planIntegrationOptions = plan.integrations || {};
+    }
+  } else {
+    var defaultPlan = events.__default || { enabled: true };
+    if (!defaultPlan.enabled) {
+      // Disabled events should always be sent to Segment.
+      planIntegrationOptions = { All: false, 'Segment.io': true };
+    }
   }
+
+  // Add the initialize integrations so the server-side ones can be disabled too
+  defaults(
+    msg.integrations,
+    this._mergeInitializeAndPlanIntegrations(planIntegrationOptions)
+  );
 
   this._invoke('track', new Track(msg));
 
@@ -1787,7 +1778,11 @@ Analytics.prototype.track = function(event, properties, options, fn) {
  * @return {Analytics}
  */
 
-Analytics.prototype.trackClick = Analytics.prototype.trackLink = function(links, event, properties) {
+Analytics.prototype.trackClick = Analytics.prototype.trackLink = function(
+  links,
+  event,
+  properties
+) {
   if (!links) return this;
   // always arrays, handles jquery
   if (type(links) === 'element') links = [links];
@@ -1800,9 +1795,10 @@ Analytics.prototype.trackClick = Analytics.prototype.trackLink = function(links,
     on(el, 'click', function(e) {
       var ev = is.fn(event) ? event(el) : event;
       var props = is.fn(properties) ? properties(el) : properties;
-      var href = el.getAttribute('href')
-        || el.getAttributeNS('http://www.w3.org/1999/xlink', 'href')
-        || el.getAttribute('xlink:href');
+      var href =
+        el.getAttribute('href') ||
+        el.getAttributeNS('http://www.w3.org/1999/xlink', 'href') ||
+        el.getAttribute('xlink:href');
 
       self.track(ev, props);
 
@@ -1830,14 +1826,19 @@ Analytics.prototype.trackClick = Analytics.prototype.trackLink = function(links,
  * @return {Analytics}
  */
 
-Analytics.prototype.trackSubmit = Analytics.prototype.trackForm = function(forms, event, properties) {
+Analytics.prototype.trackSubmit = Analytics.prototype.trackForm = function(
+  forms,
+  event,
+  properties
+) {
   if (!forms) return this;
   // always arrays, handles jquery
   if (type(forms) === 'element') forms = [forms];
 
   var self = this;
   each(function(el) {
-    if (type(el) !== 'element') throw new TypeError('Must pass HTMLElement to `analytics.trackForm`.');
+    if (type(el) !== 'element')
+      throw new TypeError('Must pass HTMLElement to `analytics.trackForm`.');
     function handler(e) {
       prevent(e);
 
@@ -1878,12 +1879,15 @@ Analytics.prototype.trackSubmit = Analytics.prototype.trackForm = function(forms
 Analytics.prototype.page = function(category, name, properties, options, fn) {
   // Argument reshuffling.
   /* eslint-disable no-unused-expressions, no-sequences */
-  if (is.fn(options)) fn = options, options = null;
-  if (is.fn(properties)) fn = properties, options = properties = null;
-  if (is.fn(name)) fn = name, options = properties = name = null;
-  if (type(category) === 'object') options = name, properties = category, name = category = null;
-  if (type(name) === 'object') options = properties, properties = name, name = null;
-  if (type(category) === 'string' && type(name) !== 'string') name = category, category = null;
+  if (is.fn(options)) (fn = options), (options = null);
+  if (is.fn(properties)) (fn = properties), (options = properties = null);
+  if (is.fn(name)) (fn = name), (options = properties = name = null);
+  if (type(category) === 'object')
+    (options = name), (properties = category), (name = category = null);
+  if (type(name) === 'object')
+    (options = properties), (properties = name), (name = null);
+  if (type(category) === 'string' && type(name) !== 'string')
+    (name = category), (category = null);
   /* eslint-enable no-unused-expressions, no-sequences */
 
   properties = clone(properties) || {};
@@ -1911,6 +1915,11 @@ Analytics.prototype.page = function(category, name, properties, options, fn) {
     options: options,
     name: name
   });
+
+  // Add the initialize integrations so the server-side ones can be disabled too
+  if (this.options.integrations) {
+    defaults(msg.integrations, this.options.integrations);
+  }
 
   this._invoke('page', new Page(msg));
 
@@ -1947,9 +1956,9 @@ Analytics.prototype.pageview = function(url) {
 Analytics.prototype.alias = function(to, from, options, fn) {
   // Argument reshuffling.
   /* eslint-disable no-unused-expressions, no-sequences */
-  if (is.fn(options)) fn = options, options = null;
-  if (is.fn(from)) fn = from, options = null, from = null;
-  if (is.object(from)) options = from, from = null;
+  if (is.fn(options)) (fn = options), (options = null);
+  if (is.fn(from)) (fn = from), (options = null), (from = null);
+  if (is.object(from)) (options = from), (from = null);
   /* eslint-enable no-unused-expressions, no-sequences */
 
   var msg = this.normalize({
@@ -1957,6 +1966,11 @@ Analytics.prototype.alias = function(to, from, options, fn) {
     previousId: from,
     userId: to
   });
+
+  // Add the initialize integrations so the server-side ones can be disabled too
+  if (this.options.integrations) {
+    defaults(msg.integrations, this.options.integrations);
+  }
 
   this._invoke('alias', new Alias(msg));
 
@@ -2019,6 +2033,7 @@ Analytics.prototype._options = function(options) {
   options = options || {};
   this.options = options;
   cookie.options(options.cookie);
+  metrics.options(options.metrics);
   store.options(options.localStorage);
   user.options(options.user);
   group.options(options.group);
@@ -2050,11 +2065,43 @@ Analytics.prototype._callback = function(fn) {
  */
 
 Analytics.prototype._invoke = function(method, facade) {
+  var self = this;
+  metrics.increment('analytics_js.invoke', {
+    method: method
+  });
   this.emit('invoke', facade);
 
+  var failedInitializations = self.failedInitializations || [];
   each(function(integration, name) {
     if (!facade.enabled(name)) return;
-    integration.invoke.call(integration, method, facade);
+    // Check if an integration failed to initialize.
+    // If so, do not process the message as the integration is in an unstable state.
+    if (failedInitializations.indexOf(name) >= 0) {
+      self.log(
+        'Skipping invokation of .%s method of %s integration. Integation failed to initialize properly.',
+        method,
+        name
+      );
+    } else {
+      try {
+        metrics.increment('analytics_js.integration.invoke', {
+          method: method,
+          integration_name: integration.name
+        });
+        integration.invoke.call(integration, method, facade);
+      } catch (e) {
+        metrics.increment('analytics_js.integration.invoke.error', {
+          method: method,
+          integration_name: integration.name
+        });
+        self.log(
+          'Error invoking .%s method of %s integration: %o',
+          method,
+          name,
+          e
+        );
+      }
+    }
   }, this._integrations);
 
   return this;
@@ -2117,13 +2164,17 @@ Analytics.prototype._parseQuery = function(query) {
   function pickPrefix(prefix, object) {
     var length = prefix.length;
     var sub;
-    return foldl(function(acc, val, key) {
-      if (key.substr(0, length) === prefix) {
-        sub = key.substr(length);
-        acc[sub] = val;
-      }
-      return acc;
-    }, {}, object);
+    return foldl(
+      function(acc, val, key) {
+        if (key.substr(0, length) === prefix) {
+          sub = key.substr(length);
+          acc[sub] = val;
+        }
+        return acc;
+      },
+      {},
+      object
+    );
   }
 };
 
@@ -2146,6 +2197,42 @@ Analytics.prototype.normalize = function(msg) {
 };
 
 /**
+ * Merges the tracking plan and initialization integration options.
+ *
+ * @param  {Object} planIntegrations Tracking plan integrations.
+ * @return {Object}                  The merged integrations.
+ */
+Analytics.prototype._mergeInitializeAndPlanIntegrations = function(
+  planIntegrations
+) {
+  // Do nothing if there are no initialization integrations
+  if (!this.options.integrations) {
+    return planIntegrations;
+  }
+
+  // Clone the initialization integrations
+  var integrations = extend({}, this.options.integrations);
+  var integrationName;
+
+  // Allow the tracking plan to disable integrations that were explicitly
+  // enabled on initialization
+  if (planIntegrations.All === false) {
+    integrations = { All: false };
+  }
+
+  for (integrationName in planIntegrations) {
+    if (planIntegrations.hasOwnProperty(integrationName)) {
+      // Don't allow the tracking plan to re-enable disabled integrations
+      if (this.options.integrations[integrationName] !== false) {
+        integrations[integrationName] = planIntegrations[integrationName];
+      }
+    }
+  }
+
+  return integrations;
+};
+
+/**
  * No conflict support.
  */
 
@@ -2162,9 +2249,10 @@ module.exports = Analytics;
 module.exports.cookie = cookie;
 module.exports.memory = memory;
 module.exports.store = store;
+module.exports.metrics = metrics;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cookie":21,"./group":23,"./memory":25,"./normalize":26,"./pageDefaults":27,"./store":28,"./user":29,"@ndhoule/after":3,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/pick":15,"@segment/is-meta":595,"@segment/prevent-default":599,"bind-all":607,"component-emitter":30,"component-event":613,"component-querystring":616,"component-type":618,"debug":31,"is":629,"next-tick":640,"segmentio-facade":655}],21:[function(require,module,exports){
+},{"./cookie":21,"./group":23,"./memory":25,"./metrics":26,"./normalize":27,"./pageDefaults":28,"./store":29,"./user":30,"@ndhoule/after":3,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/pick":15,"@segment/is-meta":104,"@segment/prevent-default":117,"bind-all":125,"component-emitter":134,"component-event":135,"component-querystring":138,"component-type":140,"debug":143,"extend":146,"is":153,"next-tick":166,"segmentio-facade":179}],21:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2188,7 +2276,6 @@ var topDomain = require('@segment/top-domain');
 function Cookie(options) {
   this.options(options);
 }
-
 
 /**
  * Get or set the cookie options.
@@ -2230,7 +2317,6 @@ Cookie.prototype.options = function(options) {
   this.remove('ajs:test');
 };
 
-
 /**
  * Set a `key` and `value` in our cookie.
  *
@@ -2249,7 +2335,6 @@ Cookie.prototype.set = function(key, value) {
   }
 };
 
-
 /**
  * Get a value from our cookie by `key`.
  *
@@ -2267,7 +2352,6 @@ Cookie.prototype.get = function(key) {
   }
 };
 
-
 /**
  * Remove a value from our cookie by `key`.
  *
@@ -2284,13 +2368,11 @@ Cookie.prototype.remove = function(key) {
   }
 };
 
-
 /**
  * Expose the cookie singleton.
  */
 
 module.exports = bindAll(new Cookie());
-
 
 /**
  * Expose the `Cookie` constructor.
@@ -2298,7 +2380,7 @@ module.exports = bindAll(new Cookie());
 
 module.exports.Cookie = Cookie;
 
-},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@segment/top-domain":604,"bind-all":607,"component-cookie":610,"debug":31,"json3":633}],22:[function(require,module,exports){
+},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@segment/top-domain":122,"bind-all":125,"component-cookie":128,"debug":143,"json3":156}],22:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2319,7 +2401,6 @@ var isodateTraverse = require('@segment/isodate-traverse');
  */
 
 module.exports = Entity;
-
 
 /**
  * Initialize new `Entity` with `options`.
@@ -2356,7 +2437,9 @@ Entity.prototype.initialize = function() {
   }
 
   // fallback to memory storage.
-  debug('warning using memory store both cookies and localStorage are disabled');
+  debug(
+    'warning using memory store both cookies and localStorage are disabled'
+  );
   this._storage = memory;
 };
 
@@ -2367,7 +2450,6 @@ Entity.prototype.initialize = function() {
 Entity.prototype.storage = function() {
   return this._storage;
 };
-
 
 /**
  * Get or set storage `options`.
@@ -2383,7 +2465,6 @@ Entity.prototype.options = function(options) {
   this._options = defaults(options || {}, this.defaults || {});
 };
 
-
 /**
  * Get or set the entity's `id`.
  *
@@ -2392,13 +2473,14 @@ Entity.prototype.options = function(options) {
 
 Entity.prototype.id = function(id) {
   switch (arguments.length) {
-  case 0: return this._getId();
-  case 1: return this._setId(id);
-  default:
-      // No default case
+    case 0:
+      return this._getId();
+    case 1:
+      return this._setId(id);
+    default:
+    // No default case
   }
 };
-
 
 /**
  * Get the entity's id.
@@ -2412,7 +2494,6 @@ Entity.prototype._getId = function() {
     : this._id;
   return ret === undefined ? null : ret;
 };
-
 
 /**
  * Set the entity's `id`.
@@ -2428,7 +2509,6 @@ Entity.prototype._setId = function(id) {
   }
 };
 
-
 /**
  * Get or set the entity's `traits`.
  *
@@ -2439,13 +2519,14 @@ Entity.prototype._setId = function(id) {
 
 Entity.prototype.properties = Entity.prototype.traits = function(traits) {
   switch (arguments.length) {
-  case 0: return this._getTraits();
-  case 1: return this._setTraits(traits);
-  default:
-      // No default case
+    case 0:
+      return this._getTraits();
+    case 1:
+      return this._setTraits(traits);
+    default:
+    // No default case
   }
 };
-
 
 /**
  * Get the entity's traits. Always convert ISO date strings into real dates,
@@ -2455,10 +2536,11 @@ Entity.prototype.properties = Entity.prototype.traits = function(traits) {
  */
 
 Entity.prototype._getTraits = function() {
-  var ret = this._options.persist ? store.get(this._options.localStorage.key) : this._traits;
+  var ret = this._options.persist
+    ? store.get(this._options.localStorage.key)
+    : this._traits;
   return ret ? isodateTraverse(clone(ret)) : {};
 };
-
 
 /**
  * Set the entity's `traits`.
@@ -2475,7 +2557,6 @@ Entity.prototype._setTraits = function(traits) {
   }
 };
 
-
 /**
  * Identify the entity with an `id` and `traits`. If we it's the same entity,
  * extend the existing `traits` instead of overwriting.
@@ -2487,13 +2568,13 @@ Entity.prototype._setTraits = function(traits) {
 Entity.prototype.identify = function(id, traits) {
   traits = traits || {};
   var current = this.id();
-  if (current === null || current === id) traits = extend(this.traits(), traits);
+  if (current === null || current === id)
+    traits = extend(this.traits(), traits);
   if (id) this.id(id);
   this.debug('identify %o, %o', id, traits);
   this.traits(traits);
   this.save();
 };
-
 
 /**
  * Save the entity to local storage and the cookie.
@@ -2508,7 +2589,6 @@ Entity.prototype.save = function() {
   return true;
 };
 
-
 /**
  * Log the entity out, reseting `id` and `traits` to defaults.
  */
@@ -2520,7 +2600,6 @@ Entity.prototype.logout = function() {
   store.remove(this._options.localStorage.key);
 };
 
-
 /**
  * Reset all entity state, logging out and returning options to defaults.
  */
@@ -2529,7 +2608,6 @@ Entity.prototype.reset = function() {
   this.logout();
   this.options({});
 };
-
 
 /**
  * Load saved entity `id` or `traits` from storage.
@@ -2540,8 +2618,7 @@ Entity.prototype.load = function() {
   this.traits(store.get(this._options.localStorage.key));
 };
 
-
-},{"./cookie":21,"./memory":25,"./store":28,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"@segment/isodate-traverse":596,"debug":31}],23:[function(require,module,exports){
+},{"./cookie":21,"./memory":25,"./store":29,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"@segment/isodate-traverse":105,"debug":143}],23:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2567,7 +2644,6 @@ Group.defaults = {
   }
 };
 
-
 /**
  * Initialize a new `Group` with `options`.
  *
@@ -2580,13 +2656,11 @@ function Group(options) {
   Entity.call(this, options);
 }
 
-
 /**
  * Inherit `Entity`
  */
 
 inherit(Group, Entity);
-
 
 /**
  * Expose the group singleton.
@@ -2594,14 +2668,13 @@ inherit(Group, Entity);
 
 module.exports = bindAll(new Group());
 
-
 /**
  * Expose the `Group` constructor.
  */
 
 module.exports.Group = Group;
 
-},{"./entity":22,"bind-all":607,"debug":31,"inherits":627}],24:[function(require,module,exports){
+},{"./entity":22,"bind-all":125,"debug":143,"inherits":151}],24:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2628,7 +2701,7 @@ analytics.VERSION = require('../package.json').version;
 
 module.exports = analytics;
 
-},{"../package.json":34,"./analytics":20}],25:[function(require,module,exports){
+},{"../package.json":31,"./analytics":20}],25:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2694,7 +2767,104 @@ Memory.prototype.remove = function(key) {
   return true;
 };
 
-},{"@ndhoule/clone":5,"bind-all":607}],26:[function(require,module,exports){
+},{"@ndhoule/clone":5,"bind-all":125}],26:[function(require,module,exports){
+'use strict';
+
+var bindAll = require('bind-all');
+var send = require('@segment/send-json');
+var debug = require('debug')('analytics.js:metrics');
+
+function Metrics(options) {
+  this.options(options);
+}
+
+/**
+ * Set the metrics options.
+ *
+ * @param {Object} options
+ *   @field {String} host
+ *   @field {Number} sampleRate
+ *   @field {Number} flushTimer
+ */
+
+Metrics.prototype.options = function(options) {
+  options = options || {};
+
+  this.host = options.host || 'api.segment.io/v1';
+  this.sampleRate = options.sampleRate || 0; // disable metrics by default.
+  this.flushTimer = options.flushTimer || 30 * 1000 /* 30s */;
+  this.maxQueueSize = options.maxQueueSize || 20;
+
+  this.queue = [];
+
+  if (this.sampleRate > 0) {
+    var self = this;
+    setInterval(function() {
+      self._flush();
+    }, this.flushTimer);
+  }
+};
+
+/**
+ * Increments the counter identified by name and tags by one.
+ *
+ * @param {String} metric Name of the metric to increment.
+ * @param {Object} tags Dimensions associated with the metric.
+ */
+Metrics.prototype.increment = function(metric, tags) {
+  if (Math.random() > this.sampleRate) {
+    return;
+  }
+
+  if (this.queue.length >= this.maxQueueSize) {
+    return;
+  }
+
+  this.queue.push({ type: 'Counter', metric: metric, value: 1, tags: tags });
+
+  // Trigger a flush if this is an error metric.
+  if (metric.indexOf('error') > 0) {
+    this._flush();
+  }
+};
+
+/**
+ * Flush all queued metrics.
+ */
+Metrics.prototype._flush = function() {
+  var self = this;
+
+  if (self.queue.length <= 0) {
+    return;
+  }
+
+  var payload = { series: this.queue };
+  var headers = { 'Content-Type': 'text/plain' };
+
+  self.queue = [];
+
+  // This endpoint does not support jsonp, so only proceed if the browser
+  // supports xhr.
+  if (send.type !== 'xhr') return;
+
+  send('https://' + this.host + '/m', payload, headers, function(err, res) {
+    debug('sent %O, received %O', payload, [err, res]);
+  });
+};
+
+/**
+ * Expose the metrics singleton.
+ */
+
+module.exports = bindAll(new Metrics());
+
+/**
+ * Expose the `Metrics` constructor.
+ */
+
+module.exports.Metrics = Metrics;
+
+},{"@segment/send-json":119,"bind-all":125,"debug":143}],27:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2724,12 +2894,7 @@ module.exports = normalize;
  * Toplevel properties.
  */
 
-var toplevel = [
-  'integrations',
-  'anonymousId',
-  'timestamp',
-  'context'
-];
+var toplevel = ['integrations', 'anonymousId', 'timestamp', 'context'];
 
 /**
  * Normalize `msg` based on integrations `list`.
@@ -2740,7 +2905,9 @@ var toplevel = [
  */
 
 function normalize(msg, list) {
-  var lower = map(function(s) { return s.toLowerCase(); }, list);
+  var lower = map(function(s) {
+    return s.toLowerCase();
+  }, list);
   var opts = msg.options || {};
   var integrations = opts.integrations || {};
   var providers = opts.providers || {};
@@ -2760,7 +2927,8 @@ function normalize(msg, list) {
   each(function(value, key) {
     if (!integration(key)) return;
     if (type(integrations[key]) === 'object') return;
-    if (has.call(integrations, key) && typeof providers[key] === 'boolean') return;
+    if (has.call(integrations, key) && typeof providers[key] === 'boolean')
+      return;
     integrations[key] = value;
   }, providers);
 
@@ -2783,11 +2951,15 @@ function normalize(msg, list) {
   return ret;
 
   function integration(name) {
-    return !!(includes(name, list) || name.toLowerCase() === 'all' || includes(name.toLowerCase(), lower));
+    return !!(
+      includes(name, list) ||
+      name.toLowerCase() === 'all' ||
+      includes(name.toLowerCase(), lower)
+    );
   }
 }
 
-},{"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/includes":12,"@ndhoule/map":14,"component-type":618,"debug":31}],27:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/includes":12,"@ndhoule/map":14,"component-type":140,"debug":143}],28:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2851,7 +3023,7 @@ function canonicalUrl(search) {
 
 module.exports = pageDefaults;
 
-},{"@ndhoule/includes":12,"@segment/canonical":592,"component-url":619}],28:[function(require,module,exports){
+},{"@ndhoule/includes":12,"@segment/canonical":101,"component-url":141}],29:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2889,7 +3061,6 @@ Store.prototype.options = function(options) {
   this._options = options;
 };
 
-
 /**
  * Set a `key` and `value` in local storage.
  *
@@ -2901,7 +3072,6 @@ Store.prototype.set = function(key, value) {
   if (!this.enabled) return false;
   return store.set(key, value);
 };
-
 
 /**
  * Get a value from local storage by `key`.
@@ -2915,7 +3085,6 @@ Store.prototype.get = function(key) {
   return store.get(key);
 };
 
-
 /**
  * Remove a value from local storage by `key`.
  *
@@ -2927,13 +3096,11 @@ Store.prototype.remove = function(key) {
   return store.remove(key);
 };
 
-
 /**
  * Expose the store singleton.
  */
 
 module.exports = bindAll(new Store());
-
 
 /**
  * Expose the `Store` constructor.
@@ -2941,7 +3108,7 @@ module.exports = bindAll(new Store());
 
 module.exports.Store = Store;
 
-},{"@ndhoule/defaults":6,"@segment/store":602,"bind-all":607}],29:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@segment/store":120,"bind-all":125}],30:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2971,7 +3138,6 @@ User.defaults = {
   }
 };
 
-
 /**
  * Initialize a new `User` with `options`.
  *
@@ -2983,7 +3149,6 @@ function User(options) {
   this.debug = debug;
   Entity.call(this, options);
 }
-
 
 /**
  * Inherit `Entity`
@@ -3087,7 +3252,6 @@ User.prototype.load = function() {
   Entity.prototype.load.call(this);
 };
 
-
 /**
  * BACKWARDS COMPATIBILITY: Load the old user from the cookie.
  *
@@ -3105,13 +3269,11 @@ User.prototype._loadOldCookie = function() {
   return true;
 };
 
-
 /**
  * Expose the user singleton.
  */
 
 module.exports = bindAll(new User());
-
 
 /**
  * Expose the `User` constructor.
@@ -3119,574 +3281,58 @@ module.exports = bindAll(new User());
 
 module.exports.User = User;
 
-},{"./cookie":21,"./entity":22,"bind-all":607,"component-cookie":610,"debug":31,"inherits":627,"uuid":33}],30:[function(require,module,exports){
-
-/**
- * Expose `Emitter`.
- */
-
-if (typeof module !== 'undefined') {
-  module.exports = Emitter;
-}
-
-/**
- * Initialize a new `Emitter`.
- *
- * @api public
- */
-
-function Emitter(obj) {
-  if (obj) return mixin(obj);
-};
-
-/**
- * Mixin the emitter properties.
- *
- * @param {Object} obj
- * @return {Object}
- * @api private
- */
-
-function mixin(obj) {
-  for (var key in Emitter.prototype) {
-    obj[key] = Emitter.prototype[key];
-  }
-  return obj;
-}
-
-/**
- * Listen on the given `event` with `fn`.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.on =
-Emitter.prototype.addEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
-    .push(fn);
-  return this;
-};
-
-/**
- * Adds an `event` listener that will be invoked a single
- * time then automatically removed.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.once = function(event, fn){
-  function on() {
-    this.off(event, on);
-    fn.apply(this, arguments);
-  }
-
-  on.fn = fn;
-  this.on(event, on);
-  return this;
-};
-
-/**
- * Remove the given callback for `event` or all
- * registered callbacks.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.off =
-Emitter.prototype.removeListener =
-Emitter.prototype.removeAllListeners =
-Emitter.prototype.removeEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-
-  // all
-  if (0 == arguments.length) {
-    this._callbacks = {};
-    return this;
-  }
-
-  // specific event
-  var callbacks = this._callbacks['$' + event];
-  if (!callbacks) return this;
-
-  // remove all handlers
-  if (1 == arguments.length) {
-    delete this._callbacks['$' + event];
-    return this;
-  }
-
-  // remove specific handler
-  var cb;
-  for (var i = 0; i < callbacks.length; i++) {
-    cb = callbacks[i];
-    if (cb === fn || cb.fn === fn) {
-      callbacks.splice(i, 1);
-      break;
-    }
-  }
-  return this;
-};
-
-/**
- * Emit `event` with the given args.
- *
- * @param {String} event
- * @param {Mixed} ...
- * @return {Emitter}
- */
-
-Emitter.prototype.emit = function(event){
-  this._callbacks = this._callbacks || {};
-  var args = [].slice.call(arguments, 1)
-    , callbacks = this._callbacks['$' + event];
-
-  if (callbacks) {
-    callbacks = callbacks.slice(0);
-    for (var i = 0, len = callbacks.length; i < len; ++i) {
-      callbacks[i].apply(this, args);
-    }
-  }
-
-  return this;
-};
-
-/**
- * Return array of callbacks for `event`.
- *
- * @param {String} event
- * @return {Array}
- * @api public
- */
-
-Emitter.prototype.listeners = function(event){
-  this._callbacks = this._callbacks || {};
-  return this._callbacks['$' + event] || [];
-};
-
-/**
- * Check if this emitter has `event` handlers.
- *
- * @param {String} event
- * @return {Boolean}
- * @api public
- */
-
-Emitter.prototype.hasListeners = function(event){
-  return !! this.listeners(event).length;
-};
-
-},{}],31:[function(require,module,exports){
-
-/**
- * Expose `debug()` as the module.
- */
-
-module.exports = debug;
-
-/**
- * Create a debugger with the given `name`.
- *
- * @param {String} name
- * @return {Type}
- * @api public
- */
-
-function debug(name) {
-  if (!debug.enabled(name)) return function(){};
-
-  return function(fmt){
-    fmt = coerce(fmt);
-
-    var curr = new Date;
-    var ms = curr - (debug[name] || curr);
-    debug[name] = curr;
-
-    fmt = name
-      + ' '
-      + fmt
-      + ' +' + debug.humanize(ms);
-
-    // This hackery is required for IE8
-    // where `console.log` doesn't have 'apply'
-    window.console
-      && console.log
-      && Function.prototype.apply.call(console.log, console, arguments);
-  }
-}
-
-/**
- * The currently active debug mode names.
- */
-
-debug.names = [];
-debug.skips = [];
-
-/**
- * Enables a debug mode by name. This can include modes
- * separated by a colon and wildcards.
- *
- * @param {String} name
- * @api public
- */
-
-debug.enable = function(name) {
-  try {
-    localStorage.debug = name;
-  } catch(e){}
-
-  var split = (name || '').split(/[\s,]+/)
-    , len = split.length;
-
-  for (var i = 0; i < len; i++) {
-    name = split[i].replace('*', '.*?');
-    if (name[0] === '-') {
-      debug.skips.push(new RegExp('^' + name.substr(1) + '$'));
-    }
-    else {
-      debug.names.push(new RegExp('^' + name + '$'));
-    }
-  }
-};
-
-/**
- * Disable debug output.
- *
- * @api public
- */
-
-debug.disable = function(){
-  debug.enable('');
-};
-
-/**
- * Humanize the given `ms`.
- *
- * @param {Number} m
- * @return {String}
- * @api private
- */
-
-debug.humanize = function(ms) {
-  var sec = 1000
-    , min = 60 * 1000
-    , hour = 60 * min;
-
-  if (ms >= hour) return (ms / hour).toFixed(1) + 'h';
-  if (ms >= min) return (ms / min).toFixed(1) + 'm';
-  if (ms >= sec) return (ms / sec | 0) + 's';
-  return ms + 'ms';
-};
-
-/**
- * Returns true if the given mode name is enabled, false otherwise.
- *
- * @param {String} name
- * @return {Boolean}
- * @api public
- */
-
-debug.enabled = function(name) {
-  for (var i = 0, len = debug.skips.length; i < len; i++) {
-    if (debug.skips[i].test(name)) {
-      return false;
-    }
-  }
-  for (var i = 0, len = debug.names.length; i < len; i++) {
-    if (debug.names[i].test(name)) {
-      return true;
-    }
-  }
-  return false;
-};
-
-/**
- * Coerce `val`.
- */
-
-function coerce(val) {
-  if (val instanceof Error) return val.stack || val.message;
-  return val;
-}
-
-// persist
-
-try {
-  if (window.localStorage) debug.enable(localStorage.debug);
-} catch(e){}
-
-},{}],32:[function(require,module,exports){
-(function (global){
-
-var rng;
-
-var crypto = global.crypto || global.msCrypto; // for IE 11
-if (crypto && crypto.getRandomValues) {
-  // WHATWG crypto-based RNG - http://wiki.whatwg.org/wiki/Crypto
-  // Moderately fast, high quality
-  var _rnds8 = new Uint8Array(16);
-  rng = function whatwgRNG() {
-    crypto.getRandomValues(_rnds8);
-    return _rnds8;
-  };
-}
-
-if (!rng) {
-  // Math.random()-based (RNG)
-  //
-  // If all else fails, use Math.random().  It's fast, but is of unspecified
-  // quality.
-  var  _rnds = new Array(16);
-  rng = function() {
-    for (var i = 0, r; i < 16; i++) {
-      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
-      _rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
-    }
-
-    return _rnds;
-  };
-}
-
-module.exports = rng;
-
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],33:[function(require,module,exports){
-//     uuid.js
-//
-//     Copyright (c) 2010-2012 Robert Kieffer
-//     MIT License - http://opensource.org/licenses/mit-license.php
-
-// Unique ID creation requires a high quality random # generator.  We feature
-// detect to determine the best RNG source, normalizing to a function that
-// returns 128-bits of randomness, since that's what's usually required
-var _rng = require('./rng');
-
-// Maps for number <-> hex string conversion
-var _byteToHex = [];
-var _hexToByte = {};
-for (var i = 0; i < 256; i++) {
-  _byteToHex[i] = (i + 0x100).toString(16).substr(1);
-  _hexToByte[_byteToHex[i]] = i;
-}
-
-// **`parse()` - Parse a UUID into it's component bytes**
-function parse(s, buf, offset) {
-  var i = (buf && offset) || 0, ii = 0;
-
-  buf = buf || [];
-  s.toLowerCase().replace(/[0-9a-f]{2}/g, function(oct) {
-    if (ii < 16) { // Don't overflow!
-      buf[i + ii++] = _hexToByte[oct];
-    }
-  });
-
-  // Zero out remaining bytes if string was short
-  while (ii < 16) {
-    buf[i + ii++] = 0;
-  }
-
-  return buf;
-}
-
-// **`unparse()` - Convert UUID byte array (ala parse()) into a string**
-function unparse(buf, offset) {
-  var i = offset || 0, bth = _byteToHex;
-  return  bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]];
-}
-
-// **`v1()` - Generate time-based UUID**
-//
-// Inspired by https://github.com/LiosK/UUID.js
-// and http://docs.python.org/library/uuid.html
-
-// random #'s we need to init node and clockseq
-var _seedBytes = _rng();
-
-// Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
-var _nodeId = [
-  _seedBytes[0] | 0x01,
-  _seedBytes[1], _seedBytes[2], _seedBytes[3], _seedBytes[4], _seedBytes[5]
-];
-
-// Per 4.2.2, randomize (14 bit) clockseq
-var _clockseq = (_seedBytes[6] << 8 | _seedBytes[7]) & 0x3fff;
-
-// Previous uuid creation time
-var _lastMSecs = 0, _lastNSecs = 0;
-
-// See https://github.com/broofa/node-uuid for API details
-function v1(options, buf, offset) {
-  var i = buf && offset || 0;
-  var b = buf || [];
-
-  options = options || {};
-
-  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
-
-  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
-  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
-  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
-  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
-  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
-
-  // Per 4.2.1.2, use count of uuid's generated during the current clock
-  // cycle to simulate higher resolution clock
-  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
-
-  // Time since last uuid creation (in msecs)
-  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
-
-  // Per 4.2.1.2, Bump clockseq on clock regression
-  if (dt < 0 && options.clockseq === undefined) {
-    clockseq = clockseq + 1 & 0x3fff;
-  }
-
-  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
-  // time interval
-  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
-    nsecs = 0;
-  }
-
-  // Per 4.2.1.2 Throw error if too many uuids are requested
-  if (nsecs >= 10000) {
-    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
-  }
-
-  _lastMSecs = msecs;
-  _lastNSecs = nsecs;
-  _clockseq = clockseq;
-
-  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
-  msecs += 12219292800000;
-
-  // `time_low`
-  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
-  b[i++] = tl >>> 24 & 0xff;
-  b[i++] = tl >>> 16 & 0xff;
-  b[i++] = tl >>> 8 & 0xff;
-  b[i++] = tl & 0xff;
-
-  // `time_mid`
-  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
-  b[i++] = tmh >>> 8 & 0xff;
-  b[i++] = tmh & 0xff;
-
-  // `time_high_and_version`
-  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
-  b[i++] = tmh >>> 16 & 0xff;
-
-  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
-  b[i++] = clockseq >>> 8 | 0x80;
-
-  // `clock_seq_low`
-  b[i++] = clockseq & 0xff;
-
-  // `node`
-  var node = options.node || _nodeId;
-  for (var n = 0; n < 6; n++) {
-    b[i + n] = node[n];
-  }
-
-  return buf ? buf : unparse(b);
-}
-
-// **`v4()` - Generate random UUID**
-
-// See https://github.com/broofa/node-uuid for API details
-function v4(options, buf, offset) {
-  // Deprecated - 'format' argument, as supported in v1.2
-  var i = buf && offset || 0;
-
-  if (typeof(options) == 'string') {
-    buf = options == 'binary' ? new Array(16) : null;
-    options = null;
-  }
-  options = options || {};
-
-  var rnds = options.random || (options.rng || _rng)();
-
-  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
-  rnds[6] = (rnds[6] & 0x0f) | 0x40;
-  rnds[8] = (rnds[8] & 0x3f) | 0x80;
-
-  // Copy bytes to buffer, if provided
-  if (buf) {
-    for (var ii = 0; ii < 16; ii++) {
-      buf[i + ii] = rnds[ii];
-    }
-  }
-
-  return buf || unparse(rnds);
-}
-
-// Export public API
-var uuid = v4;
-uuid.v1 = v1;
-uuid.v4 = v4;
-uuid.parse = parse;
-uuid.unparse = unparse;
-
-module.exports = uuid;
-
-},{"./rng":32}],34:[function(require,module,exports){
+},{"./cookie":21,"./entity":22,"bind-all":125,"component-cookie":128,"debug":143,"inherits":151,"uuid":199}],31:[function(require,module,exports){
 module.exports={
   "_args": [
     [
-      "@segment/analytics.js-core@^3.0.0",
-      "/Users/carlthorner/Projects/skraphaug/develoment/analytics.js"
+      {
+        "raw": "@segment/analytics.js-core@^3.0.0",
+        "scope": "@segment",
+        "escapedName": "@segment%2fanalytics.js-core",
+        "name": "@segment/analytics.js-core",
+        "rawSpec": "^3.0.0",
+        "spec": ">=3.0.0 <4.0.0",
+        "type": "range"
+      },
+      "/Users/carlthorner/Workspace/analytics.js"
     ]
   ],
   "_from": "@segment/analytics.js-core@>=3.0.0 <4.0.0",
-  "_id": "@segment/analytics.js-core@3.0.0",
+  "_hasShrinkwrap": false,
+  "_id": "@segment/analytics.js-core@3.7.2",
   "_inCache": true,
-  "_installable": true,
   "_location": "/@segment/analytics.js-core",
-  "_nodeVersion": "4.4.5",
+  "_nodeVersion": "8.11.3",
   "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/analytics.js-core-3.0.0.tgz_1464222726516_0.005199481267482042"
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/analytics.js-core_3.7.2_1532984206353_0.43287702783300386"
   },
   "_npmUser": {
-    "email": "tools+npm@segment.com",
-    "name": "segment"
+    "name": "segment-admin",
+    "email": "tools+npm@segment.com"
   },
-  "_npmVersion": "2.15.5",
+  "_npmVersion": "5.6.0",
   "_phantomChildren": {},
   "_requested": {
-    "name": "@segment/analytics.js-core",
     "raw": "@segment/analytics.js-core@^3.0.0",
-    "rawSpec": "^3.0.0",
     "scope": "@segment",
+    "escapedName": "@segment%2fanalytics.js-core",
+    "name": "@segment/analytics.js-core",
+    "rawSpec": "^3.0.0",
     "spec": ">=3.0.0 <4.0.0",
     "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@segment/analytics.js-core/-/analytics.js-core-3.0.0.tgz",
-  "_shasum": "166e682023e6086d41e53abe5cddb23bf02b14ed",
+  "_resolved": "https://registry.npmjs.org/@segment/analytics.js-core/-/analytics.js-core-3.7.2.tgz",
+  "_shasum": "4e663b49ec5c9cb6baf40394ba798a6d84075a1f",
   "_shrinkwrap": null,
   "_spec": "@segment/analytics.js-core@^3.0.0",
-  "_where": "/Users/carlthorner/Projects/skraphaug/develoment/analytics.js",
+  "_where": "/Users/carlthorner/Workspace/analytics.js",
   "author": {
-    "email": "friends@segment.com",
-    "name": "Segment"
+    "name": "Segment",
+    "email": "friends@segment.com"
   },
   "bugs": {
     "url": "https://github.com/segmentio/analytics.js-core/issues"
@@ -3707,6 +3353,7 @@ module.exports={
     "@segment/isodate": "^1.0.2",
     "@segment/isodate-traverse": "^1.0.1",
     "@segment/prevent-default": "^1.0.0",
+    "@segment/send-json": "^3.0.0",
     "@segment/store": "^1.3.20",
     "@segment/top-domain": "^3.0.0",
     "bind-all": "^1.0.0",
@@ -3717,6 +3364,7 @@ module.exports={
     "component-type": "^1.2.1",
     "component-url": "^0.2.1",
     "debug": "^0.7.4",
+    "extend": "3.0.1",
     "inherits": "^2.0.1",
     "install": "^0.7.3",
     "is": "^3.1.0",
@@ -3728,37 +3376,51 @@ module.exports={
   },
   "description": "The hassle-free way to integrate analytics into any web application.",
   "devDependencies": {
-    "@segment/analytics.js-integration": "^2.0.0",
-    "@segment/eslint-config": "^3.1.1",
-    "browserify": "^13.0.0",
+    "@segment/analytics.js-integration": "^3.2.1",
+    "@segment/eslint-config": "^4.0.0",
+    "browserify": "13.0.0",
     "browserify-istanbul": "^2.0.0",
+    "codecov": "^3.0.2",
     "compat-trigger-event": "^1.0.0",
     "component-each": "^0.2.6",
-    "eslint": "^2.9.0",
-    "eslint-plugin-mocha": "^2.2.0",
-    "eslint-plugin-require-path-exists": "^1.1.5",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-require-path-exists": "^1.1.8",
+    "husky": "^0.14.3",
     "istanbul": "^0.4.3",
-    "jquery": "^1.12.3",
-    "karma": "^0.13.22",
+    "jquery": "^3.2.1",
+    "karma": "1.3.0",
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.0.0",
     "karma-junit-reporter": "^1.0.0",
-    "karma-mocha": "^1.0.1",
+    "karma-mocha": "1.0.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
+    "karma-summary-reporter": "^1.5.0",
+    "lint-staged": "^7.2.0",
     "mocha": "^2.2.5",
+    "np": "^3.0.4",
     "phantomjs-prebuilt": "^2.1.7",
+    "prettier-eslint-cli": "^4.7.1",
     "proclaim": "^3.4.1",
     "sinon": "^1.7.3",
+    "snyk": "^1.83.0",
     "watchify": "^3.7.0"
   },
   "directories": {},
   "dist": {
-    "shasum": "166e682023e6086d41e53abe5cddb23bf02b14ed",
-    "tarball": "https://registry.npmjs.org/@segment/analytics.js-core/-/analytics.js-core-3.0.0.tgz"
+    "integrity": "sha512-+I0jGiZka4oZVZCXCYmTdG0h0kebcqXLVWTgDp/ZiXGwUeVjT6yfk2H69j7NbAJDMUg09db0nEMbZcyjltX/Zw==",
+    "shasum": "4e663b49ec5c9cb6baf40394ba798a6d84075a1f",
+    "tarball": "https://registry.npmjs.org/@segment/analytics.js-core/-/analytics.js-core-3.7.2.tgz",
+    "fileCount": 37,
+    "unpackedSize": 421728,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbX3uOCRA9TVsSAnZWagAAKdIP/AmpWM38cQxry0BhNfrH\nBzpKUIxTALZjPn+Y8/DU1RXp7Wn37HBhKApTS+4Mx9VcnSAWNDty2hI6InqD\npPbX3Hbq38KHWHqojA18WpN4pWiTCeizZdQq/TbJkZFDi+DNXcbDj+DmJtdW\n6n0zIopMOhwyPxWh5YxS/JtP5uLtfZMQRupZnxg0PK+cYBEmmIWAVbg1WNSi\nR38GialSvVjQnUEQKkzD/QItUkN7rhJbSEuU8CHcOzL3Rx1QvI2kQNwJe//y\ngZ4UujBEBgowCM08ZlVISKkfGDjHft0NWrokvvzkuO35MwsnPWZpf5ul6UzB\nIhq55iGAdK45mUlLA2I/8ajnAbustB4L2+//NTbZ++o1MX5e7zdbKndIyRDE\n9RBJNwtGmT/pqPJIGlaz3VMWHRIGy3+wd8GO3v02g1hkHT+9idf1EdIwOIkT\nT76xvwhX9OM+eMfW1KkSVSceZfh44skyNJuBavugTb6HlhOzlqgi2BYOBVmI\ndXnLkVS/o9lmL34czA2Jq3auFqGVH6r+Afo3hurZ5Fo9L9syoaXy/ybfGfwn\nBt7HrsgCbh0eHp/oKrhAW9M8HFgEhs6/vrFozigRaOMlJViMwRBl2AHjBQis\nk/KjZD1tti8zSdIhJuE9c4Rlm9ce7ViNrsIwxfM4rCFbQyJ6Eq/O7LSbArro\nw2pZ\r\n=SjFM\r\n-----END PGP SIGNATURE-----\r\n"
   },
+  "gitHead": "a2ad22ca8df361ac7439510fe468c1fa9bf5f3ab",
   "homepage": "https://github.com/segmentio/analytics.js-core#readme",
   "keywords": [
     "analytics",
@@ -3767,11 +3429,334 @@ module.exports={
     "segment.io"
   ],
   "license": "SEE LICENSE IN LICENSE",
+  "lint-staged": {
+    "linters": {
+      "*.{js,json,md}": [
+        "prettier-eslint --write",
+        "git add"
+      ]
+    }
+  },
   "main": "lib/index.js",
   "maintainers": [
     {
-      "name": "segment",
+      "name": "achille-roussel",
+      "email": "achille.roussel@gmail.com"
+    },
+    {
+      "name": "alan-segment",
+      "email": "alan@segment.com"
+    },
+    {
+      "name": "albert.segment",
+      "email": "albert@segment.com"
+    },
+    {
+      "name": "amillet89",
+      "email": "alex@segment.io"
+    },
+    {
+      "name": "andreiko_ru",
+      "email": "mail@andreiko.ru"
+    },
+    {
+      "name": "anoonan",
+      "email": "amnoonann@gmail.com"
+    },
+    {
+      "name": "atrivedi1",
+      "email": "akash@segment.com"
+    },
+    {
+      "name": "bgamwell",
+      "email": "brennan@segment.com"
+    },
+    {
+      "name": "boggsboggs",
+      "email": "john.boggs@segment.com"
+    },
+    {
+      "name": "calvinfo",
+      "email": "calvin@calv.info"
+    },
+    {
+      "name": "carlosmecha",
+      "email": "mecha.carlos@gmail.com"
+    },
+    {
+      "name": "ccnixon",
+      "email": "chrisnxn@gmail.com"
+    },
+    {
+      "name": "chenpengcheng",
+      "email": "pengcheng.chen@gmail.com"
+    },
+    {
+      "name": "chrisbuttery",
+      "email": "info@chrisbuttery.com"
+    },
+    {
+      "name": "colinking",
+      "email": "me@colinking.co"
+    },
+    {
+      "name": "cyrusroshan",
+      "email": "hello@cyrusroshan.com"
+    },
+    {
+      "name": "dfuentes",
+      "email": "daniel.richard.fuentes@gmail.com"
+    },
+    {
+      "name": "dominicbarnes",
+      "email": "dominic@dbarnes.info"
+    },
+    {
+      "name": "dscrobonia",
+      "email": "davidscrobonia@gmail.com"
+    },
+    {
+      "name": "eesegment",
+      "email": "eric.ellett@segment.com"
+    },
+    {
+      "name": "emilio-gomez-lavin",
+      "email": "emilio@segment.com"
+    },
+    {
+      "name": "emily.luckette",
+      "email": "emily@segment.com"
+    },
+    {
+      "name": "erickimsegment",
+      "email": "eric@segment.com"
+    },
+    {
+      "name": "estela-diaz",
+      "email": "estela.diaz@segment.com"
+    },
+    {
+      "name": "f2prateek",
+      "email": "f2prateek@gmail.com"
+    },
+    {
+      "name": "fathyb",
+      "email": "fathy.boundjadj@gmail.com"
+    },
+    {
+      "name": "fforres",
+      "email": "felipe.torressepulveda@gmail.com"
+    },
+    {
+      "name": "flaque",
+      "email": "flaqueeau@gmail.com"
+    },
+    {
+      "name": "gnijor",
+      "email": "nijor22@gmail.com"
+    },
+    {
+      "name": "hanothan",
+      "email": "hankim813@gmail.com"
+    },
+    {
+      "name": "ivolo",
+      "email": "ilya@segment.io"
+    },
+    {
+      "name": "jamesmcguinness",
+      "email": "james.mcguinness@segment.com"
+    },
+    {
+      "name": "jeroenransijn",
+      "email": "jssrdesign@gmail.com"
+    },
+    {
+      "name": "jfabre-segment",
+      "email": "julien@segment.com"
+    },
+    {
+      "name": "jfarah",
+      "email": "julio.farah@segment.com"
+    },
+    {
+      "name": "jfmaggie",
+      "email": "jfmaggie@gmail.com"
+    },
+    {
+      "name": "jlee9595",
+      "email": "justin@segment.com"
+    },
+    {
+      "name": "joeybloggs",
+      "email": "dean@segment.com"
+    },
+    {
+      "name": "josh_segment",
+      "email": "josh@segment.com"
+    },
+    {
+      "name": "joshwget",
+      "email": "josh@curl.me"
+    },
+    {
+      "name": "ladanazita",
+      "email": "ladanazita@gmail.com"
+    },
+    {
+      "name": "lauramunozjimenez",
+      "email": "laura.munoz@segment.com"
+    },
+    {
+      "name": "leifdreizler",
+      "email": "leifdreizler@gmail.com"
+    },
+    {
+      "name": "mag"
+    },
+    {
+      "name": "maxence-charriere",
+      "email": "charriere@outlook.com"
+    },
+    {
+      "name": "monicadamborenea",
+      "email": "monica@segment.com"
+    },
+    {
+      "name": "msanterre",
+      "email": "mooxeh@gmail.com"
+    },
+    {
+      "name": "mshwery",
+      "email": "mshwery@gmail.com"
+    },
+    {
+      "name": "n2parko",
+      "email": "kevin@segment.com"
+    },
+    {
+      "name": "nettofarah",
+      "email": "nettofarah@gmail.com"
+    },
+    {
+      "name": "notfelineit",
+      "email": "notfelineit@gmail.com"
+    },
+    {
+      "name": "nucleartide",
+      "email": "jasontu4@gmail.com"
+    },
+    {
+      "name": "nzoschke",
+      "email": "nzoschke@gmail.com"
+    },
+    {
+      "name": "peripheral",
+      "email": "peter.h.richmond@gmail.com"
+    },
+    {
+      "name": "rarchana2001asu",
+      "email": "archana@segment.com"
+    },
+    {
+      "name": "rlc4",
+      "email": "rickyconnell@gmail.com"
+    },
+    {
+      "name": "rowno",
+      "email": "rowno@webspirited.com"
+    },
+    {
+      "name": "rpaul80",
+      "email": "rpaul80@gmail.com"
+    },
+    {
+      "name": "sahilp",
+      "email": "sahil@segment.com"
+    },
+    {
+      "name": "segment-admin",
       "email": "tools+npm@segment.com"
+    },
+    {
+      "name": "segment-anastassia",
+      "email": "anastassia@segment.com"
+    },
+    {
+      "name": "segment-andy-yeo",
+      "email": "andy.yeo@segment.com"
+    },
+    {
+      "name": "segment-cyammine",
+      "email": "chris.yammine@segment.com"
+    },
+    {
+      "name": "segment-danielstjules",
+      "email": "danielst.jules@segment.com"
+    },
+    {
+      "name": "segment-scott",
+      "email": "scott@segment.com"
+    },
+    {
+      "name": "segment-ulysse",
+      "email": "ulysse@segment.com"
+    },
+    {
+      "name": "segmentaimee",
+      "email": "aimee@segment.com"
+    },
+    {
+      "name": "segmentio",
+      "email": "tools@segment.com"
+    },
+    {
+      "name": "segmentmfischer",
+      "email": "michael.fischer@segment.com"
+    },
+    {
+      "name": "sperand-io",
+      "email": "chris@sperand.io"
+    },
+    {
+      "name": "srthurman",
+      "email": "srthurman@gmail.com"
+    },
+    {
+      "name": "systemizer",
+      "email": "robmcqn@gmail.com"
+    },
+    {
+      "name": "tamarrow",
+      "email": "tamarrow@gmail.com"
+    },
+    {
+      "name": "tejasmanohar",
+      "email": "me@tejas.io"
+    },
+    {
+      "name": "tyson_segment",
+      "email": "tyson@segment.com"
+    },
+    {
+      "name": "vdemedes",
+      "email": "vdemedes@gmail.com"
+    },
+    {
+      "name": "willallison",
+      "email": "will.allison@segment.com"
+    },
+    {
+      "name": "williams-blake",
+      "email": "blake@segment.com"
+    },
+    {
+      "name": "xagos",
+      "email": "xavier.agostini@mail.mcgill.ca"
+    },
+    {
+      "name": "yields",
+      "email": "yields@icloud.com"
     }
   ],
   "name": "@segment/analytics.js-core",
@@ -3782,12 +3767,16 @@ module.exports={
     "url": "git+https://github.com/segmentio/analytics.js-core.git"
   },
   "scripts": {
+    "format": "prettier-eslint --write --list-different \"./{lib,test}/**/*.{js,json,md}\"",
+    "lint": "eslint \"./{lib,test}/**/*.js\"",
+    "np": "np --no-publish",
+    "precommit": "lint-staged",
     "test": "make test"
   },
-  "version": "3.0.0"
+  "version": "3.7.2"
 }
 
-},{}],35:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3992,14 +3981,13 @@ function formulateData(track, alias) {
   return ret;
 }
 
-},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/map":14,"@segment/analytics.js-integration":586,"to-snake-case":665,"use-https":672}],36:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/map":14,"@segment/analytics.js-integration":95,"to-snake-case":191,"use-https":196}],33:[function(require,module,exports){
 'use strict';
 
 /**
  * Module dependencies.
  */
 
-var each = require('@ndhoule/each');
 var integration = require('@segment/analytics.js-integration');
 var when = require('do-when');
 
@@ -4009,10 +3997,9 @@ var when = require('do-when');
 
 var AdWords = module.exports = integration('AdWords')
   .option('conversionId', '')
-  .option('remarketing', false)
-  .option('whitelist', [])
-  .tag('<script src="//www.googleadservices.com/pagead/conversion_async.js">')
-  .mapping('events');
+  .option('pageRemarketing', false)
+  .option('eventMappings', [])
+  .tag('<script src="//www.googleadservices.com/pagead/conversion_async.js">');
 
 /**
  * Initialize.
@@ -4054,7 +4041,7 @@ AdWords.prototype.loaded = function() {
 AdWords.prototype.page = function(page) {
   // Remarketing option can support both Adwords' "static" or "dynamic" remarketing tags
   // Difference is static you don't need to send props under `google_custom_params`
-  var remarketing = this.options.remarketing;
+  var remarketing = this.options.pageRemarketing;
   var id = this.options.conversionId;
   var props = page.properties();
 
@@ -4084,49 +4071,73 @@ AdWords.prototype.page = function(page) {
  */
 
 AdWords.prototype.track = function(track) {
-  var id = this.options.conversionId;
+  var self = this;
   var props = track.properties();
-  var remarketing = this.options.remarketing;
-  var events = this.events(track.event());
+  var eventMappings = this.options.eventMappings;
   var revenue = track.revenue() || 0;
-  // Check if this is a whitelisted event for standalone remarketing tag
-  var whitelisted = this.options.whitelist.indexOf(track.event()) > -1;
-  var sentAlready = false;
 
-  each(function(label) {
-    delete props.revenue;
-    // Fire conversion tag
-    window.google_trackConversion({
-      google_conversion_id: id,
-      google_custom_params: props,
-      google_conversion_language: 'en',
-      google_conversion_format: '3',
-      google_conversion_color: 'ffffff',
-      google_conversion_label: label,
-      google_conversion_value: revenue,
-      google_remarketing_only: false // ensure this is a conversion tag
-    });
-    // Fire remarketing tag
-    if (!sentAlready && remarketing) {
-      window.google_trackConversion({
-        google_conversion_id: id,
-        google_custom_params: props, // do not send PII here!
-        google_remarketing_only: true // ensure this is a remarketing tag
-      });
-      sentAlready = true;
+  eventMappings.forEach(function(mapping) {
+    if (mapping.value) {
+      if (mapping.value.eventName.toLowerCase() !== track.event().toLowerCase()) return;
+      var id = mapping.value.conversionId ||  self.options.conversionId;  // customer can either specify one global conversion id or one per  mapping
+  
+      // Fire conversion tag
+      if (mapping.value.label !== '') {
+        delete props.revenue;
+      
+        window.google_trackConversion({
+          google_conversion_id: id,
+          google_custom_params: props,
+          google_conversion_language: 'en',
+          google_conversion_format: '3',
+          google_conversion_color: 'ffffff',
+          google_conversion_label: mapping.value.label,
+          google_conversion_value: revenue,
+          google_remarketing_only: false // ensure this is a conversion tag
+        });
+      }
+  
+      // Fire remarketing tag
+      if (mapping.value.remarketing) {
+        window.google_trackConversion({
+          google_conversion_id: id,
+          google_custom_params: props, // do not send PII here!
+          google_remarketing_only: true // ensure this is a remarketing tag
+        });
+      }
+    } else {
+      if (mapping.eventName.toLowerCase() !== track.event().toLowerCase()) return;
+      id = mapping.conversionId ||  self.options.conversionId;  // customer can either specify one global conversion id or one per  mapping
+  
+      // Fire conversion tag
+      if (mapping.label !== '') {
+        delete props.revenue;
+      
+        window.google_trackConversion({
+          google_conversion_id: id,
+          google_custom_params: props,
+          google_conversion_language: 'en',
+          google_conversion_format: '3',
+          google_conversion_color: 'ffffff',
+          google_conversion_label: mapping.label,
+          google_conversion_value: revenue,
+          google_remarketing_only: false // ensure this is a conversion tag
+        });
+      }
+  
+      // Fire remarketing tag
+      if (mapping.remarketing) {
+        window.google_trackConversion({
+          google_conversion_id: id,
+          google_custom_params: props, // do not send PII here!
+          google_remarketing_only: true // ensure this is a remarketing tag
+        });
+      }
     }
-  }, events);
-
-  if (!sentAlready && whitelisted) {
-    window.google_trackConversion({
-      google_conversion_id: id,
-      google_custom_params: props, // do not send PII here!
-      google_remarketing_only: true // ensure this is a remarketing tag
-    });
-  }
+  });
 };
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":37,"do-when":623}],37:[function(require,module,exports){
+},{"@segment/analytics.js-integration":34,"do-when":144}],34:[function(require,module,exports){
 'use strict';
 
 /**
@@ -4191,7 +4202,7 @@ function createIntegration(name) {
 
 module.exports = createIntegration;
 
-},{"./protos":38,"./statics":39,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"slug-component":661}],38:[function(require,module,exports){
+},{"./protos":35,"./statics":36,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":38,"slug-component":185}],35:[function(require,module,exports){
 'use strict';
 
 /**
@@ -4368,16 +4379,9 @@ exports.invoke = function(method) {
   if (!this[method]) return;
   var args = Array.prototype.slice.call(arguments, 1);
   if (!this._ready) return this.queue(method, args);
-  var ret;
 
-  try {
-    this.debug('%s with %o', method, args);
-    ret = this[method].apply(this, args);
-  } catch (e) {
-    this.debug('error %o calling %s with %o', e, method, args);
-  }
-
-  return ret;
+  this.debug('%s with %o', method, args);
+  return this[method].apply(this, args);
 };
 
 /**
@@ -4674,7 +4678,7 @@ function render(template, locals) {
   }, {}, template.attrs);
 }
 
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":40,"component-emitter":41,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":42}],39:[function(require,module,exports){
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":37,"component-emitter":134,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],36:[function(require,module,exports){
 'use strict';
 
 /**
@@ -4839,7 +4843,7 @@ function objectify(str) {
   };
 }
 
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":41,"domify":624}],40:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145}],37:[function(require,module,exports){
 
 module.exports = {
   // Promotions
@@ -4906,1131 +4910,400 @@ module.exports = {
   pushNotificationBounced: /^[ _]?push[ _]?notification[ _]?bounced[ _]?$/i
 };
 
-},{}],41:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],42:[function(require,module,exports){
-
+},{}],38:[function(require,module,exports){
+(function (process){
 /**
- * Expose `toNoCase`.
- */
-
-module.exports = toNoCase;
-
-
-/**
- * Test whether a string is camel-case.
- */
-
-var hasSpace = /\s/;
-var hasSeparator = /[\W_]/;
-
-
-/**
- * Remove any starting case from a `string`, like camel or snake, but keep
- * spaces and punctuation that may be important otherwise.
+ * This is the web browser implementation of `debug()`.
  *
- * @param {String} string
- * @return {String}
+ * Expose `debug()` as the module.
  */
 
-function toNoCase (string) {
-  if (hasSpace.test(string)) return string.toLowerCase();
-  if (hasSeparator.test(string)) return (unseparate(string) || string).toLowerCase();
-  return uncamelize(string).toLowerCase();
+exports = module.exports = require('./debug');
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = 'undefined' != typeof chrome
+               && 'undefined' != typeof chrome.storage
+                  ? chrome.storage.local
+                  : localstorage();
+
+/**
+ * Colors.
+ */
+
+exports.colors = [
+  'lightseagreen',
+  'forestgreen',
+  'goldenrod',
+  'dodgerblue',
+  'darkorchid',
+  'crimson'
+];
+
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */
+
+function useColors() {
+  // NB: In an Electron preload script, document will be defined but not fully
+  // initialized. Since we know we're in Chrome, we'll just detect this case
+  // explicitly
+  if (typeof window !== 'undefined' && window.process && window.process.type === 'renderer') {
+    return true;
+  }
+
+  // is webkit? http://stackoverflow.com/a/16459606/376773
+  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+  return (typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance) ||
+    // is firebug? http://stackoverflow.com/a/398120/376773
+    (typeof window !== 'undefined' && window.console && (window.console.firebug || (window.console.exception && window.console.table))) ||
+    // is firefox >= v31?
+    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31) ||
+    // double check webkit in userAgent just in case we are in a worker
+    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
 }
 
-
 /**
- * Separator splitter.
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
  */
 
-var separatorSplitter = /[\W_]+(.|$)/g;
+exports.formatters.j = function(v) {
+  try {
+    return JSON.stringify(v);
+  } catch (err) {
+    return '[UnexpectedJSONParseError]: ' + err.message;
+  }
+};
 
 
 /**
- * Un-separate a `string`.
- *
- * @param {String} string
- * @return {String}
- */
-
-function unseparate (string) {
-  return string.replace(separatorSplitter, function (m, next) {
-    return next ? ' ' + next : '';
-  });
-}
-
-
-/**
- * Camelcase splitter.
- */
-
-var camelSplitter = /(.)([A-Z]+)/g;
-
-
-/**
- * Un-camelcase a `string`.
- *
- * @param {String} string
- * @return {String}
- */
-
-function uncamelize (string) {
-  return string.replace(camelSplitter, function (m, previous, uppers) {
-    return previous + ' ' + uppers.toLowerCase().split('').join(' ');
-  });
-}
-},{}],43:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose Alexa integration.
- */
-
-var Alexa = module.exports = integration('Alexa')
-  .assumesPageview()
-  .global('_atrk_opts')
-  .option('account', null)
-  .option('domain', '')
-  .option('dynamic', true)
-  .tag('<script src="//d31qbv1cthcecs.cloudfront.net/atrk.js">');
-
-/**
- * Initialize.
+ * Colorize log arguments if enabled.
  *
  * @api public
  */
 
-Alexa.prototype.initialize = function() {
-  var self = this;
-  window._atrk_opts = {
-    atrk_acct: this.options.account,
-    domain: this.options.domain,
-    dynamic: this.options.dynamic
-  };
-  this.load(function() {
-    window.atrk();
-    self.ready();
+function formatArgs(args) {
+  var useColors = this.useColors;
+
+  args[0] = (useColors ? '%c' : '')
+    + this.namespace
+    + (useColors ? ' %c' : ' ')
+    + args[0]
+    + (useColors ? '%c ' : ' ')
+    + '+' + exports.humanize(this.diff);
+
+  if (!useColors) return;
+
+  var c = 'color: ' + this.color;
+  args.splice(1, 0, c, 'color: inherit')
+
+  // the final "%c" is somewhat tricky, because there could be other
+  // arguments passed either before or after the %c, so we need to
+  // figure out the correct index to insert the CSS into
+  var index = 0;
+  var lastC = 0;
+  args[0].replace(/%[a-zA-Z%]/g, function(match) {
+    if ('%%' === match) return;
+    index++;
+    if ('%c' === match) {
+      // we only are interested in the *last* %c
+      // (the user may have provided their own)
+      lastC = index;
+    }
   });
-};
+
+  args.splice(lastC, 0, c);
+}
 
 /**
- * Loaded?
+ * Invokes `console.log()` when available.
+ * No-op when `console.log` is not a "function".
  *
+ * @api public
+ */
+
+function log() {
+  // this hackery is required for IE8/9, where
+  // the `console.log` function doesn't have 'apply'
+  return 'object' === typeof console
+    && console.log
+    && Function.prototype.apply.call(console.log, console, arguments);
+}
+
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
  * @api private
- * @return {boolean}
  */
 
-Alexa.prototype.loaded = function() {
-  return !!window.atrk;
-};
-
-},{"@segment/analytics.js-integration":44}],44:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":45,"./statics":46,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],45:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":47,"component-emitter":48,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":49}],46:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":48,"domify":624,"dup":39}],47:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],48:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],49:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],50:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var bind = require('component-bind');
-var integration = require('@segment/analytics.js-integration');
-var topDomain = require('@segment/top-domain');
-var when = require('do-when');
-
-/**
- * UMD?
- */
-
-var umd = typeof window.define === 'function' && window.define.amd;
-
-/**
- * Source.
- */
-
-var src = '//d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.4.0-min.gz.js';
-
-/**
- * Expose `Amplitude` integration.
- */
-
-var Amplitude = module.exports = integration('Amplitude')
-  .global('amplitude')
-  .option('apiKey', '')
-  .option('trackAllPages', false)
-  .option('trackNamedPages', true)
-  .option('trackCategorizedPages', true)
-  .option('trackUtmProperties', true)
-  .option('trackReferrer', false)
-  .option('batchEvents', false)
-  .option('eventUploadThreshold', 30)
-  .option('eventUploadPeriodMillis', 30000)
-  .option('useLogRevenueV2', false)
-  .option('forceHttps', false)
-  .option('trackGclid', false)
-  .option('saveParamsReferrerOncePerSession', true)
-  .option('deviceIdFromUrlParam', false)
-  .tag('<script src="' + src + '">');
-
-/**
- * Initialize.
- *
- * https://github.com/amplitude/Amplitude-Javascript
- *
- * @api public
- */
-
-Amplitude.prototype.initialize = function() {
-  /* eslint-disable */
-  (function(e,t){var r=e.amplitude||{_q:[]};function n(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}var s=function(){this._q=[];return this};var i=["add","append","clearAll","prepend","set","setOnce","unset"];for(var o=0;o<i.length;o++){n(s,i[o])}r.Identify=s;var a=function(){this._q=[];return this;};var u=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];for(var c=0;c<u.length;c++){n(a,u[c])}r.Revenue=a;var p=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];function l(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));}}for(var r=0;r<p.length;r++){t(p[r])}}l(r);e.amplitude=r})(window,document);
-  /* eslint-enable */
-
-  this.setDomain(window.location.href);
-  window.amplitude.init(this.options.apiKey, null, {
-    includeUtm: this.options.trackUtmProperties,
-    includeReferrer: this.options.trackReferrer,
-    batchEvents: this.options.batchEvents,
-    eventUploadThreshold: this.options.eventUploadThreshold,
-    eventUploadPeriodMillis: this.options.eventUploadPeriodMillis,
-    forceHttps: this.options.forceHttps,
-    includeGclid: this.options.trackGclid,
-    saveParamsReferrerOncePerSession: this.options.saveParamsReferrerOncePerSession,
-    deviceIdFromUrlParam: this.options.deviceIdFromUrlParam
-  });
-
-  var loaded = bind(this, this.loaded);
-  var ready = this.ready;
-  // FIXME (wcjohnson11): Refactor the load method to include this logic
-  // to better support if UMD present
-  if (umd) {
-    window.require([src], function(amplitude) {
-      window.amplitude = amplitude;
-      when(loaded, function() {
-        window.amplitude.runQueuedFunctions();
-        ready();
-      });
-    });
-    return;
-  }
-
-  this.load(function() {
-    when(loaded, function() {
-      window.amplitude.runQueuedFunctions();
-      ready();
-    });
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Amplitude.prototype.loaded = function() {
-  return !!(window.amplitude && window.amplitude.options);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Amplitude.prototype.page = function(page) {
-  var category = page.category();
-  var name = page.fullName();
-  var opts = this.options;
-
-  // all pages
-  if (opts.trackAllPages) {
-    this.track(page.track());
-  }
-
-  // categorized pages
-  if (category && opts.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-
-  // named pages
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Facade} identify
- */
-
-Amplitude.prototype.identify = function(identify) {
-  var id = identify.userId();
-  var traits = identify.traits();
-  if (id) window.amplitude.setUserId(id);
-  if (traits) window.amplitude.setUserProperties(traits);
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} event
- */
-
-Amplitude.prototype.track = function(track) {
-  var props = track.properties();
-  var event = track.event();
-
-  // track the event
-  window.amplitude.logEvent(event, props);
-
-  // also track revenue
-  var revenue = track.revenue();
-  if (revenue) {
-    // use logRevenueV2 with revenue props
-    if (this.options.useLogRevenueV2) {
-      var price = props.price;
-      var quantity = props.quantity;
-      if (!price) {
-        price = revenue;
-        quantity = 1;
-      }
-
-      var ampRevenue = new window.amplitude.Revenue().setPrice(price).setQuantity(quantity);
-      if (props.productId) {
-        ampRevenue.setProductId(props.productId);
-      }
-      if (props.revenueType) {
-        ampRevenue.setRevenueType(props.revenueType);
-      }
-      ampRevenue.setEventProperties(props);
-      window.amplitude.logRevenueV2(ampRevenue);
+function save(namespaces) {
+  try {
+    if (null == namespaces) {
+      exports.storage.removeItem('debug');
     } else {
-      // fallback to logRevenue v1
-      window.amplitude.logRevenue(revenue, props.quantity, props.productId);
+      exports.storage.debug = namespaces;
+    }
+  } catch(e) {}
+}
+
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */
+
+function load() {
+  var r;
+  try {
+    r = exports.storage.debug;
+  } catch(e) {}
+
+  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+  if (!r && typeof process !== 'undefined' && 'env' in process) {
+    r = process.env.DEBUG;
+  }
+
+  return r;
+}
+
+/**
+ * Enable namespaces listed in `localStorage.debug` initially.
+ */
+
+exports.enable(load());
+
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */
+
+function localstorage() {
+  try {
+    return window.localStorage;
+  } catch (e) {}
+}
+
+}).call(this,require('_process'))
+},{"./debug":39,"_process":170}],39:[function(require,module,exports){
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = createDebug.debug = createDebug['default'] = createDebug;
+exports.coerce = coerce;
+exports.disable = disable;
+exports.enable = enable;
+exports.enabled = enabled;
+exports.humanize = require('ms');
+
+/**
+ * The currently active debug mode names, and names to skip.
+ */
+
+exports.names = [];
+exports.skips = [];
+
+/**
+ * Map of special "%n" handling functions, for the debug "format" argument.
+ *
+ * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+ */
+
+exports.formatters = {};
+
+/**
+ * Previous log timestamp.
+ */
+
+var prevTime;
+
+/**
+ * Select a color.
+ * @param {String} namespace
+ * @return {Number}
+ * @api private
+ */
+
+function selectColor(namespace) {
+  var hash = 0, i;
+
+  for (i in namespace) {
+    hash  = ((hash << 5) - hash) + namespace.charCodeAt(i);
+    hash |= 0; // Convert to 32bit integer
+  }
+
+  return exports.colors[Math.abs(hash) % exports.colors.length];
+}
+
+/**
+ * Create a debugger with the given `namespace`.
+ *
+ * @param {String} namespace
+ * @return {Function}
+ * @api public
+ */
+
+function createDebug(namespace) {
+
+  function debug() {
+    // disabled?
+    if (!debug.enabled) return;
+
+    var self = debug;
+
+    // set `diff` timestamp
+    var curr = +new Date();
+    var ms = curr - (prevTime || curr);
+    self.diff = ms;
+    self.prev = prevTime;
+    self.curr = curr;
+    prevTime = curr;
+
+    // turn the `arguments` into a proper Array
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+
+    args[0] = exports.coerce(args[0]);
+
+    if ('string' !== typeof args[0]) {
+      // anything else let's inspect with %O
+      args.unshift('%O');
+    }
+
+    // apply any `formatters` transformations
+    var index = 0;
+    args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
+      // if we encounter an escaped % then don't increase the array index
+      if (match === '%%') return match;
+      index++;
+      var formatter = exports.formatters[format];
+      if ('function' === typeof formatter) {
+        var val = args[index];
+        match = formatter.call(self, val);
+
+        // now we need to remove `args[index]` since it's inlined in the `format`
+        args.splice(index, 1);
+        index--;
+      }
+      return match;
+    });
+
+    // apply env-specific formatting (colors, etc.)
+    exports.formatArgs.call(self, args);
+
+    var logFn = debug.log || exports.log || console.log.bind(console);
+    logFn.apply(self, args);
+  }
+
+  debug.namespace = namespace;
+  debug.enabled = exports.enabled(namespace);
+  debug.useColors = exports.useColors();
+  debug.color = selectColor(namespace);
+
+  // env-specific initialization logic for debug instances
+  if ('function' === typeof exports.init) {
+    exports.init(debug);
+  }
+
+  return debug;
+}
+
+/**
+ * Enables a debug mode by namespaces. This can include modes
+ * separated by a colon and wildcards.
+ *
+ * @param {String} namespaces
+ * @api public
+ */
+
+function enable(namespaces) {
+  exports.save(namespaces);
+
+  exports.names = [];
+  exports.skips = [];
+
+  var split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+  var len = split.length;
+
+  for (var i = 0; i < len; i++) {
+    if (!split[i]) continue; // ignore empty strings
+    namespaces = split[i].replace(/\*/g, '.*?');
+    if (namespaces[0] === '-') {
+      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+    } else {
+      exports.names.push(new RegExp('^' + namespaces + '$'));
     }
   }
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-Amplitude.prototype.group = function(group) {
-  var groupId = group.groupId();
-  if (groupId) window.amplitude.setGroup('[Segment] Group', groupId);
-};
-
-/**
- * Set domain name to root domain in Amplitude.
- *
- * @api private
- * @param {string} href
- */
-
-Amplitude.prototype.setDomain = function(href) {
-  var domain = topDomain(href);
-  window.amplitude.setDomain(domain);
-};
-
-/**
- * Override device ID in Amplitude.
- *
- * @api private
- * @param {string} deviceId
- */
-
-Amplitude.prototype.setDeviceId = function(deviceId) {
-  if (deviceId) window.amplitude.setDeviceId(deviceId);
-};
-
-},{"@segment/analytics.js-integration":51,"@segment/top-domain":604,"component-bind":608,"do-when":623}],51:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":52,"./statics":53,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],52:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":54,"component-emitter":55,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":56}],53:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":55,"domify":624,"dup":39}],54:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],55:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],56:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],57:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var isObject = require('isobject');
-var load = require('@segment/load-script');
-
-/**
- * Expose `Appcues` integration.
- */
-
-var Appcues = integration('Appcues')
-  .global('Appcues')
-  .option('appcuesId', '');
-
-/**
- * Initialize.
- *
- * http://appcues.com/docs/
- *
- * @api public
- */
-
-Appcues.prototype.initialize = function() {
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Appcues.prototype.loaded = function() {
-  return isObject(window.Appcues);
-};
-
-/**
- * Load the Appcues library.
- *
- * @api private
- * @param {Function} callback
- */
-
-Appcues.prototype.load = function(callback) {
-  var id = this.options.appcuesId || 'appcues';
-  load('//fast.appcues.com/' + id + '.js', callback);
-};
-
-/**
- * Page.
- *
- * http://appcues.com/docs#page
- *
- * @api public
- * @param {Page} page
- */
-
-Appcues.prototype.page = function(page) {
-  window.Appcues.page(page.name(), page.properties());
-};
-
-/**
- * Identify.
- *
- * http://appcues.com/docs#identify
- *
- * @api public
- * @param {Identify} identify
- */
-
-Appcues.prototype.identify = function(identify) {
-  window.Appcues.identify(identify.userId(), identify.traits());
-};
-
-/**
- * Track.
- *
- * http://appcues.com/docs#track
- *
- * @api public
- * @param {Track} track
- */
-
-Appcues.prototype.track = function(track) {
-  window.Appcues.track(track.event(), track.properties());
-};
-
-/**
- * Expose plugin.
- */
-
-// FIXME(ndhoule): Is this still necessary? I believe this API was deprecated
-module.exports = exports = function(analytics) {
-  analytics.addIntegration(Appcues);
-};
-
-exports.Integration = Appcues;
-
-},{"@segment/analytics.js-integration":58,"@segment/load-script":598,"isobject":630}],58:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":59,"./statics":60,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],59:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":61,"component-emitter":62,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":63}],60:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":62,"domify":624,"dup":39}],61:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],62:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],63:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],64:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var isObject = require('isobject');
-
-/**
- * Expose `Atatus` integration.
- */
-
-var Atatus = module.exports = integration('Atatus')
-  .global('atatus')
-  .option('apiKey', '')
-  .option('enableSourcemap', false)
-  .option('disableAjaxMonitoring', false)
-  .tag('<script src="//dmc1acwvwny3.cloudfront.net/atatus.js">');
-
-/**
- * Initialize.
- *
- * https://www.atatus.com/docs.html
- *
- * @api public
- */
-
-Atatus.prototype.initialize = function() {
-  var self = this;
-
-  this.load(function() {
-    var configOptions = {
-      enableSourcemap: self.options.enableSourcemap,
-      disableAjaxMonitoring: self.options.disableAjaxMonitoring
-    };
-
-    // Configure Atatus and install default handler to capture uncaught
-    // exceptions
-    window.atatus.config(self.options.apiKey, configOptions).install();
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Atatus.prototype.loaded = function() {
-  return isObject(window.atatus);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Atatus.prototype.identify = function(identify) {
-  window.atatus.setCustomData({ person: identify.traits() });
-};
-
-},{"@segment/analytics.js-integration":65,"isobject":630}],65:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":66,"./statics":67,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],66:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":68,"component-emitter":69,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":70}],67:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":69,"domify":624,"dup":39}],68:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],69:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],70:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],71:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Autosend` integration.
- */
-
-var Autosend = module.exports = integration('Autosend')
-  .global('_autosend')
-  .option('appKey', '')
-  .tag('<script id="asnd-tracker" src="https://d2zjxodm1cz8d6.cloudfront.net/js/v1/autosend.js" data-auth-key="{{ appKey }}">');
-
-/**
- * Initialize.
- *
- * http://autosend.io/faq/install-autosend-using-javascript/
- *
- * @api public
- */
-
-Autosend.prototype.initialize = function() {
-  window._autosend = window._autosend || [];
-  /* eslint-disable */
-  (function(){var a,b,c;a=function(f){return function(){window._autosend.push([f].concat(Array.prototype.slice.call(arguments,0))); }; }; b=["identify", "track", "cb"];for (c=0;c<b.length;c++){window._autosend[b[c]]=a(b[c]); } })();
-  /* eslint-enable */
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Autosend.prototype.loaded = function() {
-  return !!window._autosend;
-};
-
-/**
- * Identify.
- *
- * http://autosend.io/faq/install-autosend-using-javascript/
- *
- * @api public
- * @param {Identify} identify
- */
-
-Autosend.prototype.identify = function(identify) {
-  var id = identify.userId();
-  if (!id) return;
-
-  var traits = identify.traits();
-  traits.id = id;
-  window._autosend.identify(traits);
-};
-
-/**
- * Track.
- *
- * http://autosend.io/faq/install-autosend-using-javascript/
- *
- * @api public
- * @param {Track} track
- */
-
-Autosend.prototype.track = function(track) {
-  window._autosend.track(track.event());
-};
-
-},{"@segment/analytics.js-integration":72}],72:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":73,"./statics":74,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],73:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":75,"component-emitter":76,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":77}],74:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":76,"domify":624,"dup":39}],75:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],76:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],77:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],78:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Awesm` integration.
- */
-
-var Awesm = module.exports = integration('awe.sm')
-  .assumesPageview()
-  .global('AWESM')
-  .option('apiKey', '')
-  .tag('<script src="//widgets.awe.sm/v3/widgets.js?key={{ apiKey }}&async=true">')
-  .mapping('events');
-
-/**
- * Initialize.
- *
- * http://developers.awe.sm/guides/javascript/
- *
- * @api public
- */
-
-Awesm.prototype.initialize = function() {
-  window.AWESM = { api_key: this.options.apiKey };
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Awesm.prototype.loaded = function() {
-  return !!(window.AWESM && window.AWESM._exists);
-};
-
-/**
- * Track.
- *
- * @api private
- * @param {Track} track
- */
-
-Awesm.prototype.track = function(track) {
-  var user = this.analytics.user();
-  var goals = this.events(track.event());
-  each(function(goal) {
-    window.AWESM.convert(goal, track.cents(), null, user.id());
-  }, goals);
-};
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":79}],79:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":80,"./statics":81,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],80:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":82,"component-emitter":83,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":84}],81:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":83,"domify":624,"dup":39}],82:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],83:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],84:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],85:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Bing`.
- *
- * https://bingads.microsoft.com/campaign/signup
- */
-
-var Bing = module.exports = integration('Bing Ads')
-  .global('UET')
-  .global('uetq')
-  .option('tagId', '')
-  .tag('<script src="//bat.bing.com/bat.js">');
-
-/**
- * Initialize.
- *
- * Inferred from their snippet:
- * https://gist.github.com/sperand-io/8bef4207e9c66e1aa83b
- *
- * @api public
- */
-
-Bing.prototype.initialize = function() {
-  window.uetq = window.uetq || [];
-  var self = this;
-
-  self.load(function() {
-    var setup = {
-      ti: self.options.tagId,
-      q: window.uetq
-    };
-
-    window.uetq = new window.UET(setup);
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Bing.prototype.loaded = function() {
-  return !!(window.uetq && window.uetq.push !== Array.prototype.push);
-};
-
-/**
- * Page.
- *
- * @api public
- */
-
-Bing.prototype.page = function() {
-  window.uetq.push('pageLoad');
-};
-
-/**
- * Track.
- *
- * Send all events then set goals based
- * on them retroactively: http://advertise.bingads.microsoft.com/en-us/uahelp-topic?market=en&project=Bing_Ads&querytype=topic&query=HLP_BA_PROC_UET.htm
- *
- * @api public
- * @param {Track} track
- */
-
-Bing.prototype.track = function(track) {
-  var event = {
-    ea: 'track',
-    el: track.event()
-  };
-
-  if (track.category()) event.ec = track.category();
-  if (track.revenue()) event.gv = track.revenue();
-
-  window.uetq.push(event);
-};
-
-},{"@segment/analytics.js-integration":86}],86:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":87,"./statics":88,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],87:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":89,"component-emitter":90,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":91}],88:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":90,"domify":624,"dup":39}],89:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],90:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],91:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],92:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var foldl = require('@ndhoule/foldl');
-
-/**
- * Expose `Blueshift` integration.
- */
-
-var Blueshift = module.exports = integration('Blueshift')
-  .global('blueshift')
-  .global('_blueshiftid')
-  .option('apiKey', '')
-  .option('retarget', false)
-  .tag('<script src="https://cdn.getblueshift.com/blueshift.js">');
-
-/**
- * Initialize.
- *
- * Documentation: http://getblueshift.com/documentation
- *
- * @api public
- */
-
-Blueshift.prototype.initialize = function() {
-  window.blueshift = window.blueshift || [];
-  /* eslint-disable */
-  window.blueshift.load=function(a){window._blueshiftid=a;var d=function(a){return function(){blueshift.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track","click", "pageload", "capture", "retarget"];for(var f=0;f<e.length;f++)blueshift[e[f]]=d(e[f])};
-  /* eslint-enable */
-  window.blueshift.load(this.options.apiKey);
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Blueshift.prototype.loaded = function() {
-  return !!(window.blueshift && window._blueshiftid);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Blueshift.prototype.page = function(page) {
-  if (this.options.retarget) window.blueshift.retarget();
-
-  var properties = page.properties();
-  properties._bsft_source = 'segment.com';
-  properties.customer_id = this.analytics.user().id();
-  properties.anonymousId = this.analytics.user().anonymousId();
-  properties.category = page.category();
-  properties.name = page.name();
-
-  window.blueshift.pageload(removeBlankAttributes(properties));
-};
-
-/**
- * Trait Aliases.
- */
-
-var traitAliases = {
-  created: 'created_at',
-  firstName: 'firstname',
-  lastName: 'lastname'
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Blueshift.prototype.identify = function(identify) {
-  if (!identify.userId() && !identify.anonymousId()) {
-    return this.debug('user id required');
-  }
-  var traits = identify.traits(traitAliases);
-  traits._bsft_source = 'segment.com';
-  traits.customer_id = identify.userId();
-  traits.anonymousId = identify.anonymousId();
-
-  window.blueshift.identify(removeBlankAttributes(traits));
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Blueshift.prototype.track = function(track) {
-  var properties = track.properties();
-  properties._bsft_source = 'segment.com';
-  properties.customer_id = this.analytics.user().id();
-  properties.anonymousId = this.analytics.user().anonymousId();
-
-  window.blueshift.track(track.event(), removeBlankAttributes(properties));
-};
-
-/**
- * Alias.
- *
- * @param {Alias} alias
- */
-
-Blueshift.prototype.alias = function(alias) {
-  window.blueshift.track('alias', removeBlankAttributes({
-    _bsft_source: 'segment.com',
-    customer_id: alias.userId(),
-    previous_customer_id: alias.previousId(),
-    anonymousId: alias.anonymousId()
-  }));
-};
-
-/**
- * Filters null/undefined values from an object, returning a new object.
- *
- * @api private
- * @param {Object} obj
- * @return {Object}
- */
-
-function removeBlankAttributes(obj) {
-  return foldl(function(results, val, key) {
-    if (val !== null && val !== undefined) results[key] = val;
-    return results;
-  }, {}, obj);
-}
-
-},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":93}],93:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":94,"./statics":95,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],94:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":96,"component-emitter":97,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":98}],95:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":97,"domify":624,"dup":39}],96:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],97:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],98:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],99:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var convertDates = require('@segment/convert-dates');
-var integration = require('@segment/analytics.js-integration');
-var md5 = require('spark-md5').hash;
-
-/**
- * Expose `Boomtrain` integration.
- */
-
-var Boomtrain = module.exports = integration('Boomtrain')
-  .global('_bt')
-  .option('apiKey', '')
-  .tag('<script src="https://cdn.boomtrain.com/analyticstrain/{{ apiKey }}/analyticstrain.min.js"></script>');
-
-/**
- * Initialize.
- *
- *
- *
- * @api public
- */
-
-Boomtrain.prototype.initialize = function() {
-  window._bt = window._bt || [];
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Boomtrain.prototype.loaded = function() {
-  return !!(window._bt && window._bt.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- *
- *
- * @api public
- * @param {Identify} identify
- */
-
-Boomtrain.prototype.identify = function(identify) {
-  var userId = identify.userId();
-  if (!userId) return this.debug('user id required');
-  var traits = identify.traits({ createdAt: 'created_at' });
-  traits = convertDates(traits, convertDate);
-  traits.email = identify.email();
-  window._bt.person.set(traits);
-};
-
-/**
- * Page.
- *
- *
- *
- * @api public
- * @param {Page} page
- */
-
-Boomtrain.prototype.page = function(page) {
-  var properties = page.properties();
-  if (!properties.model) properties.model = getModel() || undefined;
-  if (!properties.id) properties.id = md5(page.url());
-  window._bt.track('viewed', properties);
-};
-
-/**
- * Track.
- *
- *
- *
- * @api public
- * @param {Track} track
- */
-
-Boomtrain.prototype.track = function(track) {
-  var properties = track.properties();
-  window._bt.track(track.event(), properties);
-};
-
-/**
- * Convert a date to the format Boomtrain supports.
- *
- * @api private
- * @param {Date} date
- * @return {number}
- */
-
-function convertDate(date) {
-  return Math.floor(date.getTime() / 1000);
 }
 
 /**
- * Get model of page, stored under meta-tag with property "og:type"
+ * Disable debug output.
  *
- * @api private
- * @param
- * @return {string}
+ * @api public
  */
 
-function getModel() {
-  var elements = window.document.getElementsByTagName('meta');
-  var data = {};
-  var pattern = 'og:';
-  var key = 'property';
-  for (var i = elements.length - 1; i >= 0; i--) {
-    var property = elements[i].getAttribute && elements[i].getAttribute(key);
-    if (property && property.match(pattern)) {
-      data[property.replace(pattern, '')] = elements[i].getAttribute('content');
+function disable() {
+  exports.enable('');
+}
+
+/**
+ * Returns true if the given mode name is enabled, false otherwise.
+ *
+ * @param {String} name
+ * @return {Boolean}
+ * @api public
+ */
+
+function enabled(name) {
+  var i, len;
+  for (i = 0, len = exports.skips.length; i < len; i++) {
+    if (exports.skips[i].test(name)) {
+      return false;
     }
   }
-  return data.type;
+  for (i = 0, len = exports.names.length; i < len; i++) {
+    if (exports.names[i].test(name)) {
+      return true;
+    }
+  }
+  return false;
 }
 
-},{"@segment/analytics.js-integration":100,"@segment/convert-dates":593,"spark-md5":662}],100:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":101,"./statics":102,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],101:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":103,"component-emitter":104,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":105}],102:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":104,"domify":624,"dup":39}],103:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],104:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],105:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],106:[function(require,module,exports){
+/**
+ * Coerce `val`.
+ *
+ * @param {Mixed} val
+ * @return {Mixed}
+ * @api private
+ */
+
+function coerce(val) {
+  if (val instanceof Error) return val.stack || val.message;
+  return val;
+}
+
+},{"ms":161}],40:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6132,281 +5405,7 @@ Bronto.prototype.orderCompleted = function(track) {
   });
 };
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":586,"component-querystring":616,"segmentio-facade":655}],107:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var tick = require('next-tick');
-
-/**
- * Expose `BugHerd` integration.
- */
-
-var BugHerd = module.exports = integration('BugHerd')
-  .assumesPageview()
-  .global('BugHerdConfig')
-  .global('_bugHerd')
-  .option('apiKey', '')
-  .option('showFeedbackTab', true)
-  .tag('<script src="//www.bugherd.com/sidebarv2.js?apikey={{ apiKey }}">');
-
-/**
- * Initialize.
- *
- * http://support.bugherd.com/home
- *
- * @api public
- */
-
-BugHerd.prototype.initialize = function() {
-  window.BugHerdConfig = { feedback: { hide: !this.options.showFeedbackTab } };
-  var ready = this.ready;
-  this.load(function() {
-    tick(ready);
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-BugHerd.prototype.loaded = function() {
-  return !!window._bugHerd;
-};
-
-},{"@segment/analytics.js-integration":108,"next-tick":640}],108:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":109,"./statics":110,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],109:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":111,"component-emitter":112,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":113}],110:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":112,"domify":624,"dup":39}],111:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],112:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],113:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],114:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var isObject = require('isobject');
-var extend = require('@ndhoule/extend');
-
-/**
- * UMD ?
- */
-
-var umd = typeof window.define === 'function' && window.define.amd;
-
-/**
- * Source.
- */
-
-var src = '//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js';
-
-/**
- * Expose `Bugsnag` integration.
- */
-
-var Bugsnag = module.exports = integration('Bugsnag')
-  .global('Bugsnag')
-  .option('apiKey', '')
-  .option('releaseStage', null)
-  .tag('<script src="' + src + '">');
-
-/**
- * Initialize.
- *
- * https://bugsnag.com/docs/notifiers/js
- *
- * @api public
- */
-
-Bugsnag.prototype.initialize = function() {
-  var self = this;
-
-  if (umd) {
-    window.require([src], function(bugsnag) {
-      bugsnag.apiKey = self.options.apiKey;
-      if (self.options.releaseStage) bugsnag.releaseStage = self.options.releaseStage;
-      window.Bugsnag = bugsnag;
-      self.ready();
-    });
-    return;
-  }
-
-  this.load(function() {
-    window.Bugsnag.apiKey = self.options.apiKey;
-    if (self.options.releaseStage) window.Bugsnag.releaseStage = self.options.releaseStage;
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Bugsnag.prototype.loaded = function() {
-  return isObject(window.Bugsnag);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Bugsnag.prototype.identify = function(identify) {
-  window.Bugsnag.user = window.Bugsnag.user || {};
-  extend(window.Bugsnag.user, identify.traits());
-};
-
-},{"@ndhoule/extend":10,"@segment/analytics.js-integration":115,"isobject":630}],115:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":116,"./statics":117,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],116:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":118,"component-emitter":119,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":120}],117:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":119,"domify":624,"dup":39}],118:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],119:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],120:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],121:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var each = require('@ndhoule/each');
-
-/**
- * Expose `Chameleon` integration.
- */
-
-var Chameleon = module.exports = integration('Chameleon')
-  .assumesPageview()
-  .readyOnInitialize()
-  .readyOnLoad()
-  .global('chmln')
-  .option('apiKey', null)
-  .tag('<script src="https://fast.trychameleon.com/messo/{{apiKey}}/messo.min.js"></script>');
-
-/**
- * Initialize Chameleon.
- *
- * @api public
- */
-
-Chameleon.prototype.initialize = function() {
-  /* eslint-disable */
-  var that=this;!function(){var c=(window.chmln||(window.chmln={}));if(c.root){return;}c.location=window.location.href.toString();c.accountToken=that.options.apiKey;var names='setup identify alias track set show on off custom help _data'.split(' ');for(var i=0;i<names.length;i++){(function(){var t=c[names[i]+'_a']=[];c[names[i]]=function(){t.push(arguments);};})()}}();
-  /* eslint-enable */
-
-  this.ready();
-  this.load();
-};
-
-/**
- * Has the Chameleon library been loaded yet?
- *
- * @api private
- * @return {boolean}
- */
-
-Chameleon.prototype.loaded = function() {
-  return !!window.chmln;
-};
-
-/**
- * Identify a user.
- *
- * @api public
- * @param {Facade} identify
- */
-
-Chameleon.prototype.identify = function(identify) {
-  var options = identify.traits();
-
-  options.uid = options.id || identify.userId() || identify.anonymousId();
-  delete options.id;
-
-  window.chmln.identify(options);
-};
-
-/**
- * Associate the current user with a group of users.
- *
- * @api public
- * @param {Facade} group
- */
-
-Chameleon.prototype.group = function(group) {
-  var options = {};
-
-  each(function(value, key) {
-    options['group:' + key] = value;
-  }, group.traits());
-
-  options['group:id'] = group.groupId();
-
-  window.chmln.set(options);
-};
-
-/**
- * Track an event.
- *
- * @param {Facade} track
- */
-
-Chameleon.prototype.track = function(track) {
-  window.chmln.track(track.event(), track.properties());
-};
-
-/**
- * Change the user identifier after we know who they are.
- *
- * @param {Facade} alias
- */
-
-Chameleon.prototype.alias = function(alias) {
-  var fromId = alias.previousId() || alias.anonymousId();
-
-  window.chmln.alias({ from: fromId, to: alias.userId() });
-};
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":122}],122:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":123,"./statics":124,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],123:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":125,"component-emitter":126,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":127}],124:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":126,"domify":624,"dup":39}],125:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],126:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],127:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],128:[function(require,module,exports){
+},{"@ndhoule/each":8,"@segment/analytics.js-integration":95,"component-querystring":138,"segmentio-facade":179}],41:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6422,41 +5421,16 @@ var onBody = require('on-body');
  */
 
 var Chartbeat = module.exports = integration('Chartbeat')
-  .assumesPageview()
   .global('_sf_async_config')
   .global('_sf_endpt')
   .global('pSUPERFLY')
   .option('domain', '')
   .option('uid', null)
   .option('video', false)
+  .option('sendNameAndCategoryAsTitle', false)
+  .option('subscriberEngagementKeys', [])
+
   .tag('<script src="//static.chartbeat.com/js/{{ script }}">');
-
-/**
- * Initialize.
- *
- * http://chartbeat.com/docs/configuration_variables/
- *
- * @api public
- */
-
-Chartbeat.prototype.initialize = function() {
-  var self = this;
-  var script = this.options.video ? 'chartbeat_video.js' : 'chartbeat.js';
-
-  window._sf_async_config = window._sf_async_config || {};
-  window._sf_async_config.useCanonical = true;
-  defaults(window._sf_async_config, {
-    domain: this.options.domain,
-    uid: this.options.uid
-  });
-
-  onBody(function() {
-    window._sf_endpt = new Date().getTime();
-    // Note: Chartbeat depends on document.body existing so the script does
-    // not load until that is confirmed. Otherwise it may trigger errors.
-    self.load({ script: script }, self.ready);
-  });
-};
 
 /**
  * Loaded?
@@ -6469,6 +5443,11 @@ Chartbeat.prototype.loaded = function() {
   return !!window.pSUPERFLY;
 };
 
+Chartbeat.prototype.initialize = function() {
+  this.pageCalledYet = false;
+  this._ready = true; // temporarily switch ready to true so that a single page call can fire
+};
+
 /**
  * Page.
  *
@@ -6479,712 +5458,76 @@ Chartbeat.prototype.loaded = function() {
  */
 
 Chartbeat.prototype.page = function(page) {
+  this.updateConfig(page);
+
+  // since chartbeat automatically calls a page when it loads, don't load chartbeat script until
+  // first Segment page call comes in and configures global config vars using its props
+  if (!this.pageCalledYet) {
+    this._ready = false;  // switch ready to false so that no pages after the first one can fire until _initialize has loaded chartbeat script
+    this.pageCalledYet = true;
+    this._initialize();
+  } else {
+    var props = page.properties();
+    window.pSUPERFLY.virtualPage(props.path);
+  }
+};
+
+// update chartbeat global config vars
+Chartbeat.prototype.updateConfig = function(page) {
   var category = page.category();
-  if (category) window._sf_async_config.sections = category;
   var author = page.proxy('properties.author');
-  if (author) window._sf_async_config.authors = author;
   var props = page.properties();
-  var name = page.fullName();
-  window.pSUPERFLY.virtualPage(props.path, name || props.title);
-};
 
-},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":129,"on-body":645}],129:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":130,"./statics":131,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],130:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":132,"component-emitter":133,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":134}],131:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":133,"domify":624,"dup":39}],132:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],133:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],134:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],135:[function(require,module,exports){
-'use strict';
+  // Chartbeat expects the document.title (props.title) to populate as title
+  // This maintains legacy behavior for existing users,
+  // defaults new users to the correct behavior,
+  // and allows current users to opt-in to the correct behavior.
+  // http://support.chartbeat.com/docs/#titles
+  var title;
+  if (this.options.sendNameAndCategoryAsTitle) {
+    title = page.fullName() || props.title;
+  } else {
+    title = props.title;
+  }
 
-/**
- * Module dependencies.
- */
+  // update general config
+  window._sf_async_config = window._sf_async_config || {};
 
-var Identify = require('segmentio-facade').Identify;
-var extend = require('@ndhoule/extend');
-var integration = require('@segment/analytics.js-integration');
-var isObject = require('isobject');
+  if (category) window._sf_async_config.sections = category;
+  if (author) window._sf_async_config.authors = author;
+  if (title) window._sf_async_config.title = title;
 
-/**
- * Expose `Clicky` integration.
- */
+  // update subscriber engagement
+  var _cbq = window._cbq = window._cbq || [];
 
-var Clicky = module.exports = integration('Clicky')
-  .assumesPageview()
-  .global('clicky')
-  .global('clicky_site_ids')
-  .global('clicky_custom')
-  .option('siteId', null)
-  .tag('<script src="//static.getclicky.com/js"></script>');
-
-/**
- * Initialize.
- *
- * http://clicky.com/help/customization
- *
- * @api public
- */
-
-Clicky.prototype.initialize = function() {
-  var user = this.analytics.user();
-  window.clicky_site_ids = window.clicky_site_ids || [this.options.siteId];
-  this.identify(new Identify({
-    userId: user.id(),
-    traits: user.traits()
-  }));
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Clicky.prototype.loaded = function() {
-  return isObject(window.clicky);
-};
-
-/**
- * Page.
- *
- * http://clicky.com/help/customization#/help/custom/manual
- *
- * @api public
- * @param {Page} page
- */
-
-Clicky.prototype.page = function(page) {
-  var properties = page.properties();
-  var name = page.fullName();
-  window.clicky.log(properties.path, name || properties.title);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} [id]
- */
-
-Clicky.prototype.identify = function(identify) {
-  window.clicky_custom = window.clicky_custom || {};
-  window.clicky_custom.session = window.clicky_custom.session || {};
-  var traits = identify.traits();
-
-  var username = identify.username();
-  var email = identify.email();
-  var name = identify.name();
-
-  if (username || email || name) traits.username = username || email || name;
-
-  extend(window.clicky_custom.session, traits);
-};
-
-/**
- * Track.
- *
- * http://clicky.com/help/customization#/help/custom/manual
- *
- * @api public
- * @param {Track} event
- */
-
-Clicky.prototype.track = function(track) {
-  window.clicky.goal(track.event(), track.revenue());
-};
-
-},{"@ndhoule/extend":10,"@segment/analytics.js-integration":136,"isobject":630,"segmentio-facade":655}],136:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":137,"./statics":138,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],137:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":139,"component-emitter":140,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":141}],138:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":140,"domify":624,"dup":39}],139:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],140:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],141:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],142:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var useHttps = require('use-https');
-
-/**
- * Expose `Comscore` integration.
- */
-
-var Comscore = module.exports = integration('comScore')
-  .assumesPageview()
-  .global('_comscore')
-  .global('COMSCORE')
-  .option('c1', '2')
-  .option('c2', '')
-  .tag('http', '<script src="http://b.scorecardresearch.com/beacon.js">')
-  .tag('https', '<script src="https://sb.scorecardresearch.com/beacon.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Comscore.prototype.initialize = function() {
-  var comScoreOptions = { c1: this.options.c1, c2: this.options.c2 };
-  window._comscore = window._comscore || [comScoreOptions];
-  var tagName = useHttps() ? 'https' : 'http';
-  this.load(tagName, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Comscore.prototype.loaded = function() {
-  return !!window.COMSCORE;
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Object} page
- */
-
-Comscore.prototype.page = function() {
-  var comScoreOptions = { c1: this.options.c1, c2: this.options.c2 };
-  window.COMSCORE.beacon(comScoreOptions);
-};
-
-},{"@segment/analytics.js-integration":143,"use-https":672}],143:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":144,"./statics":145,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],144:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":146,"component-emitter":147,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":148}],145:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":147,"domify":624,"dup":39}],146:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],147:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],148:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],149:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `CrazyEgg` integration.
- */
-
-var CrazyEgg = module.exports = integration('Crazy Egg')
-  .assumesPageview()
-  .global('CE2')
-  .option('accountNumber', '')
-  .tag('<script src="//script.crazyegg.com/pages/scripts/{{ path }}.js?{{ cacheBuster }}">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-CrazyEgg.prototype.initialize = function() {
-  var number = this.options.accountNumber;
-  var path = number.slice(0, 4) + '/' + number.slice(4);
-  var cacheBuster = Math.floor(new Date().getTime() / 3600000);
-  this.load({ path: path, cacheBuster: cacheBuster }, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-CrazyEgg.prototype.loaded = function() {
-  return !!window.CE2;
-};
-
-},{"@segment/analytics.js-integration":150}],150:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":151,"./statics":152,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],151:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":153,"component-emitter":154,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":155}],152:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":154,"domify":624,"dup":39}],153:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],154:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],155:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],156:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Identify = require('segmentio-facade').Identify;
-var Track = require('segmentio-facade').Track;
-var bind = require('component-bind');
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-var iso = require('@segment/to-iso-string');
-var push = require('global-queue')('_curebitq');
-var throttle = require('throttleit');
-var when = require('do-when');
-
-/**
- * Expose `Curebit` integration.
- */
-
-var Curebit = module.exports = integration('Curebit')
-  .global('_curebitq')
-  .global('curebit')
-  .option('campaigns', {})
-  .option('device', '')
-  .option('iframeBorder', 0)
-  .option('iframeHeight', '480')
-  .option('iframeId', 'curebit_integration')
-  .option('iframeWidth', '100%')
-  .option('insertIntoId', '')
-  .option('responsive', true)
-  .option('server', 'https://www.curebit.com')
-  .option('siteId', '')
-  .option('customUrl', '')
-  .tag('<script src="{{ src }}">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Curebit.prototype.initialize = function() {
-  var url = this.options.customUrl || '//d2jjzw81hqbuqv.cloudfront.net/integration/curebit-1.0.min.js';
-
-  push('init', { site_id: this.options.siteId, server: this.options.server });
-
-  this.load({ src: url }, this.ready);
-
-  // throttle the call to `page` since curebit needs to append an iframe
-  this.page = throttle(bind(this, this.page), 250);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Curebit.prototype.loaded = function() {
-  return !!window.curebit;
-};
-
-/**
- * Page.
- *
- * Call the `register_affiliate` method of the Curebit API that will load a
- * custom iframe onto the page, only if this page's path is marked as a
- * campaign.
- *
- * http://www.curebit.com/docs/affiliate/registration
- *
- * This is throttled to prevent accidentally drawing the iframe multiple times,
- * from multiple `.page()` calls. The `250` is from the curebit script.
- *
- * @api private
- * @param {String} url
- * @param {String} id
- * @param {Function} fn
- */
-
-// FIXME: Is this deprecated? Seems unused
-Curebit.prototype.injectIntoId = function(url, id, fn) {
-  when(function() {
-    return document.getElementById(id);
-  }, function() {
-    var script = document.createElement('script');
-    script.src = url;
-    var parent = document.getElementById(id);
-    parent.appendChild(script);
-    onload(script, fn);
-  });
-};
-
-/**
- * Campaign tags.
- *
- * @api public
- * @param {Page} page
- */
-
-Curebit.prototype.page = function() {
-  var user = this.analytics.user();
-  var campaigns = this.options.campaigns;
-  var path = window.location.pathname;
-  if (!campaigns[path]) return;
-
-  var tags = (campaigns[path] || '').split(',');
-  if (!tags.length) return;
-
-  var settings = {
-    responsive: this.options.responsive,
-    device: this.options.device,
-    campaign_tags: tags,
-    iframe: {
-      width: this.options.iframeWidth,
-      height: this.options.iframeHeight,
-      id: this.options.iframeId,
-      frameborder: this.options.iframeBorder,
-      container: this.options.insertIntoId
+  for (var key in props) {
+    if (!props.hasOwnProperty(key)) continue;
+    if (this.options.subscriberEngagementKeys.indexOf(key) > -1) {
+      _cbq.push([key, props[key]]);
     }
-  };
-
-  var identify = new Identify({
-    userId: user.id(),
-    traits: user.traits()
-  });
-
-  // if we have an email, add any information about the user
-  if (identify.email()) {
-    settings.affiliate_member = {
-      email: identify.email(),
-      first_name: identify.firstName(),
-      last_name: identify.lastName(),
-      customer_id: identify.userId()
-    };
   }
-
-  push('register_affiliate', settings);
 };
 
-/**
- * Order completed.
- *
- * Fire the Curebit `register_purchase` with the order details and items.
- *
- * https://www.curebit.com/docs/ecommerce/custom
- *
- * @api public
- * @param {Track} track
- */
+// sets global vars and loads Chartbeat script
+Chartbeat.prototype._initialize = function() {
+  var self = this;
+  var script = this.options.video ? 'chartbeat_video.js' : 'chartbeat.js';
 
-Curebit.prototype.orderCompleted = function(track) {
-  var user = this.analytics.user();
-  var orderId = track.orderId();
-  var products = track.products();
-  var props = track.properties();
-  var items = [];
-  var identify = new Identify({
-    traits: user.traits(),
-    userId: user.id()
+  window._sf_async_config.useCanonical = true;
+  defaults(window._sf_async_config, {
+    domain: this.options.domain,
+    uid: this.options.uid
   });
 
-  each(function(product) {
-    var track = new Track({ properties: product });
-    items.push({
-      product_id: track.productId() || track.id() || track.sku(),
-      quantity: track.quantity(),
-      image_url: product.image,
-      price: track.price(),
-      title: track.name(),
-      url: product.url
-    });
-  }, products);
-
-  push('register_purchase', {
-    order_date: iso(props.date || new Date()),
-    order_number: orderId,
-    coupon_code: track.coupon(),
-    subtotal: track.total(),
-    customer_id: identify.userId(),
-    first_name: identify.firstName(),
-    last_name: identify.lastName(),
-    email: identify.email(),
-    items: items
+  onBody(function() {
+    window._sf_endpt = new Date().getTime();
+    // Note: Chartbeat depends on document.body existing so the script does
+    // not load until that is confirmed. Otherwise it may trigger errors.
+    self.load({ script: script }, self.ready);  // switch ready to true for real once the script has loaded
   });
 };
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":586,"@segment/to-iso-string":603,"component-bind":608,"do-when":623,"global-queue":625,"segmentio-facade":655,"throttleit":663}],157:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Identify = require('segmentio-facade').Identify;
-var alias = require('@segment/alias');
-var convertDates = require('@segment/convert-dates');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Customerio` integration.
- */
-
-var Customerio = module.exports = integration('Customer.io')
-  .global('_cio')
-  .option('siteId', '')
-  .tag('<script id="cio-tracker" src="https://assets.customer.io/assets/track.js" data-site-id="{{ siteId }}">');
-
-/**
- * Initialize.
- *
- * http://customer.io/docs/api/javascript.html
- *
- * @api public
- */
-
-Customerio.prototype.initialize = function() {
-  window._cio = window._cio || [];
-  /* eslint-disable */
-  (function(){var a,b,c; a = function(f){return function(){window._cio.push([f].concat(Array.prototype.slice.call(arguments,0))); }; }; b = ['identify', 'track']; for (c = 0; c < b.length; c++) {window._cio[b[c]] = a(b[c]); } })();
-  /* eslint-enable */
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Customerio.prototype.loaded = function() {
-  return !!(window._cio && window._cio.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- * http://customer.io/docs/api/javascript.html#section-Identify_customers
- *
- * @api public
- * @param {Identify} identify
- */
-
-Customerio.prototype.identify = function(identify) {
-  if (!identify.userId()) return this.debug('user id required');
-  var traits = identify.traits({ createdAt: 'created' });
-  traits = alias(traits, { created: 'created_at' });
-  traits = convertDates(traits, convertDate);
-  window._cio.identify(traits);
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-Customerio.prototype.group = function(group) {
-  var traits = group.traits();
-  var user = this.analytics.user();
-
-  traits = alias(traits, function(trait) {
-    return 'Group ' + trait;
-  });
-
-  this.identify(new Identify({
-    userId: user.id(),
-    traits: traits
-  }));
-};
-
-/**
- * Track.
- *
- * http://customer.io/docs/api/javascript.html#section-Track_a_custom_event
- *
- * @api public
- * @param {Track} track
- */
-
-Customerio.prototype.track = function(track) {
-  var properties = track.properties();
-  properties = convertDates(properties, convertDate);
-  window._cio.track(track.event(), properties);
-};
-
-/**
- * Convert a date to the format Customer.io supports.
- *
- * @api private
- * @param {Date} date
- * @return {number}
- */
-
-function convertDate(date) {
-  return Math.floor(date.getTime() / 1000);
-}
-
-},{"@segment/alias":19,"@segment/analytics.js-integration":158,"@segment/convert-dates":593,"segmentio-facade":655}],158:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":159,"./statics":160,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],159:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":161,"component-emitter":162,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":163}],160:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":162,"domify":624,"dup":39}],161:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],162:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],163:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],164:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var convertDates = require('@segment/convert-dates');
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-
-var REFRESH_RATE = 300000;
-var timeHash = Math.ceil(new Date() / REFRESH_RATE) * REFRESH_RATE;
-
-/**
- * Expose `Drift` integration.
- */
-
-var Drift = module.exports = integration('Drift')
-  .global('drift')
-  .option('embedId', '')
-  .tag('<script src="https://js.driftt.com/include/' + timeHash + '/{{ embedId }}.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Drift.prototype.initialize = function() {
-  var drift;
-
-  drift = window.drift = window.driftt = window.driftt || [];
-  drift.methods = ['identify', 'track', 'reset', 'debug', 'show', 'ping', 'page', 'hide', 'off', 'on'];
-  drift.factory = function(method) {
-    return function() {
-      var args;
-      args = Array.prototype.slice.call(arguments);
-      args.unshift(method);
-      drift.push(args);
-    };
-  };
-
-  each(function(key) {
-    drift[key] = drift.factory(key);
-  }, drift.methods);
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Drift.prototype.loaded = function() {
-  return window.drift !== undefined;
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Drift.prototype.identify = function(identify) {
-  if (!identify.userId()) return this.debug('user id required');
-  var traits = identify.traits();
-  var id = identify.userId();
-  delete traits.id;
-  window.drift.identify(id, traits);
-  this.identified = true;
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Drift.prototype.track = function(track) {
-  var properties = track.properties();
-  properties = convertDates(properties, convertDate);
-  window.drift.track(track.event(), properties);
-};
-
-/**
- * @api private
- * @param {Date} date
- * @return {number}
- */
-
-function convertDate(date) {
-  return Math.floor(date.getTime() / 1000);
-}
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Drift.prototype.page = function(page) {
-  var userId = this.analytics.user().id();
-  if (!this.identified && userId) {
-    window.drift.identify(userId);
-    this.identified = true;
-  }
-
-  window.drift.page(page.name());
-};
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":165,"@segment/convert-dates":593}],165:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":166,"./statics":167,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],166:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":168,"component-emitter":169,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":170}],167:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":169,"domify":624,"dup":39}],168:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],169:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],170:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],171:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":95,"on-body":169}],42:[function(require,module,exports){
 'use strict';
 
 /**
@@ -7194,6 +5537,8 @@ arguments[4][42][0].apply(exports,arguments)
 var integration = require('@segment/analytics.js-integration');
 var isObject = require('isobject');
 var push = require('global-queue')('_dcq');
+var each = require('@ndhoule/each');
+var find = require('obj-case').find;
 
 /**
  * Expose `Drip` integration.
@@ -7239,9 +5584,11 @@ Drip.prototype.loaded = function() {
  */
 
 Drip.prototype.track = function(track) {
-  var props = track.properties();
-  var cents = track.cents();
+  var props = format(track.properties());
+  var cents = Math.round(track.revenue() * 100);
   if (cents) props.value = cents;
+
+  // removes redundant data
   delete props.revenue;
   push('track', track.event(), props);
 };
@@ -7254,610 +5601,39 @@ Drip.prototype.track = function(track) {
  */
 
 Drip.prototype.identify = function(identify) {
-  push('identify', identify.traits());
-};
+  // minimum required trait to identify a user in Drip
+  if (!identify.email()) return;
 
-},{"@segment/analytics.js-integration":586,"global-queue":625,"isobject":630}],172:[function(require,module,exports){
-'use strict';
+  push('identify', format(identify.traits()));
 
-var integration = require('@segment/analytics.js-integration');
-var tick = require('next-tick');
-var objCase = require('obj-case');
-var each = require('@ndhoule/each');
-var objectKeys = require('@ndhoule/keys');
+  // default can be configured in your UI settings
+  var dripCampaignId = find(identify.options(this.name), 'campaignId') || this.options.campaignId;
 
-/**
- * Expose `Elevio` integration.
- */
-
-var Elevio = module.exports = integration('Elevio')
-  .assumesPageview()
-  .option('accountId', '')
-  .global('_elev')
-  .tag('<script src="//static.elev.io/js/v3.js">');
-
-/**
- * Initialize elevio.
- */
-
-Elevio.prototype.initialize = function() {
-  var self = this;
-  window._elev = window._elev || {};
-  window._elev.account_id = this.options.accountId;
-  window._elev.segment = true;
-  this.load(function() {
-    tick(self.ready);
-  });
+  // you can subscribe users to specific campaigns in Drip
+  // https://www.getdrip.com/docs/js-api#subscribe
+  if (dripCampaignId) push('subscribe', { campaign_id: dripCampaignId, fields: identify.traits() });
 };
 
 /**
- * Has the elevio library been loaded yet?
- *
- * @return {Boolean}
- */
-
-Elevio.prototype.loaded = function() {
-  return !!window._elev;
-};
-
-/**
- * Identify a user.
- *
- * @param {Facade} identify
- */
-
-Elevio.prototype.identify = function(identify) {
-  var name = identify.name();
-  var email = identify.email();
-  var plan = identify.proxy('traits.plan');
-  var traits = identify.traits();
-
-  var removeTraits = ['id', 'name', 'firstName', 'lastName', 'email'];
-
-  each(function(traitItem) {
-    if (traits.hasOwnProperty(traitItem)) {
-      objCase.del(traits, traitItem);
-    }
-  }, removeTraits);
-
-  var user = {};
-  user.via = 'segment';
-  if (email) user.email = email;
-  if (name) user.name = name;
-  if (plan) user.plan = [plan];
-  if (objectKeys(traits).length > 0) user.traits = traits;
-  window._elev.user = user;
-};
-
-},{"@ndhoule/each":8,"@ndhoule/keys":13,"@segment/analytics.js-integration":173,"next-tick":179,"obj-case":641}],173:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":174,"./statics":175,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],174:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":177,"component-emitter":178,"dup":38,"is":629,"load-iframe":635,"next-tick":176,"to-no-case":180}],175:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":178,"domify":624,"dup":39}],176:[function(require,module,exports){
-(function (process){
-'use strict';
-
-var callable, byObserver;
-
-callable = function (fn) {
-	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
-	return fn;
-};
-
-byObserver = function (Observer) {
-	var node = document.createTextNode(''), queue, i = 0;
-	new Observer(function () {
-		var data;
-		if (!queue) return;
-		data = queue;
-		queue = null;
-		if (typeof data === 'function') {
-			data();
-			return;
-		}
-		data.forEach(function (fn) { fn(); });
-	}).observe(node, { characterData: true });
-	return function (fn) {
-		callable(fn);
-		if (queue) {
-			if (typeof queue === 'function') queue = [queue, fn];
-			else queue.push(fn);
-			return;
-		}
-		queue = fn;
-		node.data = (i = ++i % 2);
-	};
-};
-
-module.exports = (function () {
-	// Node.js
-	if ((typeof process !== 'undefined') && process &&
-			(typeof process.nextTick === 'function')) {
-		return process.nextTick;
-	}
-
-	// MutationObserver=
-	if ((typeof document === 'object') && document) {
-		if (typeof MutationObserver === 'function') {
-			return byObserver(MutationObserver);
-		}
-		if (typeof WebKitMutationObserver === 'function') {
-			return byObserver(WebKitMutationObserver);
-		}
-	}
-
-	// W3C Draft
-	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
-	if (typeof setImmediate === 'function') {
-		return function (cb) { setImmediate(callable(cb)); };
-	}
-
-	// Wide available standard
-	if (typeof setTimeout === 'function') {
-		return function (cb) { setTimeout(callable(cb), 0); };
-	}
-
-	return null;
-}());
-
-}).call(this,require('_process'))
-},{"_process":647}],177:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],178:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],179:[function(require,module,exports){
-(function (process){
-'use strict';
-
-var callable, byObserver;
-
-callable = function (fn) {
-	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
-	return fn;
-};
-
-byObserver = function (Observer) {
-	var node = document.createTextNode(''), queue, currentQueue, i = 0;
-	new Observer(function () {
-		var callback;
-		if (!queue) {
-			if (!currentQueue) return;
-			queue = currentQueue;
-		} else if (currentQueue) {
-			queue = currentQueue.concat(queue);
-		}
-		currentQueue = queue;
-		queue = null;
-		if (typeof currentQueue === 'function') {
-			callback = currentQueue;
-			currentQueue = null;
-			callback();
-			return;
-		}
-		node.data = (i = ++i % 2); // Invoke other batch, to handle leftover callbacks in case of crash
-		while (currentQueue) {
-			callback = currentQueue.shift();
-			if (!currentQueue.length) currentQueue = null;
-			callback();
-		}
-	}).observe(node, { characterData: true });
-	return function (fn) {
-		callable(fn);
-		if (queue) {
-			if (typeof queue === 'function') queue = [queue, fn];
-			else queue.push(fn);
-			return;
-		}
-		queue = fn;
-		node.data = (i = ++i % 2);
-	};
-};
-
-module.exports = (function () {
-	// Node.js
-	if ((typeof process === 'object') && process && (typeof process.nextTick === 'function')) {
-		return process.nextTick;
-	}
-
-	// MutationObserver
-	if ((typeof document === 'object') && document) {
-		if (typeof MutationObserver === 'function') return byObserver(MutationObserver);
-		if (typeof WebKitMutationObserver === 'function') return byObserver(WebKitMutationObserver);
-	}
-
-	// W3C Draft
-	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
-	if (typeof setImmediate === 'function') {
-		return function (cb) { setImmediate(callable(cb)); };
-	}
-
-	// Wide available standard
-	if ((typeof setTimeout === 'function') || (typeof setTimeout === 'object')) {
-		return function (cb) { setTimeout(callable(cb), 0); };
-	}
-
-	return null;
-}());
-
-}).call(this,require('_process'))
-},{"_process":647}],180:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],181:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var extend = require('@ndhoule/extend');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_errs');
-
-/**
- * Expose `Errorception` integration.
- */
-
-var Errorception = module.exports = integration('Errorception')
-  .assumesPageview()
-  .global('_errs')
-  .option('projectId', '')
-  .option('meta', true)
-  .tag('<script src="//beacon.errorception.com/{{ projectId }}.js">');
-
-/**
- * Initialize.
- *
- * https://github.com/amplitude/Errorception-Javascript
+ * Format
+ * Replaces spaces with underscores
  *
  * @api public
- */
-
-Errorception.prototype.initialize = function() {
-  window._errs = window._errs || [this.options.projectId];
-
-  if (typeof window.onerror === 'function' && window.onerror !== push) {
-    var oldOnerror = window.onerror;
-    window.onerror = function() {
-      oldOnerror.apply(window, arguments);
-      push.apply(window, arguments);
-    };
-  } else {
-    window.onerror = push;
-  }
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
+ * @param {Object} obj
  *
- * @api private
- * @return {boolean}
  */
 
-Errorception.prototype.loaded = function() {
-  return !!(window._errs && window._errs.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- * http://blog.errorception.com/2012/11/capture-custom-data-with-your-errors.html
- *
- * @api public
- * @param {Object} identify
- */
-
-Errorception.prototype.identify = function(identify) {
-  if (!this.options.meta) return;
-  var traits = identify.traits();
-  window._errs = window._errs || [];
-  window._errs.meta = window._errs.meta || {};
-  extend(window._errs.meta, traits);
-};
-
-},{"@ndhoule/extend":182,"@segment/analytics.js-integration":183,"global-queue":625}],182:[function(require,module,exports){
-arguments[4][10][0].apply(exports,arguments)
-},{"dup":10}],183:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":184,"./statics":185,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":182,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],184:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":186,"component-emitter":187,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":188}],185:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":187,"domify":624,"dup":39}],186:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],187:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],188:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],189:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_aaq');
-
-/**
- * Expose `Evergage` integration.
- */
-
-var Evergage = module.exports = integration('Evergage')
-  .assumesPageview()
-  .global('_aaq')
-  .option('account', '')
-  .option('dataset', '')
-  .tag('<script src="//cdn.evergage.com/beacon/{{ account }}/{{ dataset }}/scripts/evergage.min.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Evergage.prototype.initialize = function() {
-  var account = this.options.account;
-  var dataset = this.options.dataset;
-
-  window._aaq = window._aaq || [];
-  push('setEvergageAccount', account);
-  push('setDataset', dataset);
-  push('setUseSiteConfig', true);
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Evergage.prototype.loaded = function() {
-  return !!window._aaq;
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Evergage.prototype.page = function(page) {
-  var props = page.properties();
-  var name = page.name();
-  if (name) push('namePage', name);
-
+function format(obj) {
+  var ret = {};
   each(function(value, key) {
-    push('setCustomField', key, value, 'page');
-  }, props);
+    var formattedKey = key.replace(/\s/g, '_');
+    ret[formattedKey] = value;
+  }, obj);
 
-  window.Evergage.init(true);
-};
+  return ret;
+}
 
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Evergage.prototype.identify = function(identify) {
-  var id = identify.userId();
-  if (!id) return;
-
-  push('setUser', id);
-
-  var traits = identify.traits({
-    email: 'userEmail',
-    name: 'userName'
-  });
-
-  each(function(value, key) {
-    push('setUserField', key, value, 'page');
-  }, traits);
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-Evergage.prototype.group = function(group) {
-  var props = group.traits();
-  var id = group.groupId();
-  if (!id) return;
-
-  push('setCompany', id);
-  each(function(value, key) {
-    push('setAccountField', key, value, 'page');
-  }, props);
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Evergage.prototype.track = function(track) {
-  push('trackAction', track.event(), track.properties());
-};
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":190,"global-queue":625}],190:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":191,"./statics":192,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],191:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":193,"component-emitter":194,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":195}],192:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":194,"domify":624,"dup":39}],193:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],194:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],195:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],196:[function(require,module,exports){
-'use strict';
-
-/**
-* Module dependencies.
-*/
-
-var domify = require('domify');
-var each = require('@ndhoule/each');
-var extend = require('@ndhoule/extend');
-var integration = require('@segment/analytics.js-integration');
-var json = require('json3');
-
-/**
-* Expose `Extole` integration.
-*/
-
-var Extole = module.exports = integration('Extole')
-  .global('extole')
-  .option('clientId', '')
-  .mapping('events')
-  .tag('main', '<script src="//tags.extole.com/{{ clientId }}/core.js">');
-
-/**
-* Initialize.
-*
-* @api public
-* @param {Object} page
-*/
-
-Extole.prototype.initialize = function() {
-  if (this.loaded()) return this.ready();
-  this.load('main', this.ready);
-};
-
-/**
-* Loaded?
-*
-* @api private
-* @return {boolean}
-*/
-
-Extole.prototype.loaded = function() {
-  return !!window.extole;
-};
-
-/**
-* Track.
-*
-* @api public
-* @param {Track} track
-*/
-
-Extole.prototype.track = function(track) {
-  var user = this.analytics.user();
-  var traits = user.traits();
-  var userId = user.id();
-  var email = traits.email;
-  var self = this;
-
-  if (!userId && !email) {
-    return this.debug('User must be identified before `#track` calls');
-  }
-
-  var event = track.event();
-  var extoleEvents = this.events(event);
-
-  if (!extoleEvents.length) {
-    return this.debug('No events found for %s', event);
-  }
-
-  each(function(extoleEvent) {
-    self._registerConversion(self._createConversionTag({
-      type: extoleEvent,
-      params: self._formatConversionParams(event, email, userId, track.properties())
-    }));
-  }, extoleEvents);
-};
-
-/**
- * Register a conversion to Extole.
- *
- * @api private
- * @param {HTMLElement} conversionTag An Extole conversion tag.
- */
-
-// FIXME: If I understand Extole's lib correctly, this is sometimes async,
-// sometimes sync. Refactor this into more predictable/sane behavior.
-Extole.prototype._registerConversion = function(conversionTag) {
-  if (window.extole.main && window.extole.main.fireConversion) {
-    return window.extole.main.fireConversion(conversionTag);
-  }
-
-  if (window.extole.initializeGo) {
-    window.extole.initializeGo().andWhenItsReady(function() {
-      window.extole.main.fireConversion(conversionTag);
-    });
-  }
-};
-
-/**
- * Formats details from a Segment track event into a data format Extole can
- * accept.
- *
- * @api private
- * @param {string} event
- * @param {string} email
- * @param {string|number} userId
- * @param {Object} properties track.properties().
- * @return {Object}
- */
-
-Extole.prototype._formatConversionParams = function(event, email, userId, properties) {
-  var total;
-
-  if (properties.total) {
-    total = properties.total;
-    delete properties.total;
-    properties['tag:cart_value'] = total;
-  }
-
-  return extend({
-    'tag:segment_event': event,
-    e: email,
-    partner_conversion_id: userId
-  }, properties);
-};
-
-/**
- * Create an Extole conversion tag.
- *
- * @param {Object} conversion An Extole conversion object.
- * @return {HTMLElement}
- */
-
-Extole.prototype._createConversionTag = function(conversion) {
-  return domify('<script type="extole/conversion">' + json.stringify(conversion) + '</script>');
-};
-
-},{"@ndhoule/each":8,"@ndhoule/extend":10,"@segment/analytics.js-integration":197,"domify":624,"json3":633}],197:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":198,"./statics":199,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],198:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":200,"component-emitter":201,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":202}],199:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":201,"domify":624,"dup":39}],200:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],201:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],202:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],203:[function(require,module,exports){
+},{"@ndhoule/each":8,"@segment/analytics.js-integration":95,"global-queue":147,"isobject":155,"obj-case":167}],43:[function(require,module,exports){
 'use strict';
 
 /**
@@ -7937,19 +5713,19 @@ Facebook.prototype.track = function(track) {
   }, events);
 };
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":204,"global-queue":625}],204:[function(require,module,exports){
+},{"@ndhoule/each":8,"@segment/analytics.js-integration":44,"global-queue":147}],44:[function(require,module,exports){
+arguments[4][34][0].apply(exports,arguments)
+},{"./protos":45,"./statics":46,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":48,"dup":34,"slug-component":185}],45:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":47,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],46:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],47:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./protos":205,"./statics":206,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],205:[function(require,module,exports){
+},{"dup":37}],48:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":207,"component-emitter":208,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":209}],206:[function(require,module,exports){
+},{"./debug":49,"_process":170,"dup":38}],49:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":208,"domify":624,"dup":39}],207:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],208:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],209:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],210:[function(require,module,exports){
+},{"dup":39,"ms":161}],50:[function(require,module,exports){
 'use strict';
 
 /**
@@ -8089,7 +5865,7 @@ FacebookCustomAudiences.prototype.orderCompleted = function(track) {
   });
 };
 
-},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":586,"global-queue":625,"segmentio-facade":655}],211:[function(require,module,exports){
+},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"global-queue":147,"segmentio-facade":179}],51:[function(require,module,exports){
 'use strict';
 
 /**
@@ -8100,6 +5876,8 @@ var integration = require('@segment/analytics.js-integration');
 var foldl = require('@ndhoule/foldl');
 var each = require('@ndhoule/each');
 var reject = require('reject');
+var camel = require('to-camel-case');
+var is = require('is');
 var dateformat = require('dateformat');
 var Track = require('segmentio-facade').Track;
 
@@ -8113,6 +5891,7 @@ var FacebookPixel = module.exports = integration('Facebook Pixel')
   .option('agent', 'seg')
   .option('valueIdentifier', 'value')
   .option('initWithExistingTraits', false)
+  .option('traverse', false)
   .mapping('standardEvents')
   .mapping('legacyEvents')
   .tag('<script src="//connect.facebook.net/en_US/fbevents.js">');
@@ -8136,6 +5915,7 @@ FacebookPixel.prototype.initialize = function() {
   window.fbq.push = window.fbq;
   window.fbq.loaded = true;
   window.fbq.disablePushState = true; // disables automatic pageview tracking
+  window.fbq.allowDuplicatePageViews = true; // enables fb
   window.fbq.agent = this.options.agent;
   window.fbq.version = '2.0';
   window.fbq.queue = [];
@@ -8177,11 +5957,41 @@ FacebookPixel.prototype.page = function() {
 FacebookPixel.prototype.track = function(track) {
   var event = track.event();
   var revenue = formatRevenue(track.revenue());
-
   var payload = foldl(function(acc, val, key) {
     if (key === 'revenue') {
       acc.value = revenue;
       return acc;
+    }
+
+    /**
+    * FB requires these date fields be formatted in a specific way.
+    * The specifications are non iso8601 compliant.
+    * https://developers.facebook.com/docs/marketing-api/dynamic-ads-for-travel/audience
+    * Therefore, we check if the property is one of these reserved fields.
+    * If so, we check if we have converted it to an iso date object already.
+    * If we have, we convert it again into Facebook's spec.
+    * If we have not, the user has likely passed in a date string that already
+    * adheres to FB's docs so we can just pass it through as is.
+    * @ccnixon
+    */
+
+    var dateFields = [
+      'checkinDate',
+      'checkoutDate',
+      'departingArrivalDate',
+      'departingDepartureDate',
+      'returningArrivalDate',
+      'returningDepartureDate',
+      'travelEnd',
+      'travelStart'
+    ];
+
+    if (dateFields.indexOf(camel(key)) >= 0) {
+      if (is.date(val)) {
+        val = val.toISOString().split('T')[0];
+        acc[key] = val;
+        return acc;
+      }
     }
 
     acc[key] = val;
@@ -8224,9 +6034,32 @@ FacebookPixel.prototype.track = function(track) {
  */
 
 FacebookPixel.prototype.productListViewed = function(track) {
+  var contentType;
+  var contentIds = [];
+  var products = track.products();
+  
+  // First, check to see if a products array with productIds has been defined.
+  if (Array.isArray(products)) {
+    products.forEach(function(product) {
+      var productId = product.productId || product.product_id;
+      if (productId) {
+        contentIds.push(productId);
+      }
+    });
+  }
+
+  // If no products have been defined, fallback on legacy behavior.
+  // Facebook documents the content_type parameter decision here: https://developers.facebook.com/docs/facebook-pixel/api-reference
+  if (contentIds.length) {
+    contentType = 'product';
+  } else {
+    contentIds.push(track.category() || '');
+    contentType = 'product_group';
+  }
+
   window.fbq('track', 'ViewContent', {
-    content_ids: [track.category() || ''],
-    content_type: 'product_group'
+    content_ids: contentIds,
+    content_type: contentType
   });
 
   // fall through for mapped legacy conversions
@@ -8358,7 +6191,10 @@ function formatTraits(analytics) {
     firstName = nameArray.shift();
     lastName = nameArray.pop();
   }
-  var gender = traits.gender && traits.gender.slice(0,1).toLowerCase();
+  var gender;
+  if (traits.gender && is.string(traits.gender)) {
+    gender = traits.gender.slice(0,1).toLowerCase();
+  }
   var birthday = traits.birthday && dateformat(traits.birthday, 'yyyymmdd');
   var address = traits.address || {};
   var city = address.city && address.city.split(' ').join('').toLowerCase();
@@ -8377,581 +6213,7 @@ function formatTraits(analytics) {
   });
 }
 
-},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@segment/analytics.js-integration":586,"dateformat":620,"reject":648,"segmentio-facade":655}],212:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Track = require('segmentio-facade').Track;
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_fxm');
-
-/**
- * Expose `FoxMetrics` integration.
- */
-
-var FoxMetrics = module.exports = integration('FoxMetrics')
-  .assumesPageview()
-  .global('_fxm')
-  .option('appId', '')
-  .tag('<script src="//d35tca7vmefkrc.cloudfront.net/scripts/{{ appId }}.js">');
-
-/**
- * Initialize.
- *
- * http://foxmetrics.com/documentation/apijavascript
- *
- * @api public
- */
-
-FoxMetrics.prototype.initialize = function() {
-  window._fxm = window._fxm || [];
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @return {Boolean}
- */
-
-FoxMetrics.prototype.loaded = function() {
-  return !!(window._fxm && window._fxm.appId);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-FoxMetrics.prototype.page = function(page) {
-  var properties = page.properties();
-  var category = page.category();
-  var name = page.name();
-  // store for later
-  // TODO: Why? Document me
-  this._category = category;
-
-  push(
-    '_fxm.pages.view',
-    properties.title,
-    name,
-    category,
-    properties.url,
-    properties.referrer
-  );
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-FoxMetrics.prototype.identify = function(identify) {
-  var id = identify.userId();
-
-  if (!id) return;
-
-  push(
-    '_fxm.visitor.profile',
-    id,
-    identify.firstName(),
-    identify.lastName(),
-    identify.email(),
-    identify.address(),
-    // social
-    // TODO: Why is this `undefined`? Document
-    undefined,
-    // partners
-    // TODO: Why is this `undefined`? Document
-    undefined,
-    identify.traits()
-  );
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-FoxMetrics.prototype.track = function(track) {
-  var props = track.properties();
-  var category = this._category || props.category;
-  push(track.event(), category, props);
-};
-
-/**
- * Product viewed.
- *
- * @api private
- * @param {Track} track
- */
-
-FoxMetrics.prototype.productViewed = function(track) {
-  ecommerce('productview', track);
-};
-
-/**
- * Product Removed.
- *
- * @api private
- * @param {Track} track
- */
-
-FoxMetrics.prototype.productRemoved = function(track) {
-  ecommerce('removecartitem', track);
-};
-
-/**
- * Product Added.
- *
- * @api private
- * @param {Track} track
- */
-
-FoxMetrics.prototype.productAdded = function(track) {
-  ecommerce('cartitem', track);
-};
-
-/**
- * Order Completed.
- *
- * @api private
- * @param {Track} track
- */
-
-FoxMetrics.prototype.orderCompleted = function(track) {
-  var orderId = track.orderId();
-
-  // transaction
-  push(
-    '_fxm.ecommerce.order',
-    orderId,
-    track.subtotal(),
-    track.shipping(),
-    track.tax(),
-    track.city(),
-    track.state(),
-    track.zip(),
-    track.quantity()
-  );
-
-  // items
-  each(track.products(), function(product) {
-    var track = new Track({ properties: product });
-    ecommerce('purchaseitem', track, [
-      track.quantity(),
-      track.price(),
-      orderId
-    ]);
-  });
-};
-
-/**
- * Track ecommerce `event` with `track`
- * with optional `arr` to append.
- *
- * @api private
- * @param {string} event
- * @param {Track} track
- * @param {Array} arr
- */
-
-function ecommerce(event, track, arr) {
-  push.apply(null, [
-    '_fxm.ecommerce.' + event,
-    track.productId() || track.id() || track.sku(),
-    track.name(),
-    track.category()
-  ].concat(arr || []));
-}
-
-},{"@segment/analytics.js-integration":586,"component-each":611,"global-queue":625,"segmentio-facade":655}],213:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-
-/**
- * hasOwnProperty reference.
- */
-
-var has = Object.prototype.hasOwnProperty;
-
-/**
- * Expose `Frontleaf` integration.
- */
-
-var Frontleaf = module.exports = integration('Frontleaf')
-  .global('_fl')
-  .global('_flBaseUrl')
-  .option('baseUrl', 'https://api.frontleaf.com')
-  .option('stream', '')
-  .option('token', '')
-  .option('trackCategorizedPages', false)
-  .option('trackNamedPages', false)
-  .tag('<script id="_fl" src="{{ baseUrl }}/lib/tracker.js">');
-
-/**
- * Initialize.
- *
- * http://docs.frontleaf.com/#/technical-implementation/tracking-customers/tracking-beacon
- *
- * @api public
- */
-
-Frontleaf.prototype.initialize = function() {
-  window._fl = window._fl || [];
-  window._flBaseUrl = window._flBaseUrl || this.options.baseUrl;
-  this._push('setApiToken', this.options.token);
-  this._push('setStream', this.options.stream);
-  this.load({ baseUrl: window._flBaseUrl }, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Frontleaf.prototype.loaded = function() {
-  return is.array(window._fl) && window._fl.ready === true;
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Frontleaf.prototype.identify = function(identify) {
-  var userId = identify.userId();
-  if (userId) {
-    this._push('setUser', {
-      id: userId,
-      name: identify.name() || identify.username(),
-      data: clean(identify.traits())
-    });
-  }
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-Frontleaf.prototype.group = function(group) {
-  var groupId = group.groupId();
-  if (groupId) {
-    this._push('setAccount', {
-      id: groupId,
-      name: group.proxy('traits.name'),
-      data: clean(group.traits())
-    });
-  }
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Frontleaf.prototype.page = function(page) {
-  var category = page.category();
-  var name = page.fullName();
-  var opts = this.options;
-
-  // categorized pages
-  if (category && opts.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-
-  // named pages
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Frontleaf.prototype.track = function(track) {
-  var event = track.event();
-  this._push('event', event, clean(track.properties()));
-};
-
-/**
- * Push a command onto the global Frontleaf queue.
- *
- * @api private
- * @param {String} command
- * @return {Object} args
- */
-
-Frontleaf.prototype._push = function(command) {
-  var args = [].slice.call(arguments, 1);
-  window._fl.push(function(t) { t[command].apply(command, args); });
-};
-
-/**
- * Clean all nested objects and arrays.
- *
- * @api private
- * @param {Object} obj
- * @return {Object}
- */
-
-function clean(obj) {
-  var ret = {};
-
-  // Remove traits/properties that are already represented
-  // outside of the data container
-  // TODO: Refactor into `omit` call
-  var excludeKeys = ['id', 'name', 'firstName', 'lastName'];
-  each(function(omitKey) {
-    clear(obj, omitKey);
-  }, excludeKeys);
-
-  // Flatten nested hierarchy, preserving arrays
-  obj = flatten(obj);
-
-  // Discard nulls, represent arrays as comma-separated strings
-  // FIXME: This also discards `undefined`s. Is that OK?
-  for (var key in obj) {
-    if (has.call(obj, key)) {
-      var val = obj[key];
-      if (val == null) {
-        continue;
-      }
-
-      if (is.array(val)) {
-        ret[key] = val.toString();
-        continue;
-      }
-
-      ret[key] = val;
-    }
-  }
-
-  return ret;
-}
-
-/**
- * Remove a property from an object if set.
- *
- * @api private
- * @param {Object} obj
- * @param {String} key
- */
-
-function clear(obj, key) {
-  if (obj.hasOwnProperty(key)) {
-    delete obj[key];
-  }
-}
-
-/**
- * Flatten a nested object into a single level space-delimited
- * hierarchy.
- *
- * Based on https://github.com/hughsk/flat
- *
- * @api private
- * @param {Object} source
- * @return {Object}
- */
-
-function flatten(source) {
-  var output = {};
-
-  function step(object, prev) {
-    for (var key in object) {
-      if (has.call(object, key)) {
-        var value = object[key];
-        var newKey = prev ? prev + ' ' + key : key;
-
-        if (!is.array(value) && is.object(value)) {
-          return step(value, newKey);
-        }
-
-        output[newKey] = value;
-      }
-    }
-  }
-
-  step(source);
-
-  return output;
-}
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":214,"is":629}],214:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":215,"./statics":216,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],215:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":217,"component-emitter":218,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":219}],216:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":218,"domify":624,"dup":39}],217:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],218:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],219:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],220:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_gauges');
-
-/**
- * Expose `Gauges` integration.
- */
-
-var Gauges = module.exports = integration('Gauges')
-  .assumesPageview()
-  .global('_gauges')
-  .option('siteId', '')
-  .tag('<script id="gauges-tracker" src="//secure.gaug.es/track.js" data-site-id="{{ siteId }}">');
-
-/**
- * Initialize Gauges.
- *
- * http://get.gaug.es/documentation/tracking/
- *
- * @api public
- */
-
-Gauges.prototype.initialize = function() {
-  window._gauges = window._gauges || [];
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Gauges.prototype.loaded = function() {
-  return !!(window._gauges && window._gauges.push !== Array.prototype.push);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Gauges.prototype.page = function() {
-  push('track');
-};
-
-},{"@segment/analytics.js-integration":221,"global-queue":625}],221:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":222,"./statics":223,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],222:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":224,"component-emitter":225,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":226}],223:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":225,"domify":624,"dup":39}],224:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],225:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],226:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],227:[function(require,module,exports){
-'use strict';
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var onBody = require('on-body-ready');
-
-/**
- * Expose `GetSatisfaction` integration.
- */
-
-var GetSatisfaction = module.exports = integration('Get Satisfaction')
-  .assumesPageview()
-  .global('GSFN')
-  .option('widgetId', '')
-  .tag('<script src="https://loader.engage.gsfn.us/loader.js">');
-
-/**
- * Initialize.
- *
- * https://console.getsatisfaction.com/start/101022?signup=true#engage
- *
- * @api public
- */
-
-GetSatisfaction.prototype.initialize = function() {
-  var self = this;
-  var widget = this.options.widgetId;
-  var div = document.createElement('div');
-  var id = div.id = 'getsat-widget-' + widget;
-  onBody(function(body) { body.appendChild(div); });
-
-  // usually the snippet is sync, so wait for it before initializing the tab
-  this.load(function() {
-    window.GSFN.loadWidget(widget, { containerId: id });
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-GetSatisfaction.prototype.loaded = function() {
-  return !!window.GSFN;
-};
-
-},{"@segment/analytics.js-integration":228,"on-body-ready":644}],228:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":229,"./statics":230,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],229:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":231,"component-emitter":232,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":233}],230:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":232,"domify":624,"dup":39}],231:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],232:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],233:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],234:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"dateformat":142,"is":153,"reject":171,"segmentio-facade":179,"to-camel-case":188}],52:[function(require,module,exports){
 'use strict';
 
 /**
@@ -8968,6 +6230,7 @@ var len = require('object-component').length;
 var push = require('global-queue')('_gaq');
 var reject = require('reject');
 var useHttps = require('use-https');
+var extend = require('extend');
 var user;
 
 /**
@@ -8994,6 +6257,7 @@ var GA = exports.Integration = integration('Google Analytics')
   .global('_gaq')
   .global('GoogleAnalyticsObject')
   .option('anonymizeIp', false)
+  .option('useGoogleAmpClientId', false)
   .option('classic', false)
   .option('contentGroupings', {})
   .option('dimensions', {})
@@ -9003,6 +6267,7 @@ var GA = exports.Integration = integration('Google Analytics')
   .option('enhancedLinkAttribution', false)
   .option('ignoredReferrers', null)
   .option('includeSearch', false)
+  .option('setAllMappedProps', true)
   .option('metrics', {})
   .option('nonInteraction', false)
   .option('sendUserId', false)
@@ -9012,6 +6277,7 @@ var GA = exports.Integration = integration('Google Analytics')
   .option('trackNamedPages', true)
   .option('trackingId', '')
   .option('optimize', '')
+  .option('nameTracker', false)
   .tag('library', '<script src="//www.google-analytics.com/analytics.js">')
   .tag('double click', '<script src="//stats.g.doubleclick.net/dc.js">')
   .tag('http', '<script src="http://www.google-analytics.com/ga.js">')
@@ -9041,6 +6307,8 @@ GA.on('construct', function(integration) {
     integration.orderRefunded = integration.orderRefundedEnhanced;
     integration.promotionViewed = integration.promotionViewedEnhanced;
     integration.promotionClicked = integration.promotionClickedEnhanced;
+    integration.productListViewed = integration.productListViewedEnhanced;
+    integration.productListFiltered = integration.productListFilteredEnhanced;
   }
 });
 
@@ -9063,39 +6331,56 @@ GA.prototype.initialize = function() {
   window.ga.l = new Date().getTime();
 
   if (window.location.hostname === 'localhost') opts.domain = 'none';
-
-  window.ga('create', opts.trackingId, {
+  var config = {
     // Fall back on default to protect against empty string
     cookieDomain: opts.domain || GA.prototype.defaults.domain,
     siteSpeedSampleRate: opts.siteSpeedSampleRate,
     sampleRate: opts.sampleRate,
-    allowLinker: true
-  });
+    allowLinker: true,
+    useAmpClientId: opts.useGoogleAmpClientId
+  };
 
-  if (opts.optimize) window.ga('require', opts.optimize);
+  // set tracker name to avoid collisions with unnamed third party trackers
+  if (opts.nameTracker) {
+    config.name = 'segmentGATracker';
+    this._trackerName = 'segmentGATracker.';  // tracker name must be prepended to all ga method calls with format [name].[method]
+  } else {
+    this._trackerName = ''; // tracker name must be set even if empty to avoid undefined references when prepending
+  }
+  window.ga('create', opts.trackingId, config);
+
+  if (opts.optimize) window.ga(this._trackerName + 'require', opts.optimize);
 
   // display advertising
   if (opts.doubleClick) {
-    window.ga('require', 'displayfeatures');
+    window.ga(this._trackerName + 'require', 'displayfeatures');
   }
 
   // https://support.google.com/analytics/answer/2558867?hl=en
   if (opts.enhancedLinkAttribution) {
-    window.ga('require', 'linkid', 'linkid.js');
+    window.ga(this._trackerName + 'require', 'linkid', 'linkid.js');
   }
 
   // send global id
   if (opts.sendUserId && user.id()) {
-    window.ga('set', 'userId', user.id());
+    window.ga(this._trackerName + 'set', 'userId', user.id());
   }
 
   // anonymize after initializing, otherwise a warning is shown
   // in google analytics debugger
-  if (opts.anonymizeIp) window.ga('set', 'anonymizeIp', true);
+  if (opts.anonymizeIp) window.ga(this._trackerName + 'set', 'anonymizeIp', true);
+
+  // initialize page with `id` appended to user's traits
+  // sets `id` as a custom dimension for the lifetime of the tracker object and
+  // ensures `id` sent as a custom dimension for all hits on the page
+  var userTraits = user.traits();
+  if (user.id()) {
+    userTraits.id = user.id();
+  }
 
   // custom dimensions & metrics
-  var custom = metrics(user.traits(), opts);
-  if (len(custom)) window.ga('set', custom);
+  var custom = metrics(userTraits, opts);
+  if (len(custom)) window.ga(this._trackerName + 'set', custom);
 
   this.load('library', this.ready);
 };
@@ -9130,6 +6415,7 @@ GA.prototype.page = function(page) {
   var pagePath = path(props, this.options);
   var pageTitle = name || props.title;
   var pageReferrer = page.referrer() || '';
+  var self = this;
   var track;
 
   // store for later
@@ -9146,22 +6432,21 @@ GA.prototype.page = function(page) {
   if (campaign.content) pageview.campaignContent = campaign.content;
   if (campaign.term) pageview.campaignKeyword = campaign.term;
 
-  // custom dimensions, metrics and content groupings
-  var custom = metrics(props, opts);
-  if (len(custom)) window.ga('set', custom);
-
   // set
   var payload = {
     page: pagePath,
     title: pageTitle
   };
+
+  pageview = extend(pageview, setCustomDimenionsAndMetrics(props, opts, self._trackerName));
+
   if (pageReferrer !== document.referrer) payload.referrer = pageReferrer; // allow referrer override if referrer was manually set
-  window.ga('set', payload);
+  window.ga(this._trackerName + 'set', payload);
 
   if (this.pageCalled) delete pageview.location;
 
   // send
-  window.ga('send', 'pageview', pageview);
+  window.ga(this._trackerName + 'send', 'pageview', pageview);
 
   // categorized pages
   if (category && this.options.trackCategorizedPages) {
@@ -9189,12 +6474,12 @@ GA.prototype.identify = function(identify) {
   var opts = this.options;
 
   if (opts.sendUserId && identify.userId()) {
-    window.ga('set', 'userId', identify.userId());
+    window.ga(this._trackerName + 'set', 'userId', identify.userId());
   }
 
   // Set dimensions
-  var custom = metrics(user.traits(), opts);
-  if (len(custom)) window.ga('set', custom);
+  var custom = metrics(identify.traits(), opts);
+  if (len(custom)) window.ga(this._trackerName + 'set', custom);
 };
 
 /**
@@ -9213,17 +6498,15 @@ GA.prototype.track = function(track, options) {
   opts = defaults(opts, interfaceOpts);
   var props = track.properties();
   var campaign = track.proxy('context.campaign') || {};
-
-  // custom dimensions & metrics
-  var custom = metrics(props, interfaceOpts);
-  if (len(custom)) window.ga('set', custom);
+  var self = this;
 
   var payload = {
     eventAction: track.event(),
     eventCategory: track.category() || this._category || 'All',
     eventLabel: props.label,
     eventValue: formatValue(props.value || track.revenue()),
-    nonInteraction: !!(props.nonInteraction || opts.nonInteraction)
+    // Allow users to override their nonInteraction integration setting for any single particluar event.
+    nonInteraction: props.nonInteraction !== undefined ? !!props.nonInteraction : !!opts.nonInteraction
   };
 
   if (campaign.name) payload.campaignName = campaign.name;
@@ -9232,7 +6515,9 @@ GA.prototype.track = function(track, options) {
   if (campaign.content) payload.campaignContent = campaign.content;
   if (campaign.term) payload.campaignKeyword = campaign.term;
 
-  window.ga('send', 'event', payload);
+  payload = extend(payload, setCustomDimenionsAndMetrics(props, interfaceOpts, self._trackerName));
+
+  window.ga(this._trackerName + 'send', 'event', payload);
 };
 
 /**
@@ -9250,18 +6535,19 @@ GA.prototype.orderCompleted = function(track) {
   var orderId = track.orderId();
   var products = track.products();
   var props = track.properties();
+  var self = this;
 
   // orderId is required.
   if (!orderId) return;
 
   // require ecommerce
   if (!this.ecommerce) {
-    window.ga('require', 'ecommerce');
+    window.ga(this._trackerName + 'require', 'ecommerce');
     this.ecommerce = true;
   }
 
   // add transaction
-  window.ga('ecommerce:addTransaction', {
+  window.ga(this._trackerName + 'ecommerce:addTransaction', {
     affiliation: props.affiliation,
     shipping: track.shipping(),
     revenue: total,
@@ -9273,7 +6559,7 @@ GA.prototype.orderCompleted = function(track) {
   // add products
   each(products, function(product) {
     var productTrack = createProductTrack(track, product);
-    window.ga('ecommerce:addItem', {
+    window.ga(self._trackerName + 'ecommerce:addItem', {
       category: productTrack.category(),
       quantity: productTrack.quantity(),
       price: productTrack.price(),
@@ -9285,7 +6571,7 @@ GA.prototype.orderCompleted = function(track) {
   });
 
   // send
-  window.ga('ecommerce:send');
+  window.ga(this._trackerName + 'ecommerce:send');
 };
 
 /**
@@ -9454,6 +6740,31 @@ function path(properties, options) {
 }
 
 /**
+ * Set custom dimensions and metrics
+ *
+ * @param {Properties} props
+ * @param {Options} opts
+ * @param {String} trackerName
+ * @return {Object}
+ */
+
+function setCustomDimenionsAndMetrics(props, opts, trackerName) {
+  var ret = {};
+  var custom = metrics(props, opts);
+  if (len(custom)) {
+    if (opts.setAllMappedProps) {
+      window.ga(trackerName + 'set', custom);
+    } else {
+      // Add custom dimensions / metrics to event payload
+      each(custom, function(key, value) {
+        ret[key] = value;
+      });
+      return ret;
+    }
+  }
+}
+
+/**
  * Format the value property to Google's liking.
  *
  * @param {Number} value
@@ -9493,7 +6804,7 @@ function metrics(obj, data) {
     each(group, function(prop, key) {
       var value = dot(obj, prop) || obj[prop];
       if (is.bool(value)) value = value.toString();
-      if (value) ret[key] = value;
+      if (value || value === 0) ret[key] = value;
     });
   });
 
@@ -9507,13 +6818,15 @@ function metrics(obj, data) {
  */
 
 GA.prototype.loadEnhancedEcommerce = function(track) {
+  var self = this;
+
   if (!this.enhancedEcommerceLoaded) {
-    window.ga('require', 'ec');
+    window.ga(self._trackerName + 'require', 'ec');
     this.enhancedEcommerceLoaded = true;
   }
 
   // Ensure we set currency for every hit
-  window.ga('set', '&cu', track.currency());
+  window.ga(self._trackerName + 'set', '&cu', track.currency());
 };
 
 /**
@@ -9523,16 +6836,17 @@ GA.prototype.loadEnhancedEcommerce = function(track) {
  * @param {Track} track
  */
 
-GA.prototype.pushEnhancedEcommerce = function(track) {
+GA.prototype.pushEnhancedEcommerce = function(track, opts, trackerName) {
+  var self = this;
   // Send a custom non-interaction event to ensure all EE data is pushed.
   // Without doing this we'd need to require page display after setting EE data.
   var args = reject([
-    'send',
+    self._trackerName + 'send',
     'event',
     track.category() || 'EnhancedEcommerce',
     track.event() || 'Action not defined',
     track.properties().label,
-    { nonInteraction: 1 }
+    extend({ nonInteraction: 1 }, setCustomDimenionsAndMetrics(track.properties(), opts, trackerName))
   ]);
   window.ga.apply(window, args);
 };
@@ -9578,20 +6892,21 @@ GA.prototype.checkoutStepViewedEnhanced = function(track) {
   var products = track.products();
   var props = track.properties();
   var options = extractCheckoutOptions(props);
+  var self = this;
+  var opts = this.options;
 
   this.loadEnhancedEcommerce(track);
 
   each(products, function(product) {
     var productTrack = createProductTrack(track, product);
-    enhancedEcommerceTrackProduct(productTrack);
+    enhancedEcommerceTrackProduct(productTrack, self._trackerName, opts);
   });
-
-  window.ga('ec:setAction', 'checkout', {
+  window.ga(self._trackerName + 'ec:setAction', 'checkout', {
     step: props.step || 1,
     option: options || undefined
   });
 
-  this.pushEnhancedEcommerce(track);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9606,18 +6921,19 @@ GA.prototype.checkoutStepViewedEnhanced = function(track) {
 GA.prototype.checkoutStepCompletedEnhanced = function(track) {
   var props = track.properties();
   var options = extractCheckoutOptions(props);
+  var self = this;
 
   // Only send an event if we have step and options to update
   if (!props.step || !options) return;
 
   this.loadEnhancedEcommerce(track);
 
-  window.ga('ec:setAction', 'checkout_option', {
+  window.ga(self._trackerName + 'ec:setAction', 'checkout_option', {
     step: props.step || 1,
     option: options
   });
 
-  window.ga('send', 'event', 'Checkout', 'Option');
+  window.ga(self._trackerName + 'send', 'event', 'Checkout', 'Option');
 };
 
 /**
@@ -9634,6 +6950,8 @@ GA.prototype.orderCompletedEnhanced = function(track) {
   var orderId = track.orderId();
   var products = track.products();
   var props = track.properties();
+  var opts = this.options;
+  var self = this;
 
   // orderId is required.
   if (!orderId) return;
@@ -9642,10 +6960,10 @@ GA.prototype.orderCompletedEnhanced = function(track) {
 
   each(products, function(product) {
     var productTrack = createProductTrack(track, product);
-    enhancedEcommerceTrackProduct(productTrack);
+    enhancedEcommerceTrackProduct(productTrack, self._trackerName, opts);
   });
 
-  window.ga('ec:setAction', 'purchase', {
+  window.ga(self._trackerName + 'ec:setAction', 'purchase', {
     id: orderId,
     affiliation: props.affiliation,
     revenue: total,
@@ -9654,7 +6972,7 @@ GA.prototype.orderCompletedEnhanced = function(track) {
     coupon: track.coupon()
   });
 
-  this.pushEnhancedEcommerce(track);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9669,6 +6987,8 @@ GA.prototype.orderCompletedEnhanced = function(track) {
 GA.prototype.orderRefundedEnhanced = function(track) {
   var orderId = track.orderId();
   var products = track.products();
+  var self = this;
+  var opts = this.options;
 
   // orderId is required.
   if (!orderId) return;
@@ -9678,17 +6998,17 @@ GA.prototype.orderRefundedEnhanced = function(track) {
   // Without any products it's a full refund
   each(products, function(product) {
     var track = new Track({ properties: product });
-    window.ga('ec:addProduct', {
+    window.ga(self._trackerName + 'ec:addProduct', {
       id: track.productId() || track.id() || track.sku(),
       quantity: track.quantity()
     });
   });
 
-  window.ga('ec:setAction', 'refund', {
+  window.ga(self._trackerName + 'ec:setAction', 'refund', {
     id: orderId
   });
 
-  this.pushEnhancedEcommerce(track);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9701,9 +7021,12 @@ GA.prototype.orderRefundedEnhanced = function(track) {
  */
 
 GA.prototype.productAddedEnhanced = function(track) {
+  var self = this;
+  var opts = this.options;
+
   this.loadEnhancedEcommerce(track);
-  enhancedEcommerceProductAction(track, 'add');
-  this.pushEnhancedEcommerce(track);
+  enhancedEcommerceProductAction(track, 'add', null, self._trackerName, opts);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9716,9 +7039,12 @@ GA.prototype.productAddedEnhanced = function(track) {
  */
 
 GA.prototype.productRemovedEnhanced = function(track) {
+  var self = this;
+  var opts = this.options;
+
   this.loadEnhancedEcommerce(track);
-  enhancedEcommerceProductAction(track, 'remove');
-  this.pushEnhancedEcommerce(track);
+  enhancedEcommerceProductAction(track, 'remove', null, self._trackerName, opts);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9733,12 +7059,14 @@ GA.prototype.productRemovedEnhanced = function(track) {
 GA.prototype.productViewedEnhanced = function(track) {
   var props = track.properties();
   var data = {};
+  var self = this;
+  var opts = this.options;
 
   this.loadEnhancedEcommerce(track);
   // list property is optional
   if (props.list) data.list = props.list;
-  enhancedEcommerceProductAction(track, 'detail', data);
-  this.pushEnhancedEcommerce(track);
+  enhancedEcommerceProductAction(track, 'detail', data, self._trackerName, opts);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9753,12 +7081,14 @@ GA.prototype.productViewedEnhanced = function(track) {
 GA.prototype.productClickedEnhanced = function(track) {
   var props = track.properties();
   var data = {};
+  var self = this;
+  var opts = this.options;
 
   this.loadEnhancedEcommerce(track);
   // list property is optional
   if (props.list) data.list = props.list;
-  enhancedEcommerceProductAction(track, 'click', data);
-  this.pushEnhancedEcommerce(track);
+  enhancedEcommerceProductAction(track, 'click', data, self._trackerName, opts);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9772,15 +7102,17 @@ GA.prototype.productClickedEnhanced = function(track) {
 
 GA.prototype.promotionViewedEnhanced = function(track) {
   var props = track.properties();
+  var self = this;
+  var opts = this.options;
 
   this.loadEnhancedEcommerce(track);
-  window.ga('ec:addPromo', {
+  window.ga(self._trackerName + 'ec:addPromo', {
     id: track.promotionId() || track.id(),
     name: track.name(),
     creative: props.creative,
     position: props.position
   });
-  this.pushEnhancedEcommerce(track);
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
 
 /**
@@ -9794,17 +7126,103 @@ GA.prototype.promotionViewedEnhanced = function(track) {
 
 GA.prototype.promotionClickedEnhanced = function(track) {
   var props = track.properties();
+  var self = this;
+  var opts = this.options;
 
   this.loadEnhancedEcommerce(track);
-  window.ga('ec:addPromo', {
+  window.ga(self._trackerName + 'ec:addPromo', {
     id: track.promotionId() || track.id(),
     name: track.name(),
     creative: props.creative,
     position: props.position
   });
-  window.ga('ec:setAction', 'promo_click', {});
-  this.pushEnhancedEcommerce(track);
+  window.ga(self._trackerName + 'ec:setAction', 'promo_click', {});
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
 };
+
+/**
+ * Product List Viewed - Enhanced Ecommerce (Mapped to Product Impression)
+ *
+ * https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce#product-impression
+ *
+ * @api private
+ * @param {Track} track
+ */
+
+GA.prototype.productListViewedEnhanced = function(track) {
+  var props = track.properties();
+  var products = track.products();
+  var self = this;
+  var opts = this.options;
+
+  this.loadEnhancedEcommerce(track);
+  each(products, function(product) {
+    // If we don't have an ID/SKU or name, return - GA will reject the impression.
+    var item = new Track({ properties: product });
+    if (!(item.productId() || item.sku()) && !item.name()) return;
+    var impressionObj = {
+      id: item.productId() || item.sku(),
+      name: item.name(),
+      category: item.category() || track.category(),
+      list: props.list_id || track.category() || 'products',
+      brand: item.properties().brand,
+      variant: item.properties().variant,
+      price: item.price(),
+      position: products.map(function(x) { return x.product_id; }).indexOf(item.productId()) + 1
+    };
+
+    for (var prop in impressionObj) {
+      if (impressionObj[prop] === undefined) delete impressionObj[prop];
+    }
+    window.ga(self._trackerName + 'ec:addImpression', impressionObj);
+  });
+
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
+};
+
+/**
+ * Product List Filtered - Enhanced Ecommerce (Mapped to Product Impression)
+ *
+ * https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce#product-impression
+ *
+ * @api private
+ * @param {Track} track
+ */
+
+GA.prototype.productListFilteredEnhanced = function(track) {
+  var props = track.properties();
+  var products = track.products();
+  props.filters = props.filters || [];
+  props.sorters = props.sorters || [];
+  var filters = props.filters.map(function(obj) { return obj.type + ':' + obj.value;}).join();
+  var sorts = props.sorts.map(function(obj) { return obj.type + ':' + obj.value;}).join();
+  var self = this;
+  var opts = this.options;
+
+  this.loadEnhancedEcommerce(track);
+  each(products, function(product) {
+    // If we don't have an ID/SKU or name, return - GA will reject the impression.
+    var item = new Track({ properties: product });
+    if (!(item.productId() || item.sku()) && !item.name()) return;
+    var impressionObj = {
+      id: item.productId() || item.sku(),
+      name: item.name(),
+      category: item.category() || track.category(),
+      list: props.list_id || track.category() || 'search results',
+      brand: item.properties().brand,
+      variant: filters + '::' + sorts,
+      price: item.price(),
+      position: products.map(function(x) { return x.product_id; }).indexOf(item.productId()) + 1
+    };
+    for (var prop in impressionObj) {
+      if (impressionObj[prop] === undefined) delete impressionObj[prop];
+    }
+    window.ga(self._trackerName + 'ec:addImpression', impressionObj);
+  });
+
+  this.pushEnhancedEcommerce(track, opts, self._trackerName);
+};
+
 
 /**
  * Enhanced ecommerce track product.
@@ -9815,7 +7233,7 @@ GA.prototype.promotionClickedEnhanced = function(track) {
  * @param {Track} track
  */
 
-function enhancedEcommerceTrackProduct(track) {
+function enhancedEcommerceTrackProduct(track, trackerName, opts) {
   var props = track.properties();
   var product = {
     id: track.productId() || track.id() || track.sku(),
@@ -9828,11 +7246,19 @@ function enhancedEcommerceTrackProduct(track) {
     currency: track.currency()
   };
 
+  // https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce#product-data
+  // GA requires an integer but our specs says "Number", so it could be a float.
+  if (props.position != null) {
+    product.position = Math.round(props.position);
+  }
+
   // append coupon if it set
   // https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce#measuring-transactions
   var coupon = track.proxy('properties.coupon');
   if (coupon) product.coupon = coupon;
-  window.ga('ec:addProduct', product);
+
+  product = extend(product, metrics(props, opts));
+  window.ga(trackerName + 'ec:addProduct', product);
 }
 
 /**
@@ -9844,9 +7270,9 @@ function enhancedEcommerceTrackProduct(track) {
  * @param {Object} data
  */
 
-function enhancedEcommerceProductAction(track, action, data) {
-  enhancedEcommerceTrackProduct(track);
-  window.ga('ec:setAction', action, data || {});
+function enhancedEcommerceProductAction(track, action, data, trackerName, opts) {
+  enhancedEcommerceTrackProduct(track, trackerName, opts);
+  window.ga(trackerName + 'ec:setAction', action, data || {});
 }
 
 /**
@@ -9882,7 +7308,7 @@ function createProductTrack(track, properties) {
   return new Track({ properties: properties });
 }
 
-},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":586,"component-each":611,"global-queue":625,"is":629,"obj-case":641,"object-component":642,"reject":648,"segmentio-facade":655,"use-https":672}],235:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":95,"component-each":132,"extend":146,"global-queue":147,"is":153,"obj-case":167,"object-component":168,"reject":171,"segmentio-facade":179,"use-https":196}],53:[function(require,module,exports){
 'use strict';
 
 /**
@@ -9897,13 +7323,14 @@ var push = require('global-queue')('dataLayer', { wrap: false });
  */
 
 var GTM = module.exports = integration('Google Tag Manager')
-  .assumesPageview()
   .global('dataLayer')
   .global('google_tag_manager')
   .option('containerId', '')
+  .option('environment', '')
   .option('trackNamedPages', true)
   .option('trackCategorizedPages', true)
-  .tag('<script src="//www.googletagmanager.com/gtm.js?id={{ containerId }}&l=dataLayer">');
+  .tag('no-env', '<script src="//www.googletagmanager.com/gtm.js?id={{ containerId }}&l=dataLayer">')
+  .tag('with-env', '<script src="//www.googletagmanager.com/gtm.js?id={{ containerId }}&l=dataLayer&gtm_preview={{ environment }}">');
 
 /**
  * Initialize.
@@ -9915,7 +7342,12 @@ var GTM = module.exports = integration('Google Tag Manager')
 
 GTM.prototype.initialize = function() {
   push({ 'gtm.start': Number(new Date()), event: 'gtm.js' });
-  this.load(this.ready);
+
+  if (this.options.environment.length) {
+    this.load('with-env', this.options, this.ready);
+  } else {
+    this.load('no-env', this.options, this.ready);
+  }
 };
 
 /**
@@ -9977,7 +7409,7 @@ GTM.prototype.track = function(track) {
   push(props);
 };
 
-},{"@segment/analytics.js-integration":586,"global-queue":625}],236:[function(require,module,exports){
+},{"@segment/analytics.js-integration":95,"global-queue":147}],54:[function(require,module,exports){
 'use strict';
 
 /**
@@ -9985,541 +7417,6 @@ GTM.prototype.track = function(track) {
  */
 
 var Identify = require('segmentio-facade').Identify;
-var Track = require('segmentio-facade').Track;
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var omit = require('omit');
-var pick = require('pick');
-
-/**
- * Expose `GoSquared` integration.
- */
-
-var GoSquared = module.exports = integration('GoSquared')
-  .assumesPageview()
-  .global('_gs')
-  .option('anonymizeIP', false)
-  .option('apiSecret', '')
-  .option('cookieDomain', null)
-  .option('trackHash', false)
-  .option('trackLocal', false)
-  .option('trackParams', true)
-  .option('useCookies', true)
-  .tag('<script src="//d1l6p2sc9645hc.cloudfront.net/tracker.js">');
-
-/**
- * Initialize.
- *
- * https://www.gosquared.com/developer/tracker
- * Options: https://www.gosquared.com/developer/tracker/configuration
- *
- * @api public
- */
-
-GoSquared.prototype.initialize = function() {
-  var self = this;
-  var options = this.options;
-  var user = this.analytics.user();
-  push(options.apiSecret);
-
-  each(options, function(name, value) {
-    if (name === 'apiSecret') return;
-    if (value == null) return;
-    push('set', name, value);
-  });
-
-  self.identify(new Identify({
-    traits: user.traits(),
-    userId: user.id()
-  }));
-
-  self.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-GoSquared.prototype.loaded = function() {
-  // If the tracker version is set, the library has loaded
-  return !!(window._gs && window._gs.v);
-};
-
-/**
- * Page.
- *
- * https://www.gosquared.com/docs/tracking/api/#pageviews
- *
- * @param {Page} page
- */
-
-GoSquared.prototype.page = function(page) {
-  var props = page.properties();
-  var name = page.fullName();
-  push('track', props.path, name || props.title);
-};
-
-/**
- * Identify.
- *
- * https://www.gosquared.com/docs/tracking/identify
- *
- * @param {Identify} identify
- */
-
-GoSquared.prototype.identify = function(identify) {
-  var traits = identify.traits({
-    createdAt: 'created_at',
-    firstName: 'first_name',
-    lastName: 'last_name',
-    title: 'company_position',
-    industry: 'company_industry'
-  });
-
-  // https://www.gosquared.com/docs/tracking/api/#properties
-  var specialKeys = [
-    'id',
-    'email',
-    'name',
-    'first_name',
-    'last_name',
-    'username',
-    'description',
-    'avatar',
-    'phone',
-    'created_at',
-    'company_name',
-    'company_size',
-    'company_position',
-    'company_industry'
-  ];
-
-  // Segment allows traits to all be in a flat object
-  // GoSquared requires all custom properties to be in a `custom` object,
-
-  // select all special keys
-  var props = pick.apply(null, [traits].concat(specialKeys));
-  props.custom = omit(specialKeys, traits);
-
-  var id = identify.userId();
-
-  if (id) {
-    push('identify', id, props);
-  } else {
-    push('properties', props);
-  }
-};
-
-/**
- * Track.
- *
- * https://www.gosquared.com/docs/tracking/events
- *
- * @param {Track} track
- */
-
-GoSquared.prototype.track = function(track) {
-  push('event', track.event(), track.properties());
-};
-
-/**
- * Checked out.
- *
- * https://www.gosquared.com/docs/tracking/ecommerce
- *
- * @api private
- * @param {Track} track
- */
-
-GoSquared.prototype.orderCompleted = function(track) {
-  var products = track.products();
-  var items = [];
-
-  each(products, function(product) {
-    var track = new Track({ properties: product });
-    items.push({
-      category: track.category(),
-      quantity: track.quantity(),
-      price: track.price(),
-      name: track.name()
-    });
-  });
-
-  push('transaction', track.orderId(), {
-    revenue: track.total(),
-    track: true
-  }, items);
-};
-
-/**
- * Push to `_gs.q`.
- *
- * @api private
- * @param {...*} args
- */
-
-function push() {
-  window._gs = window._gs || function() {
-    window._gs.q.push(arguments);
-  };
-  window._gs.q = window._gs.q || [];
-  window._gs.apply(null, arguments);
-}
-
-},{"@segment/analytics.js-integration":586,"component-each":611,"omit":643,"pick":646,"segmentio-facade":655}],237:[function(require,module,exports){
-'use strict';
-/* global JSON */
-/* eslint no-restricted-globals: [0] */
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var each = require('component-each');
-var is = require('is');
-var extend = require('@ndhoule/extend');
-var toISOString = require('@segment/to-iso-string');
-var toString = Object.prototype.toString; // in case this method has been overridden by the user
-
-/**
- * Expose `Heap` integration.
- */
-
-var Heap = module.exports = integration('Heap')
-  .global('heap')
-  .option('appId', '')
-  .tag('<script src="//cdn.heapanalytics.com/js/heap-{{ appId }}.js">');
-
-/**
- * Initialize.
- *
- * https://heapanalytics.com/docs/installation#web
- *
- * @api public
- */
-
-Heap.prototype.initialize = function() {
-  window.heap = window.heap || [];
-  window.heap.load = function(appid, config) {
-    window.heap.appid = appid;
-    window.heap.config = config;
-
-    var methodFactory = function(type) {
-      return function() {
-        window.heap.push([type].concat(Array.prototype.slice.call(arguments, 0)));
-      };
-    };
-
-    var heapMethods = ['addEventProperties', 'addUserProperties', 'clearEventProperties', 'identify', 'removeEventProperty', 'setEventProperties', 'track', 'unsetEventProperty'];
-    each(heapMethods, function(method) {
-      window.heap[method] = methodFactory(method);
-    });
-  };
-
-  window.heap.load(this.options.appId);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Heap.prototype.loaded = function() {
-  return !!(window.heap && window.heap.appid);
-};
-
-/**
- * Identify.
- *
- * https://heapanalytics.com/docs#identify
- *
- * @api public
- * @param {Identify} identify
- */
-
-Heap.prototype.identify = function(identify) {
-  var traits = identify.traits({ email: '_email' });
-  var id = identify.userId();
-  if (id) window.heap.identify(id);
-  window.heap.addUserProperties(clean(traits));
-};
-
-/**
- * Track.
- *
- * https://heapanalytics.com/docs#track
- *
- * @api public
- * @param {Track} track
- */
-
-Heap.prototype.track = function(track) {
-  window.heap.track(track.event(), clean(track.properties()));
-};
-
-/**
- * Clean all nested objects and arrays.
- *
- * @param {Object} obj
- * @return {Object}
- * @api private
- */
-
-function clean(obj) {
-  var ret = {};
-
-  for (var k in obj) {
-    if (obj.hasOwnProperty(k)) {
-      var value = obj[k];
-      // Heap's natively library will drop null and undefined properties anyway
-      // so no need to send these
-      // also prevents uncaught errors since we call .toString() on non objects
-      if (value === null || value === undefined) continue;
-
-      // date
-      if (is.date(value)) {
-        ret[k] = toISOString(value);
-        continue;
-      }
-
-      // leave boolean as is
-      if (is.bool(value)) {
-        ret[k] = value;
-        continue;
-      }
-
-      // leave  numbers as is
-      if (is.number(value)) {
-        ret[k] = value;
-        continue;
-      }
-
-      // arrays of objects (eg. `products` array)
-      if (toString.call(value) === '[object Array]') {
-        ret = extend(ret, trample(k, value));
-        continue;
-      }
-
-      // non objects
-      if (toString.call(value) !== '[object Object]') {
-        ret[k] = value.toString();
-        continue;
-      }
-
-      ret = extend(ret, trample(k, value));
-    }
-  }
-  // json
-  // must flatten including the name of the original trait/property
-  function trample(key, value) {
-    var nestedObj = {};
-    nestedObj[key] = value;
-    var flattenedObj = flatten(nestedObj, { safe: true });
-
-    // stringify arrays inside nested object to be consistent with top level behavior of arrays
-    for (var k in flattenedObj) {
-      if (is.array(flattenedObj[k])) flattenedObj[k] = JSON.stringify(flattenedObj[k]);
-    }
-
-    return flattenedObj;
-  }
-
-  return ret;
-}
-
-/**
- * Flatten nested objects
- * taken from https://www.npmjs.com/package/flat
- * @param {Object} obj
- * @return {Object} obj
- * @api public
- */
-
-function flatten(target, opts) {
-  opts = opts || {};
-
-  var delimiter = opts.delimiter || '.';
-  var maxDepth = opts.maxDepth;
-  var currentDepth = 1;
-  var output = {};
-
-  function step(object, prev) {
-    Object.keys(object).forEach(function(key) {
-      var value = object[key];
-      var isarray = opts.safe && Array.isArray(value);
-      var type = Object.prototype.toString.call(value);
-      var isobject = type === '[object Object]' || type === '[object Array]';
-
-      var newKey = prev
-        ? prev + delimiter + key
-        : key;
-
-      if (!opts.maxDepth) {
-        maxDepth = currentDepth + 1;
-      }
-
-      if (!isarray && isobject && Object.keys(value).length && currentDepth < maxDepth) {
-        ++currentDepth;
-        return step(value, newKey);
-      }
-
-      output[newKey] = value;
-    });
-  }
-
-  step(target);
-
-  return output;
-}
-
-/**
- * Polyfill Object.keys
- * // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
- * Note: Had to do this because for some reason, the above will not work properly without using Object.keys
- */
-
-if (!Object.keys) {
-  Object.keys = function(o) {
-    if (o !== Object(o)) {
-      throw new TypeError('Object.keys called on a non-object');
-    }
-    var k = [];
-    var p;
-    for (p in o) if (Object.prototype.hasOwnProperty.call(o, p)) k.push(p);
-    return k;
-  };
-}
-
-},{"@ndhoule/extend":10,"@segment/analytics.js-integration":586,"@segment/to-iso-string":603,"component-each":611,"is":629}],238:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `hellobar.com` integration.
- */
-
-var Hellobar = module.exports = integration('Hello Bar')
-  .assumesPageview()
-  .global('_hbq')
-  .option('apiKey', '')
-  .tag('<script src="//s3.amazonaws.com/scripts.hellobar.com/{{ apiKey }}.js">');
-
-/**
- * Initialize.
- *
- * https://s3.amazonaws.com/scripts.hellobar.com/bb900665a3090a79ee1db98c3af21ea174bbc09f.js
- *
- * @api public
- */
-
-Hellobar.prototype.initialize = function() {
-  window._hbq = window._hbq || [];
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Hellobar.prototype.loaded = function() {
-  return !!(window._hbq && window._hbq.push !== Array.prototype.push);
-};
-
-},{"@segment/analytics.js-integration":239}],239:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":240,"./statics":241,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],240:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":242,"component-emitter":243,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":244}],241:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":243,"domify":624,"dup":39}],242:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],243:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],244:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],245:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `HitTail` integration.
- */
-
-var HitTail = module.exports = integration('HitTail')
-  .assumesPageview()
-  .global('htk')
-  .option('siteId', '')
-  .tag('<script src="//{{ siteId }}.hittail.com/mlt.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-HitTail.prototype.initialize = function() {
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-HitTail.prototype.loaded = function() {
-  return isFunction(window.htk);
-};
-
-/**
- * Check if it is a function
- */
-
-function isFunction(functionToCheck) {
-  var getType = {};
-  return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
-}
-
-},{"@segment/analytics.js-integration":246}],246:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":247,"./statics":248,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],247:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":249,"component-emitter":250,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":251}],248:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":250,"domify":624,"dup":39}],249:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],250:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],251:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],252:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
 var convert = require('@segment/convert-dates');
 var integration = require('@segment/analytics.js-integration');
 var push = require('global-queue')('_hsq');
@@ -10577,10 +7474,24 @@ HubSpot.prototype.page = function() {
  */
 
 HubSpot.prototype.identify = function(identify) {
-  if (!identify.email()) return;
-  var traits = identify.traits({ firstName: 'firstname', lastName: 'lastname' });
+  // use newer version of Identify to have access to `companyName`
+  var newIdentify = new Identify({
+    traits: identify.traits(),
+    userId: identify.userId()
+  });
+
+  if (!newIdentify.email()) {
+    return;
+  }
+
+  var traits = newIdentify.traits({ firstName: 'firstname', lastName: 'lastname' });
   traits = convertDates(traits);
   traits = formatTraits(traits);
+
+  if (newIdentify.companyName() !== undefined) {
+    traits.company = newIdentify.companyName();
+  }
+
   push('identify', traits);
 };
 
@@ -10623,219 +7534,23 @@ function convertDates(properties) {
 function formatTraits(traits) {
   var ret = {};
   each(function(value, key) {
-    var k = key.toLowerCase().replace(/\s/g, '_');
+    // Using split/join due to IE 11 failing to properly support regex in str.replace()
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace
+    var k = key.toLowerCase()
+      .split(' ').join('_') // spaces
+      .split('.').join('_') // Periods
+      .split('\n').join('_') // new lines
+      .split('\v').join('_') // Vertical tabs
+      .split('\t').join('_') // Regular tabs
+      .split('\f').join('_') // form feeds
+      .split('\r').join('_'); // Carriage returns
     ret[k] = value;
   }, traits);
 
   return ret;
 }
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":253,"@segment/convert-dates":593,"global-queue":625}],253:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":254,"./statics":255,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],254:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":256,"component-emitter":257,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":258}],255:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":257,"domify":624,"dup":39}],256:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],257:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],258:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],259:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Improvely` integration.
- */
-
-var Improvely = module.exports = integration('Improvely')
-  .assumesPageview()
-  .global('_improvely')
-  .global('improvely')
-  .option('domain', '')
-  .option('projectId', null)
-  .tag('<script src="//{{ domain }}.iljmp.com/improvely.js">');
-
-/**
- * Initialize.
- *
- * http://www.improvely.com/docs/landing-page-code
- *
- * @api public
- */
-
-Improvely.prototype.initialize = function() {
-  // Shim out the Improvely library/globals.
-  window._improvely = [];
-  /* eslint-disable */
-  window.improvely = { init: function(e, t){ window._improvely.push(["init", e, t]); }, goal: function(e){ window._improvely.push(["goal", e]); }, label: function(e){ window._improvely.push(["label", e]); }};
-  /* eslint-enable */
-
-  var domain = this.options.domain;
-  var id = this.options.projectId;
-  window.improvely.init(domain, id);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Improvely.prototype.loaded = function() {
-  return !!(window.improvely && window.improvely.identify);
-};
-
-/**
- * Identify.
- *
- * http://www.improvely.com/docs/labeling-visitors
- *
- * @api public
- * @param {Identify} identify
- */
-
-Improvely.prototype.identify = function(identify) {
-  var id = identify.userId();
-  if (id) window.improvely.label(id);
-};
-
-/**
- * Track.
- *
- * http://www.improvely.com/docs/conversion-code
- *
- * @api public
- * @param {Track} track
- */
-
-Improvely.prototype.track = function(track) {
-  var props = track.properties({ revenue: 'amount' });
-  props.type = track.event();
-  window.improvely.goal(props);
-};
-
-},{"@segment/analytics.js-integration":260}],260:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":261,"./statics":262,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],261:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":263,"component-emitter":264,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":265}],262:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":264,"domify":624,"dup":39}],263:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],264:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],265:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],266:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('__insp');
-
-/**
- * Expose `Inspectlet` integration.
- */
-
-var Inspectlet = module.exports = integration('Inspectlet')
-  .assumesPageview()
-  .global('__insp')
-  .global('__insp_')
-  .option('wid', '')
-  .tag('<script src="//cdn.inspectlet.com/inspectlet.js">');
-
-/**
- * Initialize.
- *
- * https://www.inspectlet.com/dashboard/embedcode/1492461759/initial
- *
- * @api public
- */
-
-Inspectlet.prototype.initialize = function() {
-  push('wid', this.options.wid);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Inspectlet.prototype.loaded = function() {
-  return !!(window.__insp_ && window.__insp);
-};
-
-/**
- * Identify.
- *
- * http://www.inspectlet.com/docs#tagging
- *
- * @api public
- * @param {Identify} identify
- */
-
-Inspectlet.prototype.identify = function(identify) {
-  var traits = identify.traits({ id: 'userid' });
-  var email = identify.email();
-  if (email) push('identify', email);
-  push('tagSession', traits);
-};
-
-/**
- * Track.
- *
- * http://www.inspectlet.com/docs/tags
- *
- * @api public
- * @param {Track} track
- */
-
-Inspectlet.prototype.track = function(track) {
-  push('tagSession', track.event(), track.properties());
-};
-
-/**
- * Page.
- *
- * http://www.inspectlet.com/docs/tags
- *
- * @api public
- * @param {Track} track
- */
-
-Inspectlet.prototype.page = function() {
-  push('virtualPage');
-};
-
-},{"@segment/analytics.js-integration":267,"global-queue":625}],267:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":268,"./statics":269,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],268:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":270,"component-emitter":271,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":272}],269:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":271,"domify":624,"dup":39}],270:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],271:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],272:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],273:[function(require,module,exports){
+},{"@ndhoule/each":8,"@segment/analytics.js-integration":95,"@segment/convert-dates":102,"global-queue":147,"segmentio-facade":179}],55:[function(require,module,exports){
 'use strict';
 
 /**
@@ -10848,6 +7563,9 @@ var del = require('obj-case').del;
 var integration = require('@segment/analytics.js-integration');
 var is = require('is');
 var extend = require('@ndhoule/extend');
+var clone = require('@ndhoule/clone');
+var each = require('@ndhoule/each');
+var pick = require('@ndhoule/pick');
 
 /**
  * Expose `Intercom` integration.
@@ -10857,6 +7575,7 @@ var Intercom = module.exports = integration('Intercom')
   .global('Intercom')
   .option('activator', '#IntercomDefaultWidget')
   .option('appId', '')
+  .option('richLinkProperties', [])
   .tag('<script src="https://widget.intercom.io/widget/{{ appId }}">');
 
 /**
@@ -10918,6 +7637,7 @@ Intercom.prototype.identify = function(identify) {
   var name = identify.name();
   var id = identify.userId();
   var group = this.analytics.group();
+  var settings = this.options;
 
   if (!id && !identify.email()) {
     return;
@@ -10952,6 +7672,9 @@ Intercom.prototype.identify = function(identify) {
   // convert dates
   traits = convertDates(traits, formatDate);
 
+  // format nested custom traits
+  traits = formatNestedCustomTraits(traits, settings);
+
   // handle options
   if (integrationSettings.userHash) traits.user_hash = integrationSettings.userHash;
   if (integrationSettings.user_hash) traits.user_hash = integrationSettings.user_hash;
@@ -10967,15 +7690,21 @@ Intercom.prototype.identify = function(identify) {
  */
 
 Intercom.prototype.group = function(group) {
+  var settings = this.options;
   // using .traits here since group.properties() doesn't take alias object
   var props = group.traits({
     createdAt: 'created',
-    created: 'created_at'
+    created: 'created_at',
+    monthlySpend: 'monthly_spend'
   });
   props = convertDates(props, formatDate);
   var id = group.groupId();
   if (id) props.id = id;
   var integrationSettings = group.options(this.name);
+
+  // format nested custom traits
+  props = formatNestedCustomTraits(props, settings);
+
   var traits = extend({ company: props }, hideDefaultLauncher(integrationSettings));
 
   api('update', traits);
@@ -10989,7 +7718,27 @@ Intercom.prototype.group = function(group) {
  */
 
 Intercom.prototype.track = function(track) {
-  api('trackEvent', track.event(), track.properties());
+  var settings = this.options;
+  var props = track.properties();
+  var revenue = track.revenue();
+  if (revenue) {
+    var revenueData = {
+      // Intercom requests value in cents
+      price: {
+        amount: revenue * 100,
+        currency: track.currency() // fallsback on 'USD'
+      }
+    };
+  }
+
+  // format Nested custom traits
+  props = formatNestedCustomTraits(props, settings);
+
+  props = extend(props, revenueData);
+  del(props, 'revenue');
+  del(props, 'currency');
+
+  api('trackEvent', track.event(), props);
 };
 
 /**
@@ -11031,6 +7780,60 @@ function formatDate(date) {
 }
 
 /**
+ * Flatten selectively based on your settings. You can either stringify, flatten, or drop the properties.
+ * Intercom rejects nested objects so you must choose a method.
+ *
+ * @param {Object} obj
+ * @param {Object} settings
+ * @return {Object} ret
+ * @api private
+ */
+
+function formatNestedCustomTraits(obj, settings) {
+  var richLinkProperties = settings.richLinkProperties;
+  var basicIntercomTraits = [
+    'companies',
+    'company',
+    'created_at',
+    'created',
+    'custom_attributes',
+    'company_id',
+    'id',
+    'name',
+    'monthly_spend',
+    'plan',
+    'remote_created_at',
+    'remove',
+    'user_id',
+    'email'
+  ];
+
+  // add rich link object to semantic traits so that it's not altered by the default method and
+  // is passed to intercom as a nested object: https://developers.intercom.com/reference#event-metadata-types
+  var semanticTraits = basicIntercomTraits.concat(richLinkProperties);
+
+  // clone traits so we don't modify the original object
+  var customTraits = clone(obj);
+
+  // filter out semanticTraits so that we only format custom nested traits
+  each(function(trait) {
+    del(customTraits, trait);
+  }, semanticTraits);
+
+  // create object without custom traits to merge with formatted custom traits in the end
+  var standardTraits = pick(semanticTraits, obj);
+
+  // drop any arrays or objects
+  var supportedTraits = {};
+  each(function(value, key) {
+    if (!is.object(value) && !is.array(value)) supportedTraits[key] = value;
+  }, customTraits);
+
+  // combine all the traits
+  return extend(supportedTraits, standardTraits);
+}
+
+/**
  * Push a call onto the Intercom queue.
  *
  * @api private
@@ -11056,344 +7859,19 @@ function hideDefaultLauncher(options) {
   return ret;
 }
 
-},{"@ndhoule/defaults":6,"@ndhoule/extend":10,"@segment/analytics.js-integration":274,"@segment/convert-dates":593,"is":629,"obj-case":641}],274:[function(require,module,exports){
+},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/extend":10,"@ndhoule/pick":15,"@segment/analytics.js-integration":56,"@segment/convert-dates":102,"is":153,"obj-case":167}],56:[function(require,module,exports){
+arguments[4][34][0].apply(exports,arguments)
+},{"./protos":57,"./statics":58,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":60,"dup":34,"slug-component":185}],57:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":59,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],58:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],59:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./protos":275,"./statics":276,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],275:[function(require,module,exports){
+},{"dup":37}],60:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":277,"component-emitter":278,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":279}],276:[function(require,module,exports){
+},{"./debug":61,"_process":170,"dup":38}],61:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":278,"domify":624,"dup":39}],277:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],278:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],279:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],280:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var clone = require('@ndhoule/clone');
-
-/**
- * Expose `Keen IO` integration.
- */
-
-var Keen = module.exports = integration('Keen IO')
-  .global('KeenSegment')
-  .option('ipAddon', false)
-  .option('projectId', '')
-  .option('readKey', '')
-  .option('referrerAddon', false)
-  .option('trackAllPages', false)
-  .option('trackCategorizedPages', true)
-  .option('trackNamedPages', true)
-  .option('uaAddon', false)
-  .option('urlAddon', false)
-  .option('writeKey', '')
-  .tag('<script src="//d26b395fwzu5fz.cloudfront.net/3.1.0/{{ lib }}.min.js">');
-
-/**
- * Initialize.
- *
- * https://keen.io/docs/
- *
- * @api public
- */
-
-Keen.prototype.initialize = function() {
-  var lib = this.options.readKey ? 'keen' : 'keen-tracker';
-  var options = this.options;
-  var previousKeen = window.Keen || null;
-  var self = this;
-
-  // Skip this step if keen-js@3.1.0 is already available
-  if (!window.Keen || window.Keen.version !== '3.1.0') {
-    // Force-undefine `Keen` (saved as `previousKeen`)
-    window.Keen = undefined;
-    /**
-      * Shim out the Keen client library.
-      *
-      * To update the library, grab the most up-to-date embed code from Keen's
-      * JS library readme (https://github.com/keen/keen-js) and remove any of the
-      * script loading/appending business. Next, update the script tag above with
-      * the new client library URL.
-    */
-    /* eslint-disable */
-    !(function(a,b){if(void 0===b[a]){b["_"+a]={},b[a]=function(c){b["_"+a].clients=b["_"+a].clients||{},b["_"+a].clients[c.projectId]=this,this._config=c},b[a].ready=function(c){b["_"+a].ready=b["_"+a].ready||[],b["_"+a].ready.push(c)};for(var c=["addEvent","setGlobalProperties","trackExternalLink","on"],d=0;d<c.length;d++){var e=c[d],f=function(a){return function(){return this["_"+a]=this["_"+a]||[],this["_"+a].push(arguments),this}};b[a].prototype[e]=f(e)}}})("Keen",window);
-    /* eslint-enable */
-    // keen-js@3.1.0 will be installed once `.load()` is called
-  }
-
-  // Define a safe namespace (stub)
-  window.KeenSegment = window.Keen;
-
-  // Define client (stub)
-  this.client = new window.KeenSegment({
-    projectId: options.projectId,
-    readKey: options.readKey,
-    writeKey: options.writeKey
-  });
-
-  this.load({ lib: lib }, function() {
-    // Redefine safe namespace with full library
-    window.KeenSegment = window.Keen;
-    // Restore original `Keen`
-    if (previousKeen) {
-      window.Keen = previousKeen;
-      previousKeen = undefined;
-    }
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Keen.prototype.loaded = function() {
-  return !!(window.KeenSegment && window.KeenSegment.prototype.configure);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Keen.prototype.page = function(page) {
-  var category = page.category();
-  var name = page.fullName();
-  var opts = this.options;
-
-  // all pages
-  if (opts.trackAllPages) {
-    this.track(page.track());
-  }
-
-  // named pages
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-
-  // categorized pages
-  if (category && opts.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-};
-
-/**
- * Identify.
- *
- * TODO: migrate from old `userId` to simpler `id`
- * https://keen.io/docs/data-collection/data-enrichment/#add-ons
- *
- * Set up the Keen addons object. These must be specifically
- * enabled by the settings in order to include the plugins, or else
- * Keen will reject the request.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Keen.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  var id = identify.userId();
-  var user = {};
-  if (id) user.userId = id;
-  if (traits) user.traits = traits;
-  var props = { user: user };
-  this.addons(props, identify);
-  this.client.setGlobalProperties(function() {
-    // Clone the props so the Keen Client can't manipulate the ref
-    return clone(props);
-  });
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Keen.prototype.track = function(track) {
-  var props = track.properties();
-  this.addons(props, track);
-  this.client.addEvent(track.event(), props);
-};
-
-/**
- * Attach addons to `obj` with `msg`.
- *
- * @api private
- * @param {Object} obj
- * @param {Facade} msg
- */
-
-Keen.prototype.addons = function(obj, msg) {
-  var options = this.options;
-  var addons = [];
-
-  if (options.ipAddon) {
-    addons.push({
-      name: 'keen:ip_to_geo',
-      input: { ip: 'ip_address' },
-      output: 'ip_geo_info'
-    });
-    obj.ip_address = '${keen.ip}';
-  }
-
-  if (options.uaAddon) {
-    addons.push({
-      name: 'keen:ua_parser',
-      input: { ua_string: 'user_agent' },
-      output: 'parsed_user_agent'
-    });
-    obj.user_agent = '${keen.user_agent}';
-  }
-
-  if (options.urlAddon) {
-    addons.push({
-      name: 'keen:url_parser',
-      input: { url: 'page_url' },
-      output: 'parsed_page_url'
-    });
-    obj.page_url = document.location.href;
-  }
-
-  if (options.referrerAddon) {
-    addons.push({
-      name: 'keen:referrer_parser',
-      input: {
-        referrer_url: 'referrer_url',
-        page_url: 'page_url'
-      },
-      output: 'referrer_info'
-    });
-    obj.referrer_url = document.referrer;
-    obj.page_url = document.location.href;
-  }
-
-  obj.keen = {
-    timestamp: msg.timestamp(),
-    addons: addons
-  };
-};
-
-},{"@ndhoule/clone":5,"@segment/analytics.js-integration":281}],281:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":282,"./statics":283,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],282:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":284,"component-emitter":285,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":286}],283:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":285,"domify":624,"dup":39}],284:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],285:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],286:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],287:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var includes = require('@ndhoule/includes');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-
-/**
- * Expose `Kenshoo` integration.
- */
-
-var Kenshoo = module.exports = integration('Kenshoo')
-  .global('k_trackevent')
-  .option('cid', '')
-  .option('events', [])
-  .option('subdomain', '')
-  .tag('<script src="//{{ subdomain }}.xg4ken.com/media/getpx.php?cid={{ cid }}">');
-
-/**
- * Initialize.
- *
- * See https://gist.github.com/justinboyle/7875832
- *
- * @api public
- */
-
-Kenshoo.prototype.initialize = function() {
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Kenshoo.prototype.loaded = function() {
-  return is.fn(window.k_trackevent);
-};
-
-/**
- * Track.
- *
- * FIXME: Only tracks events if they are listed in the events array option.
- * We've asked for docs a few times but no go :/
- *
- * https://github.com/jorgegorka/the_tracker/blob/master/lib/the_tracker/trackers/kenshoo.rb
- *
- * @api public
- * @param {Track} event
- */
-
-Kenshoo.prototype.track = function(track) {
-  var events = this.options.events;
-  var event = track.event();
-  var revenue = track.revenue() || 0;
-  if (!includes(event, events)) return;
-
-  var params = [
-    'id=' + this.options.cid,
-    'type=conv',
-    'val=' + revenue,
-    'orderId=' + track.orderId(),
-    'promoCode=' + track.coupon(),
-    'valueCurrency=' + track.currency(),
-
-    // Live tracking fields.
-    // FIXME: Ignored for now (until we get documentation).
-    'GCID=',
-    'kw=',
-    'product='
-  ];
-
-  window.k_trackevent(params, this.options.subdomain);
-};
-
-},{"@ndhoule/includes":12,"@segment/analytics.js-integration":288,"is":629}],288:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":289,"./statics":290,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],289:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":291,"component-emitter":292,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":293}],290:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":292,"domify":624,"dup":39}],291:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],292:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],293:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],294:[function(require,module,exports){
+},{"dup":39,"ms":161}],62:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11742,19 +8220,19 @@ function flatten(target, opts) {
   return output;
 }
 
-},{"@ndhoule/extend":10,"@segment/analytics.js-integration":295,"component-each":611,"global-queue":625,"is":629,"obj-case":641}],295:[function(require,module,exports){
+},{"@ndhoule/extend":10,"@segment/analytics.js-integration":63,"component-each":132,"global-queue":147,"is":153,"obj-case":167}],63:[function(require,module,exports){
+arguments[4][34][0].apply(exports,arguments)
+},{"./protos":64,"./statics":65,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":67,"dup":34,"slug-component":185}],64:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":66,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],65:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],66:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./protos":296,"./statics":297,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],296:[function(require,module,exports){
+},{"dup":37}],67:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":298,"component-emitter":299,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":300}],297:[function(require,module,exports){
+},{"./debug":68,"_process":170,"dup":38}],68:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":299,"domify":624,"dup":39}],298:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],299:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],300:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],301:[function(require,module,exports){
+},{"dup":39,"ms":161}],69:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11769,18 +8247,6 @@ var foldl = require('@ndhoule/foldl');
 var remove = require('obj-case').del;
 var extend = require('@ndhoule/extend');
 
-/**
- * Trait aliases.
- */
-
-var traitAliases = {
-  id: '$id',
-  email: '$email',
-  firstName: '$first_name',
-  lastName: '$last_name',
-  phone: '$phone_number',
-  title: '$title'
-};
 
 /**
  * Expose `Klaviyo` integration.
@@ -11790,6 +8256,7 @@ var Klaviyo = module.exports = integration('Klaviyo')
   .assumesPageview()
   .global('_learnq')
   .option('apiKey', '')
+  .option('enforceEmail', false)
   .tag('<script src="//a.klaviyo.com/media/js/analytics/analytics.js">');
 
 /**
@@ -11827,9 +8294,25 @@ Klaviyo.prototype.loaded = function() {
  */
 
 Klaviyo.prototype.identify = function(identify) {
+  // if you don't send either userId or email, noop
+  if (!identify.userId() && !identify.email()) return;
   // TODO: should map/alias the rest of the reserved props
+  var traitAliases = {
+    email: '$email',
+    id: '$id',
+    firstName: '$first_name',
+    lastName: '$last_name',
+    phone: '$phone_number',
+    title: '$title'
+  };
+  // don't add $id or id if email only option is enforced to prevent some edge case dupe profile issues with Klaviyo API
   var traits = identify.traits(traitAliases);
-  if (!traits.$id && !traits.$email) return;
+  if (this.options.enforceEmail) {
+    remove(traits, 'id');
+    remove(traits, '$id');
+  }
+  // if you enforce email but you don't send email, noop
+  if (this.options.enforceEmail && !traits.$email) return;
   push('identify', traits);
 };
 
@@ -12039,458 +8522,7 @@ function reject(obj) {
   }, {}, obj);
 }
 
-},{"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":586,"global-queue":625,"next-tick":640,"obj-case":641,"segmentio-facade":655}],302:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Identify = require('segmentio-facade').Identify;
-var clone = require('component-clone');
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var tick = require('next-tick');
-var when = require('do-when');
-
-/**
- * Expose `LiveChat` integration.
- */
-
-var LiveChat = module.exports = integration('LiveChat')
-  .assumesPageview()
-  .global('LC_API')
-  .global('LC_Invite')
-  .global('__lc')
-  .global('__lc_inited')
-  .global('__lc_lang')
-  .option('group', 0)
-  .option('license', '')
-  .option('listen', false)
-  .tag('<script src="//cdn.livechatinc.com/tracking.js">');
-
-/**
- * The context for this integration.
- */
-
-var integrationContext = {
-  name: 'livechat',
-  version: '1.0.0'
-};
-
-/**
- * Initialize.
- *
- * http://www.livechatinc.com/api/javascript-api
- *
- * @api public
- */
-
-LiveChat.prototype.initialize = function() {
-  var self = this;
-  var user = this.analytics.user();
-  var identify = new Identify({
-    userId: user.id(),
-    traits: user.traits()
-  });
-
-  window.__lc = clone(this.options);
-  window.__lc.visitor = {
-    name: identify.name(),
-    email: identify.email()
-  };
-  // listen is not an option we need from clone
-  delete window.__lc.listen;
-
-  this.load(function() {
-    when(function() {
-      return self.loaded();
-    }, function() {
-      if (self.options.listen) self.attachListeners();
-      tick(self.ready);
-    });
-  });
-};
-
-/**
- * Loaded?
- *
- * @api public
- * @return {boolean}
- */
-
-LiveChat.prototype.loaded = function() {
-  return !!(window.LC_API && window.LC_Invite);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-LiveChat.prototype.identify = function(identify) {
-  var traits = identify.traits({ userId: 'User ID' });
-  window.LC_API.set_custom_variables(convert(traits));
-};
-
-/**
- * Listen for chat events.
- *
- * @api private
- */
-
-LiveChat.prototype.attachListeners = function() {
-  var self = this;
-  window.LC_API = window.LC_API || {};
-
-  window.LC_API.on_chat_started = function(data) {
-    self.analytics.track(
-      'Live Chat Conversation Started',
-      { agentName: data.agent_name },
-      { context: { integration: integrationContext }
-    });
-  };
-
-  window.LC_API.on_message = function(data) {
-    if (data.user_type === 'visitor') {
-      self.analytics.track(
-        'Live Chat Message Sent',
-        {},
-        { context: { integration: integrationContext }
-      });
-    } else {
-      self.analytics.track(
-        'Live Chat Message Received',
-        { agentName: data.agent_name, agentUsername: data.agent_login },
-        { context: { integration: integrationContext }
-      });
-    }
-  };
-
-  window.LC_API.on_chat_ended = function() {
-    self.analytics.track('Live Chat Conversation Ended');
-  };
-};
-
-/**
- * Convert a traits object into the format LiveChat requires.
- *
- * @param {Object} traits
- * @return {Array}
- */
-
-function convert(traits) {
-  var arr = [];
-  each(traits, function(key, value) {
-    arr.push({ name: key, value: value });
-  });
-  return arr;
-}
-
-},{"@segment/analytics.js-integration":303,"component-clone":609,"component-each":611,"do-when":623,"next-tick":640,"segmentio-facade":655}],303:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":304,"./statics":305,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],304:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":306,"component-emitter":307,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":308}],305:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":307,"domify":624,"dup":39}],306:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],307:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],308:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],309:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Identify = require('segmentio-facade').Identify;
-var integration = require('@segment/analytics.js-integration');
-var useHttps = require('use-https');
-
-/**
- * Expose `LuckyOrange` integration.
- */
-
-var LuckyOrange = module.exports = integration('Lucky Orange')
-  .assumesPageview()
-  .global('_loq')
-  .global('__lo_cs_added')
-  .global('__wtw_lucky_site_id')
-  .global('__wtw_lucky_is_segment_io')
-  .global('__wtw_custom_user_data')
-  .option('siteId', null)
-  .tag('http', '<script src="http://www.luckyorange.com/w.js?{{ cacheBuster }}">')
-  .tag('https', '<script src="https://ssl.luckyorange.com/w.js?{{ cacheBuster }}">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-LuckyOrange.prototype.initialize = function() {
-  if (!window._loq) window._loq = [];
-  window.__wtw_lucky_site_id = this.options.siteId;
-
-  var user = this.analytics.user();
-  this.identify(new Identify({
-    traits: user.traits(),
-    userId: user.id()
-  }));
-
-  var cacheBuster = Math.floor(new Date().getTime() / 60000);
-  var tagName = useHttps() ? 'https' : 'http';
-  this.load(tagName, { cacheBuster: cacheBuster }, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-LuckyOrange.prototype.loaded = function() {
-  return !!window.__lo_cs_added;
-};
-
-/**
- * Identify.
- *
- * @param {Identify} identify
- */
-
-LuckyOrange.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  var email = identify.email();
-  if (email) traits.email = email;
-  var name = identify.name();
-  if (name) traits.name = name;
-  window.__wtw_custom_user_data = traits;
-};
-
-},{"@segment/analytics.js-integration":586,"segmentio-facade":655,"use-https":672}],310:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var alias = require('@segment/alias');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Lytics` integration.
- */
-
-var Lytics = module.exports = integration('Lytics')
-  .global('jstag')
-  .option('cid', '')
-  .option('stream', 'default')
-  .option('cookie', 'seerid')
-  .option('delay', 2000)
-  .option('sessionTimeout', 1800)
-  .option('url', '//c.lytics.io')
-  .tag('<script src="https://c.lytics.io/api/tag/{{ cid }}/lio.js">');
-
-/**
- * Options aliases.
- */
-
-var aliases = {
-  sessionTimeout: 'sessecs'
-};
-
-/**
- * Initialize.
- *
- * http://admin.lytics.io/doc#jstag
- *
- * @api public
- */
-
-Lytics.prototype.initialize = function() {
-  var options = alias(this.options, aliases);
-  /* eslint-disable */
-  window.jstag = function() {var t = {_q: [], _c: options, ts: (new Date).getTime() }, e = !1, i = (window, document), n = "/static/io", s = ".min.js", r = Array.prototype.slice, a = "//c.lytics.io", c = "//c.lytics.io", o = "io"; return t.init = function(e) {return c = e.url || c, s = e.min === !1 ? ".js" : s, o = e.tag || o, t._c = e, this }, t.load = function() {var t, r = i.getElementsByTagName("script")[0]; return e = !0, i.getElementById(n) ? this : (t = i.createElement("script"), n = a + "/static/" + o + s, t.id = n, t.src = n, r.parentNode.insertBefore(t, r), this) }, t.bind = function(t) {e || this.load(), this._q.push([t, r.call(arguments, 1)]) }, t.ready = function() {e || this.load(), this._q.push(["ready", r.call(arguments)]) }, t.send = function() {return e || this.load(), this._q.push(["ready", "send", r.call(arguments)]), this }, t }();
-  /* eslint-enable */
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Lytics.prototype.loaded = function() {
-  return !!(window.jstag && window.jstag.bind);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Lytics.prototype.page = function(page) {
-  window.jstag.send(this.options.stream, page.properties({
-    name: '_e'
-  }));
-};
-
-/**
- * Idenfity.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Lytics.prototype.identify = function(identify) {
-  window.jstag.send(this.options.stream, identify.traits({
-    id: 'user_id'
-  }));
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Lytics.prototype.track = function(track) {
-  var props = track.properties();
-  props._e = track.event();
-  window.jstag.send(this.options.stream, props);
-};
-
-},{"@segment/alias":19,"@segment/analytics.js-integration":311}],311:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":312,"./statics":313,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],312:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":314,"component-emitter":315,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":316}],313:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":315,"domify":624,"dup":39}],314:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],315:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],316:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],317:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * UMD?
- */
-
-var umd = typeof window.define === 'function' && window.define.amd;
-
-/**
- * Expose `Madkudu` integration.
- */
-
-var MadKudu = module.exports = integration('Madkudu')
-  .global('madkudu')
-  .option('apiKey', '')
-  .readyOnLoad()
-  .tag('<script src="//cdn.madkudu.com/madkudu.js/v1/{{ apiKey }}/madkudu.min.js">');
-
-/**
- * Initialize.
- *
- * https://github.com/MadKudu/madkudu.js
- *
- * @api public
- */
-
-MadKudu.prototype.initialize = function() {
-  /* eslint-disable */
-  !function(){var madkudu=window.madkudu=window.madkudu||[];if(!madkudu.initialize)if(madkudu.invoked)window.console&&console.error&&console.error("MadKudu snippet included twice.");else{madkudu.invoked=!0;madkudu.methods=["identify","reset","group","ready","page","track","once","on"];;madkudu.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);madkudu.push(e);return madkudu}};for(var t=0;t<madkudu.methods.length;t++){var e=madkudu.methods[t];madkudu[e]=madkudu.factory(e)}
-    madkudu.SNIPPET_VERSION="0.3.0";
-  }}();
-  /* eslint-enable */
-
-  var self = this;
-
-  if (umd) {
-    window.require(['//cdn.madkudu.com/madkudu.js/v1/' + self.options.apiKey + '/madkudu.min.js'], function(madkudu) {
-      window.madkudu = madkudu;
-      self.ready();
-    });
-    return;
-  }
-
-  this.load({ apiKey: this.options.apiKey }, function() {
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-MadKudu.prototype.loaded = function() {
-  return !!(window.madkudu && window.madkudu.options);
-};
-
-/**
- * {Page}.
- *
- * @api public
- * @param {Facade} page
- */
-
-MadKudu.prototype.page = function() {
-  window.madkudu.page();
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Facade} identify
- */
-
-MadKudu.prototype.identify = function(identify) {
-  var id = identify.userId();
-  var traits = identify.traits();
-  if (id) {
-    window.madkudu.identify(id, traits);
-  } else {
-    window.madkudu.identify(traits);
-  }
-};
-
-},{"@segment/analytics.js-integration":318}],318:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":319,"./statics":320,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],319:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":321,"component-emitter":322,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":323}],320:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":322,"domify":624,"dup":39}],321:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],322:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],323:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],324:[function(require,module,exports){
+},{"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"global-queue":147,"next-tick":166,"obj-case":167,"segmentio-facade":179}],70:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12513,7 +8545,8 @@ var indexOf = require('component-indexof');
 
 var Mixpanel = module.exports = integration('Mixpanel')
   .global('mixpanel')
-  .option('increments', [])
+  .option('eventIncrements', [])
+  .option('propIncrements', [])
   .option('peopleProperties', [])
   .option('superProperties', [])
   .option('cookieName', '')
@@ -12529,6 +8562,7 @@ var Mixpanel = module.exports = integration('Mixpanel')
   .option('trackAllPages', false)
   .option('trackNamedPages', false)
   .option('trackCategorizedPages', false)
+  .option('sourceName', '')
   .tag('<script src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js">');
 
 /**
@@ -12556,7 +8590,8 @@ Mixpanel.prototype.initialize = function() {
 0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
 for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;}})(document,window.mixpanel||[]);
   /* eslint-enable */
-  this.options.increments = lowercase(this.options.increments);
+  this.options.eventIncrements = lowercase(this.options.eventIncrements);
+  this.options.propIncrements = lowercase(this.options.propIncrements);
   var options = alias(this.options, optionsAliases);
   // tag ajs requests with Segment by request from Mixpanel team for better mutual debugging
   options.loaded = function(mixpanel) {
@@ -12662,22 +8697,48 @@ Mixpanel.prototype.identify = function(identify) {
   var nametag = email || username || id;
   if (nametag) window.mixpanel.name_tag(nametag);
 
-  // default set all traits as super and people properties
   var traits = identify.traits(traitAliases);
   if (traits.$created) del(traits, 'createdAt');
-  if (setAllTraitsByDefault) {
-    window.mixpanel.register(dates(traits, iso));
-    if (this.options.people) window.mixpanel.people.set(traits);
+  traits = dates(traits, iso);
+
+  // determine which traits to union to existing properties and which to set as new properties
+  var traitsToUnion = {};
+  var traitsToSet = {};
+  for (var key in traits) {
+    if (!traits.hasOwnProperty(key)) continue;
+
+    var trait = traits[key];
+    if (Array.isArray(trait) && trait.length > 0) {
+      traitsToUnion[key] = trait;
+      // since mixpanel doesn't offer a union method for super properties we have to do it manually by retrieving the existing list super property
+      // from mixpanel and manually unioning to it ourselves
+      var existingTrait = window.mixpanel.get_property(key);
+      if (existingTrait && Array.isArray(existingTrait)) {
+        traits[key] = unionArrays(existingTrait, trait);
+      }
+    } else {
+      traitsToSet[key] = trait;
+    }
   }
 
-  // explicitly set select traits as people and super properties
-  var mappedSuperProps = mapTraits(superProperties);
-  var superProps = pick(mappedSuperProps || [], traits);
-  if (!is.empty(superProps)) window.mixpanel.register(superProps);
-  if (people) {
-    var mappedPeopleProps = mapTraits(peopleProperties);
-    var peopleProps = pick(mappedPeopleProps || [], traits);
-    if (!is.empty(peopleProps)) window.mixpanel.people.set(peopleProps);
+  if (setAllTraitsByDefault) {
+    window.mixpanel.register(traits);
+    if (people) {
+      window.mixpanel.people.set(traitsToSet);
+      window.mixpanel.people.union(traitsToUnion);
+    }
+  } else {
+    // explicitly set select traits as people and super properties
+    var mappedSuperProps = mapTraits(superProperties);
+    var superProps = pick(mappedSuperProps || [], traits);
+    if (!is.empty(superProps)) window.mixpanel.register(superProps);
+    if (people) {
+      var mappedPeopleProps = mapTraits(peopleProperties);
+      var peoplePropsToSet = pick(mappedPeopleProps || [], traitsToSet);
+      var peoplePropsToUnion = pick(mappedPeopleProps || [], traitsToUnion);
+      if (!is.empty(peoplePropsToSet)) window.mixpanel.people.set(peoplePropsToSet);
+      if (!is.empty(peoplePropsToUnion)) window.mixpanel.people.union(peoplePropsToUnion);
+    }
   }
 };
 
@@ -12692,13 +8753,17 @@ Mixpanel.prototype.identify = function(identify) {
  */
 
 Mixpanel.prototype.track = function(track) {
-  var increments = this.options.increments;
-  var increment = track.event().toLowerCase();
+  var eventIncrements = this.options.eventIncrements || this.options.increments; // TODO: remove settings.increments check, it's only here as we cutover from increments to eventIncrements
+  var propIncrements = this.options.propIncrements;
+  var eventLowercase = track.event().toLowerCase();
   var people = this.options.people;
   var props = track.properties();
   var revenue = track.revenue();
   // Don't map traits, clients should use identify instead.
   var superProps = pick(this.options.superProperties, props);
+  var sourceName = this.options.sourceName;
+
+  if (sourceName) props.segment_source_name = sourceName;
 
   // delete mixpanel's reserved properties, so they don't conflict
   delete props.distinct_id;
@@ -12707,24 +8772,49 @@ Mixpanel.prototype.track = function(track) {
   delete props.mp_note;
   delete props.token;
 
-  // increment properties in mixpanel people
-  if (people && includes(increment, increments)) {
-    window.mixpanel.people.increment(track.event());
-    window.mixpanel.people.set('Last ' + track.event(), new Date());
+  props = dates(props, iso);
+  invertObjectArrays(props);
+
+  // Mixpanel People operations
+  if (people) {
+    // increment event count
+    if (includes(eventLowercase, eventIncrements)) {
+      window.mixpanel.people.increment(track.event());
+      window.mixpanel.people.set('Last ' + track.event(), new Date());
+    }
+    // increment property counts
+    for (var key in props) {
+      if (!Object.prototype.hasOwnProperty.call(props, key)) {
+        continue;
+      }
+      var prop = props[key];
+      if (includes(key.toLowerCase(), propIncrements)) {
+        window.mixpanel.people.increment(key, prop);
+      }
+    }
+    // track revenue
+    if (revenue) {
+      window.mixpanel.people.track_charge(revenue);
+    }
   }
 
   // track the event
-  props = dates(props, iso);
-  window.mixpanel.track(track.event(), props);
+  var query;
+  if (props.link_query) {
+    query = props.link_query; // DOM query
+    delete props.link_query;
+    window.mixpanel.track_links(query, track.event(), props);
+  } else if (props.form_query) {  // DOM query
+    query = props.form_query;
+    delete props.form_query;
+    window.mixpanel.track_forms(query, track.event(), props);
+  } else {
+    window.mixpanel.track(track.event(), props);
+  }
 
   // register super properties if present in context.mixpanel.superProperties
   if (!is.empty(superProps)) {
     window.mixpanel.register(superProps);
-  }
-
-  // track revenue specifically
-  if (revenue && people) {
-    window.mixpanel.people.track_charge(revenue);
   }
 };
 
@@ -12815,720 +8905,109 @@ function extendTraits(arr) {
   return arr;
 }
 
-},{"@ndhoule/includes":12,"@ndhoule/pick":15,"@segment/alias":19,"@segment/analytics.js-integration":325,"@segment/convert-dates":593,"@segment/to-iso-string":603,"component-indexof":614,"is":629,"obj-case":641}],325:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":326,"./statics":327,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],326:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":328,"component-emitter":329,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":330}],327:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":329,"domify":624,"dup":39}],328:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],329:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],330:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],331:[function(require,module,exports){
-'use strict';
-
 /**
- * Module dependencies.
- */
-
-var bind = require('component-bind');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var when = require('do-when');
-
-/**
- * Expose `Mojn`
- */
-
-var Mojn = module.exports = integration('Mojn')
-  .global('_mojnTrack')
-  .option('customerCode', '')
-  .option('region', 'eu')
-  .option('sync', false)
-  .tag('main', '<script src="https://cdn.idtargeting.com/track/{{region}}.js">')
-  .tag('custom', '<script src="https://cdn.idtargeting.com/track/{{customerCode}}.js">')
-  .tag('identify', '<img width="1" height="1" src="https://matcher.idtargeting.com/identify.gif?cid={{cid}}&_mjnctid={{mjnctid}}">')
-  .tag('sync', '<img width="1" height="1" src="http://ho.idtargeting.com/c/{{cid}}?u={{uid}}&_chk">');
-
-/**
- * Initialize.
- *
- * @api public
- * @param {Object} page
- */
-
-Mojn.prototype.initialize = function() {
-  window._mojnTrack = window._mojnTrack || [];
-  window._mojnTrack.push({ cid: this.options.customerCode });
-  var loaded = bind(this, this.loaded);
-  var ready = this.ready;
-  var self = this;
-  this.load('main', function() {
-    self.load('custom', function() {
-      when(loaded, ready);
-    });
-  });
-};
-
-/**
- * Loaded?
+ * Since Mixpanel doesn't support lists of objects, invert each list of objects to a set of lists of object properties.
+ * Treats list transformation atomically, e.g. will only transform if EVERY item in list is an object
  *
  * @api private
- * @return {boolean}
+ * @param {Object} props
+ * @example
+ * input: {products: [{sku: 32, revenue: 99}, {sku:2, revenue: 103}]}
+ * output: {products_skus: [32, 2], products_revenues: [99, 103]}
  */
 
-Mojn.prototype.loaded = function() {
-  return is.object(window._mojnTrack);
-};
+function invertObjectArrays(props) {
+  for (var propName in props) {  // eslint-disable-line
+    var propValue = props[propName];
+    if (!props.hasOwnProperty(propName) || !Array.isArray(propValue)) {
+      continue;
+    }
 
-/**
- * Identify.
- *
- * @param {Identify} identify
- * @return {Element|undefined}
- */
-
-Mojn.prototype.identify = function(identify) {
-  var email = identify.email();
-  if (!email) return;
-
-  this.load('identify', { cid: this.options.customerCode, mjnctid: email });
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} event
- * @return {string}
- */
-
-Mojn.prototype.track = function(track) {
-  var properties = track.properties();
-  var revenue = properties.revenue;
-  if (!revenue) return;
-  var currency = properties.currency || '';
-  var conv = currency + revenue;
-  window._mojnTrack.push({ conv: conv });
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Mojn.prototype.page = function() {
-  if (!this.options.sync) return;
-  this.load('sync', { cid: this.options.customerCode, uid: this.analytics.user().anonymousId() });
-};
-
-},{"@segment/analytics.js-integration":332,"component-bind":608,"do-when":623,"is":629}],332:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":333,"./statics":334,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],333:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":335,"component-emitter":336,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":337}],334:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":336,"domify":624,"dup":39}],335:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],336:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],337:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],338:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_mfq');
-
-/**
- * Expose `Mouseflow`.
- */
-
-var Mouseflow = module.exports = integration('Mouseflow')
-  .assumesPageview()
-  .global('_mfq')
-  .global('mouseflow')
-  .global('mouseflowHtmlDelay')
-  .option('apiKey', '')
-  .option('mouseflowHtmlDelay', 0)
-  .tag('<script src="//cdn.mouseflow.com/projects/{{ apiKey }}.js">');
-
-/**
- * Initalize.
- *
- * @api public
- */
-
-Mouseflow.prototype.initialize = function() {
-  window.mouseflowHtmlDelay = this.options.mouseflowHtmlDelay;
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Mouseflow.prototype.loaded = function() {
-  return !!window.mouseflow;
-};
-
-/**
- * Page.
- *
- * http://mouseflow.zendesk.com/entries/22528817-Single-page-websites
- *
- * @api public
- * @param {Page} page
- */
-
-Mouseflow.prototype.page = function() {
-  if (!window.mouseflow) return;
-  if (typeof window.mouseflow.newPageView !== 'function') return;
-  window.mouseflow.newPageView();
-};
-
-/**
- * Identify.
- *
- * http://mouseflow.zendesk.com/entries/24643603-Custom-Variables-Tagging
- *
- * @api public
- * @param {Identify} identify
- */
-
-Mouseflow.prototype.identify = function(identify) {
-  set(identify.traits());
-};
-
-/**
- * Track.
- *
- * http://mouseflow.zendesk.com/entries/24643603-Custom-Variables-Tagging
- *
- * @api public
- * @param {Track} track
- */
-
-Mouseflow.prototype.track = function(track) {
-  var props = track.properties();
-  props.event = track.event();
-  set(props);
-};
-
-/**
- * Push each key and value in the given `obj` onto the queue.
- *
- * @api private
- * @param {Object} obj
- */
-
-function set(obj) {
-  each(obj, function(key, value) {
-    push('setVariable', key, value);
-  });
+    var invertedArrays = invertObjectArray(propName, propValue);
+    if (Object.keys(invertedArrays).length !== 0) { // make sure obj isn't empty
+      mergeArraysIntoObj(props, invertedArrays);
+      delete props[propName];
+    }
+  }
 }
 
-},{"@segment/analytics.js-integration":339,"component-each":611,"global-queue":625}],339:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":340,"./statics":341,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],340:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":342,"component-emitter":343,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":344}],341:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":343,"domify":624,"dup":39}],342:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],343:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],344:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],345:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var useHttps = require('use-https');
-
-/**
- * Expose `MouseStats` integration.
- */
-
-var MouseStats = module.exports = integration('MouseStats')
-  .assumesPageview()
-  .global('msaa')
-  .global('MouseStatsVisitorPlaybacks')
-  .option('accountNumber', '')
-  .tag('http', '<script src="http://www2.mousestats.com/js/{{ path }}.js?{{ cacheBuster }}">')
-  .tag('https', '<script src="https://ssl.mousestats.com/js/{{ path }}.js?{{ cacheBuster }}">');
-
-/**
- * Initialize.
- *
- * http://www.mousestats.com/docs/pages/allpages
- *
- * @api public
- */
-
-MouseStats.prototype.initialize = function() {
-  var accountNumber = this.options.accountNumber;
-  var path = accountNumber.slice(0, 1) + '/' + accountNumber.slice(1, 2) + '/' + accountNumber;
-  var cacheBuster = Math.floor(new Date().getTime() / 60000);
-  var tagName = useHttps() ? 'https' : 'http';
-  this.load(tagName, { path: path, cacheBuster: cacheBuster }, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-MouseStats.prototype.loaded = function() {
-  return is.array(window.MouseStatsVisitorPlaybacks);
-};
-
-/**
- * Identify.
- *
- * http://www.mousestats.com/docs/wiki/7/how-to-add-custom-data-to-visitor-playbacks
- *
- * @api public
- * @param {Identify} identify
- */
-
-MouseStats.prototype.identify = function(identify) {
-  each(identify.traits(), function(key, value) {
-    window.MouseStatsVisitorPlaybacks.customVariable(key, value);
-  });
-};
-
-},{"@segment/analytics.js-integration":346,"component-each":611,"is":629,"use-https":672}],346:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":347,"./statics":348,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],347:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":349,"component-emitter":350,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":351}],348:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":350,"domify":624,"dup":39}],349:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],350:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],351:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],352:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('__nls');
-
-/**
- * Expose `Navilytics` integration.
- */
-
-var Navilytics = module.exports = integration('Navilytics')
-  .assumesPageview()
-  .global('__nls')
-  .option('memberId', '')
-  .option('projectId', '')
-  .tag('<script src="//www.navilytics.com/nls.js?mid={{ memberId }}&pid={{ projectId }}">');
-
-/**
- * Initialize.
- *
- * https://www.navilytics.com/member/code_settings
- *
- * @api public
- */
-
-Navilytics.prototype.initialize = function() {
-  window.__nls = window.__nls || [];
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Navilytics.prototype.loaded = function() {
-  return !!(window.__nls && Array.prototype.push !== window.__nls.push);
-};
-
-/**
- * Track.
- *
- * https://www.navilytics.com/docs#tags
- *
- * @param {Track} track
- */
-
-Navilytics.prototype.track = function(track) {
-  push('tagRecording', track.event());
-};
-
-},{"@segment/analytics.js-integration":353,"global-queue":625}],353:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":354,"./statics":355,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],354:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":356,"component-emitter":357,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":358}],355:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":357,"domify":624,"dup":39}],356:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],357:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],358:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],359:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var alias = require('@segment/alias');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Nudgespot` integration.
- */
-
-var Nudgespot = module.exports = integration('Nudgespot')
-  .assumesPageview()
-  .global('nudgespot')
-  .option('clientApiKey', '')
-  .tag('<script id="nudgespot" src="//cdn.nudgespot.com/nudgespot.js">');
-
-/**
- * Initialize Nudgespot.
- *
- * @api public
- */
-
-Nudgespot.prototype.initialize = function() {
-  window.nudgespot = window.nudgespot || [];
-
-  // XXX(ndhoule): This script has been modified to:
-  //   1) Remove the Nudgespot snippet's script loading logic
-  //   2) Fix a global variable leak
-  /* eslint-disable */
-  !function(e){e.init=function(p){function t(e,p){var t=p.split(".");2==t.length&&(e=e[t[0]],p=t[1]),e[p]=function(){e.push([p].concat(Array.prototype.slice.call(arguments,0)))}}e._version=.1,e._globals=[p],e.people=e.people||[],e.params=e.params||[];for(var o="track register unregister identify set_config people.delete people.create people.update people.create_property people.tag people.remove_Tag".split(" "),r=0;r<o.length;r++)t(e,o[r])}}(window.nudgespot);
-  /* eslint-enable */
-
-  window.nudgespot.init(this.options.clientApiKey);
-  this.load(this.ready);
-};
-
-/**
- * Has the Nudgespot library been loaded yet?
- *
- * @api private
- * @return {boolean}
- */
-
-Nudgespot.prototype.loaded = function() {
-  return !!(window.nudgespot && window.nudgespot.push !== Array.prototype.push);
-};
-
-/**
- * Identify a user.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Nudgespot.prototype.identify = function(identify) {
-  if (!identify.userId()) return this.debug('user id required');
-  var traits = identify.traits({ createdAt: 'created' });
-  traits = alias(traits, { created: 'created_at' });
-  window.nudgespot.identify(identify.userId(), traits);
-};
-
-/**
- * Track an event.
- *
- * @api public
- * @param {Track} track
- */
-
-Nudgespot.prototype.track = function(track) {
-  window.nudgespot.track(track.event(), track.properties());
-};
-
-},{"@segment/alias":19,"@segment/analytics.js-integration":360}],360:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":361,"./statics":362,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],361:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":363,"component-emitter":364,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":365}],362:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":364,"domify":624,"dup":39}],363:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],364:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],365:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],366:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var https = require('use-https');
-var integration = require('@segment/analytics.js-integration');
-var tick = require('next-tick');
-
-/**
- * Expose `Olark` integration.
- */
-
-var Olark = module.exports = integration('Olark')
-  .assumesPageview()
-  .global('olark')
-  .option('groupId', '')
-  .option('identify', true)
-  .option('listen', false)
-  .option('page', true)
-  .option('siteId', '')
-  .option('track', false)
-  .option('inline', false);
-
-/**
- * The context for this integration.
- */
-
-var integrationContext = {
-  name: 'olark',
-  version: '1.0.0'
-};
-
-/**
- * Initialize.
- *
- * http://www.olark.com/documentation
- * https://www.olark.com/documentation/javascript/api.chat.setOperatorGroup
- *
- * @api public
- */
-
-Olark.prototype.initialize = function() {
-  var self = this;
-  this.load(function() {
-    tick(self.ready);
-  });
-
-  // assign chat to a specific site
-  var groupId = this.options.groupId;
-  if (groupId) api('chat.setOperatorGroup', { group: groupId });
-
-  // keep track of the widget's open state
-  api('box.onExpand', function() { self._open = true; });
-  api('box.onShrink', function() { self._open = false; });
-
-  // record events
-  if (this.options.listen) this.attachListeners();
-};
-
-/**
- * Load.
- *
- * @api private
- * @param {Function} callback
- */
-
-Olark.prototype.load = function(callback) {
-  /* eslint-disable */
-  window.olark||(function(c){var f=window,d=document,l=https()?"https:":"http:",z=c.name,r="load";var nt=function(){f[z]=function(){(a.s=a.s||[]).push(arguments)};var a=f[z]._={},q=c.methods.length;while (q--) {(function(n){f[z][n]=function(){f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={ 0:+new Date() };a.P=function(u){a.p[u]=new Date()-a.p[0]};function s(){a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){hd="head";return ["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if (!m) {return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if (/MSIE[ ]+6/.test(navigator.userAgent)) {b.src="javascript:false"}b.allowTransparency="true";v[j](b);try {b.contentWindow[g].open()}catch (w) {c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try {var t=b.contentWindow[g];t.write(p());t.close()}catch (x) {b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({ loader: "static.olark.com/jsclient/loader0.js", name:"olark", methods:["configure","extend","declare","identify"] });
-  /* eslint-enable */
-
-  // check if chat should be loaded as `inline chat`
-  if (this.options.inline) configure('box.inline', true);
-
-  window.olark.identify(this.options.siteId);
-  callback();
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Olark.prototype.loaded = function() {
-  return !!window.olark;
-};
-
-/**
- * Page.
- *
- * @param {Facade} page
- */
-
-Olark.prototype.page = function(page) {
-  if (!this.options.page) return;
-  var props = page.properties();
-  var name = page.fullName();
-  if (!name && !props.url) return;
-
-  name = name ? name + ' page' : props.url;
-  this.notify('looking at ' + name);
-};
-
-/**
- * Identify.
- *
- * @param {Facade} identify
- */
-
-Olark.prototype.identify = function(identify) {
-  if (!this.options.identify) return;
-
-  var username = identify.username();
-  var traits = identify.traits();
-  var id = identify.userId();
-  var email = identify.email();
-  var phone = identify.phone();
-  var name = identify.name() || identify.firstName();
-
-  if (traits) api('visitor.updateCustomFields', traits);
-  if (email) api('visitor.updateEmailAddress', { emailAddress: email });
-  if (phone) api('visitor.updatePhoneNumber', { phoneNumber: phone });
-  if (name) api('visitor.updateFullName', { fullName: name });
-
-  // figure out best nickname
-  var nickname = name || email || username || id;
-  if (name && email) nickname += ' (' + email + ')';
-  if (nickname) api('chat.updateVisitorNickname', { snippet: nickname });
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Facade} track
- */
-
-Olark.prototype.track = function(track) {
-  if (!this.options.track) return;
-  this.notify('visitor triggered "' + track.event() + '"');
-};
-
-/**
- * Listen for events.
- */
-
-Olark.prototype.attachListeners = function() {
-  var self = this;
-
-  api('chat.onBeginConversation', function() {
-    self.analytics.track(
-      'Live Chat Conversation Started',
-      {},
-      {
-        context: { integration: integrationContext },
-        integrations: { Olark: false }
+// Example:
+// input: 'products', [{sku: 32, revenue: 99}, {sku:2, revenue: 103}]
+// output: {products_skus: [32, 2], products_revenues: [99, 103]}
+function invertObjectArray(propName, arr) {
+  var invertedArrays = {};
+
+  // invert object lists and collect into invertedLists
+  for (var i=0; i<arr.length; i++) {
+    var elem = arr[i];
+
+    // abort operation if non-object encountered in array
+    if (typeof elem !== 'object') {
+      return {};
+    }
+    for (var key in elem) {
+      if (!elem.hasOwnProperty(key)) {
+        continue;
       }
-    );
-  });
+      var attrKey = propName+'_'+key+'s';  // e.g. products_skus
 
-  // Callback accepts `event`
-  // TODO: We might eventually send information about the event through Segment
-  api('chat.onMessageToOperator', function() {
-    self.analytics.track(
-      'Live Chat Message Sent',
-      {},
-      {
-        context: { integration: integrationContext },
-        integrations: { Olark: false }
+      // append to list if it exists or create new one if not
+      if (attrKey in invertedArrays) {
+        invertedArrays[attrKey].push(elem[key]);
+      } else {
+        invertedArrays[attrKey] = [elem[key]];
       }
-    );
-  });
-
-  // Callback accepts `event`
-  // TODO: We might eventually send information about the event through Segment
-  api('chat.onMessageToVisitor', function() {
-    self.analytics.track(
-      'Live Chat Message Received',
-      {},
-      {
-        context: { integration: integrationContext },
-        integrations: { Olark: false }
-      }
-    );
-  });
-};
-
-/**
- * Send a notification `message` to the operator, only when a chat is active and
- * when the chat is open.
- *
- * @api private
- * @param {string} message
- */
-
-Olark.prototype.notify = function(message) {
-  if (!this._open) return;
-
-  // lowercase since olark does
-  message = message.toLowerCase();
-
-  api('visitor.getDetails', function(data) {
-    if (!data || !data.isConversing) return;
-    api('chat.sendNotificationToOperator', { body: message });
-  });
-};
-
-/**
- * Helper for Olark API calls.
- *
- * @api private
- * @param {string} action
- * @param {Object} value
- */
-
-function api(action, value) {
-  window.olark('api.' + action, value);
+    }
+  }
+  return invertedArrays;
 }
 
-function configure(action, value) {
-  window.olark.configure(action, value);
+function mergeArraysIntoObj(destination, source) {
+  for (var arrayName in source) {
+    if (source.hasOwnProperty(arrayName)) {
+      var arr = source[arrayName];
+      destination[arrayName] = arrayName in destination ? destination[arrayName].concat(arr) : arr;
+    }
+  }
 }
 
-},{"@segment/analytics.js-integration":367,"next-tick":640,"use-https":672}],367:[function(require,module,exports){
+
+/**
+ * Return union of two arrays
+ * Pulled from https://stackoverflow.com/a/3629861
+ *
+ * @param {Array} x
+ * @param {Array} y
+ * @return {Array} res
+ * @api private
+ */
+
+function unionArrays(x, y) {
+  var obj = {};
+  // store items of each array as keys/values of obj, implicitly overwriting duplicates
+  var i;
+  for (i = 0; i < x.length; i++) {
+    obj[x[i]] = x[i];
+  }
+  for (i = 0; i < y.length; i++) {
+    obj[y[i]] = y[i];
+  }
+  return Object.keys(obj);
+}
+
+},{"@ndhoule/includes":12,"@ndhoule/pick":15,"@segment/alias":19,"@segment/analytics.js-integration":71,"@segment/convert-dates":102,"@segment/to-iso-string":121,"component-indexof":136,"is":153,"obj-case":167}],71:[function(require,module,exports){
+arguments[4][34][0].apply(exports,arguments)
+},{"./protos":72,"./statics":73,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":75,"dup":34,"slug-component":185}],72:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":74,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],73:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],74:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./protos":368,"./statics":369,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],368:[function(require,module,exports){
+},{"dup":37}],75:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":370,"component-emitter":371,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":372}],369:[function(require,module,exports){
+},{"./debug":76,"_process":170,"dup":38}],76:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":371,"domify":624,"dup":39}],370:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],371:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],372:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],373:[function(require,module,exports){
+},{"dup":39,"ms":161}],77:[function(require,module,exports){
 'use strict';
 
 /**
@@ -13552,7 +9031,8 @@ var Optimizely = module.exports = integration('Optimizely')
   .option('trackNamedPages', true)
   .option('variations', false) // send data via `.identify()`
   .option('listen', true) // send data via `.track()`
-  .option('nonInteraction', false);
+  .option('nonInteraction', false)
+  .option('sendRevenueOnlyForOrderCompleted', true);
 
 /**
  * The name and version for this integration.
@@ -13596,14 +9076,18 @@ Optimizely.prototype.initialize = function() {
 };
 
 /**
- * Track. The Optimizely Web trackEvent can only send one property, revenue
+ * Track. The Optimizely X Web event API accepts a single payload object.
+ *        It works with Classic Optimizely as well.
  *
- * https://www.optimizely.com/docs/api#track-event
- * http://developers.optimizely.com/javascript/reference/#api-function-calls
+ * Optimizely X:  https://developers.optimizely.com/x/solutions/javascript/reference/index.html#function_setevent
+ *
+ * The new-style X API is forward compatible from Optimizely Classic to Optimizely X.
+ *   - Classic will correctly consume the tags object to identify the revenue
+ *   - In bundled mode, it will be forwarded along to the X API with the entire payload
  *
  * If the Optimizely X Fullstack JavaScript SDK is being used we should pass along
- * the event to it. Any properties in the track object will be passed along as attributes.
- * If the userId is not passed into the properties object of the track call, we'll
+ * the event to it. Any properties in the track object will be passed along as event tags.
+ * If the userId is not passed into the options object of the track call, we'll
  * attempt to use the userId of the track event, which is set using the analytics.identify call.
  *
  * https://developers.optimizely.com/x/solutions/sdks/reference/?language=javascript#tracking
@@ -13613,18 +9097,39 @@ Optimizely.prototype.initialize = function() {
  */
 
 Optimizely.prototype.track = function(track) {
-  var payload = {};
-  var revenue = track.revenue();
-  if (revenue) payload.revenue = revenue *= 100;
-  push(['trackEvent', track.event(), payload]);
+  var opts = this.options;
+  var eventProperties = track.properties();
+
+  // Optimizely expects revenue only passed through Order Completed events
+  if (eventProperties.revenue && opts.sendRevenueOnlyForOrderCompleted) {
+    if (track.event() === 'Order Completed') {
+      eventProperties.revenue = Math.round(eventProperties.revenue * 100);
+    } else if (track.event() !== 'Order Completed') {
+      delete eventProperties.revenue;
+    }
+    // This is legacy Segment-Optimizely behavior, 
+    // which passes revenue whenever it is present
+  } else if (opts.sendRevenueOnlyForOrderCompleted === false && eventProperties.revenue) {
+    eventProperties.revenue = Math.round(eventProperties.revenue * 100);
+  }
+
+  // Use the new-style API (which is compatible with Classic and X)
+  var eventName = track.event().replace(/:/g, '_'); // can't have colons so replacing with underscores
+  var payload = {
+    type: 'event',
+    eventName: eventName,
+    tags: eventProperties
+  };
+
+  push(payload);
 
   var optimizelyClientInstance = window.optimizelyClientInstance;
   if (optimizelyClientInstance && optimizelyClientInstance.track) {
-    var attributes = track.properties();
     var optimizelyOptions = track.options('Optimizely');
-    var userId = optimizelyOptions.userId || track.userId();
+    var userId = optimizelyOptions.userId || track.userId() || this.analytics.user().id();
+    var attributes = optimizelyOptions.attributes || track.traits() || this.analytics.user().traits();
     if (userId) {
-      optimizelyClientInstance.track(track.event(), userId, attributes, payload.revenue);
+      optimizelyClientInstance.track(eventName, userId, attributes, payload.tags);
     }
   }
 };
@@ -13779,6 +9284,7 @@ Optimizely.prototype.sendClassicDataToSegment = function(experimentState) {
  * @param {Object} campaignState.variation: the variation the visitor is seeing
  * @param {String} campaignState.variation.id: the id of the variation
  * @param {String} campaignState.variation.name: the name of the variation
+ * @param {String} campaignState.isInCampaignHoldback: whether the visitor is in the Campaign holdback 
  */
 
 Optimizely.prototype.sendNewDataToSegment = function(campaignState) {
@@ -13806,7 +9312,8 @@ Optimizely.prototype.sendNewDataToSegment = function(campaignState) {
       variationName: variation.name,
       variationId: variation.id,
       audienceId: audienceIds, // eg. '7527562222,7527111138'
-      audienceName: audienceNames // eg. 'Peaky Blinders, Trust Tree'
+      audienceName: audienceNames, // eg. 'Peaky Blinders, Trust Tree'
+      isInCampaignHoldback: campaignState.isInCampaignHoldback
     };
 
     // If this was a redirect experiment and the effective referrer is different from document.referrer,
@@ -14037,1878 +9544,162 @@ Optimizely.initOptimizelyIntegration = function(handlers) {
   initNewOptimizelyIntegration(handlers.referrerOverride, handlers.sendCampaignData);
 };
 
+},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/values":17,"@segment/analytics.js-integration":78,"global-queue":147,"next-tick":85}],78:[function(require,module,exports){
+arguments[4][34][0].apply(exports,arguments)
+},{"./protos":79,"./statics":80,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":83,"dup":34,"slug-component":185}],79:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":82,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":81,"to-no-case":190}],80:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],81:[function(require,module,exports){
+(function (process,setImmediate){
+'use strict';
 
-},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/values":17,"@segment/analytics.js-integration":374,"global-queue":625,"next-tick":380}],374:[function(require,module,exports){
+var callable, byObserver;
+
+callable = function (fn) {
+	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
+	return fn;
+};
+
+byObserver = function (Observer) {
+	var node = document.createTextNode(''), queue, i = 0;
+	new Observer(function () {
+		var data;
+		if (!queue) return;
+		data = queue;
+		queue = null;
+		if (typeof data === 'function') {
+			data();
+			return;
+		}
+		data.forEach(function (fn) { fn(); });
+	}).observe(node, { characterData: true });
+	return function (fn) {
+		callable(fn);
+		if (queue) {
+			if (typeof queue === 'function') queue = [queue, fn];
+			else queue.push(fn);
+			return;
+		}
+		queue = fn;
+		node.data = (i = ++i % 2);
+	};
+};
+
+module.exports = (function () {
+	// Node.js
+	if ((typeof process !== 'undefined') && process &&
+			(typeof process.nextTick === 'function')) {
+		return process.nextTick;
+	}
+
+	// MutationObserver=
+	if ((typeof document === 'object') && document) {
+		if (typeof MutationObserver === 'function') {
+			return byObserver(MutationObserver);
+		}
+		if (typeof WebKitMutationObserver === 'function') {
+			return byObserver(WebKitMutationObserver);
+		}
+	}
+
+	// W3C Draft
+	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
+	if (typeof setImmediate === 'function') {
+		return function (cb) { setImmediate(callable(cb)); };
+	}
+
+	// Wide available standard
+	if (typeof setTimeout === 'function') {
+		return function (cb) { setTimeout(callable(cb), 0); };
+	}
+
+	return null;
+}());
+
+}).call(this,require('_process'),require("timers").setImmediate)
+},{"_process":170,"timers":187}],82:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./protos":375,"./statics":376,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],375:[function(require,module,exports){
+},{"dup":37}],83:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":378,"component-emitter":379,"dup":38,"is":629,"load-iframe":635,"next-tick":377,"to-no-case":381}],376:[function(require,module,exports){
+},{"./debug":84,"_process":170,"dup":38}],84:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":379,"domify":624,"dup":39}],377:[function(require,module,exports){
-arguments[4][176][0].apply(exports,arguments)
-},{"_process":647,"dup":176}],378:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],379:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],380:[function(require,module,exports){
-arguments[4][179][0].apply(exports,arguments)
-},{"_process":647,"dup":179}],381:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],382:[function(require,module,exports){
-
+},{"dup":39,"ms":161}],85:[function(require,module,exports){
+(function (process,setImmediate){
 'use strict';
 
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var uncase = require('to-no-case');
-var foldl = require('@ndhoule/foldl');
-var Identify = require('segmentio-facade').Identify;
-
-/**
- * Expose `Outbound` integration.
- */
-
-var Outbound = module.exports = integration('Outbound')
-  .global('outbound')
-  .option('publicApiKey', '')
-  .option('trackReferrer', false)
-  .tag('<script src="//cdn.outbound.io/{{ publicApiKey }}.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Outbound.prototype.initialize = function() {
-  window.outbound = window.outbound || [];
-  window.outbound.methods = [
-    'identify',
-    'track',
-    'alias',
-    'registerApnsToken',
-    'registerGcmToken',
-    'disableApnsToken',
-    'disableGcmToken',
-    'disableAllGcmTokens',
-    'disableAllApnsTokens',
-    'unsubscribeAll',
-    'unsubscribeCampaigns',
-    'subscribeAll',
-    'subscribeCampaigns',
-    'hasIdentified'
-  ];
-
-  window.outbound.factory = function(method) {
-    return function() {
-      var args = Array.prototype.slice.call(arguments);
-      args.unshift(method);
-      window.outbound.push(args);
-      return window.outbound;
-    };
-  };
-
-  for (var i = 0; i < window.outbound.methods.length; i++) {
-    var key = window.outbound.methods[i];
-    window.outbound[key] = window.outbound.factory(key);
-  }
-
-  this.load(this.ready);
-};
-
-/**
-* Loaded
-*
-* @api private
-* @return {boolean}
-*/
-
-Outbound.prototype.loaded = function() {
-  return !!(window.outbound && window.outbound.reset);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Outbound.prototype.identify = function(identify) {
-  var specialTraits = {
-    id: true,
-    email: true,
-    phone: true,
-    'user id': true,
-    'last name': true,
-    'first name': true
-  };
-
-  var userId = identify.userId() || identify.anonymousId();
-
-  var attributes = foldl(function(acc, val, key) {
-    if (!specialTraits.hasOwnProperty(uncase(key))) acc.attributes[key] = val;
-    return acc;
-  }, {
-    attributes: {},
-    email: identify.email(),
-    phoneNumber: identify.phone(),
-    firstName: identify.firstName(),
-    lastName: identify.lastName()
-  }, identify.traits());
-
-  window.outbound.identify(userId, attributes);
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Outbound.prototype.track = function(track) {
-  if (!window.outbound.hasIdentified()) {
-    var user = new Identify({ userId: track.userId() || track.anonymousId() });
-    this.identify(user);
-  }
-  window.outbound.track(track.event(), track.properties(), track.timestamp());
-};
-
-/**
- * Alias.
- *
- * @api public
- * @param {Alias} alias
- */
-
-Outbound.prototype.alias = function(alias) {
-  window.outbound.identify(alias.userId(), { previousId: alias.previousId() });
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-Outbound.prototype.page = function(page) {
-  var props = page.properties();
-  var evtName = '[Segment Page]';
-
-  if (!this.options.trackReferrer) {
-    delete props.referrer;
-  }
-
-  if (props.name || props.url) {
-    evtName += ' ' + props.name || props.url;
-  }
-
-  if (!window.outbound.hasIdentified()) {
-    var user = new Identify({ userId: page.userId() || page.anonymousId() });
-    this.identify(user);
-  }
-
-  window.outbound.track(evtName, props, page.timestamp());
-};
-},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":383,"segmentio-facade":655,"to-no-case":389}],383:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":384,"./statics":385,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],384:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":387,"component-emitter":388,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":386}],385:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":388,"domify":624,"dup":39}],386:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],387:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],388:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],389:[function(require,module,exports){
-
-/**
- * Export.
- */
-
-module.exports = toNoCase
-
-/**
- * Test whether a string is camel-case.
- */
-
-var hasSpace = /\s/
-var hasSeparator = /(_|-|\.|:)/
-var hasCamel = /([a-z][A-Z]|[A-Z][a-z])/
-
-/**
- * Remove any starting case from a `string`, like camel or snake, but keep
- * spaces and punctuation that may be important otherwise.
- *
- * @param {String} string
- * @return {String}
- */
-
-function toNoCase(string) {
-  if (hasSpace.test(string)) return string.toLowerCase()
-  if (hasSeparator.test(string)) return (unseparate(string) || string).toLowerCase()
-  if (hasCamel.test(string)) return uncamelize(string).toLowerCase()
-  return string.toLowerCase()
-}
-
-/**
- * Separator splitter.
- */
-
-var separatorSplitter = /[\W_]+(.|$)/g
-
-/**
- * Un-separate a `string`.
- *
- * @param {String} string
- * @return {String}
- */
-
-function unseparate(string) {
-  return string.replace(separatorSplitter, function (m, next) {
-    return next ? ' ' + next : ''
-  })
-}
-
-/**
- * Camelcase splitter.
- */
-
-var camelSplitter = /(.)([A-Z]+)/g
-
-/**
- * Un-camelcase a `string`.
- *
- * @param {String} string
- * @return {String}
- */
-
-function uncamelize(string) {
-  return string.replace(camelSplitter, function (m, previous, uppers) {
-    return previous + ' ' + uppers.toLowerCase().split('').join(' ')
-  })
-}
-
-},{}],390:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var when = require('do-when');
-var reject = require('reject');
-var json = require('json3');
-
-/**
- * Expose `Parsely` integration.
- */
-
-var Parsely = module.exports = integration('Parsely')
-  .global('PARSELY')
-  .option('apiKey', '')
-  .option('dynamicTracking', false)
-  .option('trackEvents', false)
-  .option('inPixelMetadata', false)
-  .tag('<script src="//d1z2jf7jlzjs58.cloudfront.net/p.js">');
-
-/**
- * Initialize.
- */
-
-Parsely.prototype.initialize = function() {
-  window.PARSELY = window.PARSELY || {};
-  // Set autoload to false to trigger pageviews on deliberate `page calls`
-  if (this.options.dynamicTracking) window.PARSELY.autotrack = false;
-  var self = this;
-
-  // append the meta tag we need first before JS fires
-  var meta = document.createElement('meta');
-  meta.id = 'parsely-cfg';
-  meta.setAttribute('data-parsely-site', this.options.apiKey);
-  var head = document.getElementsByTagName('head')[0];
-  if (!head) return;
-  head.appendChild(meta);
-
-  this.load(function() {
-    when(self.loaded, self.ready);
-  });
-};
-
-Parsely.prototype.loaded = function() {
-  return !!window.PARSELY.beacon;
-};
-
-/**
- * Page.
- *
- * Only Invoked if dynamicTracking is enabled (otherwise noop)
- */
-
-Parsely.prototype.page = function(page) {
-  if (!this.options.dynamicTracking) return;
-  var properties = page.properties();
-  var data = {
-    url: page.url(),
-    urlref: page.referrer(),
-    data: properties,
-    js: 1
-  };
-
-  if (this.options.inPixelMetadata) {
-    var metadata = {
-      articleSection: page.category() || properties.category,
-      thumbnailUrl: properties.imageUrl,
-      dateCreated: properties.created,
-      headline: properties.headline,
-      keywords: properties.keywords,
-      creator: properties.author,
-      url: properties.url
-    };
-
-    // strip any undefined or nulls
-    data.metadata = json.stringify(reject(metadata));
-  }
-
-  window.PARSELY.beacon.trackPageView(data);
-};
-
-/**
- * Track.
- *
- * http://www.parsely.com/help/integration/dynamic/
- */
-
-Parsely.prototype.track = function(track) {
-  if (this.options.trackEvents) {
-    window.PARSELY.beacon.trackPageView({
-      data: track.properties(),
-      action: track.event(),
-      url: track.proxy('context.page.url'),
-      urlref: track.proxy('context.page.referrer'),
-      js: 1
-    });
-  }
-};
-
-},{"@segment/analytics.js-integration":391,"do-when":623,"json3":633,"reject":648}],391:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":392,"./statics":393,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],392:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":394,"component-emitter":395,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":396}],393:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":395,"domify":624,"dup":39}],394:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],395:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],396:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],397:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_pq');
-
-/**
- * Expose `PerfectAudience` integration.
- */
-
-var PerfectAudience = module.exports = integration('Perfect Audience')
-  .assumesPageview()
-  .global('_pq')
-  .option('siteId', '')
-  .tag('<script src="//tag.perfectaudience.com/serve/{{ siteId }}.js">');
-
-/**
- * Initialize.
- *
- * http://support.perfectaudience.com/knowledgebase/articles/212490-visitor-tracking-api
- *
- * @api public
- */
-
-PerfectAudience.prototype.initialize = function() {
-  window._pq = window._pq || [];
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-PerfectAudience.prototype.loaded = function() {
-  return !!(window._pq && window._pq.push);
-};
-
-/**
- * Track.
- *
- * http://support.perfectaudience.com/knowledgebase/articles/212490-visitor-tracking-api
- *
- * @api public
- * @param {Track} event
- */
-
-PerfectAudience.prototype.track = function(track) {
-  var total = track.total() || track.revenue();
-  var orderId = track.orderId();
-  var props = {};
-  var sendProps = false;
-  if (total) {
-    props.revenue = total;
-    sendProps = true;
-  }
-  if (orderId) {
-    props.orderId = orderId;
-    sendProps = true;
-  }
-
-  if (!sendProps) return push('track', track.event());
-  return push('track', track.event(), props);
-};
-
-/**
- * Product viewed.
- *
- * http://support.perfectaudience.com/knowledgebase/articles/212490-visitor-tracking-api
- *
- * @api private
- * @param {Track} track
- */
-
-PerfectAudience.prototype.productViewed = function(track) {
-  var product = track.productId() || track.id() || track.sku();
-  push('track', track.event());
-  push('trackProduct', product);
-};
-
-/**
- * Completed Purchase.
- *
- * http://support.perfectaudience.com/knowledgebase/articles/212490-visitor-tracking-api
- *
- * @api private
- * @param {Track} track
- */
-
-PerfectAudience.prototype.orderCompleted = function(track) {
-  var total = track.total() || track.revenue();
-  var orderId = track.orderId();
-  var props = {};
-  if (total) props.revenue = total;
-  if (orderId) props.orderId = orderId;
-  push('track', track.event(), props);
-};
-
-},{"@segment/analytics.js-integration":586,"global-queue":625}],398:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_prum');
-
-/**
- * Expose `Pingdom` integration.
- */
-
-var Pingdom = module.exports = integration('Pingdom')
-  .assumesPageview()
-  .global('_prum')
-  .global('PRUM_EPISODES')
-  .option('id', '')
-  .tag('<script src="//rum-static.pingdom.net/prum.min.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Pingdom.prototype.initialize = function() {
-  window._prum = window._prum || [];
-  push('id', this.options.id);
-  var date = new Date();
-  push('mark', 'firstbyte', date.getTime());
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Pingdom.prototype.loaded = function() {
-  return !!(window._prum && window._prum.push !== Array.prototype.push);
-};
-
-},{"@segment/analytics.js-integration":399,"global-queue":625}],399:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":400,"./statics":401,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],400:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":402,"component-emitter":403,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":404}],401:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":403,"domify":624,"dup":39}],402:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],403:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],404:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],405:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var push = require('global-queue')('_paq');
-
-/**
- * Expose `Piwik` integration.
- */
-
-var Piwik = module.exports = integration('Piwik')
-  .global('_paq')
-  .option('url', null)
-  .option('siteId', '')
-  .option('customVariableLimit', 5)
-  .mapping('goals')
-  .tag('<script src="{{ url }}/piwik.js">');
-
-/**
- * Initialize.
- *
- * http://piwik.org/docs/javascript-tracking/#toc-asynchronous-tracking
- *
- * @api public
- */
-
-Piwik.prototype.initialize = function() {
-  window._paq = window._paq || [];
-  push('setSiteId', this.options.siteId);
-  push('setTrackerUrl', this.options.url + '/piwik.php');
-  push('enableLinkTracking');
-  this.load(this.ready);
-};
-
-/**
- * Check if Piwik is loaded.
- *
- * @api private
- */
-
-Piwik.prototype.loaded = function() {
-  return !!(window._paq && window._paq.push !== Array.prototype.push);
-};
-
-/**
- * Page
- *
- * @api public
- * @param {Page} page
- */
-
-Piwik.prototype.page = function() {
-  push('trackPageView');
-};
-
-/**
- * Identify
- *
- * @api public
- * @param {Identify} identify
- */
-
-Piwik.prototype.identify = function(identify) {
-  if (!identify.userId()) return;
-  // Ref: http://developer.piwik.org/guides/tracking-javascript-guide#user-id
-  push('setUserId', identify.userId().toString());
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Piwik.prototype.track = function(track) {
-  var goals = this.goals(track.event());
-  var revenue = track.revenue();
-  var category = track.category() || 'All';
-  var action = track.event();
-  var name = track.proxy('properties.name') || track.proxy('properties.label');
-  var value = track.value() || track.revenue();
-
-  var options = track.options('Piwik');
-  var customVariables = options.customVars || options.cvar;
-
-  if (!is.object(customVariables)) {
-    customVariables = {};
-  }
-
-  for (var i = 1; i <= this.options.customVariableLimit; i += 1) {
-    if (customVariables[i]) {
-      push('setCustomVariable', i.toString(), customVariables[i][0], customVariables[i][1], 'page');
-    }
-  }
-
-  each(goals, function(goal) {
-    push('trackGoal', goal, revenue);
-  });
-
-  push('trackEvent', category, action, name, value);
-};
-
-},{"@segment/analytics.js-integration":406,"component-each":611,"global-queue":625,"is":629}],406:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":407,"./statics":408,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],407:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":409,"component-emitter":410,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":411}],408:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":410,"domify":624,"dup":39}],409:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],410:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],411:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],412:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var convertDates = require('@segment/convert-dates');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_preactq');
-
-/**
- * Expose `Preact` integration.
- */
-
-var Preact = module.exports = integration('Preact')
-  .assumesPageview()
-  .global('_preactq')
-  .global('_lnq')
-  .option('projectCode', '')
-  .tag('<script src="//d2bbvl6dq48fa6.cloudfront.net/js/preact-4.1.min.js">');
-
-/**
- * Initialize.
- *
- * http://www.preact.io/api/javascript
- *
- * @api public
- * @param {Object} page
- */
-
-Preact.prototype.initialize = function() {
-  window._preactq = window._preactq || [];
-  window._lnq = window._lnq || [];
-  push('_setCode', this.options.projectCode);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Preact.prototype.loaded = function() {
-  return !!(window._preactq && window._preactq.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Preact.prototype.identify = function(identify) {
-  if (!identify.userId()) return;
-  var traits = identify.traits({ created: 'created_at' });
-  traits = convertDates(traits, convertDate);
-  push('_setPersonData', {
-    name: identify.name(),
-    email: identify.email(),
-    uid: identify.userId(),
-    properties: traits
-  });
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-Preact.prototype.group = function(group) {
-  if (!group.groupId()) return;
-  push('_setAccount', group.traits());
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Preact.prototype.track = function(track) {
-  var props = track.properties();
-  var revenue = track.revenue();
-  var event = track.event();
-  var special = { name: event };
-
-  if (revenue) {
-    special.revenue = revenue * 100;
-    delete props.revenue;
-  }
-
-  if (props.note) {
-    special.note = props.note;
-    delete props.note;
-  }
-
-  push('_logEvent', special, props);
-};
-
-/**
- * Convert a `date` to a format Preact supports.
- *
- * @param {Date} date
- * @return {number}
- */
-
-function convertDate(date) {
-  return Math.floor(date / 1000);
-}
-
-},{"@segment/analytics.js-integration":413,"@segment/convert-dates":593,"global-queue":625}],413:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":414,"./statics":415,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],414:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":416,"component-emitter":417,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":418}],415:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":417,"domify":624,"dup":39}],416:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],417:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],418:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],419:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Identify = require('segmentio-facade').Identify;
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_kiq');
-var when = require('do-when');
-
-/**
- * Expose `Qualaroo` integration.
- */
-
-var Qualaroo = module.exports = integration('Qualaroo')
-  .assumesPageview()
-  .global('_kiq')
-  .option('customerId', '')
-  .option('siteToken', '')
-  .option('track', false)
-  .tag('<script src="//s3.amazonaws.com/ki.js/{{ customerId }}/{{ siteToken }}.js">');
-
-/**
- * Initialize.
- *
- * @api public
- * @param {Object} page
- */
-
-Qualaroo.prototype.initialize = function() {
-  window._kiq = window._kiq || [];
-  var loaded = this.loaded;
-  var ready = this.ready;
-  this.load(function() {
-    when(loaded, ready);
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Qualaroo.prototype.loaded = function() {
-  return !!(window._kiq && window._kiq.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- * http://help.qualaroo.com/customer/portal/articles/731085-identify-survey-nudge-takers
- * http://help.qualaroo.com/customer/portal/articles/731091-set-additional-user-properties
- *
- * @api public
- * @param {Identify} identify
- */
-
-Qualaroo.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  var id = identify.userId();
-  var email = identify.email();
-  if (email) id = email;
-  if (id) push('identify', id);
-  if (traits) push('set', traits);
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Qualaroo.prototype.track = function(track) {
-  if (!this.options.track) return;
-  var event = track.event();
-  var traits = {};
-  traits['Triggered: ' + event] = true;
-  this.identify(new Identify({ traits: traits }));
-};
-
-},{"@segment/analytics.js-integration":420,"do-when":623,"global-queue":625,"segmentio-facade":655}],420:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":421,"./statics":422,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],421:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":423,"component-emitter":424,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":425}],422:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":424,"domify":624,"dup":39}],423:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],424:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],425:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],426:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var push = require('global-queue')('_qevents', { wrap: false });
-var integration = require('@segment/analytics.js-integration');
-var useHttps = require('use-https');
-var is = require('is');
-
-/**
- * Expose `Quantcast` integration.
- */
-
-var Quantcast = module.exports = integration('Quantcast')
-  .assumesPageview()
-  .global('_qevents')
-  .global('__qc')
-  .option('pCode', null)
-  .option('advertise', false)
-  .tag('http', '<script src="http://edge.quantserve.com/quant.js">')
-  .tag('https', '<script src="https://secure.quantserve.com/quant.js">');
-
-/**
- * Initialize.
- *
- * https://www.quantcast.com/learning-center/guides/using-the-quantcast-asynchronous-tag/
- * https://www.quantcast.com/help/cross-platform-audience-measurement-guide/
- *
- * @api public
- * @param {Page} page
- */
-
-Quantcast.prototype.initialize = function(page) {
-  window._qevents = window._qevents || [];
-
-  var opts = this.options;
-  var settings = { qacct: opts.pCode };
-  var user = this.analytics.user();
-  if (user.id()) settings.uid = user.id().toString();
-
-  if (page) {
-    settings.labels = this._labels(page);
-  }
-
-  push(settings);
-
-  var name = useHttps() ? 'https' : 'http';
-  this.load(name, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Quantcast.prototype.loaded = function() {
-  return !!window.__qc;
-};
-
-/**
- * Page.
- *
- * https://cloudup.com/cBRRFAfq6mf
- *
- * @api public
- * @param {Page} page
- */
-
-Quantcast.prototype.page = function(page) {
-  var settings = {
-    event: 'refresh',
-    labels: this._labels(page),
-    qacct: this.options.pCode
-  };
-  var user = this.analytics.user();
-
-  // For non-advertisers, blank labels are okay if no name/category is passed
-  if (!this.options.advertise && !page.name() && !page.category()) delete settings.labels;
-  if (user.id()) settings.uid = user.id().toString();
-  push(settings);
-};
-
-/**
- * Identify.
- *
- * https://www.quantcast.com/help/cross-platform-audience-measurement-guide/
- *
- * @api public
- * @param {string} [id]
- */
-
-Quantcast.prototype.identify = function(identify) {
-  if (identify.userId()) {
-    window._qevents[0] = window._qevents[0] || {};
-    window._qevents[0].uid = identify.userId().toString();
-  }
-};
-
-/**
- * Track.
- *
- * https://cloudup.com/cBRRFAfq6mf
- *
- * @api public
- * @param {Track} track
- */
-
-Quantcast.prototype.track = function(track) {
-  var revenue = track.revenue();
-  var orderId = track.orderId();
-  var user = this.analytics.user();
-  var settings = {
-    event: 'click',
-    labels: this._labels(track),
-    qacct: this.options.pCode
-  };
-
-  if (revenue) settings.revenue = String(revenue);
-  if (orderId) settings.orderid = String(orderId);
-  if (user.id()) settings.uid = user.id().toString();
-
-  push(settings);
-};
-
-/**
- * Order Completed
- *
- * @api private
- * @param {Track} track
- */
-
-Quantcast.prototype.orderCompleted = function(track) {
-  var labels = this._labels(track);
-
-  var category = safe(track.category());
-  if (this.options.advertise && category) {
-    labels += ',_fp.pcat.' + category;
-  }
-
-  var repeat = track.proxy('properties.repeat');
-  if (this.options.advertise && typeof repeat === 'boolean') {
-    labels += ',_fp.customer.' + (repeat ? 'repeat' : 'new');
-  }
-
-  var settings = {
-    // the example Quantcast sent has completed order send refresh not click
-    event: 'refresh',
-    labels: labels,
-    revenue: String(track.total()),
-    orderid: String(track.orderId()),
-    qacct: this.options.pCode
-  };
-
-  push(settings);
-};
-
-/**
- * Generate quantcast labels.
- *
- * @api private
- * @param {Object} facade
- * @return {string}
- *
- * @example:
- *
- *    options.advertise = false;
- *    labels(track);
- *    // => "my event"
- *    labels(page);
- *    // => "Category.Name"
- *
- *    options.advertise = true;
- *    labels(track);
- *    // => "_fp.event.my event"
- *    labels(page);
- *    // => "_fp.event.Category.Name"
- *
- *  Return a string comprised of:
- *
- *  1) Prefix
- *  2) Default Labels (dot delimited)
- *     - page calls: (Category).(Name || 'Default')
- *     - track calls: (Event Name)
- *  3) Custom Labels (comma delimited)
- *     - [properties.label, ...context.Quantcast.Labels]
- */
-
-Quantcast.prototype._labels = function(facade) {
-  var action = facade.action();
-  var autoLabels = [];
-  var ret;
-
-  if (action === 'page') {
-    // There is no default for category
-    if (facade.category()) autoLabels.push(safe(facade.category()));
-    // Fallback on default label if no page name is given
-    autoLabels.push(safe(facade.name() || 'Default'));
-    autoLabels = autoLabels.join('.');
-  } else if (action === 'track') {
-    autoLabels = safe(facade.event());
-  }
-
-  var label = safe(facade.proxy('properties.label'));
-  var customLabels = facade.options('Quantcast').labels || [];
-
-  if (is.string(customLabels)) customLabels = [customLabels];
-
-  customLabels = customLabels.map(function(label) {
-    // strip special characters to prevent invalid labels
-    return safe(label);
-  });
-
-  if (is.string(label)) customLabels.unshift(label);
-  // Multiple labels need to be delimited by commas
-  customLabels = customLabels.join(',');
-
-  // Non-advertisers require no prefix
-  if (this.options.advertise) {
-    ret = '_fp.event.' + autoLabels;
-  } else {
-    ret = autoLabels;
-  }
-
-  if (customLabels) ret += ',' + customLabels;
-  return ret;
-};
-
-/**
- * Remove special characters so that user can't accidentally mis-delimit labels or create invalid labels
- */
-
-function safe(str) {
-  if (str) return str.replace(/[^\w\s]|_/gi, '');
-}
-
-},{"@segment/analytics.js-integration":586,"global-queue":625,"is":629,"use-https":672}],427:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_iva');
-
-/**
- * Expose `QuanticMind` integration.
- */
-
-var QuanticMind = module.exports = integration('QuanticMind')
-  .global('_iva')
-  .option('clientId', '')
-  .option('domain', '')
-  .tag('<script src="//analytics.staticiv.com/iva.js">')
-  .mapping('events');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-QuanticMind.prototype.initialize = function() {
-  var domain = this.options.domain;
-  window._iva = window._iva || [];
-  push('setClientId', this.options.clientId);
-  var userId = this.analytics.user().anonymousId();
-  if (userId) push('setUserId', userId);
-  if (domain) push('setDomain', domain);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-QuanticMind.prototype.loaded = function() {
-  return !!(window._iva && window._iva.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-QuanticMind.prototype.identify = function(identify) {
-  push('setUserId', identify.anonymousId());
-};
-
-/**
- * Page.
- *
- * @param {Page} page
- */
-
-QuanticMind.prototype.page = function() {
-  // they want every landing page to send a "click" event.
-  push('trackEvent', 'click');
-};
-
-/**
- * Track.
- *
- * Tracks everything except 'sale' events.
- *
- * @param {Track} track
- */
-
-QuanticMind.prototype.track = function(track) {
-  var user = this.analytics.user();
-  var events = this.events(track.event());
-  var value = track.revenue() || track.value() || 0;
-  var eventId = track.orderId() || user.anonymousId() || '';
-  each(events, function(event) {
-    // 'sale' is a special event that will be routed to a table that is deprecated on QuanticMind's end.
-    // They don't want a generic 'sale' event to go to their deprecated table.
-    if (event !== 'sale') {
-      push('trackEvent', event, value, eventId);
-    }
-  });
-};
-
-},{"@segment/analytics.js-integration":428,"component-each":611,"global-queue":625}],428:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":429,"./statics":430,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],429:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":431,"component-emitter":432,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":433}],430:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":432,"domify":624,"dup":39}],431:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],432:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],433:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],434:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var convertDates = require('@segment/convert-dates');
-var del = require('obj-case').del;
-var alias = require('@segment/alias');
-
-
-/**
- * Expose `Ramen` integration.
- */
-
-var Ramen = module.exports = integration('Ramen')
-  .global('Ramen')
-  .global('_ramen')
-  .option('organization_id', '')
-  .tag('<script src="//cdn.ramen.is/assets/ramen.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Ramen.prototype.initialize = function() {
-  window._ramen = window._ramen || [];
-  /* eslint-disable */
-  (function(){var a,b,c; a = function(f){return function(){window._ramen.push([f].concat(Array.prototype.slice.call(arguments,0))); }; }; b = ["boot","ready","identify","group","track","page","reset","ask"]; for (c = 0; c < b.length; c++) {window._ramen[b[c]] = a(b[c]); } })();
-  /* eslint-enable */
-  window._ramen.boot(this.options.organization_id, this.options);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Ramen.prototype.loaded = function() {
-  return !!(window._ramen && window._ramen.push !== Array.prototype.push);
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-Ramen.prototype.group = function(group) {
-  if (!this.identified) {
-    window._ramen.identify();
-    this.identified = true;
-  }
-
-  var props = group.traits({ createdAt: 'created', created: 'created_at' });
-  if (group.groupId()) props.id = group.groupId();
-
-  window._ramen.group(props);
-};
-
-/**
- * Page.
- *
- * @api public
- */
-
-Ramen.prototype.page = function() {
-  if (!this.identified) {
-    window._ramen.identify();
-    this.identified = true;
-  }
-
-  window._ramen.page();
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Ramen.prototype.track = function(track) {
-  if (!this.identified) {
-    window._ramen.identify();
-    this.identified = true;
-  }
-
-  window._ramen.track(track.event());
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Ramen.prototype.identify = function(identify) {
-  // Ramen requires that `identify`'d users have an `id`.
-  // For anonymous visitors, simply do not call `analytics.identify`
-  // and the rest of the integration will handle it.
-  if (!identify.userId()) return;
-
-  var user;
-  var traits;
-  var opts;
-
-  traits = identify.traits();
-  opts = identify.options(this.name);
-
-  // Setup the basic `user` attributes: id, email, created_at, and name
-  // `null` values are OK. Ramen will ignore them.
-
-  user = { id: identify.userId() };
-
-  if (traits.email) {
-    user.email = traits.email;
-  }
-
-  if (identify.created()) {
-    user.created_at = identify.created();
-  }
-
-  if (identify.name()) {
-    user.name = identify.name();
-  }
-
-  if (traits.company && traits.company.id) {
-    user.company = alias(traits.company, { createdAt: 'created', created: 'created_at' });
-  }
-
-  // Clear out Ramen-specific values from traits, set traits to equal
-  // `user.traits`
-  del(traits, 'email');
-  del(traits, 'name');
-  del(traits, 'id');
-  del(traits, 'created');
-  del(traits, 'createdAt');
-  del(traits, 'company');
-  user.traits = traits;
-
-  // Convert all timestamps to epoch seconds
-  user = convertDates(user, function(date) { return Math.floor(date / 1000); });
-
-  user.traits = alias(user.traits, { createdAt: 'created' });
-  user.traits = alias(user.traits, { created: 'created_at' });
-
-  // Rename `auth_hash_timestamp` to `timestamp` for secure mode
-  opts = alias(opts, { auth_hash_timestamp: 'timestamp' });
-
-  window._ramen.identify(user, opts);
-  this.identified = true;
-};
-
-},{"@segment/alias":19,"@segment/analytics.js-integration":435,"@segment/convert-dates":593,"obj-case":641}],435:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":436,"./statics":437,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],436:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":438,"component-emitter":439,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":440}],437:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":439,"domify":624,"dup":39}],438:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],439:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],440:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],441:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var extend = require('@ndhoule/extend');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-
-/**
- * Expose `Rollbar` integration.
- */
-
-var RollbarIntegration = module.exports = integration('Rollbar')
-  .global('Rollbar')
-  .option('identify', true)
-  .option('accessToken', '')
-  .option('environment', 'unknown')
-  .option('captureUncaught', true)
-  .option('captureUnhandledRejections', false)
-  .option('ignoredMessages', [])
-  .option('loadTimeout', 60000)
-  .option('verbose', false);
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-RollbarIntegration.prototype.initialize = function() {
-  window._rollbarConfig = this.config = {
-    accessToken: this.options.accessToken,
-    captureUncaught: this.options.captureUncaught,
-    captureUnhandledRejections: this.options.captureUnhandledRejections,
-    verbose: this.options.verbose,
-    payload: {
-      environment: this.options.environment
-    }
-  };
-
-  var msg = this.options.ignoredMessages;
-  if (msg.length > 0) {
-    var ret = [];
-    // clean out array
-    for (var x = 0; x < msg.length; x++) {
-      if (msg[x] !== null && msg[x] !== '') ret.push(msg[x]);
-    }
-    window._rollbarConfig.ignoredMessages = ret;
-  }
-
-  /* eslint-disable */
-!function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
-  /* eslint-enable */
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {Boolean}
- */
-
-RollbarIntegration.prototype.loaded = function() {
-  return is.object(window.Rollbar) && window.Rollbar.shimId == null;
-};
-
-/**
- * Load.
- *
- * @api public
- * @param {Function} callback
- */
-
-RollbarIntegration.prototype.load = function(callback) {
-  var loadedCheck = this.loaded;
-  var startTime = (new Date()).getTime();
-  var timeout = this.options.loadTimeout;
-
-  function timer() {
-    if (loadedCheck()) {
-      return callback();
-    }
-    if ((new Date()).getTime() - startTime >= timeout) {
-      return callback(new Error('Rollbar timed out while loading'));
-    }
-
-    setTimeout(timer, 1);
-  }
-
-  timer();
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-RollbarIntegration.prototype.identify = function(identify) {
-  // do stuff with `id` or `traits`
-  if (!this.options.identify) return;
-
-  // Don't allow identify without a user id
-  var uid = identify.userId();
-  if (uid === null || uid === undefined) return;
-
-  var rollbar = window.Rollbar;
-  var person = { id: uid };
-  extend(person, identify.traits());
-  rollbar.configure({ payload: { person: person } });
-};
-
-},{"@ndhoule/extend":10,"@segment/analytics.js-integration":442,"is":629}],442:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":443,"./statics":444,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],443:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":445,"component-emitter":446,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":447}],444:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":446,"domify":624,"dup":39}],445:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],446:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],447:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],448:[function(require,module,exports){
-'use strict';
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Route` integration.
- */
-
-var Route = module.exports = integration('Route')
-  .global('_rq')
-  .global('_route')
-  .option('organizationId', '')
-  .tag('<script id="rtracker" data-organization-id="{{ organizationId }}" data-source="segment.com" src="//www.routecdn.com/tracker/route-tracker-min.js">');
-
-/**
- * Initialize Route.
- *
- * @api public
- */
-
-Route.prototype.initialize = function() {
-  window._rq = window._rq || [];
-  window._route = window._route || [];
-  window._route.methods = ['identify', 'track', 'trackById'];
-  window._route.factory = function(method) {
-    return function() {
-      var args = Array.prototype.slice.call(arguments);
-      args.unshift(method);
-      window._rq.push(args);
-      return window._rq;
-    };
-  };
-  for (var i = 0; i < window._route.methods.length; i++) {
-    var key = window._route.methods[i];
-    window._route[key] = window._route.factory(key);
-  }
-  this.load(this.ready);
-};
-
-/**
- * Has the Route library been loaded yet?
- *
- * @api private
- * @return {Boolean}
- */
-
-Route.prototype.loaded = function() {
-  return window._rq && window._rq.push !== Array.prototype.push;
-};
-
-/**
- * Identify a user.
- *
- * @api public
- * @param {Track} identify
- */
-
-Route.prototype.identify = function(identify) {
-  window._route.identify(identify.traits());
-};
-
-/**
- * Track an event.
- *
- * @api public
- * @param {Track} track
- */
-
-Route.prototype.track = function(track) {
-  window._route.track(track.event());
-};
-
-},{"@segment/analytics.js-integration":449}],449:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":450,"./statics":451,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],450:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":452,"component-emitter":453,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":454}],451:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":453,"domify":624,"dup":39}],452:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],453:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],454:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],455:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var objCase = require('obj-case');
-
-/**
- * Expose `SaaSquatch` integration.
- */
-
-var SaaSquatch = module.exports = integration('SaaSquatch')
-  .option('tenantAlias', '')
-  .option('referralImage', '')
-  .global('_sqh')
-  .tag('<script src="//d2rcp9ak152ke1.cloudfront.net/assets/javascripts/squatch.min.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-SaaSquatch.prototype.initialize = function() {
-  window._sqh = window._sqh || [];
-  window._sqh.push(['init', {
-    tenant_alias: this.options.tenantAlias
-  }]);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-SaaSquatch.prototype.loaded = function() {
-  return window._sqh && window._sqh.push !== Array.prototype.push;
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Facade} identify
- */
-
-SaaSquatch.prototype.identify = function(identify) {
-  var sqh = window._sqh;
-  var opts = identify.options(this.name);
-  var id = identify.userId();
-  var email = identify.email();
-
-  if (!(id || email)) return;
-  if (this.called) return;
-
-
-  var init = identify.traits();
-
-  init.email = email;
-  init.user_id = id;
-  objCase.del(init, 'id');
-
-  init.tenant_alias = this.options.tenantAlias;
-
-  init.first_name = identify.firstName();
-  init.last_name = identify.lastName();
-  init.user_image = identify.avatar();
-
-  // Pull SaaSquatch specific properties from options, but fallback to traits
-  var properties = [
-    'account_id',
-    'payment_provider_id',
-    'account_status',
-    'referral_code',
-    'user_referral_code',
-    'checksum',
-    'mode',
-    'locale'
-  ];
-  for (var i = 0; i < properties.length; i++) {
-    var prop = properties[i];
-    var value = objCase.find(opts, prop) || objCase.find(init, prop);
-    objCase.del(init, prop);
-    if (value) {
-      init[prop] = value;
-    }
-  }
-
-  if (init.payment_provider_id === 'null') {
-    init.payment_provider_id = null;
-  }
-
-  var image = objCase.find(opts, 'referralImage') || objCase.find(init, 'referralImage') || this.options.referralImage;
-  if (image) {
-    objCase.del(init, 'referralImage');
-    init.fb_share_image = image;
-  }
-
-  sqh.push(['init', init]);
-  this.called = true;
-  this.load();
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-SaaSquatch.prototype.group = function(group) {
-  var sqh = window._sqh;
-  var id = group.groupId();
-  var image = group.proxy('traits.referralImage') || this.options.referralImage;
-  var opts = group.options(this.name);
-
-  // tenant_alias is required.
-  if (this.called) return;
-
-  var init = {
-    tenant_alias: this.options.tenantAlias,
-    account_id: id
-  };
-
-  if (opts.checksum) init.checksum = opts.checksum;
-  if (image) init.fb_share_image = image;
-
-  sqh.push(['init', init]);
-  this.called = true;
-  this.load();
-};
-
-},{"@segment/analytics.js-integration":456,"obj-case":641}],456:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":457,"./statics":458,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],457:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":459,"component-emitter":460,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":461}],458:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":460,"domify":624,"dup":39}],459:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],460:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],461:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],462:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var when = require('do-when');
-
-/**
- * Expose `SatisMeter` integration.
- */
-
-var SatisMeter = module.exports = integration('SatisMeter')
-  .global('satismeter')
-  .option('token', '')
-  .option('apiKey', '')
-  .tag('<script src="https://app.satismeter.com/satismeter.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-SatisMeter.prototype.initialize = function() {
-  var self = this;
-  this.load(function() {
-    when(function() { return self.loaded(); }, self.ready);
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-SatisMeter.prototype.loaded = function() {
-  return !!window.satismeter;
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-SatisMeter.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  traits.token = this.options.apiKey || this.options.token;
-  traits.user = {
-    id: identify.userId()
-  };
-
-  if (identify.name()) {
-    traits.user.name = identify.name();
-  }
-  if (identify.email()) {
-    traits.user.email = identify.email();
-  }
-  if (identify.created()) {
-    traits.user.signUpDate = identify.created().toISOString();
-  }
-
-  // Remove traits that are already passed in user object
-  delete traits.id;
-  delete traits.email;
-  delete traits.name;
-  delete traits.created;
-
-  window.satismeter(traits);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-SatisMeter.prototype.page = function() {
-  window.satismeter({
-    writeKey: this.options.apiKey || this.options.token,
-    userId: this.analytics.user().id(),
-    type: 'page'
-  });
-};
-
-},{"@segment/analytics.js-integration":463,"do-when":623}],463:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":464,"./statics":465,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],464:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":466,"component-emitter":467,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":468}],465:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":467,"domify":624,"dup":39}],466:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],467:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],468:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],469:[function(require,module,exports){
+var callable, byObserver;
+
+callable = function (fn) {
+	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
+	return fn;
+};
+
+byObserver = function (Observer) {
+	var node = document.createTextNode(''), queue, currentQueue, i = 0;
+	new Observer(function () {
+		var callback;
+		if (!queue) {
+			if (!currentQueue) return;
+			queue = currentQueue;
+		} else if (currentQueue) {
+			queue = currentQueue.concat(queue);
+		}
+		currentQueue = queue;
+		queue = null;
+		if (typeof currentQueue === 'function') {
+			callback = currentQueue;
+			currentQueue = null;
+			callback();
+			return;
+		}
+		node.data = (i = ++i % 2); // Invoke other batch, to handle leftover callbacks in case of crash
+		while (currentQueue) {
+			callback = currentQueue.shift();
+			if (!currentQueue.length) currentQueue = null;
+			callback();
+		}
+	}).observe(node, { characterData: true });
+	return function (fn) {
+		callable(fn);
+		if (queue) {
+			if (typeof queue === 'function') queue = [queue, fn];
+			else queue.push(fn);
+			return;
+		}
+		queue = fn;
+		node.data = (i = ++i % 2);
+	};
+};
+
+module.exports = (function () {
+	// Node.js
+	if ((typeof process === 'object') && process && (typeof process.nextTick === 'function')) {
+		return process.nextTick;
+	}
+
+	// MutationObserver
+	if ((typeof document === 'object') && document) {
+		if (typeof MutationObserver === 'function') return byObserver(MutationObserver);
+		if (typeof WebKitMutationObserver === 'function') return byObserver(WebKitMutationObserver);
+	}
+
+	// W3C Draft
+	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
+	if (typeof setImmediate === 'function') {
+		return function (cb) { setImmediate(callable(cb)); };
+	}
+
+	// Wide available standard
+	if ((typeof setTimeout === 'function') || (typeof setTimeout === 'object')) {
+		return function (cb) { setTimeout(callable(cb), 0); };
+	}
+
+	return null;
+}());
+
+}).call(this,require('_process'),require("timers").setImmediate)
+},{"_process":170,"timers":187}],86:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -16009,7 +9800,7 @@ ScratchIt.prototype.identify = function(identify) {
   }
 };
 
-},{"@segment/analytics.js-integration":586,"is":629,"obj-case":641}],470:[function(require,module,exports){
+},{"@segment/analytics.js-integration":95,"is":153,"obj-case":167}],87:[function(require,module,exports){
 'use strict';
 
 /**
@@ -16030,6 +9821,7 @@ var send = require('@segment/send-json');
 var topDomain = require('@segment/top-domain');
 var utm = require('@segment/utm-params');
 var uuid = require('uuid').v4;
+var Queue = require('@segment/localstorage-retry');
 
 /**
  * Cookie options
@@ -16042,6 +9834,28 @@ var cookieOptions = {
   path: '/'
 };
 
+
+/**
+ * Segment messages can be a maximum of 32kb.
+ */
+var MAX_SIZE = 32 * 1000;
+
+/**
+ * Queue options
+ *
+ * Attempt with exponential backoff for upto 10 times.
+ * Backoff periods are: 1s, 2s, 4s, 8s, 16s, 32s, 64s, 128s (~2m), 256s (~4m),
+ * 512s (~8.5m) and 1024s (~17m).
+ */
+
+var queueOptions = {
+  maxRetryDelay: 360000, // max interval of 1hr. Added as a guard.
+  minRetryDelay: 1000, // first attempt (1s)
+  backoffFactor: 2,
+  maxAttempts: 10,
+  maxItems: 100
+};
+
 /**
  * Expose `Segment` integration.
  */
@@ -16049,7 +9863,8 @@ var cookieOptions = {
 var Segment = exports = module.exports = integration('Segment.io')
   .option('apiKey', '')
   .option('apiHost', 'api.segment.io/v1')
-  .option('beacon', false)
+  .option('crossDomainIdServers', [])
+  .option('retryQueue', true)
   .option('addBundledMetadata', false)
   .option('unbundledIntegrations', []);
 
@@ -16069,6 +9884,56 @@ exports.storage = function() {
 
 exports.global = window;
 
+
+/**
+ * Send the given `obj` and `headers` to `url` with the specified `timeout` and
+ * `fn(err, req)`. Exported for testing.
+ *
+ * @param {String} url
+ * @param {Object} obj
+ * @param {Object} headers
+ * @param {long} timeout
+ * @param {Function} fn
+ * @api private
+ */
+
+exports.sendJsonWithTimeout = function(url, obj, headers, timeout, fn) {
+  // only proceed with our new code path when cors is supported. this is
+  // unlikely to happen in production, but we're being safe to preserve backward
+  // compatibility.
+  if (send.type !== 'xhr') {
+    send(url, obj, headers, fn);
+    return;
+  }
+
+  var req = new XMLHttpRequest();
+  req.onerror = fn;
+  req.onreadystatechange = done;
+
+  req.open('POST', url, true);
+
+  req.timeout = timeout;
+  req.ontimeout = fn;
+
+  // TODO: Remove this eslint disable
+  // eslint-disable-next-line guard-for-in
+  for (var k in headers) {
+    req.setRequestHeader(k, headers[k]);
+  }
+  req.send(json.stringify(obj));
+
+  function done() {
+    if (req.readyState === 4) {
+      // Fail on 429 and 5xx HTTP errors
+      if (req.status === 429 || req.status >= 500 && req.status < 600) {
+        fn(new Error('HTTP Error ' + req.status + ' (' + req.statusText + ')'));
+      } else {
+        fn(null, req);
+      }
+    }
+  }
+};
+
 /**
  * Initialize.
  *
@@ -16079,7 +9944,26 @@ exports.global = window;
 
 Segment.prototype.initialize = function() {
   var self = this;
+
+  if (this.options.retryQueue) {
+    this._lsqueue = new Queue('segmentio', queueOptions, function(item, done) {
+      // apply sentAt at flush time and reset on each retry
+      // so the tracking-api doesn't interpret a time skew
+      item.msg.sentAt = new Date();
+
+      // send with 10s timeout
+      Segment.sendJsonWithTimeout(item.url, item.msg, item.headers, 10 * 1000, function(err, res) {
+        self.debug('sent %O, received %O', item.msg, [err, res]);
+        if (err) return done(err);
+        done(null, res);
+      });
+    });
+
+    this._lsqueue.start();
+  }
+
   this.ready();
+
   this.analytics.on('invoke', function(msg) {
     var action = msg.action();
     var listener = 'on' + msg.action();
@@ -16087,6 +9971,23 @@ Segment.prototype.initialize = function() {
     if (self[listener]) self[listener](msg);
     self.ready();
   });
+
+  // Migrate from old cross domain id cookie names
+  if (this.cookie('segment_cross_domain_id')) {
+    this.cookie('seg_xid', this.cookie('segment_cross_domain_id'));
+    this.cookie('seg_xid_fd', this.cookie('segment_cross_domain_id_from_domain'));
+    this.cookie('seg_xid_ts', this.cookie('segment_cross_domain_id_timestamp'));
+    this.cookie('segment_cross_domain_id', null);
+    this.cookie('segment_cross_domain_id_from_domain', null);
+    this.cookie('segment_cross_domain_id_timestamp', null);
+  }
+
+  // At this moment we intentionally do not want events to be queued while we retrieve the `crossDomainId`
+  // so `.ready` will get called right away and we'll try to figure out `crossDomainId`
+  // separately
+  if (this.isCrossDomainAnalyticsEnabled()) {
+    this.retrieveCrossDomainId();
+  }
 };
 
 /**
@@ -16108,7 +10009,7 @@ Segment.prototype.loaded = function() {
  */
 
 Segment.prototype.onpage = function(page) {
-  this.send('/p', page.json());
+  this.enqueue('/p', page.json());
 };
 
 /**
@@ -16119,7 +10020,7 @@ Segment.prototype.onpage = function(page) {
  */
 
 Segment.prototype.onidentify = function(identify) {
-  this.send('/i', identify.json());
+  this.enqueue('/i', identify.json());
 };
 
 /**
@@ -16130,7 +10031,7 @@ Segment.prototype.onidentify = function(identify) {
  */
 
 Segment.prototype.ongroup = function(group) {
-  this.send('/g', group.json());
+  this.enqueue('/g', group.json());
 };
 
 /**
@@ -16146,7 +10047,7 @@ Segment.prototype.ontrack = function(track) {
   var json = track.json();
   // TODO: figure out why we need traits.
   delete json.traits;
-  this.send('/t', json);
+  this.enqueue('/t', json);
 };
 
 /**
@@ -16163,7 +10064,7 @@ Segment.prototype.onalias = function(alias) {
   json.userId = json.userId || json.to;
   delete json.from;
   delete json.to;
-  this.send('/a', json);
+  this.enqueue('/a', json);
 };
 
 /**
@@ -16183,17 +10084,32 @@ Segment.prototype.normalize = function(msg) {
   msg.writeKey = this.options.apiKey;
   ctx.userAgent = navigator.userAgent;
   if (!ctx.library) ctx.library = { name: 'analytics.js', version: this.analytics.VERSION };
-  if (query) ctx.campaign = utm(query);
+  var crossDomainId = this.cookie('seg_xid');
+  if (crossDomainId && this.isCrossDomainAnalyticsEnabled()) {
+    if (!ctx.traits) {
+      ctx.traits = { crossDomainId: crossDomainId };
+    } else if (!ctx.traits.crossDomainId) {
+      ctx.traits.crossDomainId = crossDomainId;
+    }
+  }
+  // if user provides campaign via context, do not overwrite with UTM qs param
+  if (query && !ctx.campaign) {
+    ctx.campaign = utm(query);
+  }
   this.referrerId(query, ctx);
   msg.userId = msg.userId || user.id();
   msg.anonymousId = user.anonymousId();
   msg.sentAt = new Date();
+  // Add _metadata.
+  var failedInitializations = this.analytics.failedInitializations || [];
+  if (failedInitializations.length > 0) {
+    msg._metadata = { failedInitializations: failedInitializations };
+  }
   if (this.options.addBundledMetadata) {
     var bundled = keys(this.analytics.Integrations);
-    msg._metadata = {
-      bundled: bundled,
-      unbundled: this.options.unbundledIntegrations
-    };
+    msg._metadata = msg._metadata || {};
+    msg._metadata.bundled = bundled;
+    msg._metadata.unbundled = this.options.unbundledIntegrations;
   }
   // add some randomness to the messageId checksum
   msg.messageId = 'ajs-' + md5(json.stringify(msg) + uuid());
@@ -16222,37 +10138,33 @@ Segment.prototype.ampId = function(ctx) {
  * @param {Function} fn
  */
 
-Segment.prototype.send = function(path, msg, fn) {
+Segment.prototype.enqueue = function(path, msg, fn) {
   var url = 'https://' + this.options.apiHost + path;
-  fn = fn || noop;
-  var self = this;
-
-  // msg
+  var headers = { 'Content-Type': 'text/plain' };
   msg = this.normalize(msg);
 
-  // send
-  if (this.options.beacon && navigator.sendBeacon) {
-    // Beacon returns false if the browser couldn't queue the data for transfer
-    // (e.g: the data was too big)
-    if (navigator.sendBeacon(url, json.stringify(msg))) {
-      self.debug('beacon sent %o', msg);
-      fn();
-    } else {
-      self.debug('beacon failed, falling back to ajax %o', msg);
-      sendAjax();
-    }
-  } else {
-    sendAjax();
+  // Print a log statement when messages exceed the maximum size. In the future,
+  // we may consider dropping this event on the client entirely.
+  if (json.stringify(msg).length > MAX_SIZE) {
+    this.debug('message must be less than 32kb %O', msg);
   }
 
-  function sendAjax() {
-    // Beacons are sent as a text/plain POST
-    var headers = { 'Content-Type': 'text/plain' };
+  this.debug('enqueueing %O', msg);
+
+  var self = this;
+  if (this.options.retryQueue) {
+    this._lsqueue.addItem({
+      url: url,
+      headers: headers,
+      msg: msg
+    });
+  } else {
     send(url, msg, headers, function(err, res) {
-      self.debug('ajax sent %o, received %o', msg, arguments);
-      if (err) return fn(err);
-      res.url = url;
-      fn(null, res);
+      self.debug('sent %O, received %O', msg, [err, res]);
+      if (fn) {
+        if (err) return fn(err);
+        fn(null, res);
+      }
     });
   }
 };
@@ -16308,929 +10220,185 @@ Segment.prototype.referrerId = function(query, ctx) {
 };
 
 /**
- * Noop.
- */
-
-function noop() {}
-
-},{"@ndhoule/extend":10,"@ndhoule/keys":13,"@segment/ad-params":18,"@segment/analytics.js-integration":471,"@segment/protocol":600,"@segment/send-json":601,"@segment/top-domain":604,"@segment/utm-params":605,"component-clone":609,"component-cookie":610,"json3":633,"spark-md5":662,"uuid":478,"yields-store":674}],471:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":472,"./statics":473,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],472:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":474,"component-emitter":475,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":476}],473:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":475,"domify":624,"dup":39}],474:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],475:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],476:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],477:[function(require,module,exports){
-arguments[4][32][0].apply(exports,arguments)
-},{"dup":32}],478:[function(require,module,exports){
-arguments[4][33][0].apply(exports,arguments)
-},{"./rng":477,"dup":33}],479:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var foldl = require('@ndhoule/foldl');
-/**
- * Expose `Sentry` integration.
- */
-
-var Sentry = module.exports = integration('Sentry')
-  .global('Raven')
-  .global('RavenConfig')
-  .option('config', '')
-  .option('serverName', null)
-  .option('release', null)
-  .option('ignoreErrors', [])
-  .option('ignoreUrls', [])
-  .option('whitelistUrls', [])
-  .option('includePaths', [])
-  .option('maxMessageLength', null)
-  .option('logger', null)
-  .tag('<script src="https://cdn.ravenjs.com/3.8.0/raven.min.js">');
-
-/**
- * Initialize.
- *
- * https://docs.getsentry.com/hosted/clients/javascript/config/
- * https://github.com/getsentry/raven-js/blob/3.8.0/src/raven.js#L597-L600
- * @api public
- */
-
-Sentry.prototype.initialize = function() {
-  var dsnPublic = this.options.config;
-  var options = {
-    logger: this.options.logger,
-    release: this.options.release,
-    serverName: this.options.serverName,
-    whitelistUrls: this.options.whitelistUrls,
-    ignoreErrors: this.options.ignoreErrors,
-    ignoreUrls: this.options.ignoreUrls,
-    includePaths: this.options.includePaths,
-    maxMessageLength: this.options.maxMessageLength
-  };
-  window.RavenConfig = {
-    dsn: dsnPublic,
-    config: reject(options)
-  };
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
+ * isCrossDomainAnalyticsEnabled returns true if cross domain analytics is enabled.
+ * This field is not directly supplied, so it is inferred by inspecting the
+ * `crossDomainIdServers` array in settings. If this array is null or empty,
+ * it is assumed that cross domain analytics is disabled.
  *
  * @api private
- * @return {boolean}
  */
-
-Sentry.prototype.loaded = function() {
-  return is.object(window.Raven);
+Segment.prototype.isCrossDomainAnalyticsEnabled = function() {
+  if (!this.options.crossDomainIdServers) {
+    return false;
+  }
+  return this.options.crossDomainIdServers.length > 0;
 };
 
 /**
- * Identify.
+ * retrieveCrossDomainId.
  *
- * @api public
- * @param {Identify} identify
+ * @api private
+ * @param {function) callback => err, {crossDomainId, fromServer, timestamp}
  */
+Segment.prototype.retrieveCrossDomainId = function(callback) {
+  if (!this.isCrossDomainAnalyticsEnabled()) {
+    if (callback) {
+      callback('crossDomainId not enabled', null);
+    }
+    return;
+  }
+  if (!this.cookie('seg_xid')) {
+    var self = this;
+    var writeKey = this.options.apiKey;
 
-Sentry.prototype.identify = function(identify) {
-  window.Raven.setUserContext(identify.traits());
+    // Exclude the current domain from the list of servers we're querying
+    var currentTld = getTld(window.location.hostname);
+    var domains = [];
+    for (var i=0; i<this.options.crossDomainIdServers.length; i++) {
+      var domain = this.options.crossDomainIdServers[i];
+      if (getTld(domain) !== currentTld) {
+        domains.push(domain);
+      }
+    }
+
+    getCrossDomainIdFromServerList(domains, writeKey, function(err, res) {
+      if (err) {
+        // We optimize for no conflicting xid as much as possible. So bail out if there is an
+        // error and we cannot be sure that xid does not exist on any other domains
+        if (callback) {
+          callback(err, null);
+        }
+        return;
+      }
+      var crossDomainId = null;
+      var fromDomain = null;
+      if (res) {
+        crossDomainId = res.id;
+        fromDomain = res.domain;
+      } else {
+        crossDomainId = uuid();
+        fromDomain = window.location.hostname;
+      }
+      var currentTimeMillis = (new Date()).getTime();
+      self.cookie('seg_xid', crossDomainId);
+      // Not actively used. Saving for future conflict resolution purposes
+      self.cookie('seg_xid_fd', fromDomain);
+      self.cookie('seg_xid_ts', currentTimeMillis);
+      self.analytics.identify({
+        crossDomainId: crossDomainId
+      });
+      if (callback) {
+        callback(null, {
+          crossDomainId: crossDomainId,
+          fromDomain: fromDomain,
+          timestamp: currentTimeMillis
+        });
+      }
+    });
+  }
 };
 
 /**
- * Clean out null values
+ * getCrossDomainIdFromServers
+ * @param {Array} domains
+ * @param {string} writeKey
+ * @param {function} callback => err, {domain, id}
  */
+function getCrossDomainIdFromServerList(domains, writeKey, callback) {
+  // Should not happen but special case
+  if (domains.length === 0) {
+    callback(null, null);
+  }
+  var crossDomainIdFound = false;
+  var finishedRequests = 0;
+  var error = null;
+  for (var i=0; i<domains.length; i++) {
+    var domain = domains[i];
 
-function reject(obj) {
-  return foldl(function(result, val, key) {
-    // strip any null or empty string values
-    if (val !== null && val !== '' && !is.array(val)) {
-      result[key] = val;
-    }
-    // strip any empty arrays
-    if (is.array(val)) {
-      var ret = [];
-      // strip if there's only an empty string or null in the array since the settings UI lets you save additional rows even though some may be empty strings
-      for (var x = 0; x < val.length; x++) {
-        if (val[x] !== null && val[x] !== '') ret.push(val[x]);
+    getCrossDomainIdFromSingleServer(domain, writeKey, function(err, res) {
+      finishedRequests++;
+      if (err) {
+        // if request against a particular domain fails, we won't early exit
+        // but rather wait and see if requests to other domains succeed
+        error = err;
+      } else if (res && res.id && !crossDomainIdFound) {
+        // If we found an xid from any of the servers, we'll just early exit and callback
+        crossDomainIdFound = true;
+        callback(null, res);
       }
-      if (!is.empty(ret)) {
-        result[key] = ret;
+      if (finishedRequests === domains.length && !crossDomainIdFound) {
+        // Error is non-null if we encountered an issue, otherwise error will be null
+        // meaning that no domains in the list has an xid for current user
+        callback(error, null);
       }
-    }
-    return result;
-  }, {}, obj);
+    });
+  }
 }
 
-},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":480,"is":629}],480:[function(require,module,exports){
+/**
+ * getCrossDomainId
+ * @param {Array} domain
+ * @param {string} writeKey
+ * @param {function} callback => err, {domain, id}
+ */
+function getCrossDomainIdFromSingleServer(domain, writeKey, callback) {
+  var endpoint = 'https://' + domain + '/v1/id/' + writeKey;
+  getJson(endpoint, function(err, res) {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, {
+        domain: domain,
+        id: res && res.id || null
+      });
+    }
+  });
+}
+
+/**
+ * getJson
+ * @param {string} url
+ * @param {function} callback => err, json
+ */
+function getJson(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.withCredentials = true;
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        callback(null, xhr.responseText ? json.parse(xhr.responseText) : null);
+      } else {
+        callback(xhr.statusText || 'Unknown Error', null);
+      }
+    }
+  };
+  xhr.send();
+}
+
+/**
+ * getTld
+ * Get domain.com from subdomain.domain.com, etc.
+ * @param {string} domain
+ * @return {string} tld
+ */
+function getTld(domain) {
+  return domain.split('.').splice(-2).join('.');
+}
+
+},{"@ndhoule/extend":10,"@ndhoule/keys":13,"@segment/ad-params":18,"@segment/analytics.js-integration":88,"@segment/localstorage-retry":109,"@segment/protocol":118,"@segment/send-json":119,"@segment/top-domain":122,"@segment/utm-params":123,"component-clone":127,"component-cookie":128,"json3":156,"spark-md5":186,"uuid":199,"yields-store":200}],88:[function(require,module,exports){
+arguments[4][34][0].apply(exports,arguments)
+},{"./protos":89,"./statics":90,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":92,"dup":34,"slug-component":185}],89:[function(require,module,exports){
+arguments[4][35][0].apply(exports,arguments)
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":91,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],90:[function(require,module,exports){
+arguments[4][36][0].apply(exports,arguments)
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],91:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"./protos":481,"./statics":482,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],481:[function(require,module,exports){
+},{"dup":37}],92:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":483,"component-emitter":484,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":485}],482:[function(require,module,exports){
+},{"./debug":93,"_process":170,"dup":38}],93:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":484,"domify":624,"dup":39}],483:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],484:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],485:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],486:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var defaults = require('@ndhoule/defaults');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Simplereach` integration.
- */
-
-var SimpleReach = module.exports = integration('SimpleReach')
-  .global('__reach_config')
-  .global('SPR')
-  .option('pid', '')
-  .tag('<script src="//d8rk54i4mohrb.cloudfront.net/js/reach.js">');
-
-/**
- * Initialize.
- * http://www.simplereach.com/docs/#standardImplementation
- * Some adjustments made to standard implementation
- *
- * @api public
- */
-
-SimpleReach.prototype.initialize = function() {
-  window.__reach_config = window.__reach_config || {};
-  defaults(window.__reach_config, {
-    pid: this.options.pid,
-    reach_tracking: false
-  });
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-SimpleReach.prototype.loaded = function() {
-  return !!window.SPR;
-};
-
-/**
- * Page.
- *
- * http://www.simplereach.com/docs/ajax/
- *
- * @api public
- */
-
-SimpleReach.prototype.page = function(page) {
-  defaults(window.__reach_config, {
-    url: page.url(),
-    title: page.title()
-  });
-
-  if (window.__reach_config.url === false) {
-    window.__reach_config.url = page.url();
-  }
-
-  window.SPR.collect(window.__reach_config);
-};
-
-/**
- * Page.
- *
- * http://www.simplereach.com/docs/ajax/
- *
- * @api public
- */
-SimpleReach.prototype.track = function(track) {
-  window.SPR.collect({
-    pid: this.options.pid,
-    reach_tracking: false,
-    url: track.proxy('context.page.url'),
-    title: track.proxy('context.page.title'),
-    ctx_revenue: track.revenue(),
-    ctx_order_id: track.orderId(),
-    ctx_event_name: track.event()
-  });
-};
-
-},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":487}],487:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":488,"./statics":489,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],488:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":490,"component-emitter":491,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":492}],489:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":491,"domify":624,"dup":39}],490:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],491:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],492:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],493:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var tick = require('next-tick');
-
-/**
- * Expose `SnapEngage` integration.
- */
-
-var SnapEngage = module.exports = integration('SnapEngage')
-  .assumesPageview()
-  .global('SnapABug')
-  .global('SnapEngage')
-  .option('apiKey', '')
-  .option('listen', false)
-  .tag('<script src="//www.snapengage.com/cdn/js/{{ apiKey }}.js">');
-
-/**
- * Integration object for root events.
- */
-
-var integrationContext = {
-  name: 'snapengage',
-  version: '1.0.0'
-};
-
-/**
- * Initialize.
- *
- * http://help.snapengage.com/installation-guide-getting-started-in-a-snap/
- *
- * @api public
- */
-
-SnapEngage.prototype.initialize = function() {
-  var self = this;
-  this.load(function() {
-    if (self.options.listen) self.attachListeners();
-    tick(self.ready);
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-SnapEngage.prototype.loaded = function() {
-  return is.object(window.SnapABug) && is.object(window.SnapEngage);
-};
-
-/**
- * Identify.
- *
- * @api private
- * @param {Identify} identify
- */
-
-SnapEngage.prototype.identify = function(identify) {
-  var email = identify.email();
-  if (!email) return;
-  window.SnapABug.setUserEmail(email);
-};
-
-/**
- * Listen for events.
- *
- * https://developer.snapengage.com/javascript-api/setcallback/
- *
- * @api private
- */
-
-SnapEngage.prototype.attachListeners = function() {
-  var self = this;
-
-  // Callback is passed `email, message, type`
-  // TODO: Eventually this might pass information about the chat to Segment
-  window.SnapEngage.setCallback('StartChat', function() {
-    self.analytics.track('Live Chat Conversation Started',
-      {},
-      { context: { integration: integrationContext } });
-  });
-
-  // Callback is passed `agent, message`
-  // TODO: Eventually this might pass information about the message to Segment
-  window.SnapEngage.setCallback('ChatMessageReceived', function(agent) {
-    self.analytics.track('Live Chat Message Received',
-      { agentUsername: agent },
-      { context: { integration: integrationContext } });
-  });
-
-  // Callback is passed `message`
-  // TODO: Eventually this might pass information about the message to Segment
-  window.SnapEngage.setCallback('ChatMessageSent', function() {
-    self.analytics.track('Live Chat Message Sent',
-      {},
-      { context: { integration: integrationContext } });
-  });
-
-  // Callback is passed `type, status`
-  // TODO: Eventually this might pass information about the status to Segment
-  window.SnapEngage.setCallback('Close', function() {
-    self.analytics.track('Live Chat Conversation Ended',
-      {},
-      { context: { integration: integrationContext } });
-  });
-};
-
-},{"@segment/analytics.js-integration":494,"is":629,"next-tick":640}],494:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":495,"./statics":496,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],495:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":497,"component-emitter":498,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":499}],496:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":498,"domify":624,"dup":39}],497:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],498:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],499:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],500:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var bind = require('component-bind');
-var integration = require('@segment/analytics.js-integration');
-var when = require('do-when');
-
-/**
- * Expose `Spinnakr` integration.
- */
-
-var Spinnakr = module.exports = integration('Spinnakr')
-  .assumesPageview()
-  .global('_spinnakr_site_id')
-  .global('_spinnakr')
-  .option('siteId', '')
-  .tag('<script src="//d3ojzyhbolvoi5.cloudfront.net/js/so.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Spinnakr.prototype.initialize = function() {
-  window._spinnakr_site_id = this.options.siteId;
-  var loaded = bind(this, this.loaded);
-  var ready = this.ready;
-  this.load(function() {
-    when(loaded, ready);
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Spinnakr.prototype.loaded = function() {
-  return !!window._spinnakr;
-};
-
-},{"@segment/analytics.js-integration":501,"component-bind":608,"do-when":623}],501:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":502,"./statics":503,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],502:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":504,"component-emitter":505,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":506}],503:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":505,"domify":624,"dup":39}],504:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],505:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],506:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],507:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `SupportHero` integration.
- */
-
-var SupportHero = module.exports = integration('SupportHero')
-  .assumesPageview()
-  .global('supportHeroWidget')
-  .option('token', '')
-  .option('track', false)
-  .tag('<script src="https://d29l98y0pmei9d.cloudfront.net/js/widget.min.js?k={{ token }}">');
-
-/**
- * Initialize Support Hero.
- *
- * @api public
- */
-
-SupportHero.prototype.initialize = function() {
-  window.supportHeroWidget = {};
-  window.supportHeroWidget.setUserId = window.supportHeroWidget.setUserId || function() {};
-  window.supportHeroWidget.setUserTraits = window.supportHeroWidget.setUserTraits || function() {};
-  this.load(this.ready);
-};
-
-/**
- * Has the Support Hero library been loaded yet?
- *
- * @api private
- * @return {boolean}
- */
-
-SupportHero.prototype.loaded = function() {
-  return !!window.supportHeroWidget;
-};
-
-/**
- * Identify a user.
- *
- * @api public
- * @param {Facade} identify
- */
-
-SupportHero.prototype.identify = function(identify) {
-  var id = identify.userId();
-  var traits = identify.traits();
-  if (id) {
-    window.supportHeroWidget.setUserId(id);
-  }
-  if (traits) {
-    window.supportHeroWidget.setUserTraits(traits);
-  }
-};
-
-},{"@segment/analytics.js-integration":508}],508:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":509,"./statics":510,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],509:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":511,"component-emitter":512,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":513}],510:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":512,"domify":624,"dup":39}],511:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],512:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],513:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],514:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var keys = require('@ndhoule/keys');
-var push = require('global-queue')('_tlq');
-
-/**
- * Expose `Taplytics` integration.
- */
-
-var Taplytics = module.exports = integration('Taplytics')
-  .global('_tlq')
-  .global('Taplytics')
-  .option('apiKey', '')
-  .option('options', {})
-  .tag('<script id="taplytics" src="//cdn.taplytics.com/taplytics.min.js">')
-  .assumesPageview();
-
-/**
- * Initialize Taplytics.
- *
- * @api public
- */
-
-Taplytics.prototype.initialize = function() {
-  var options = this.options.options;
-  var apiKey = this.options.apiKey;
-
-  window._tlq = window._tlq || [];
-
-  push('init', apiKey, options);
-
-  this.load(this.ready);
-};
-
-/**
- * Has the Taplytics library been loaded yet?
- *
- * @api private
- * @return {boolean}
- */
-
-Taplytics.prototype.loaded = function() {
-  return window.Taplytics && is.object(window.Taplytics._in);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Facade} identify
- */
-
-Taplytics.prototype.identify = function(identify) {
-  var userId = identify.userId();
-  var attrs = identify.traits() || {};
-
-  if (userId) attrs.id = userId;
-
-  if (keys(attrs).length) {
-    push('identify', attrs);
-  }
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Facade} group
- */
-
-Taplytics.prototype.group = function(group) {
-  var attrs = {};
-  var groupId = group.groupId();
-  var traits = group.traits();
-  var user = this.analytics.user();
-  var userId = user.id();
-
-  if (groupId) attrs.groupId = groupId;
-  if (traits) attrs.groupTraits = traits;
-  if (userId) attrs.id = userId;
-
-  if (keys(attrs).length) push('identify', attrs);
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Facade} track
- */
-
-Taplytics.prototype.track = function(track) {
-  var properties = track.properties() || {};
-  var total = track.revenue() || track.total() || 0;
-
-  push('track', track.event(), total, properties);
-};
-
-/**
-* Page.
-*
-* @api public
-* @param {Facade} page
-*/
-
-Taplytics.prototype.page = function(page) {
-  var category = page.category() || undefined;
-  var name = page.fullName() || undefined;
-  var properties = page.properties() || {};
-
-  push('page', category, name, properties);
-};
-
-/**
-* Reset a user and log them out.
-*
-* @api private
-*/
-
-Taplytics.prototype.reset = function() {
-  push('reset');
-};
-
-},{"@ndhoule/keys":13,"@segment/analytics.js-integration":515,"global-queue":625,"is":629}],515:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":516,"./statics":517,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],516:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":518,"component-emitter":519,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":520}],517:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":519,"domify":624,"dup":39}],518:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],519:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],520:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],521:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_tsq');
-var slug = require('slug-component');
-
-/**
- * Expose `Tapstream` integration.
- */
-
-var Tapstream = module.exports = integration('Tapstream')
-  .assumesPageview()
-  .global('_tsq')
-  .option('accountName', '')
-  .option('trackAllPages', true)
-  .option('trackNamedPages', true)
-  .option('trackCategorizedPages', true)
-  .tag('<script src="//cdn.tapstream.com/static/js/tapstream.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Tapstream.prototype.initialize = function() {
-  window._tsq = window._tsq || [];
-  push('setAccountName', this.options.accountName);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Tapstream.prototype.loaded = function() {
-  return !!(window._tsq && window._tsq.push !== Array.prototype.push);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Tapstream.prototype.page = function(page) {
-  var category = page.category();
-  var opts = this.options;
-  var name = page.fullName();
-
-  // all pages
-  if (opts.trackAllPages) {
-    this.track(page.track());
-  }
-
-  // named pages
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-
-  // categorized pages
-  if (category && opts.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Tapstream.prototype.track = function(track) {
-  var props = track.properties();
-  // needs events as slugs
-  push('fireHit', slug(track.event()), [props.url]);
-};
-
-},{"@segment/analytics.js-integration":522,"global-queue":625,"slug-component":661}],522:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":523,"./statics":524,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],523:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":525,"component-emitter":526,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":527}],524:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":526,"domify":624,"dup":39}],525:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],526:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],527:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],528:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var alias = require('@segment/alias');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose `Trakio` integration.
- */
-
-var Trakio = module.exports = integration('trak.io')
-  .assumesPageview()
-  .global('trak')
-  .option('token', '')
-  .option('trackNamedPages', true)
-  .option('trackCategorizedPages', true)
-  .tag('<script src="//d29p64779x43zo.cloudfront.net/v1/trak.io.min.js">');
-
-/**
- * Options aliases.
- */
-
-var optionsAliases = {
-  initialPageview: 'auto_track_page_view'
-};
-
-/**
- * Initialize.
- *
- * https://docs.trak.io
- *
- * @api public
- */
-
-Trakio.prototype.initialize = function() {
-  var options = this.options;
-  window.trak = window.trak || [];
-  window.trak.io = window.trak.io || {};
-  window.trak.push = window.trak.push || function() {};
-  /* eslint-disable */
-  window.trak.io.load = window.trak.io.load || function(e){var r = function(e){return function(){window.trak.push([e].concat(Array.prototype.slice.call(arguments,0))); }; } ,i=["initialize","identify","track","alias","channel","source","host","protocol","page_view"]; for (var s=0;s<i.length;s++) window.trak.io[i[s]]=r(i[s]); window.trak.io.initialize.apply(window.trak.io,arguments); };
-  /* eslint-enable */
-  window.trak.io.load(options.token, alias(options, optionsAliases));
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Trakio.prototype.loaded = function() {
-  return !!(window.trak && window.trak.loaded);
-};
-
-/**
- * Page.
- *
- * @param {Page} page
- */
-
-Trakio.prototype.page = function(page) {
-  var category = page.category();
-  var props = page.properties();
-  var name = page.fullName();
-
-  window.trak.io.page_view(props.path, name || props.title);
-
-  if (category) window.trak.io.channel(category);
-
-  // named pages
-  if (name && this.options.trackNamedPages) {
-    this.track(page.track(name));
-  }
-
-  // categorized pages
-  if (category && this.options.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-};
-
-/**
- * Trait aliases.
- *
- * http://docs.trak.io/properties.html#special
- */
-
-var traitAliases = {
-  avatar: 'avatar_url',
-  firstName: 'first_name',
-  lastName: 'last_name'
-};
-
-/**
- * Identify.
- *
- * @param {Identify} identify
- */
-
-Trakio.prototype.identify = function(identify) {
-  var traits = identify.traits(traitAliases);
-  var id = identify.userId();
-
-  if (id) {
-    window.trak.io.identify(id, traits);
-  } else {
-    window.trak.io.identify(traits);
-  }
-};
-
-/**
- * Group.
- *
- * @param {String} id (optional)
- * @param {Object} properties (optional)
- * http://docs.trak.io/company.html
- *
- */
-
-Trakio.prototype.group = function(group) {
-  var traits = group.traits();
-  delete traits.id;
-  var id = group.groupId();
-  if (id) window.trak.io.company_id(id);
-  window.trak.io.company(traits);
-};
-
-/**
- * Track.
- *
- * @param {Track} track
- */
-
-Trakio.prototype.track = function(track) {
-  var properties = track.properties();
-  var channel = track.proxy('properties.channel');
-  if (channel) {
-    delete properties.channel;
-    window.trak.io.track(track.event(), channel, properties);
-  } else {
-    window.trak.io.track(track.event(), properties);
-  }
-};
-
-/**
- * Alias.
- *
- * @param {Alias} alias
- */
-
-Trakio.prototype.alias = function(alias) {
-  if (!window.trak.io.distinct_id) return;
-  var from = alias.from();
-  var to = alias.to();
-
-  if (to === window.trak.io.distinct_id()) return;
-
-  if (from) {
-    window.trak.io.alias(from, to);
-  } else {
-    window.trak.io.alias(to);
-  }
-};
-
-},{"@segment/alias":19,"@segment/analytics.js-integration":529}],529:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":530,"./statics":531,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],530:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":532,"component-emitter":533,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":534}],531:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":533,"domify":624,"dup":39}],532:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],533:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],534:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],535:[function(require,module,exports){
+},{"dup":39,"ms":161}],94:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17292,7 +10460,8 @@ TwitterAds.prototype.initialize = function() {
 TwitterAds.prototype.page = function(page) {
   if (this.options.universalTagPixelId) {
     window.twq('track', 'PageView');
-  } else if (this.options.page) {
+  }
+  if (this.options.page) {
     this.load('singleTag', {
       pixelId: this.options.page,
       revenue: 0, // default
@@ -17564,1092 +10733,7 @@ function setStatus(properties) {
   return properties.status ? { status: properties.status } : {};
 }
 
-
-},{"@ndhoule/defaults":6,"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":586,"component-each":611,"obj-case":641,"segmentio-facade":655}],536:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Identify = require('segmentio-facade').Identify;
-var clone = require('component-clone');
-var integration = require('@segment/analytics.js-integration');
-
-/**
- * Expose Userlike integration.
- */
-
-var Userlike = module.exports = integration('Userlike')
-  .assumesPageview()
-  .global('userlikeConfig')
-  .global('userlikeData')
-  .option('secretKey', '')
-  .option('listen', false)
-  .tag('<script src="//userlike-cdn-widgets.s3-eu-west-1.amazonaws.com/{{ secretKey }}.js">');
-
-/**
- * The context for this integration.
- */
-
-var integrationContext = {
-  name: 'userlike',
-  version: '1.0.0'
-};
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Userlike.prototype.initialize = function() {
-  var self = this;
-  var segment_base_info = clone(this.options); 
-  var user = this.analytics.user();
-  var identify = new Identify({
-    userId: user.id(),
-    traits: user.traits()
-  });
-
-  // FIXME: Should this be a global? Waiting for answer from Userlike folks as
-  // of 5/19/2015
-  //
-  // https://github.com/thomassittig/analytics.js-integrations/commit/e8fb4c067abe7f8549d0e0153504fd24a9aa4b53
-  // segment_base_info = clone(this.options);
-
-  segment_base_info.visitor = {
-    name: identify.name(),
-    email: identify.email()
-  };
-
-  if (!window.userlikeData) window.userlikeData = { custom: {} };
-  window.userlikeData.custom.segmentio = segment_base_info;
-
-  this.load(function() {
-    if (self.options.listen) self.attachListeners();
-    self.ready();
-  });
-};
-
-/**
- * Loaded?
- *
- * @return {Boolean}
- */
-
-Userlike.prototype.loaded = function() {
-  return !!(window.userlikeConfig && window.userlikeData);
-};
-
-/**
- * Listen for chat events.
- *
- * TODO: As of 4/17/2015, Userlike doesn't give access to the message body in events.
- * Revisit this/send it when they do.
- */
-
-Userlike.prototype.attachListeners = function() {
-  var self = this;
-  window.userlikeTrackingEvent = function(eventName, globalCtx, sessionCtx) {
-    if (eventName === 'chat_started') {
-      self.analytics.track(
-        'Live Chat Conversation Started',
-        { agentId: sessionCtx.operator_id, agentName: sessionCtx.operator_name },
-        { context: { integration: integrationContext }
-      });
-    }
-    if (eventName === 'message_operator_terminating') {
-      self.analytics.track(
-        'Live Chat Message Sent',
-        { agentId: sessionCtx.operator_id, agentName: sessionCtx.operator_name },
-        { context: { integration: integrationContext }
-      });
-    }
-    if (eventName === 'message_client_terminating') {
-      self.analytics.track(
-        'Live Chat Message Received',
-        { agentId: sessionCtx.operator_id, agentName: sessionCtx.operator_name },
-        { context: { integration: integrationContext }
-      });
-    }
-    if (eventName === 'chat_quit') {
-      self.analytics.track(
-        'Live Chat Conversation Ended',
-        { agentId: sessionCtx.operator_id, agentName: sessionCtx.operator_name },
-        { context: { integration: integrationContext }
-      });
-    }
-  };
-};
-
-},{"@segment/analytics.js-integration":537,"component-clone":609,"segmentio-facade":655}],537:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":538,"./statics":539,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],538:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":540,"component-emitter":541,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":542}],539:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":541,"domify":624,"dup":39}],540:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],541:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],542:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],543:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var alias = require('@segment/alias');
-var convertDates = require('@segment/convert-dates');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('UserVoice');
-var unix = require('to-unix-timestamp');
-
-/**
- * Expose `UserVoice` integration.
- */
-
-var UserVoice = module.exports = integration('UserVoice')
-  .assumesPageview()
-  .global('UserVoice')
-  .global('showClassicWidget')
-  .option('apiKey', '')
-  .option('classic', false)
-  .option('forumId', null)
-  .option('showWidget', true)
-  .option('mode', 'contact')
-  .option('accentColor', '#448dd6')
-  .option('screenshotEnabled', true)
-  .option('smartvote', true)
-  .option('trigger', null)
-  .option('triggerPosition', 'bottom-right')
-  .option('triggerColor', '#ffffff')
-  .option('triggerBackgroundColor', 'rgba(46, 49, 51, 0.6)')
-  // BACKWARD COMPATIBILITY: classic options
-  .option('classicMode', 'full')
-  .option('primaryColor', '#cc6d00')
-  .option('linkColor', '#007dbf')
-  .option('defaultMode', 'support')
-  .option('tabLabel', 'Feedback & Support')
-  .option('tabColor', '#cc6d00')
-  .option('tabPosition', 'middle-right')
-  .option('tabInverted', false)
-  .option('customTicketFields', {})
-  .tag('<script src="//widget.uservoice.com/{{ apiKey }}.js">');
-
-/**
- * When in "classic" mode, on `construct` swap all of the method to point to
- * their classic counterparts.
- *
- * @api private
- */
-
-UserVoice.on('construct', function(integration) {
-  if (!integration.options.classic) return;
-  integration.group = undefined;
-  integration.identify = integration.identifyClassic;
-  integration.initialize = integration.initializeClassic;
-});
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-UserVoice.prototype.initialize = function() {
-  var options = this.options;
-  var opts = formatOptions(options);
-  push('set', opts);
-  push('autoprompt', {});
-
-  if (options.showWidget) {
-    if (options.trigger) {
-      push('addTrigger', options.trigger, opts);
-    } else {
-      push('addTrigger', opts);
-    }
-  }
-
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-UserVoice.prototype.loaded = function() {
-  return !!(window.UserVoice && window.UserVoice.push !== Array.prototype.push);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-UserVoice.prototype.identify = function(identify) {
-  var traits = identify.traits({ created: 'created_at' });
-  traits = convertDates(traits, unix);
-  push('identify', traits);
-};
-
-/**
- * Group.
- *
- * @api public
- * @param {Group} group
- */
-
-UserVoice.prototype.group = function(group) {
-  var traits = group.traits({ created: 'created_at' });
-  traits = convertDates(traits, unix);
-  push('identify', { account: traits });
-};
-
-/**
- * Initialize (classic).
- *
- * @api private
- */
-
-UserVoice.prototype.initializeClassic = function() {
-  var options = this.options;
-  // part of public api
-  window.showClassicWidget = showClassicWidget;
-  if (options.showWidget) showClassicWidget('showTab', formatClassicOptions(options));
-  this.load(this.ready);
-};
-
-/**
- * Identify (classic).
- *
- * @api private
- * @param {Identify} identify
- */
-
-UserVoice.prototype.identifyClassic = function(identify) {
-  push('setCustomFields', identify.traits());
-};
-
-/**
- * Format the options for UserVoice.
- *
- * @api private
- * @param {Object} options
- * @return {Object}
- */
-
-function formatOptions(options) {
-  return alias(options, {
-    forumId: 'forum_id',
-    accentColor: 'accent_color',
-    smartvote: 'smartvote_enabled',
-    triggerColor: 'trigger_color',
-    triggerBackgroundColor: 'trigger_background_color',
-    triggerPosition: 'trigger_position',
-    screenshotEnabled: 'screenshot_enabled',
-    customTicketFields: 'ticket_custom_fields'
-  });
-}
-
-/**
- * Format the classic options for UserVoice.
- *
- * @api private
- * @param {Object} options
- * @return {Object}
- */
-
-function formatClassicOptions(options) {
-  return alias(options, {
-    forumId: 'forum_id',
-    classicMode: 'mode',
-    primaryColor: 'primary_color',
-    tabPosition: 'tab_position',
-    tabColor: 'tab_color',
-    linkColor: 'link_color',
-    defaultMode: 'default_mode',
-    tabLabel: 'tab_label',
-    tabInverted: 'tab_inverted'
-  });
-}
-
-/**
- * Show the classic version of the UserVoice widget. This method is usually part
- * of UserVoice classic's public API.
- *
- * @api private
- * @param {String} type ('showTab' or 'showLightbox')
- * @param {Object} options (optional)
- */
-
-function showClassicWidget(type, options) {
-  type = type || 'showLightbox';
-  push(type, 'classic_widget', options);
-}
-
-},{"@segment/alias":19,"@segment/analytics.js-integration":544,"@segment/convert-dates":593,"global-queue":625,"to-unix-timestamp":668}],544:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":545,"./statics":546,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],545:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":547,"component-emitter":548,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":549}],546:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":548,"domify":624,"dup":39}],547:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],548:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],549:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],550:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var cookie = require('component-cookie');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_veroq');
-
-/**
- * Expose `Vero` integration.
- */
-
-var Vero = module.exports = integration('Vero')
-  .global('_veroq')
-  .option('apiKey', '')
-  .tag('<script src="//d3qxef4rp70elm.cloudfront.net/m.js">');
-
-/**
- * Initialize.
- *
- * https://github.com/getvero/vero-api/blob/master/sections/js.md
- *
- * @api public
- */
-
-Vero.prototype.initialize = function() {
-  // clear default cookie so vero parses correctly.
-  // this is for the tests.
-  // basically, they have window.addEventListener('unload')
-  // which then saves their "command_store", which is an array.
-  // so we just want to create that initially so we can reload the tests.
-  if (!cookie('__veroc4')) cookie('__veroc4', '[]');
-  push('init', { api_key: this.options.apiKey });
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Vero.prototype.loaded = function() {
-  return !!(window._veroq && window._veroq.push !== Array.prototype.push);
-};
-
-/**
- * Page.
- *
- * https://www.getvero.com/knowledge-base#/questions/71768-Does-Vero-track-pageviews
- *
- * @api public
- * @param {Page} page
- */
-
-Vero.prototype.page = function() {
-  push('trackPageview');
-};
-
-/**
- * Identify.
- *
- * https://www.getvero.com/api/http/#users
- * https://github.com/getvero/vero-api/blob/master/sections/js.md#user-identification
- *
- * @api public
- * @param {Identify} identify
- */
-
-Vero.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  var email = identify.email();
-  var id = identify.userId();
-  // userId OR email address are required by Vero's API. When userId isn't present,
-  // email will be used as the userId.
-  if (!id && !email) return;
-  push('user', traits);
-};
-
-/**
- * Track.
- *
- * https://www.getvero.com/api/http/#actions
- * https://github.com/getvero/vero-api/blob/master/sections/js.md#tracking-events
- *
- * @api public
- * @param {Track} track
- */
-
-Vero.prototype.track = function(track) {
-  var regex = /[uU]nsubscribe/;
-
-  if (track.event().match(regex)) {
-    push('unsubscribe', { id: track.properties().id });
-  } else {
-    push('track', track.event(), track.properties(), { source: 'segment' });
-  }
-};
-
-/**
- * Alias.
- *
- * https://www.getvero.com/api/http/#users
- * https://github.com/getvero/vero-api/blob/master/sections/api/users.md
- *
- * @api public
- * @param {Alias} alias
- */
-
-Vero.prototype.alias = function(alias) {
-  var to = alias.to();
-
-  if (alias.from()) {
-    push('reidentify', to, alias.from());
-  } else {
-    push('reidentify', to);
-  }
-};
-
-},{"@segment/analytics.js-integration":551,"component-cookie":610,"global-queue":625}],551:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":552,"./statics":553,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],552:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":554,"component-emitter":555,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":556}],553:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":555,"domify":624,"dup":39}],554:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],555:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],556:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],557:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var tick = require('next-tick');
-
-/**
- * Expose `VWO` integration.
- */
-
-var VWO = module.exports = integration('Visual Website Optimizer')
-  .global('_vis_opt_queue')
-  .global('_vis_opt_revenue_conversion')
-  .global('_vwo_exp')
-  .global('_vwo_exp_ids')
-  .option('replay', true)
-  .option('listen', false);
-
-/**
- * The context for this integration.
- */
-
-var integrationContext = {
-  name: 'visual-website-optimizer',
-  version: '1.0.0'
-};
-
-/**
- * Initialize.
- *
- * http://v2.visualwebsiteoptimizer.com/tools/get_tracking_code.php
- */
-
-VWO.prototype.initialize = function() {
-  var self = this;
-  if (this.options.replay) {
-    tick(function() {
-      self.replay();
-    });
-  }
-  if (this.options.listen) {
-    tick(function() {
-      self.roots();
-    });
-  }
-  this.ready();
-};
-
-/**
- * Completed Purchase.
- *
- * https://vwo.com/knowledge/vwo-revenue-tracking-goal
- */
-
-VWO.prototype.orderCompleted = function(track) {
-  var total = track.total() || track.revenue() || 0;
-  enqueue(function() {
-    window._vis_opt_revenue_conversion(total);
-  });
-};
-
-/**
- * Replay the experiments the user has seen as traits to all other integrations.
- * Wait for the next tick to replay so that the `analytics` object and all of
- * the integrations are fully initialized.
- */
-
-VWO.prototype.replay = function() {
-  var analytics = this.analytics;
-
-  experiments(function(err, traits) {
-    if (traits) analytics.identify(traits);
-  });
-};
-
-/**
- * Replay the experiments the user has seen as traits to all other integrations.
- * Wait for the next tick to replay so that the `analytics` object and all of
- * the integrations are fully initialized.
- */
-
-VWO.prototype.roots = function() {
-  var analytics = this.analytics;
-
-  rootExperiments(function(err, data) {
-    each(data, function(experimentId, variationName) {
-      analytics.track(
-        'Experiment Viewed',
-        {
-          experimentId: experimentId,
-          variationName: variationName
-        },
-        { context: { integration: integrationContext } }
-      );
-    });
-  });
-};
-
-/**
- * Get dictionary of experiment keys and variations.
- *
- * http://visualwebsiteoptimizer.com/knowledge/integration-of-vwo-with-kissmetrics/
- *
- * @param {Function} fn
- * @return {Object}
- */
-
-function rootExperiments(fn) {
-  enqueue(function() {
-    var data = {};
-    var experimentIds = window._vwo_exp_ids;
-    if (!experimentIds) return fn();
-    each(experimentIds, function(experimentId) {
-      var variationName = variation(experimentId);
-      if (variationName) data[experimentId] = variationName;
-    });
-    fn(null, data);
-  });
-}
-
-/**
- * Get dictionary of experiment keys and variations.
- *
- * http://visualwebsiteoptimizer.com/knowledge/integration-of-vwo-with-kissmetrics/
- *
- * @param {Function} fn
- * @return {Object}
- */
-
-function experiments(fn) {
-  enqueue(function() {
-    var data = {};
-    var ids = window._vwo_exp_ids;
-    if (!ids) return fn();
-    each(ids, function(id) {
-      var name = variation(id);
-      if (name) data['Experiment: ' + id] = name;
-    });
-    fn(null, data);
-  });
-}
-
-/**
- * Add a `fn` to the VWO queue, creating one if it doesn't exist.
- *
- * @param {Function} fn
- */
-
-function enqueue(fn) {
-  window._vis_opt_queue = window._vis_opt_queue || [];
-  window._vis_opt_queue.push(fn);
-}
-
-/**
- * Get the chosen variation's name from an experiment `id`.
- *
- * http://visualwebsiteoptimizer.com/knowledge/integration-of-vwo-with-kissmetrics/
- *
- * @param {String} id
- * @return {String}
- */
-
-function variation(id) {
-  var experiments = window._vwo_exp;
-  if (!experiments) return null;
-  var experiment = experiments[id];
-  var variationId = experiment.combination_chosen;
-  return variationId ? experiment.comb_n[variationId] : null;
-}
-
-},{"@segment/analytics.js-integration":586,"component-each":611,"next-tick":640}],558:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var useHttps = require('use-https');
-
-/**
- * Expose `WebEngage` integration.
- */
-
-var WebEngage = module.exports = integration('WebEngage')
-  .readyOnInitialize()
-  .global('webengage')
-  .option('licenseCode', '')
-  .tag('http', '<script src="http://cdn.widgets.webengage.com/js/webengage-min-v-6.0.js">')
-  .tag('https', '<script src="https://ssl.widgets.webengage.com/js/webengage-min-v-6.0.js">');
-
-/**
- * Initialize.
- *
- * http://docs.webengage.com/docs/web-sdk-integration#section-integration-code
- * @api public
- */
-
-WebEngage.prototype.initialize = function() {
-  /* eslint-disable */
-
-  !function(e,t,n){function o(e,t){e[t[t.length-1]]=function(){r.__queue.push([t.join("."),arguments])}}var i,s,r=e[n],g=" ",l="init options track screen onReady".split(g),a="feedback survey notification".split(g),c="options render clear abort".split(g),p="Open Close Submit Complete View Click".split(g),u="identify login logout setAttribute".split(g);if(!r||!r.__v){for(e[n]=r={__queue:[],__v:"6.0",user:{}},i=0;i<l.length;i++)o(r,[l[i]]);for(i=0;i<a.length;i++){for(r[a[i]]={},s=0;s<c.length;s++)o(r[a[i]],[a[i],c[s]]);for(s=0;s<p.length;s++)o(r[a[i]],[a[i],"on"+p[s]])}for(i=0;i<u.length;i++)o(r.user,["user",u[i]]);}}(window,document,"webengage");
-
-  window.webengage.ixP = 'Segment';
-  /* eslint-enable */
-
-  window.webengage.init(this.options.licenseCode);
-
-  var name = useHttps() ? 'https' : 'http';
-  this.load(name, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-WebEngage.prototype.loaded = function() {
-  return !!window.webengage;
-};
-
-
-/**
- * Identify.
- *
- * http://docs.webengage.com/docs/web-sdk-user#section-webengage-user-login
- *
- * @api public
- * @param {Identify} identify
- */
-
-WebEngage.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  var id = identify.userId();
-  if (id) window.webengage.user.login(id);
-
-  if (traits) window.webengage.user.setAttribute(mapTraits(traits));
-};
-
-
-/**
- * Track.
- *
- * http://docs.webengage.com/docs/web-sdk-events#section-webengage-track
- *
- * @api public
- * @param {Track} track
- */
-
-WebEngage.prototype.track = function(track) {
-  var event = track.event();
-  var properties = track.properties();
-  window.webengage.track(event, properties);
-};
-
-
-/**
- * Page.
- *
- * http://docs.webengage.com/docs/web-sdk-integration#section-webengage-screen
- * @param {Page} page
- */
-
-WebEngage.prototype.page = function(page) {
-  var name = page.name() || '';
-  var properties = page.properties();
-
-  window.webengage.screen(name, properties);
-};
-
-
-/**
- * Map traits to their WebEngage attributes.
- *
- * http://docs.webengage.com/docs/web-sdk-user#section-reserved-attributes
- *
- * @param {Object} traits
- * @return {Object} mapped
- * @api private
- */
-
-function mapTraits(traits) {
-  var aliases = {
-    name: 'we_first_name',
-    firstName: 'we_first_name',
-    lastName: 'we_last_name',
-    email: 'we_email',
-    gender: 'we_gender',
-    birthday: 'we_birth_date',
-    phone: 'we_phone',
-    company: 'we_company'
-  };
-
-  var mapped = {};
-  for (var k in traits) {
-    if (aliases.hasOwnProperty(k)) {
-      mapped[aliases[k]] = traits[k];
-    } else {
-      mapped[k] = traits[k];
-    }
-  }
-
-  if (Object.prototype.toString.call(mapped.we_birth_date) === '[object Date]') {
-    var date = mapped.we_birth_date;
-
-    mapped.we_birth_date = date.getUTCFullYear()
-      + '-' + pad(date.getUTCMonth() + 1)
-      + '-' + pad(date.getUTCDate());
-  }
-
-  return mapped;
-}
-
-
-/**
- * Pad single digit numbers with a leading 0.
- *
- * @param {number} number
- * @return {number}
- * @api private
- */
-
-function pad(number) {
-  return number < 10 ? '0' + number : number;
-}
-
-},{"@segment/analytics.js-integration":559,"use-https":672}],559:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":560,"./statics":561,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],560:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":562,"component-emitter":563,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":564}],561:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":563,"domify":624,"dup":39}],562:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],563:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],564:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],565:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var toSnakeCase = require('to-snake-case');
-var is = require('is');
-var foldl = require('@ndhoule/foldl');
-var json = require('json3');
-var isostring = require('isostring');
-var time = require('unix-time');
-
-/**
- * Expose `Woopra` integration.
- */
-
-var Woopra = module.exports = integration('Woopra')
-  .global('woopra')
-  .option('domain', '')
-  .option('cookieName', 'wooTracker')
-  .option('cookieDomain', null)
-  .option('cookiePath', '/')
-  .option('ping', true)
-  .option('pingInterval', 12000)
-  .option('idleTimeout', 300000)
-  .option('downloadTracking', true)
-  .option('outgoingTracking', true)
-  .option('outgoingIgnoreSubdomain', true)
-  .option('downloadPause', 200)
-  .option('outgoingPause', 400)
-  .option('ignoreQueryUrl', true)
-  .option('hideCampaign', false)
-  .tag('<script src="//static.woopra.com/js/w.js">');
-
-/**
- * Initialize.
- *
- * http://www.woopra.com/docs/setup/javascript-tracking/
- */
-
-Woopra.prototype.initialize = function() {
-  /* eslint-disable */
-  (function(){var i, s, z, w = window, d = document, a = arguments, q = 'script', f = ['config', 'track', 'identify', 'visit', 'push', 'call'], c = function(){var i, self = this; self._e = []; for (i = 0; i < f.length; i++){(function(f){self[f] = function(){self._e.push([f].concat(Array.prototype.slice.call(arguments, 0))); return self; }; })(f[i]); } }; w._w = w._w || {}; for (i = 0; i < a.length; i++){ w._w[a[i]] = w[a[i]] = w[a[i]] || new c(); } })('woopra');
-  /* eslint-enable */
-
-  this.load(this.ready);
-  each(this.options, function(key, value) {
-    key = toSnakeCase(key);
-    if (value == null) return;
-    if (value === '') return;
-    window.woopra.config(key, value);
-  });
-};
-
-/**
- * Loaded?
- *
- * @return {Boolean}
- */
-
-Woopra.prototype.loaded = function() {
-  return !!(window.woopra && window.woopra.loaded);
-};
-
-/**
- * Page.
- *
- * @param {String} category (optional)
- */
-
-Woopra.prototype.page = function(page) {
-  var props = page.properties();
-  var name = page.fullName();
-  if (name) props.title = name;
-  window.woopra.track('pv', props);
-};
-
-/**
- * Identify.
- *
- * @param {Identify} identify
- */
-
-Woopra.prototype.identify = function(identify) {
-  var traits = identify.traits();
-
-  // Woopra likes timestamps in milliseconds
-  // Ref: https://www.woopra.com/docs/manual/configure-schema/
-  each(traits, function(key, val) {
-    if (isostring(val) || is.date(val)) {
-      traits[key] = time(val) * 1000;
-    }
-  });
-
-  if (identify.name()) traits.name = identify.name();
-  // `push` sends it off async
-  window.woopra.identify(traits).push();
-};
-
-/**
- * Track.
- *
- * @param {Track} track
- */
-
-Woopra.prototype.track = function(track) {
-  window.woopra.track(track.event(), stringifyNested(track.properties()));
-};
-
-/**
- * Stringify nested objects.
- *
- * Undocumented aspect of Woopra's API, but apparently required. Breaks
- * on `Completed Order` `properties.products`.
- *
- * @param {Object} obj
- * @return {Object}
- * @api private
- */
-
-function stringifyNested(obj) {
-  return foldl(function(results, value, key) {
-    if (is.array(obj[key])) {
-      results[key] = json.stringify(obj[key]);
-    } else {
-      results[key] = obj[key];
-    }
-    return results;
-  }, {}, obj);
-}
-
-},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":566,"component-each":611,"is":629,"isostring":632,"json3":633,"to-snake-case":665,"unix-time":671}],566:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":567,"./statics":568,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],567:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":569,"component-emitter":570,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":571}],568:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":570,"domify":624,"dup":39}],569:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],570:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],571:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],572:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var omit = require('omit');
-
-/**
- * Expose `Wootric` integration.
- */
-
-var Wootric = module.exports = integration('Wootric')
-  .assumesPageview()
-  .option('accountToken', '')
-  .global('wootricSettings')
-  .global('wootric_survey_immediately')
-  .global('wootric')
-  .tag('library', '<script src="//d27j601g4x0gd5.cloudfront.net/segmentioSnippet.js"></script>')
-  .tag('pixel', '<img src="//d8myem934l1zi.cloudfront.net/pixel.gif?account_token={{ accountToken }}&email={{ email }}&created_at={{ createdAt }}&url={{ url }}&random={{ cacheBuster }}">');
-
-/**
- * Initialize Wootric.
- *
- * @api public
- */
-
-Wootric.prototype.initialize = function() {
-  // We use this to keep track of the last page that Wootric has tracked to
-  // ensure we don't accidentally send a duplicate page call
-  this.lastPageTracked = null;
-  window.wootricSettings = window.wootricSettings || {};
-  window.wootricSettings.account_token = this.options.accountToken;
-
-  var self = this;
-  this.load('library', function() {
-    self.ready();
-  });
-};
-
-/**
- * Has the Wootric library been loaded yet?
- *
- * @api private
- * @return {boolean}
- */
-
-Wootric.prototype.loaded = function() {
-  // We are always ready since we are just setting a global variable in initialize
-  return !!window.wootric;
-};
-
-/**
- * Identify a user.
- *
- * @api public
- * @param {Facade} identify
- */
-
-Wootric.prototype.identify = function(identify) {
-  var traits = identify.traits();
-  var email = identify.email();
-  var createdAt = identify.created();
-  var language = traits.language;
-
-  if (createdAt && createdAt.getTime) window.wootricSettings.created_at = Math.round(createdAt.getTime() / 1000);
-  if (language) window.wootricSettings.language = language;
-  window.wootricSettings.email = email;
-  // Set the rest of the traits as properties
-  window.wootricSettings.properties = omit(['created', 'createdAt', 'email'], traits);
-
-  window.wootric('run');
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Wootric.prototype.page = function(page) {
-  // Only track page if we haven't already tracked it
-  if (this.lastPageTracked === window.location) {
-    return;
-  }
-
-  // Set this page as the last page tracked
-  this.lastPageTracked = window.location;
-
-  var wootricSettings = window.wootricSettings;
-  this.load('pixel', {
-    accountToken: this.options.accountToken,
-    email: encodeURIComponent(wootricSettings.email),
-    createdAt: wootricSettings.created_at,
-    url: encodeURIComponent(page.url()),
-    cacheBuster: Math.random()
-  });
-};
-
-},{"@segment/analytics.js-integration":573,"omit":643}],573:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":574,"./statics":575,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],574:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":576,"component-emitter":577,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":578}],575:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":577,"domify":624,"dup":39}],576:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],577:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],578:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],579:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"component-each":132,"obj-case":167,"segmentio-facade":179}],95:[function(require,module,exports){
 'use strict';
 
 /**
@@ -18657,104 +10741,65 @@ arguments[4][42][0].apply(exports,arguments)
  */
 
 var bind = require('component-bind');
-var integration = require('@segment/analytics.js-integration');
-var tick = require('next-tick');
-var when = require('do-when');
+var debug = require('debug');
+var defaults = require('@ndhoule/defaults');
+var extend = require('extend');
+var slug = require('slug-component');
+var protos = require('./protos');
+var statics = require('./statics');
 
 /**
- * Expose `Yandex` integration.
+ * Create a new `Integration` constructor.
+ *
+ * @constructs Integration
+ * @param {string} name
+ * @return {Function} Integration
  */
 
-var Yandex = module.exports = integration('Yandex Metrica')
-  .assumesPageview()
-  .global('yandex_metrika_callbacks')
-  .global('Ya')
-  .option('type', 0)
-  .option('counterId', null)
-  .option('clickmap', false)
-  .option('webvisor', false)
-  .option('trackHash', false)
-  .option('trackLinks', false)
-  .option('accurateTrackBounce', false)
-  .tag('<script src="//mc.yandex.ru/metrika/watch.js">');
+function createIntegration(name) {
+  /**
+   * Initialize a new `Integration`.
+   *
+   * @class
+   * @param {Object} options
+   */
 
-/**
- * Initialize.
- *
- * https://tech.yandex.com/metrika/
- * http://help.yandex.com/metrica/objects/creating-object.xml
- *
- * @api public
- */
+  function Integration(options) {
+    if (options && options.addIntegration) {
+      // plugin
+      return options.addIntegration(Integration);
+    }
+    this.debug = debug('analytics:integration:' + slug(name));
+    var clonedOpts = {};
+    extend(true, clonedOpts, options); // deep clone options
+    this.options = defaults(clonedOpts || {}, this.defaults);
+    this._queue = [];
+    this.once('ready', bind(this, this.flush));
 
-Yandex.prototype.initialize = function() {
-  var id = this.options.counterId;
-  var type = this.options.type;
-  var clickmap = this.options.clickmap;
-  var webvisor = this.options.webvisor;
-  var trackHash = this.options.trackHash;
-  var trackLinks = this.options.trackLinks;
-  var accurateTrackBounce = this.options.accurateTrackBounce;
+    Integration.emit('construct', this);
+    this.ready = bind(this, this.ready);
+    this._wrapInitialize();
+    this._wrapPage();
+    this._wrapTrack();
+  }
 
-  push(function() {
-    window['yaCounter' + id] = new window.Ya.Metrika({
-      id: id,
-      type: type,
-      clickmap: clickmap,
-      webvisor: webvisor,
-      trackHash: trackHash,
-      trackLinks: trackLinks,
-      accurateTrackBounce: accurateTrackBounce
-    });
-  });
+  Integration.prototype.defaults = {};
+  Integration.prototype.globals = [];
+  Integration.prototype.templates = {};
+  Integration.prototype.name = name;
+  extend(Integration, statics);
+  extend(Integration.prototype, protos);
 
-  var loaded = bind(this, this.loaded);
-  var ready = this.ready;
-  this.load(function() {
-    when(loaded, function() {
-      tick(ready);
-    });
-  });
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Yandex.prototype.loaded = function() {
-  return !!(window.Ya && window.Ya.Metrika);
-};
-
-/**
- * Push a new callback on the global Yandex queue.
- *
- * @api private
- * @param {Function} callback
- */
-
-function push(callback) {
-  window.yandex_metrika_callbacks = window.yandex_metrika_callbacks || [];
-  window.yandex_metrika_callbacks.push(callback);
+  return Integration;
 }
 
-},{"@segment/analytics.js-integration":580,"component-bind":608,"do-when":623,"next-tick":640}],580:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":581,"./statics":582,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],581:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":583,"component-emitter":584,"dup":38,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":585}],582:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":584,"domify":624,"dup":39}],583:[function(require,module,exports){
-arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],584:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],585:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],586:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"./protos":587,"./statics":588,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":608,"debug":621,"dup":37,"slug-component":661}],587:[function(require,module,exports){
+/**
+ * Exports.
+ */
+
+module.exports = createIntegration;
+
+},{"./protos":96,"./statics":97,"@ndhoule/defaults":6,"component-bind":126,"debug":98,"extend":146,"slug-component":185}],96:[function(require,module,exports){
 'use strict';
 
 /**
@@ -18931,16 +10976,9 @@ exports.invoke = function(method) {
   if (!this[method]) return;
   var args = Array.prototype.slice.call(arguments, 1);
   if (!this._ready) return this.queue(method, args);
-  var ret;
 
-  try {
-    this.debug('%s with %o', method, args);
-    ret = this[method].apply(this, args);
-  } catch (e) {
-    this.debug('error %o calling %s with %o', e, method, args);
-  }
-
-  return ret;
+  this.debug('%s with %o', method, args);
+  return this[method].apply(this, args);
 };
 
 /**
@@ -19224,7 +11262,7 @@ function render(template, locals) {
   }, {}, template.attrs);
 }
 
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":594,"@segment/load-script":598,"analytics-events":606,"component-emitter":589,"is":629,"load-iframe":635,"next-tick":640,"to-no-case":590}],588:[function(require,module,exports){
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":124,"component-emitter":134,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],97:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19389,11 +11427,11 @@ function objectify(str) {
   };
 }
 
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":589,"domify":624}],589:[function(require,module,exports){
-arguments[4][30][0].apply(exports,arguments)
-},{"dup":30}],590:[function(require,module,exports){
-arguments[4][42][0].apply(exports,arguments)
-},{"dup":42}],591:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145}],98:[function(require,module,exports){
+arguments[4][38][0].apply(exports,arguments)
+},{"./debug":99,"_process":170,"dup":38}],99:[function(require,module,exports){
+arguments[4][39][0].apply(exports,arguments)
+},{"dup":39,"ms":161}],100:[function(require,module,exports){
 var utf8Encode = require('utf8-encode');
 var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
@@ -19430,7 +11468,7 @@ function encode(input) {
 
     return output;
 }
-},{"utf8-encode":673}],592:[function(require,module,exports){
+},{"utf8-encode":197}],101:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19454,7 +11492,7 @@ function canonical() {
 
 module.exports = canonical;
 
-},{}],593:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 'use strict';
 
 /*
@@ -19478,7 +11516,7 @@ function convertDates(obj, convert) {
     if (type(val) === 'date') {
       obj[key] = convert(val);
     }
-    if (type(val) === 'object') {
+    if (type(val) === 'object' || type(val) === 'array') {
       obj[key] = convertDates(val, convert);
     }
   }, obj);
@@ -19491,7 +11529,7 @@ function convertDates(obj, convert) {
 
 module.exports = convertDates;
 
-},{"@ndhoule/clone":5,"@ndhoule/each":8,"component-type":618}],594:[function(require,module,exports){
+},{"@ndhoule/clone":5,"@ndhoule/each":8,"component-type":140}],103:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -19526,7 +11564,7 @@ fmt.d = parseInt;
 module.exports = fmt;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],595:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 'use strict';
 
 function isMeta(e) {
@@ -19554,7 +11592,7 @@ function isMeta(e) {
 
 module.exports = isMeta;
 
-},{}],596:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 'use strict';
 
 var type = require('component-type');
@@ -19592,6 +11630,11 @@ function traverse(input, strict) {
  */
 
 function object(obj, strict) {
+  // 'each' utility uses obj.length to check whether the obj is array. To avoid incorrect classification, wrap call to 'each' with rename of obj.length
+  if (obj.length && typeof obj.length === 'number' && !(obj.length - 1 in obj)) { // cross browser compatible way of checking has length and is not array
+    obj.lengthNonArray = obj.length;
+    delete obj.length;
+  }
   each(obj, function(key, val) {
     if (isodate.is(val, strict)) {
       obj[key] = isodate.parse(val);
@@ -19599,6 +11642,11 @@ function object(obj, strict) {
       traverse(val, strict);
     }
   });
+  // restore obj.length if it was renamed
+  if (obj.lengthNonArray) {
+    obj.length = obj.lengthNonArray;
+    delete obj.lengthNonArray;
+  }
   return obj;
 }
 
@@ -19621,7 +11669,7 @@ function array(arr, strict) {
   return arr;
 }
 
-},{"@segment/isodate":597,"component-each":611,"component-type":618}],597:[function(require,module,exports){
+},{"@segment/isodate":106,"component-each":132,"component-type":140}],106:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19693,13 +11741,16 @@ exports.parse = function(iso) {
  */
 
 exports.is = function(string, strict) {
+  if (typeof string !== 'string') {
+    return false;
+  }
   if (strict && (/^\d{4}-\d{2}-\d{2}/).test(string) === false) {
     return false;
   }
   return matcher.test(string);
 };
 
-},{}],598:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 'use strict';
 
 /*
@@ -19771,7 +11822,825 @@ function loadScript(options, cb) {
 
 module.exports = loadScript;
 
-},{"component-type":618,"next-tick":640,"script-onload":649}],599:[function(require,module,exports){
+},{"component-type":140,"next-tick":166,"script-onload":172}],108:[function(require,module,exports){
+'use strict';
+
+var keys = require('@ndhoule/keys');
+var uuid = require('uuid').v4;
+
+var inMemoryStore = {
+  _data: {},
+  length: 0,
+  setItem: function(key, value) {
+    this._data[key] = value;
+    this.length = keys(this._data).length;
+    return value;
+  },
+  getItem: function(key) {
+    if (key in this._data) {
+      return this._data[key];
+    }
+    return null;
+  },
+  removeItem: function(key) {
+    if (key in this._data) {
+      delete this._data[key];
+    }
+    this.length = keys(this._data).length;
+    return null;
+  },
+  clear: function() {
+    this._data = {};
+    this.length = 0;
+  },
+  key: function(index) {
+    return keys(this._data)[index];
+  }
+};
+
+function isSupportedNatively() {
+  try {
+    if (!window.localStorage) return false;
+    var key = uuid();
+    window.localStorage.setItem(key, 'test_value');
+    var value = window.localStorage.getItem(key);
+    window.localStorage.removeItem(key);
+
+    // handle localStorage silently failing
+    return value === 'test_value';
+  } catch (e) {
+    // Can throw if localStorage is disabled
+    return false;
+  }
+}
+
+function pickStorage() {
+  if (isSupportedNatively()) {
+    return window.localStorage;
+  }
+  // fall back to in-memory
+  return inMemoryStore;
+}
+
+// Return a shared instance
+module.exports.defaultEngine = pickStorage();
+// Expose the in-memory store explicitly for testing
+module.exports.inMemoryEngine = inMemoryStore;
+
+},{"@ndhoule/keys":13,"uuid":112}],109:[function(require,module,exports){
+'use strict';
+
+var uuid = require('uuid').v4;
+var Store = require('./store');
+var each = require('@ndhoule/each');
+var Schedule = require('./schedule');
+var debug = require('debug')('localstorage-retry');
+var Emitter = require('component-emitter');
+
+// Some browsers don't support Function.prototype.bind, so just including a simplified version here
+function bind(func, obj) {
+  return function() {
+    return func.apply(obj, arguments);
+  };
+}
+
+/**
+ * @callback processFunc
+ * @param {Mixed} item The item added to the queue to process
+ * @param {Function} done A function to call when processing is completed.
+ *   @param {Error} Optional error parameter if the processing failed
+ *   @param {Response} Optional response parameter to emit for async handling
+ */
+
+/**
+ * Constructs a Queue backed by localStorage
+ *
+ * @constructor
+ * @param {String} name The name of the queue. Will be used to find abandoned queues and retry their items
+ * @param {processFunc} fn The function to call in order to process an item added to the queue
+ */
+function Queue(name, opts, fn) {
+  if (typeof opts === 'function') fn = opts;
+  this.name = name;
+  this.id = uuid();
+  this.fn = fn;
+  this.maxItems = opts.maxItems || Infinity;
+  this.maxAttempts = opts.maxAttempts || Infinity;
+
+  this.backoff = {
+    MIN_RETRY_DELAY: opts.minRetryDelay || 1000,
+    MAX_RETRY_DELAY: opts.maxRetryDelay || 30000,
+    FACTOR: opts.backoffFactor || 2,
+    JITTER: opts.backoffJitter || 0
+  };
+
+  // painstakingly tuned. that's why they're not "easily" configurable
+  this.timeouts = {
+    ACK_TIMER: 1000,
+    RECLAIM_TIMER: 3000,
+    RECLAIM_TIMEOUT: 10000,
+    RECLAIM_WAIT: 500
+  };
+
+  this.keys = {
+    IN_PROGRESS: 'inProgress',
+    QUEUE: 'queue',
+    ACK: 'ack',
+    RECLAIM_START: 'reclaimStart',
+    RECLAIM_END: 'reclaimEnd'
+  };
+
+  this._schedule = new Schedule();
+  this._processId = 0;
+
+  // Set up our empty queues
+  this._store = new Store(this.name, this.id, this.keys);
+  this._store.set(this.keys.IN_PROGRESS, {});
+  this._store.set(this.keys.QUEUE, []);
+
+  // bind recurring tasks for ease of use
+  this._ack = bind(this._ack, this);
+  this._checkReclaim = bind(this._checkReclaim, this);
+  this._processHead = bind(this._processHead, this);
+
+  this._running = false;
+}
+
+/**
+ * Mix in event emitter
+ */
+
+Emitter(Queue.prototype);
+
+/**
+ * Starts processing the queue
+ */
+Queue.prototype.start = function() {
+  if (this._running) {
+    this.stop();
+  }
+  this._running = true;
+  this._ack();
+  this._checkReclaim();
+  this._processHead();
+};
+
+/**
+ * Stops processing the queue
+ */
+Queue.prototype.stop = function() {
+  this._schedule.cancelAll();
+  this._running = false;
+};
+
+/**
+ * Decides whether to retry. Overridable.
+ *
+ * @param {Object} item The item being processed
+ * @param {Number} attemptNumber The attemptNumber (1 for first retry)
+ * @param {Error} error The error from previous attempt, if there was one
+ * @return {Boolean} Whether to requeue the message
+ */
+Queue.prototype.shouldRetry = function(_, attemptNumber) {
+  if (attemptNumber > this.maxAttempts) return false;
+  return true;
+};
+
+/**
+ * Calculates the delay (in ms) for a retry attempt
+ *
+ * @param {Number} attemptNumber The attemptNumber (1 for first retry)
+ * @return {Number} The delay in milliseconds to wait before attempting a retry
+ */
+Queue.prototype.getDelay = function(attemptNumber) {
+  var ms = this.backoff.MIN_RETRY_DELAY * Math.pow(this.backoff.FACTOR, attemptNumber);
+  if (this.backoff.JITTER) {
+    var rand =  Math.random();
+    var deviation = Math.floor(rand * this.backoff.JITTER * ms);
+    if (Math.floor(rand * 10) < 5) {
+      ms -= deviation;
+    } else {
+      ms += deviation;
+    }
+  }
+  return Number(Math.min(ms, this.backoff.MAX_RETRY_DELAY).toPrecision(1));
+};
+
+/**
+ * Adds an item to the queue
+ *
+ * @param {Mixed} item The item to process
+ */
+Queue.prototype.addItem = function(item) {
+  this._enqueue({
+    item: item,
+    attemptNumber: 0,
+    time: this._schedule.now()
+  });
+};
+
+/**
+ * Adds an item to the retry queue
+ *
+ * @param {Mixed} item The item to retry
+ * @param {Number} attemptNumber The attempt number (1 for first retry)
+ * @param {Error} [error] The error from previous attempt, if there was one
+ */
+Queue.prototype.requeue = function(item, attemptNumber, error) {
+  if (this.shouldRetry(item, attemptNumber, error)) {
+    this._enqueue({
+      item: item,
+      attemptNumber: attemptNumber,
+      time: this._schedule.now() + this.getDelay(attemptNumber)
+    });
+  } else {
+    this.emit('discard', item, attemptNumber);
+  }
+};
+
+Queue.prototype._enqueue = function(entry) {
+  var queue = this._store.get(this.keys.QUEUE) || [];
+  queue = queue.slice(-(this.maxItems - 1));
+  queue.push(entry);
+  queue = queue.sort(function(a,b) {
+    return a.time - b.time;
+  });
+
+  this._store.set(this.keys.QUEUE, queue);
+
+  if (this._running) {
+    this._processHead();
+  }
+};
+
+Queue.prototype._processHead = function() {
+  var self = this;
+  var store = this._store;
+
+  // cancel the scheduled task if it exists
+  this._schedule.cancel(this._processId);
+
+  // Pop the head off the queue
+  var queue = store.get(this.keys.QUEUE) || [];
+  var inProgress = store.get(this.keys.IN_PROGRESS) || {};
+  var now = this._schedule.now();
+  var toRun = [];
+
+  function enqueue(el, id) {
+    toRun.push({
+      item: el.item,
+      done: function handle(err, res) {
+        var inProgress = store.get(self.keys.IN_PROGRESS) || {};
+        delete inProgress[id];
+        store.set(self.keys.IN_PROGRESS, inProgress);
+        self.emit('processed', err, res, el.item);
+        if (err) {
+          self.requeue(el.item, el.attemptNumber + 1, err);
+        }
+      }
+    });
+  }
+
+  var inProgressSize = Object.keys(inProgress).length;
+
+  while (queue.length && queue[0].time <= now && inProgressSize++ < self.maxItems) {
+    var el = queue.shift();
+    var id = uuid();
+
+    // Save this to the in progress map
+    inProgress[id] = {
+      item: el.item,
+      attemptNumber: el.attemptNumber,
+      time: self._schedule.now()
+    };
+
+    enqueue(el, id);
+  }
+
+  store.set(this.keys.QUEUE, queue);
+  store.set(this.keys.IN_PROGRESS, inProgress);
+
+  each(function(el) {
+    // TODO: handle fn timeout
+    try {
+      self.fn(el.item, el.done);
+    } catch (err) {
+      debug('Process function threw error: ' + err);
+    }
+  }, toRun);
+
+  // re-read the queue in case the process function finished immediately or added another item
+  queue = store.get(this.keys.QUEUE) || [];
+  this._schedule.cancel(this._processId);
+  if (queue.length > 0) {
+    this._processId = this._schedule.run(this._processHead, queue[0].time - now);
+  }
+};
+
+// Ack continuously to prevent other tabs from claiming our queue
+Queue.prototype._ack = function() {
+  this._store.set(this.keys.ACK, this._schedule.now());
+  this._store.set(this.keys.RECLAIM_START, null);
+  this._store.set(this.keys.RECLAIM_END, null);
+  this._schedule.run(this._ack, this.timeouts.ACK_TIMER);
+};
+
+Queue.prototype._checkReclaim = function() {
+  var self = this;
+
+  function tryReclaim(store) {
+    store.set(self.keys.RECLAIM_START, self.id);
+    store.set(self.keys.ACK, self._schedule.now());
+
+    self._schedule.run(function() {
+      if (store.get(self.keys.RECLAIM_START) !== self.id) return;
+      store.set(self.keys.RECLAIM_END, self.id);
+
+      self._schedule.run(function() {
+        if (store.get(self.keys.RECLAIM_END) !== self.id) return;
+        if (store.get(self.keys.RECLAIM_START) !== self.id) return;
+        self._reclaim(store.id);
+      }, self.timeouts.RECLAIM_WAIT);
+    }, self.timeouts.RECLAIM_WAIT);
+  }
+
+  function findOtherQueues(name) {
+    var res = [];
+    var storage = self._store.engine;
+    for (var i = 0; i < storage.length; i++) {
+      var k = storage.key(i);
+      var parts = k.split('.');
+      if (parts.length !== 3) continue;
+      if (parts[0] !== name) continue;
+      if (parts[2] !== 'ack') continue;
+      res.push(new Store(name, parts[1], self.keys));
+    }
+    return res;
+  }
+
+  each(function(store) {
+    if (store.id === self.id) return;
+    if (self._schedule.now() - store.get(self.keys.ACK) < self.timeouts.RECLAIM_TIMEOUT) return;
+    tryReclaim(store);
+  }, findOtherQueues(this.name));
+
+  this._schedule.run(this._checkReclaim, this.timeouts.RECLAIM_TIMER);
+};
+
+Queue.prototype._reclaim = function(id) {
+  var self = this;
+  var other = new Store(this.name, id, this.keys);
+
+  var our = {
+    queue: this._store.get(this.keys.QUEUE) || []
+  };
+
+  var their = {
+    inProgress: other.get(this.keys.IN_PROGRESS) || {},
+    queue: other.get(this.keys.QUEUE) || []
+  };
+
+  // add their queue to ours, resetting run-time to immediate and copying the attempt#
+  each(function(el) {
+    our.queue.push({
+      item: el.item,
+      attemptNumber: el.attemptNumber,
+      time: self._schedule.now()
+    });
+  }, their.queue);
+
+  // if the queue is abandoned, all the in-progress are failed. retry them immediately and increment the attempt#
+  each(function(el) {
+    our.queue.push({
+      item: el.item,
+      attemptNumber: el.attemptNumber + 1,
+      time: self._schedule.now()
+    });
+  }, their.inProgress);
+
+  our.queue = our.queue.sort(function(a,b) {
+    return a.time - b.time;
+  });
+
+  this._store.set(this.keys.QUEUE, our.queue);
+
+  // remove all keys
+  other.remove(this.keys.ACK);
+  other.remove(this.keys.RECLAIM_START);
+  other.remove(this.keys.RECLAIM_END);
+  other.remove(this.keys.IN_PROGRESS);
+  other.remove(this.keys.QUEUE);
+
+  // process the new items we claimed
+  this._processHead();
+};
+
+module.exports = Queue;
+
+},{"./schedule":110,"./store":111,"@ndhoule/each":8,"component-emitter":134,"debug":143,"uuid":112}],110:[function(require,module,exports){
+'use strict';
+
+var each = require('@ndhoule/each');
+
+var defaultClock = {
+  setTimeout: function(fn, ms) {
+    return window.setTimeout(fn, ms);
+  },
+  clearTimeout: function(id) {
+    return window.clearTimeout(id);
+  },
+  Date: window.Date
+};
+
+var clock = defaultClock;
+
+function Schedule() {
+  this.tasks = {};
+  this.nextId = 1;
+}
+
+Schedule.prototype.now = function() {
+  return +new clock.Date();
+};
+
+Schedule.prototype.run = function(task, timeout) {
+  var id = this.nextId++;
+  this.tasks[id] = clock.setTimeout(this._handle(id, task), timeout);
+  return id;
+};
+
+Schedule.prototype.cancel = function(id) {
+  if (this.tasks[id]) {
+    clock.clearTimeout(this.tasks[id]);
+    delete this.tasks[id];
+  }
+};
+
+Schedule.prototype.cancelAll = function() {
+  each(clock.clearTimeout, this.tasks);
+  this.tasks = {};
+};
+
+Schedule.prototype._handle = function(id, callback) {
+  var self = this;
+  return function() {
+    delete self.tasks[id];
+    return callback();
+  };
+};
+
+Schedule.setClock = function(newClock) {
+  clock = newClock;
+};
+
+Schedule.resetClock = function() {
+  clock = defaultClock;
+};
+
+module.exports = Schedule;
+
+},{"@ndhoule/each":8}],111:[function(require,module,exports){
+'use strict';
+
+var defaultEngine = require('./engine').defaultEngine;
+var inMemoryEngine = require('./engine').inMemoryEngine;
+var each = require('@ndhoule/each');
+var keys = require('@ndhoule/keys');
+var json = require('json3');
+
+/**
+* Store Implementation with dedicated
+*/
+
+function Store(name, id, keys, optionalEngine) {
+  this.id = id;
+  this.name = name;
+  this.keys = keys || {};
+  this.engine = optionalEngine || defaultEngine;
+}
+
+/**
+* Set value by key.
+*/
+
+Store.prototype.set = function(key, value) {
+  var compoundKey = this._createValidKey(key);
+  if (!compoundKey) return;
+  try {
+    this.engine.setItem(compoundKey, json.stringify(value));
+  } catch (err) {
+    if (isQuotaExceeded(err)) {
+      // switch to inMemory engine
+      this._swapEngine();
+      // and save it there
+      this.set(key, value);
+    }
+  }
+};
+
+/**
+* Get by Key.
+*/
+
+Store.prototype.get = function(key) {
+  try {
+    var str = this.engine.getItem(this._createValidKey(key));
+    if (str === null) {
+      return null;
+    }
+    return json.parse(str);
+  } catch (err) {
+    return null;
+  }
+};
+
+/**
+* Remove by Key.
+*/
+
+Store.prototype.remove = function(key) {
+  this.engine.removeItem(this._createValidKey(key));
+};
+
+/**
+* Ensure the key is valid
+*/
+
+Store.prototype._createValidKey = function(key) {
+  var name = this.name;
+  var id = this.id;
+
+  if (!keys(this.keys).length) return [name, id, key].join('.');
+
+  // validate and return undefined if invalid key
+  var compoundKey;
+  each(function(value) {
+    if (value === key) {
+      compoundKey = [name, id, key].join('.');
+    }
+  }, this.keys);
+  return compoundKey;
+};
+
+/**
+* Switch to inMemoryEngine, bringing any existing data with.
+*/
+
+Store.prototype._swapEngine = function() {
+  var self = this;
+
+  // grab existing data, but only for this page's queue instance, not all
+  // better to keep other queues in localstorage to be flushed later
+  // than to pull them into memory and remove them from durable storage
+  each(function(key) {
+    var value = self.get(key);
+    inMemoryEngine.setItem([self.name, self.id, key].join('.'), value);
+    self.remove(key);
+  }, this.keys);
+
+  this.engine = inMemoryEngine;
+};
+
+module.exports = Store;
+
+function isQuotaExceeded(e) {
+  var quotaExceeded = false;
+  if (e.code) {
+    switch (e.code) {
+    case 22:
+      quotaExceeded = true;
+      break;
+    case 1014:
+      // Firefox
+      if (e.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+        quotaExceeded = true;
+      }
+      break;
+    default:
+      break;
+    }
+  } else if (e.number === -2147024882) {
+    // Internet Explorer 8
+    quotaExceeded = true;
+  }
+  return quotaExceeded;
+}
+
+},{"./engine":108,"@ndhoule/each":8,"@ndhoule/keys":13,"json3":156}],112:[function(require,module,exports){
+var v1 = require('./v1');
+var v4 = require('./v4');
+
+var uuid = v4;
+uuid.v1 = v1;
+uuid.v4 = v4;
+
+module.exports = uuid;
+
+},{"./v1":115,"./v4":116}],113:[function(require,module,exports){
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+var byteToHex = [];
+for (var i = 0; i < 256; ++i) {
+  byteToHex[i] = (i + 0x100).toString(16).substr(1);
+}
+
+function bytesToUuid(buf, offset) {
+  var i = offset || 0;
+  var bth = byteToHex;
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([bth[buf[i++]], bth[buf[i++]], 
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]]]).join('');
+}
+
+module.exports = bytesToUuid;
+
+},{}],114:[function(require,module,exports){
+// Unique ID creation requires a high quality random # generator.  In the
+// browser this is a little complicated due to unknown quality of Math.random()
+// and inconsistent support for the `crypto` API.  We do the best we can via
+// feature-detection
+
+// getRandomValues needs to be invoked in a context where "this" is a Crypto
+// implementation. Also, find the complete implementation of crypto on IE11.
+var getRandomValues = (typeof(crypto) != 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto)) ||
+                      (typeof(msCrypto) != 'undefined' && typeof window.msCrypto.getRandomValues == 'function' && msCrypto.getRandomValues.bind(msCrypto));
+
+if (getRandomValues) {
+  // WHATWG crypto RNG - http://wiki.whatwg.org/wiki/Crypto
+  var rnds8 = new Uint8Array(16); // eslint-disable-line no-undef
+
+  module.exports = function whatwgRNG() {
+    getRandomValues(rnds8);
+    return rnds8;
+  };
+} else {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var rnds = new Array(16);
+
+  module.exports = function mathRNG() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return rnds;
+  };
+}
+
+},{}],115:[function(require,module,exports){
+var rng = require('./lib/rng');
+var bytesToUuid = require('./lib/bytesToUuid');
+
+// **`v1()` - Generate time-based UUID**
+//
+// Inspired by https://github.com/LiosK/UUID.js
+// and http://docs.python.org/library/uuid.html
+
+var _nodeId;
+var _clockseq;
+
+// Previous uuid creation time
+var _lastMSecs = 0;
+var _lastNSecs = 0;
+
+// See https://github.com/broofa/node-uuid for API details
+function v1(options, buf, offset) {
+  var i = buf && offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+  var node = options.node || _nodeId;
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // node and clockseq need to be initialized to random values if they're not
+  // specified.  We do this lazily to minimize issues related to insufficient
+  // system entropy.  See #189
+  if (node == null || clockseq == null) {
+    var seedBytes = rng();
+    if (node == null) {
+      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+      node = _nodeId = [
+        seedBytes[0] | 0x01,
+        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
+      ];
+    }
+    if (clockseq == null) {
+      // Per 4.2.2, randomize (14 bit) clockseq
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
+    }
+  }
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
+  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid's generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt < 0 && options.clockseq === undefined) {
+    clockseq = clockseq + 1 & 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
+  // time interval
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs >= 10000) {
+    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl >>> 24 & 0xff;
+  b[i++] = tl >>> 16 & 0xff;
+  b[i++] = tl >>> 8 & 0xff;
+  b[i++] = tl & 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
+  b[i++] = tmh >>> 8 & 0xff;
+  b[i++] = tmh & 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
+  b[i++] = tmh >>> 16 & 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq >>> 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq & 0xff;
+
+  // `node`
+  for (var n = 0; n < 6; ++n) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : bytesToUuid(b);
+}
+
+module.exports = v1;
+
+},{"./lib/bytesToUuid":113,"./lib/rng":114}],116:[function(require,module,exports){
+var rng = require('./lib/rng');
+var bytesToUuid = require('./lib/bytesToUuid');
+
+function v4(options, buf, offset) {
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options === 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ++ii) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || bytesToUuid(rnds);
+}
+
+module.exports = v4;
+
+},{"./lib/bytesToUuid":113,"./lib/rng":114}],117:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19796,7 +12665,7 @@ function preventDefault(e) {
 
 module.exports = preventDefault;
 
-},{}],600:[function(require,module,exports){
+},{}],118:[function(require,module,exports){
 'use strict';
 
 /**
@@ -19881,7 +12750,7 @@ function set(protocol) {
   }
 }
 
-},{}],601:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 'use strict';
 
 /*
@@ -19999,7 +12868,7 @@ function encode(obj) {
   return encodeURIComponent(str);
 }
 
-},{"@segment/base64-encode":591,"has-cors":626,"json3":633,"jsonp":634}],602:[function(require,module,exports){
+},{"@segment/base64-encode":100,"has-cors":150,"json3":156,"jsonp":157}],120:[function(require,module,exports){
 (function (global){
 "use strict"
 
@@ -20172,7 +13041,7 @@ module.exports = (function() {
 }())
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"json3":633}],603:[function(require,module,exports){
+},{"json3":156}],121:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20211,7 +13080,7 @@ function toISOString(date) {
 
 module.exports = toISOString;
 
-},{}],604:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20311,7 +13180,7 @@ domain.cookie = cookie;
 
 exports = module.exports = domain;
 
-},{"component-cookie":610,"component-url":619}],605:[function(require,module,exports){
+},{"component-cookie":128,"component-url":141}],123:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20390,7 +13259,7 @@ function strict(query) {
 module.exports = utm;
 module.exports.strict = strict;
 
-},{"@ndhoule/foldl":11,"component-querystring":616}],606:[function(require,module,exports){
+},{"@ndhoule/foldl":11,"component-querystring":138}],124:[function(require,module,exports){
 'use strict';
 
 /**
@@ -20401,6 +13270,68 @@ var map = require('@ndhoule/map');
 var foldl = require('@ndhoule/foldl');
 
 var eventMap = {
+  // Videos
+  videoPlaybackStarted: [{
+    object: 'video playback',
+    action: 'started'
+  }],
+  videoPlaybackPaused: [{
+    object: 'video playback',
+    action: 'paused'
+  }],
+  videoPlaybackInterrupted: [{
+    object: 'video playback',
+    action: 'interrupted'
+  }],
+  videoPlaybackResumed: [{
+    object: 'video playback',
+    action: 'resumed'
+  }],
+  videoPlaybackCompleted: [{
+    object: 'video playback',
+    action: 'completed'
+  }],
+  videoPlaybackBufferStarted: [{
+    object: 'video playback buffer',
+    action: 'started'
+  }],
+  videoPlaybackBufferCompleted: [{
+    object: 'video playback buffer',
+    action: 'completed'
+  }],
+  videoPlaybackSeekStarted: [{
+    object: 'video playback seek',
+    action: 'started'
+  }],
+  videoPlaybackSeekCompleted: [{
+    object: 'video playback seek',
+    action: 'completed'
+  }],
+  videoContentStarted: [{
+    object: 'video content',
+    action: 'started'
+  }],
+  videoContentPlaying: [{
+    object: 'video content',
+    action: 'playing'
+  }],
+  videoContentCompleted: [{
+    object: 'video content',
+    action: 'completed'
+  }],
+  videoAdStarted: [{
+    object: 'video ad',
+    action: 'started'
+  }],
+  videoAdPlaying: [{
+    object: 'video ad',
+    action: 'playing'
+  }],
+  videoAdCompleted: [{
+    object: 'video ad',
+    action: 'completed'
+  }],
+
   // Promotions
   promotionViewed: [{
     object: 'promotion',
@@ -20554,6 +13485,10 @@ var eventMap = {
     object: 'application',
     action: 'uninstalled'
   }],
+  applicationCrashed: [{
+    object: 'application',
+    action: 'crashed'
+  }],
 
   // App Campaign and Referral Events
   installAttributed: [{
@@ -20575,6 +13510,32 @@ var eventMap = {
   pushNotificationBounced: [{
     object: 'push notification',
     action: 'bounced'
+  }],
+
+  // Email
+  emailBounced: [{
+    object: 'email',
+    action: 'bounced'
+  }],
+  emailDelivered: [{
+    object: 'email',
+    action: 'delivered'
+  }],
+  emailLinkClicked: [{
+    object: 'email link',
+    action: 'clicked'
+  }],
+  emailMarkedAsSpam: [{
+    object: 'email',
+    action: 'marked as spam'
+  }],
+  emailOpened: [{
+    object: 'email',
+    action: 'opened'
+  }],
+  unsubscribed: [{
+    object: '',
+    action: 'unsubscribed'
   }]
 };
 
@@ -20620,7 +13581,7 @@ module.exports = foldl(function transform(ret, pairs, method) {
   return ret;
 }, {}, eventMap);
 
-},{"@ndhoule/foldl":11,"@ndhoule/map":14}],607:[function(require,module,exports){
+},{"@ndhoule/foldl":11,"@ndhoule/map":14}],125:[function(require,module,exports){
 'use strict';
 
 var bind = require('component-bind');
@@ -20638,7 +13599,7 @@ function bindAll(obj) {
 
 module.exports = bindAll;
 
-},{"component-bind":608}],608:[function(require,module,exports){
+},{"component-bind":126}],126:[function(require,module,exports){
 /**
  * Slice reference.
  */
@@ -20663,7 +13624,7 @@ module.exports = function(obj, fn){
   }
 };
 
-},{}],609:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -20722,7 +13683,7 @@ function clone(obj){
   }
 }
 
-},{"component-type":618,"type":618}],610:[function(require,module,exports){
+},{"component-type":140,"type":140}],128:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -20855,7 +13816,503 @@ function decode(value) {
   }
 }
 
-},{"debug":621}],611:[function(require,module,exports){
+},{"debug":129}],129:[function(require,module,exports){
+
+/**
+ * This is the web browser implementation of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = require('./debug');
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = 'undefined' != typeof chrome
+               && 'undefined' != typeof chrome.storage
+                  ? chrome.storage.local
+                  : localstorage();
+
+/**
+ * Colors.
+ */
+
+exports.colors = [
+  'lightseagreen',
+  'forestgreen',
+  'goldenrod',
+  'dodgerblue',
+  'darkorchid',
+  'crimson'
+];
+
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */
+
+function useColors() {
+  // is webkit? http://stackoverflow.com/a/16459606/376773
+  return ('WebkitAppearance' in document.documentElement.style) ||
+    // is firebug? http://stackoverflow.com/a/398120/376773
+    (window.console && (console.firebug || (console.exception && console.table))) ||
+    // is firefox >= v31?
+    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+    (navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31);
+}
+
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */
+
+exports.formatters.j = function(v) {
+  return JSON.stringify(v);
+};
+
+
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */
+
+function formatArgs() {
+  var args = arguments;
+  var useColors = this.useColors;
+
+  args[0] = (useColors ? '%c' : '')
+    + this.namespace
+    + (useColors ? ' %c' : ' ')
+    + args[0]
+    + (useColors ? '%c ' : ' ')
+    + '+' + exports.humanize(this.diff);
+
+  if (!useColors) return args;
+
+  var c = 'color: ' + this.color;
+  args = [args[0], c, 'color: inherit'].concat(Array.prototype.slice.call(args, 1));
+
+  // the final "%c" is somewhat tricky, because there could be other
+  // arguments passed either before or after the %c, so we need to
+  // figure out the correct index to insert the CSS into
+  var index = 0;
+  var lastC = 0;
+  args[0].replace(/%[a-z%]/g, function(match) {
+    if ('%%' === match) return;
+    index++;
+    if ('%c' === match) {
+      // we only are interested in the *last* %c
+      // (the user may have provided their own)
+      lastC = index;
+    }
+  });
+
+  args.splice(lastC, 0, c);
+  return args;
+}
+
+/**
+ * Invokes `console.log()` when available.
+ * No-op when `console.log` is not a "function".
+ *
+ * @api public
+ */
+
+function log() {
+  // this hackery is required for IE8/9, where
+  // the `console.log` function doesn't have 'apply'
+  return 'object' === typeof console
+    && console.log
+    && Function.prototype.apply.call(console.log, console, arguments);
+}
+
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */
+
+function save(namespaces) {
+  try {
+    if (null == namespaces) {
+      exports.storage.removeItem('debug');
+    } else {
+      exports.storage.debug = namespaces;
+    }
+  } catch(e) {}
+}
+
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */
+
+function load() {
+  var r;
+  try {
+    r = exports.storage.debug;
+  } catch(e) {}
+  return r;
+}
+
+/**
+ * Enable namespaces listed in `localStorage.debug` initially.
+ */
+
+exports.enable(load());
+
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */
+
+function localstorage(){
+  try {
+    return window.localStorage;
+  } catch (e) {}
+}
+
+},{"./debug":130}],130:[function(require,module,exports){
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = debug;
+exports.coerce = coerce;
+exports.disable = disable;
+exports.enable = enable;
+exports.enabled = enabled;
+exports.humanize = require('ms');
+
+/**
+ * The currently active debug mode names, and names to skip.
+ */
+
+exports.names = [];
+exports.skips = [];
+
+/**
+ * Map of special "%n" handling functions, for the debug "format" argument.
+ *
+ * Valid key names are a single, lowercased letter, i.e. "n".
+ */
+
+exports.formatters = {};
+
+/**
+ * Previously assigned color.
+ */
+
+var prevColor = 0;
+
+/**
+ * Previous log timestamp.
+ */
+
+var prevTime;
+
+/**
+ * Select a color.
+ *
+ * @return {Number}
+ * @api private
+ */
+
+function selectColor() {
+  return exports.colors[prevColor++ % exports.colors.length];
+}
+
+/**
+ * Create a debugger with the given `namespace`.
+ *
+ * @param {String} namespace
+ * @return {Function}
+ * @api public
+ */
+
+function debug(namespace) {
+
+  // define the `disabled` version
+  function disabled() {
+  }
+  disabled.enabled = false;
+
+  // define the `enabled` version
+  function enabled() {
+
+    var self = enabled;
+
+    // set `diff` timestamp
+    var curr = +new Date();
+    var ms = curr - (prevTime || curr);
+    self.diff = ms;
+    self.prev = prevTime;
+    self.curr = curr;
+    prevTime = curr;
+
+    // add the `color` if not set
+    if (null == self.useColors) self.useColors = exports.useColors();
+    if (null == self.color && self.useColors) self.color = selectColor();
+
+    var args = Array.prototype.slice.call(arguments);
+
+    args[0] = exports.coerce(args[0]);
+
+    if ('string' !== typeof args[0]) {
+      // anything else let's inspect with %o
+      args = ['%o'].concat(args);
+    }
+
+    // apply any `formatters` transformations
+    var index = 0;
+    args[0] = args[0].replace(/%([a-z%])/g, function(match, format) {
+      // if we encounter an escaped % then don't increase the array index
+      if (match === '%%') return match;
+      index++;
+      var formatter = exports.formatters[format];
+      if ('function' === typeof formatter) {
+        var val = args[index];
+        match = formatter.call(self, val);
+
+        // now we need to remove `args[index]` since it's inlined in the `format`
+        args.splice(index, 1);
+        index--;
+      }
+      return match;
+    });
+
+    if ('function' === typeof exports.formatArgs) {
+      args = exports.formatArgs.apply(self, args);
+    }
+    var logFn = enabled.log || exports.log || console.log.bind(console);
+    logFn.apply(self, args);
+  }
+  enabled.enabled = true;
+
+  var fn = exports.enabled(namespace) ? enabled : disabled;
+
+  fn.namespace = namespace;
+
+  return fn;
+}
+
+/**
+ * Enables a debug mode by namespaces. This can include modes
+ * separated by a colon and wildcards.
+ *
+ * @param {String} namespaces
+ * @api public
+ */
+
+function enable(namespaces) {
+  exports.save(namespaces);
+
+  var split = (namespaces || '').split(/[\s,]+/);
+  var len = split.length;
+
+  for (var i = 0; i < len; i++) {
+    if (!split[i]) continue; // ignore empty strings
+    namespaces = split[i].replace(/\*/g, '.*?');
+    if (namespaces[0] === '-') {
+      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+    } else {
+      exports.names.push(new RegExp('^' + namespaces + '$'));
+    }
+  }
+}
+
+/**
+ * Disable debug output.
+ *
+ * @api public
+ */
+
+function disable() {
+  exports.enable('');
+}
+
+/**
+ * Returns true if the given mode name is enabled, false otherwise.
+ *
+ * @param {String} name
+ * @return {Boolean}
+ * @api public
+ */
+
+function enabled(name) {
+  var i, len;
+  for (i = 0, len = exports.skips.length; i < len; i++) {
+    if (exports.skips[i].test(name)) {
+      return false;
+    }
+  }
+  for (i = 0, len = exports.names.length; i < len; i++) {
+    if (exports.names[i].test(name)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Coerce `val`.
+ *
+ * @param {Mixed} val
+ * @return {Mixed}
+ * @api private
+ */
+
+function coerce(val) {
+  if (val instanceof Error) return val.stack || val.message;
+  return val;
+}
+
+},{"ms":131}],131:[function(require,module,exports){
+/**
+ * Helpers.
+ */
+
+var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var y = d * 365.25;
+
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} options
+ * @return {String|Number}
+ * @api public
+ */
+
+module.exports = function(val, options){
+  options = options || {};
+  if ('string' == typeof val) return parse(val);
+  return options.long
+    ? long(val)
+    : short(val);
+};
+
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */
+
+function parse(str) {
+  str = '' + str;
+  if (str.length > 10000) return;
+  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str);
+  if (!match) return;
+  var n = parseFloat(match[1]);
+  var type = (match[2] || 'ms').toLowerCase();
+  switch (type) {
+    case 'years':
+    case 'year':
+    case 'yrs':
+    case 'yr':
+    case 'y':
+      return n * y;
+    case 'days':
+    case 'day':
+    case 'd':
+      return n * d;
+    case 'hours':
+    case 'hour':
+    case 'hrs':
+    case 'hr':
+    case 'h':
+      return n * h;
+    case 'minutes':
+    case 'minute':
+    case 'mins':
+    case 'min':
+    case 'm':
+      return n * m;
+    case 'seconds':
+    case 'second':
+    case 'secs':
+    case 'sec':
+    case 's':
+      return n * s;
+    case 'milliseconds':
+    case 'millisecond':
+    case 'msecs':
+    case 'msec':
+    case 'ms':
+      return n;
+  }
+}
+
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function short(ms) {
+  if (ms >= d) return Math.round(ms / d) + 'd';
+  if (ms >= h) return Math.round(ms / h) + 'h';
+  if (ms >= m) return Math.round(ms / m) + 'm';
+  if (ms >= s) return Math.round(ms / s) + 's';
+  return ms + 'ms';
+}
+
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */
+
+function long(ms) {
+  return plural(ms, d, 'day')
+    || plural(ms, h, 'hour')
+    || plural(ms, m, 'minute')
+    || plural(ms, s, 'second')
+    || ms + ' ms';
+}
+
+/**
+ * Pluralization helper.
+ */
+
+function plural(ms, n, name) {
+  if (ms < n) return;
+  if (ms < n * 1.5) return Math.floor(ms / n) + ' ' + name;
+  return Math.ceil(ms / n) + ' ' + name + 's';
+}
+
+},{}],132:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -20946,7 +14403,7 @@ function array(obj, fn, ctx) {
   }
 }
 
-},{"component-type":612,"to-function":664,"type":612}],612:[function(require,module,exports){
+},{"component-type":133,"to-function":189,"type":133}],133:[function(require,module,exports){
 
 /**
  * toString ref.
@@ -20980,7 +14437,172 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],613:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
+
+/**
+ * Expose `Emitter`.
+ */
+
+if (typeof module !== 'undefined') {
+  module.exports = Emitter;
+}
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */
+
+function Emitter(obj) {
+  if (obj) return mixin(obj);
+};
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
+}
+
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.on =
+Emitter.prototype.addEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+    .push(fn);
+  return this;
+};
+
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.once = function(event, fn){
+  function on() {
+    this.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+};
+
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.off =
+Emitter.prototype.removeListener =
+Emitter.prototype.removeAllListeners =
+Emitter.prototype.removeEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i < callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+};
+
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */
+
+Emitter.prototype.emit = function(event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks['$' + event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i < len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+};
+
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */
+
+Emitter.prototype.listeners = function(event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks['$' + event] || [];
+};
+
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */
+
+Emitter.prototype.hasListeners = function(event){
+  return !! this.listeners(event).length;
+};
+
+},{}],135:[function(require,module,exports){
 var bind = window.addEventListener ? 'addEventListener' : 'attachEvent',
     unbind = window.removeEventListener ? 'removeEventListener' : 'detachEvent',
     prefix = bind !== 'addEventListener' ? 'on' : '';
@@ -21016,7 +14638,7 @@ exports.unbind = function(el, type, fn, capture){
   el[unbind](prefix + type, fn, capture || false);
   return fn;
 };
-},{}],614:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 module.exports = function(arr, obj){
   if (arr.indexOf) return arr.indexOf(obj);
   for (var i = 0; i < arr.length; ++i) {
@@ -21024,7 +14646,7 @@ module.exports = function(arr, obj){
   }
   return -1;
 };
-},{}],615:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 /**
  * Global Names
  */
@@ -21111,7 +14733,7 @@ function prefixed(str) {
   };
 }
 
-},{}],616:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -21218,7 +14840,7 @@ exports.stringify = function(obj){
   return pairs.join('&');
 };
 
-},{"trim":669,"type":617}],617:[function(require,module,exports){
+},{"trim":194,"type":139}],139:[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -21254,7 +14876,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],618:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -21302,7 +14924,7 @@ function isBuffer(obj) {
     ))
 }
 
-},{}],619:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 
 /**
  * Parse the given `url`.
@@ -21386,7 +15008,7 @@ function port (protocol){
   }
 }
 
-},{}],620:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 /*
  * Date Format 1.2.3
  * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
@@ -21614,346 +15236,78 @@ function kindOf(val) {
   }
 })(this);
 
-},{}],621:[function(require,module,exports){
-(function (process){
+},{}],143:[function(require,module,exports){
+
 /**
- * This is the web browser implementation of `debug()`.
- *
  * Expose `debug()` as the module.
  */
 
-exports = module.exports = require('./debug');
-exports.log = log;
-exports.formatArgs = formatArgs;
-exports.save = save;
-exports.load = load;
-exports.useColors = useColors;
-exports.storage = 'undefined' != typeof chrome
-               && 'undefined' != typeof chrome.storage
-                  ? chrome.storage.local
-                  : localstorage();
+module.exports = debug;
 
 /**
- * Colors.
- */
-
-exports.colors = [
-  'lightseagreen',
-  'forestgreen',
-  'goldenrod',
-  'dodgerblue',
-  'darkorchid',
-  'crimson'
-];
-
-/**
- * Currently only WebKit-based Web Inspectors, Firefox >= v31,
- * and the Firebug extension (any Firefox version) are known
- * to support "%c" CSS customizations.
+ * Create a debugger with the given `name`.
  *
- * TODO: add a `localStorage` variable to explicitly enable/disable colors
- */
-
-function useColors() {
-  // NB: In an Electron preload script, document will be defined but not fully
-  // initialized. Since we know we're in Chrome, we'll just detect this case
-  // explicitly
-  if (typeof window !== 'undefined' && window && typeof window.process !== 'undefined' && window.process.type === 'renderer') {
-    return true;
-  }
-
-  // is webkit? http://stackoverflow.com/a/16459606/376773
-  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
-  return (typeof document !== 'undefined' && document && 'WebkitAppearance' in document.documentElement.style) ||
-    // is firebug? http://stackoverflow.com/a/398120/376773
-    (typeof window !== 'undefined' && window && window.console && (console.firebug || (console.exception && console.table))) ||
-    // is firefox >= v31?
-    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-    (typeof navigator !== 'undefined' && navigator && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31) ||
-    // double check webkit in userAgent just in case we are in a worker
-    (typeof navigator !== 'undefined' && navigator && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
-}
-
-/**
- * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
- */
-
-exports.formatters.j = function(v) {
-  try {
-    return JSON.stringify(v);
-  } catch (err) {
-    return '[UnexpectedJSONParseError]: ' + err.message;
-  }
-};
-
-
-/**
- * Colorize log arguments if enabled.
- *
+ * @param {String} name
+ * @return {Type}
  * @api public
  */
 
-function formatArgs(args) {
-  var useColors = this.useColors;
+function debug(name) {
+  if (!debug.enabled(name)) return function(){};
 
-  args[0] = (useColors ? '%c' : '')
-    + this.namespace
-    + (useColors ? ' %c' : ' ')
-    + args[0]
-    + (useColors ? '%c ' : ' ')
-    + '+' + exports.humanize(this.diff);
+  return function(fmt){
+    fmt = coerce(fmt);
 
-  if (!useColors) return;
+    var curr = new Date;
+    var ms = curr - (debug[name] || curr);
+    debug[name] = curr;
 
-  var c = 'color: ' + this.color;
-  args.splice(1, 0, c, 'color: inherit')
+    fmt = name
+      + ' '
+      + fmt
+      + ' +' + debug.humanize(ms);
 
-  // the final "%c" is somewhat tricky, because there could be other
-  // arguments passed either before or after the %c, so we need to
-  // figure out the correct index to insert the CSS into
-  var index = 0;
-  var lastC = 0;
-  args[0].replace(/%[a-zA-Z%]/g, function(match) {
-    if ('%%' === match) return;
-    index++;
-    if ('%c' === match) {
-      // we only are interested in the *last* %c
-      // (the user may have provided their own)
-      lastC = index;
-    }
-  });
-
-  args.splice(lastC, 0, c);
-}
-
-/**
- * Invokes `console.log()` when available.
- * No-op when `console.log` is not a "function".
- *
- * @api public
- */
-
-function log() {
-  // this hackery is required for IE8/9, where
-  // the `console.log` function doesn't have 'apply'
-  return 'object' === typeof console
-    && console.log
-    && Function.prototype.apply.call(console.log, console, arguments);
-}
-
-/**
- * Save `namespaces`.
- *
- * @param {String} namespaces
- * @api private
- */
-
-function save(namespaces) {
-  try {
-    if (null == namespaces) {
-      exports.storage.removeItem('debug');
-    } else {
-      exports.storage.debug = namespaces;
-    }
-  } catch(e) {}
-}
-
-/**
- * Load `namespaces`.
- *
- * @return {String} returns the previously persisted debug modes
- * @api private
- */
-
-function load() {
-  try {
-    return exports.storage.debug;
-  } catch(e) {}
-
-  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
-  if (typeof process !== 'undefined' && 'env' in process) {
-    return process.env.DEBUG;
+    // This hackery is required for IE8
+    // where `console.log` doesn't have 'apply'
+    window.console
+      && console.log
+      && Function.prototype.apply.call(console.log, console, arguments);
   }
 }
 
 /**
- * Enable namespaces listed in `localStorage.debug` initially.
+ * The currently active debug mode names.
  */
 
-exports.enable(load());
+debug.names = [];
+debug.skips = [];
 
 /**
- * Localstorage attempts to return the localstorage.
- *
- * This is necessary because safari throws
- * when a user disables cookies/localstorage
- * and you attempt to access it.
- *
- * @return {LocalStorage}
- * @api private
- */
-
-function localstorage() {
-  try {
-    return window.localStorage;
-  } catch (e) {}
-}
-
-}).call(this,require('_process'))
-},{"./debug":622,"_process":647}],622:[function(require,module,exports){
-
-/**
- * This is the common logic for both the Node.js and web browser
- * implementations of `debug()`.
- *
- * Expose `debug()` as the module.
- */
-
-exports = module.exports = createDebug.debug = createDebug.default = createDebug;
-exports.coerce = coerce;
-exports.disable = disable;
-exports.enable = enable;
-exports.enabled = enabled;
-exports.humanize = require('ms');
-
-/**
- * The currently active debug mode names, and names to skip.
- */
-
-exports.names = [];
-exports.skips = [];
-
-/**
- * Map of special "%n" handling functions, for the debug "format" argument.
- *
- * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
- */
-
-exports.formatters = {};
-
-/**
- * Previous log timestamp.
- */
-
-var prevTime;
-
-/**
- * Select a color.
- * @param {String} namespace
- * @return {Number}
- * @api private
- */
-
-function selectColor(namespace) {
-  var hash = 0, i;
-
-  for (i in namespace) {
-    hash  = ((hash << 5) - hash) + namespace.charCodeAt(i);
-    hash |= 0; // Convert to 32bit integer
-  }
-
-  return exports.colors[Math.abs(hash) % exports.colors.length];
-}
-
-/**
- * Create a debugger with the given `namespace`.
- *
- * @param {String} namespace
- * @return {Function}
- * @api public
- */
-
-function createDebug(namespace) {
-
-  function debug() {
-    // disabled?
-    if (!debug.enabled) return;
-
-    var self = debug;
-
-    // set `diff` timestamp
-    var curr = +new Date();
-    var ms = curr - (prevTime || curr);
-    self.diff = ms;
-    self.prev = prevTime;
-    self.curr = curr;
-    prevTime = curr;
-
-    // turn the `arguments` into a proper Array
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-
-    args[0] = exports.coerce(args[0]);
-
-    if ('string' !== typeof args[0]) {
-      // anything else let's inspect with %O
-      args.unshift('%O');
-    }
-
-    // apply any `formatters` transformations
-    var index = 0;
-    args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
-      // if we encounter an escaped % then don't increase the array index
-      if (match === '%%') return match;
-      index++;
-      var formatter = exports.formatters[format];
-      if ('function' === typeof formatter) {
-        var val = args[index];
-        match = formatter.call(self, val);
-
-        // now we need to remove `args[index]` since it's inlined in the `format`
-        args.splice(index, 1);
-        index--;
-      }
-      return match;
-    });
-
-    // apply env-specific formatting (colors, etc.)
-    exports.formatArgs.call(self, args);
-
-    var logFn = debug.log || exports.log || console.log.bind(console);
-    logFn.apply(self, args);
-  }
-
-  debug.namespace = namespace;
-  debug.enabled = exports.enabled(namespace);
-  debug.useColors = exports.useColors();
-  debug.color = selectColor(namespace);
-
-  // env-specific initialization logic for debug instances
-  if ('function' === typeof exports.init) {
-    exports.init(debug);
-  }
-
-  return debug;
-}
-
-/**
- * Enables a debug mode by namespaces. This can include modes
+ * Enables a debug mode by name. This can include modes
  * separated by a colon and wildcards.
  *
- * @param {String} namespaces
+ * @param {String} name
  * @api public
  */
 
-function enable(namespaces) {
-  exports.save(namespaces);
+debug.enable = function(name) {
+  try {
+    localStorage.debug = name;
+  } catch(e){}
 
-  var split = (namespaces || '').split(/[\s,]+/);
-  var len = split.length;
+  var split = (name || '').split(/[\s,]+/)
+    , len = split.length;
 
   for (var i = 0; i < len; i++) {
-    if (!split[i]) continue; // ignore empty strings
-    namespaces = split[i].replace(/\*/g, '.*?');
-    if (namespaces[0] === '-') {
-      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
-    } else {
-      exports.names.push(new RegExp('^' + namespaces + '$'));
+    name = split[i].replace('*', '.*?');
+    if (name[0] === '-') {
+      debug.skips.push(new RegExp('^' + name.substr(1) + '$'));
+    }
+    else {
+      debug.names.push(new RegExp('^' + name + '$'));
     }
   }
-}
+};
 
 /**
  * Disable debug output.
@@ -21961,9 +15315,28 @@ function enable(namespaces) {
  * @api public
  */
 
-function disable() {
-  exports.enable('');
-}
+debug.disable = function(){
+  debug.enable('');
+};
+
+/**
+ * Humanize the given `ms`.
+ *
+ * @param {Number} m
+ * @return {String}
+ * @api private
+ */
+
+debug.humanize = function(ms) {
+  var sec = 1000
+    , min = 60 * 1000
+    , hour = 60 * min;
+
+  if (ms >= hour) return (ms / hour).toFixed(1) + 'h';
+  if (ms >= min) return (ms / min).toFixed(1) + 'm';
+  if (ms >= sec) return (ms / sec | 0) + 's';
+  return ms + 'ms';
+};
 
 /**
  * Returns true if the given mode name is enabled, false otherwise.
@@ -21973,27 +15346,22 @@ function disable() {
  * @api public
  */
 
-function enabled(name) {
-  var i, len;
-  for (i = 0, len = exports.skips.length; i < len; i++) {
-    if (exports.skips[i].test(name)) {
+debug.enabled = function(name) {
+  for (var i = 0, len = debug.skips.length; i < len; i++) {
+    if (debug.skips[i].test(name)) {
       return false;
     }
   }
-  for (i = 0, len = exports.names.length; i < len; i++) {
-    if (exports.names[i].test(name)) {
+  for (var i = 0, len = debug.names.length; i < len; i++) {
+    if (debug.names[i].test(name)) {
       return true;
     }
   }
   return false;
-}
+};
 
 /**
  * Coerce `val`.
- *
- * @param {Mixed} val
- * @return {Mixed}
- * @api private
  */
 
 function coerce(val) {
@@ -22001,7 +15369,13 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":636}],623:[function(require,module,exports){
+// persist
+
+try {
+  if (window.localStorage) debug.enable(localStorage.debug);
+} catch(e){}
+
+},{}],144:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -22035,7 +15409,7 @@ function when(condition, fn, interval) {
 
 module.exports = when;
 
-},{"next-tick":640}],624:[function(require,module,exports){
+},{"next-tick":166}],145:[function(require,module,exports){
 
 /**
  * Expose `parse`.
@@ -22149,7 +15523,95 @@ function parse(html, doc) {
   return fragment;
 }
 
-},{}],625:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
+'use strict';
+
+var hasOwn = Object.prototype.hasOwnProperty;
+var toStr = Object.prototype.toString;
+
+var isArray = function isArray(arr) {
+	if (typeof Array.isArray === 'function') {
+		return Array.isArray(arr);
+	}
+
+	return toStr.call(arr) === '[object Array]';
+};
+
+var isPlainObject = function isPlainObject(obj) {
+	if (!obj || toStr.call(obj) !== '[object Object]') {
+		return false;
+	}
+
+	var hasOwnConstructor = hasOwn.call(obj, 'constructor');
+	var hasIsPrototypeOf = obj.constructor && obj.constructor.prototype && hasOwn.call(obj.constructor.prototype, 'isPrototypeOf');
+	// Not own constructor property must be Object
+	if (obj.constructor && !hasOwnConstructor && !hasIsPrototypeOf) {
+		return false;
+	}
+
+	// Own properties are enumerated firstly, so to speed up,
+	// if last one is own, then all properties are own.
+	var key;
+	for (key in obj) { /**/ }
+
+	return typeof key === 'undefined' || hasOwn.call(obj, key);
+};
+
+module.exports = function extend() {
+	var options, name, src, copy, copyIsArray, clone;
+	var target = arguments[0];
+	var i = 1;
+	var length = arguments.length;
+	var deep = false;
+
+	// Handle a deep copy situation
+	if (typeof target === 'boolean') {
+		deep = target;
+		target = arguments[1] || {};
+		// skip the boolean and the target
+		i = 2;
+	}
+	if (target == null || (typeof target !== 'object' && typeof target !== 'function')) {
+		target = {};
+	}
+
+	for (; i < length; ++i) {
+		options = arguments[i];
+		// Only deal with non-null/undefined values
+		if (options != null) {
+			// Extend the base object
+			for (name in options) {
+				src = target[name];
+				copy = options[name];
+
+				// Prevent never-ending loop
+				if (target !== copy) {
+					// Recurse if we're merging plain objects or arrays
+					if (deep && copy && (isPlainObject(copy) || (copyIsArray = isArray(copy)))) {
+						if (copyIsArray) {
+							copyIsArray = false;
+							clone = src && isArray(src) ? src : [];
+						} else {
+							clone = src && isPlainObject(src) ? src : {};
+						}
+
+						// Never move original objects, clone them
+						target[name] = extend(deep, clone, copy);
+
+					// Don't bring in undefined values
+					} else if (typeof copy !== 'undefined') {
+						target[name] = copy;
+					}
+				}
+			}
+		}
+	}
+
+	// Return the modified object
+	return target;
+};
+
+},{}],147:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -22186,7 +15648,11 @@ function generate (name, options) {
   };
 }
 
-},{"debug":621}],626:[function(require,module,exports){
+},{"debug":148}],148:[function(require,module,exports){
+arguments[4][38][0].apply(exports,arguments)
+},{"./debug":149,"_process":170,"dup":38}],149:[function(require,module,exports){
+arguments[4][39][0].apply(exports,arguments)
+},{"dup":39,"ms":161}],150:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -22205,7 +15671,7 @@ try {
   module.exports = false;
 }
 
-},{}],627:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -22230,12 +15696,12 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],628:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 
 module.exports = function isEmail (string) {
     return (/.+\@.+\..+/).test(string);
 };
-},{}],629:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 /* globals window, HTMLElement */
 
 'use strict';
@@ -22254,6 +15720,10 @@ var toStr = objProto.toString;
 var symbolValueOf;
 if (typeof Symbol === 'function') {
   symbolValueOf = Symbol.prototype.valueOf;
+}
+var bigIntValueOf;
+if (typeof BigInt === 'function') {
+  bigIntValueOf = BigInt.prototype.valueOf;
 }
 var isActualNaN = function (value) {
   return value !== value;
@@ -22282,7 +15752,7 @@ var is = {};
  * is.type
  * Test if `value` is a type of `type`.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @param {String} type type
  * @return {Boolean} true if `value` is a type of `type`, false otherwise
  * @api public
@@ -22296,7 +15766,7 @@ is.a = is.type = function (value, type) {
  * is.defined
  * Test if `value` is defined.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if 'value' is defined, false otherwise
  * @api public
  */
@@ -22309,7 +15779,7 @@ is.defined = function (value) {
  * is.empty
  * Test if `value` is empty.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is empty, false otherwise
  * @api public
  */
@@ -22338,8 +15808,8 @@ is.empty = function (value) {
  * is.equal
  * Test if `value` is equal to `other`.
  *
- * @param {Mixed} value value to test
- * @param {Mixed} other value to compare with
+ * @param {*} value value to test
+ * @param {*} other value to compare with
  * @return {Boolean} true if `value` is equal to `other`, false otherwise
  */
 
@@ -22397,8 +15867,8 @@ is.equal = function equal(value, other) {
  * is.hosted
  * Test if `value` is hosted by `host`.
  *
- * @param {Mixed} value to test
- * @param {Mixed} host host to test with
+ * @param {*} value to test
+ * @param {*} host host to test with
  * @return {Boolean} true if `value` is hosted by `host`, false otherwise
  * @api public
  */
@@ -22412,7 +15882,7 @@ is.hosted = function (value, host) {
  * is.instance
  * Test if `value` is an instance of `constructor`.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an instance of `constructor`
  * @api public
  */
@@ -22425,7 +15895,7 @@ is.instance = is['instanceof'] = function (value, constructor) {
  * is.nil / is.null
  * Test if `value` is null.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is null, false otherwise
  * @api public
  */
@@ -22438,7 +15908,7 @@ is.nil = is['null'] = function (value) {
  * is.undef / is.undefined
  * Test if `value` is undefined.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is undefined, false otherwise
  * @api public
  */
@@ -22455,7 +15925,7 @@ is.undef = is.undefined = function (value) {
  * is.args
  * Test if `value` is an arguments object.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an arguments object, false otherwise
  * @api public
  */
@@ -22474,7 +15944,7 @@ is.args = is.arguments = function (value) {
  * is.array
  * Test if 'value' is an array.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an array, false otherwise
  * @api public
  */
@@ -22487,7 +15957,7 @@ is.array = Array.isArray || function (value) {
  * is.arguments.empty
  * Test if `value` is an empty arguments object.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an empty arguments object, false otherwise
  * @api public
  */
@@ -22499,7 +15969,7 @@ is.args.empty = function (value) {
  * is.array.empty
  * Test if `value` is an empty array.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an empty array, false otherwise
  * @api public
  */
@@ -22511,7 +15981,7 @@ is.array.empty = function (value) {
  * is.arraylike
  * Test if `value` is an arraylike object.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an arguments object, false otherwise
  * @api public
  */
@@ -22532,7 +16002,7 @@ is.arraylike = function (value) {
  * is.bool
  * Test if `value` is a boolean.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a boolean, false otherwise
  * @api public
  */
@@ -22545,7 +16015,7 @@ is.bool = is['boolean'] = function (value) {
  * is.false
  * Test if `value` is false.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is false, false otherwise
  * @api public
  */
@@ -22558,7 +16028,7 @@ is['false'] = function (value) {
  * is.true
  * Test if `value` is true.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is true, false otherwise
  * @api public
  */
@@ -22575,7 +16045,7 @@ is['true'] = function (value) {
  * is.date
  * Test if `value` is a date.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a date, false otherwise
  * @api public
  */
@@ -22588,7 +16058,7 @@ is.date = function (value) {
  * is.date.valid
  * Test if `value` is a valid date.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @returns {Boolean} true if `value` is a valid date, false otherwise
  */
 is.date.valid = function (value) {
@@ -22603,7 +16073,7 @@ is.date.valid = function (value) {
  * is.element
  * Test if `value` is an html element.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an HTML Element, false otherwise
  * @api public
  */
@@ -22623,7 +16093,7 @@ is.element = function (value) {
  * is.error
  * Test if `value` is an error object.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an error object, false otherwise
  * @api public
  */
@@ -22640,14 +16110,18 @@ is.error = function (value) {
  * is.fn / is.function (deprecated)
  * Test if `value` is a function.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a function, false otherwise
  * @api public
  */
 
 is.fn = is['function'] = function (value) {
   var isAlert = typeof window !== 'undefined' && value === window.alert;
-  return isAlert || toStr.call(value) === '[object Function]';
+  if (isAlert) {
+    return true;
+  }
+  var str = toStr.call(value);
+  return str === '[object Function]' || str === '[object GeneratorFunction]' || str === '[object AsyncFunction]';
 };
 
 /**
@@ -22658,7 +16132,7 @@ is.fn = is['function'] = function (value) {
  * is.number
  * Test if `value` is a number.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a number, false otherwise
  * @api public
  */
@@ -22671,7 +16145,7 @@ is.number = function (value) {
  * is.infinite
  * Test if `value` is positive or negative infinity.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is positive or negative Infinity, false otherwise
  * @api public
  */
@@ -22683,7 +16157,7 @@ is.infinite = function (value) {
  * is.decimal
  * Test if `value` is a decimal number.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a decimal number, false otherwise
  * @api public
  */
@@ -22780,7 +16254,7 @@ is.minimum = function (value, others) {
  * is.nan
  * Test if `value` is not a number.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is not a number, false otherwise
  * @api public
  */
@@ -22911,7 +16385,7 @@ is.within = function (value, start, finish) {
  * is.object
  * Test if `value` is an object.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is an object, false otherwise
  * @api public
  */
@@ -22923,7 +16397,7 @@ is.object = function (value) {
  * is.primitive
  * Test if `value` is a primitive.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a primitive, false otherwise
  * @api public
  */
@@ -22941,7 +16415,7 @@ is.primitive = function isPrimitive(value) {
  * is.hash
  * Test if `value` is a hash - a plain object literal.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a hash, false otherwise
  * @api public
  */
@@ -22958,7 +16432,7 @@ is.hash = function (value) {
  * is.regexp
  * Test if `value` is a regular expression.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a regexp, false otherwise
  * @api public
  */
@@ -22975,7 +16449,7 @@ is.regexp = function (value) {
  * is.string
  * Test if `value` is a string.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if 'value' is a string, false otherwise
  * @api public
  */
@@ -22992,7 +16466,7 @@ is.string = function (value) {
  * is.base64
  * Test if `value` is a valid base64 encoded string.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if 'value' is a base64 encoded string, false otherwise
  * @api public
  */
@@ -23009,7 +16483,7 @@ is.base64 = function (value) {
  * is.hex
  * Test if `value` is a valid hex encoded string.
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if 'value' is a hex encoded string, false otherwise
  * @api public
  */
@@ -23022,7 +16496,7 @@ is.hex = function (value) {
  * is.symbol
  * Test if `value` is an ES6 Symbol
  *
- * @param {Mixed} value value to test
+ * @param {*} value value to test
  * @return {Boolean} true if `value` is a Symbol, false otherise
  * @api public
  */
@@ -23031,9 +16505,30 @@ is.symbol = function (value) {
   return typeof Symbol === 'function' && toStr.call(value) === '[object Symbol]' && typeof symbolValueOf.call(value) === 'symbol';
 };
 
+/**
+ * is.bigint
+ * Test if `value` is an ES-proposed BigInt
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a BigInt, false otherise
+ * @api public
+ */
+
+is.bigint = function (value) {
+  // eslint-disable-next-line valid-typeof
+  return typeof BigInt === 'function' && toStr.call(value) === '[object BigInt]' && typeof bigIntValueOf.call(value) === 'bigint';
+};
+
 module.exports = is;
 
-},{}],630:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
+var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+
+},{}],155:[function(require,module,exports){
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
  *
@@ -23049,37 +16544,7 @@ module.exports = function isObject(val) {
   return val != null && typeof val === 'object' && isArray(val) === false;
 };
 
-},{"isarray":631}],631:[function(require,module,exports){
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
-
-},{}],632:[function(require,module,exports){
-
-module.exports = isDate;
-
-
-/**
- * Matching format per: http://www.w3.org/TR/NOTE-datetime
- */
-
-var isoformat = '^\\d{4}-\\d{2}-\\d{2}' +        // Match YYYY-MM-DD
-                '((T\\d{2}:\\d{2}(:\\d{2})?)' +  // Match THH:mm:ss
-                '(\\.\\d{1,6})?' +               // Match .sssss
-                '(Z|(\\+|-)\\d{2}:\\d{2})?)?$';  // Time zone (Z or +hh:mm)
-
-
-var matcher = new RegExp(isoformat);
-
-
-function isDate (val) {
-  return typeof val === 'string' &&
-         matcher.test(val) &&
-         !isNaN(Date.parse(val));
-}
-},{}],633:[function(require,module,exports){
+},{"isarray":154}],156:[function(require,module,exports){
 (function (global){
 /*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 ;(function () {
@@ -23985,7 +17450,7 @@ function isDate (val) {
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],634:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 /**
  * Module dependencies
  */
@@ -24084,7 +17549,11 @@ function jsonp(url, opts, fn){
   return cancel;
 }
 
-},{"debug":621}],635:[function(require,module,exports){
+},{"debug":158}],158:[function(require,module,exports){
+arguments[4][38][0].apply(exports,arguments)
+},{"./debug":159,"_process":170,"dup":38}],159:[function(require,module,exports){
+arguments[4][39][0].apply(exports,arguments)
+},{"dup":39,"ms":161}],160:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -24146,16 +17615,16 @@ module.exports = function loadIframe(options, fn){
   return iframe;
 };
 
-},{"is":629,"next-tick":640,"script-onload":649}],636:[function(require,module,exports){
+},{"is":153,"next-tick":166,"script-onload":172}],161:[function(require,module,exports){
 /**
  * Helpers.
  */
 
-var s = 1000
-var m = s * 60
-var h = m * 60
-var d = h * 24
-var y = d * 365.25
+var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var y = d * 365.25;
 
 /**
  * Parse or format the given `val`.
@@ -24165,24 +17634,25 @@ var y = d * 365.25
  *  - `long` verbose formatting [false]
  *
  * @param {String|Number} val
- * @param {Object} options
+ * @param {Object} [options]
  * @throws {Error} throw an error if val is not a non-empty string or a number
  * @return {String|Number}
  * @api public
  */
 
-module.exports = function (val, options) {
-  options = options || {}
-  var type = typeof val
+module.exports = function(val, options) {
+  options = options || {};
+  var type = typeof val;
   if (type === 'string' && val.length > 0) {
-    return parse(val)
+    return parse(val);
   } else if (type === 'number' && isNaN(val) === false) {
-    return options.long ?
-			fmtLong(val) :
-			fmtShort(val)
+    return options.long ? fmtLong(val) : fmtShort(val);
   }
-  throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val))
-}
+  throw new Error(
+    'val is not a non-empty string or a valid number. val=' +
+      JSON.stringify(val)
+  );
+};
 
 /**
  * Parse the given `str` and return milliseconds.
@@ -24193,53 +17663,55 @@ module.exports = function (val, options) {
  */
 
 function parse(str) {
-  str = String(str)
-  if (str.length > 10000) {
-    return
+  str = String(str);
+  if (str.length > 100) {
+    return;
   }
-  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(str)
+  var match = /^((?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|years?|yrs?|y)?$/i.exec(
+    str
+  );
   if (!match) {
-    return
+    return;
   }
-  var n = parseFloat(match[1])
-  var type = (match[2] || 'ms').toLowerCase()
+  var n = parseFloat(match[1]);
+  var type = (match[2] || 'ms').toLowerCase();
   switch (type) {
     case 'years':
     case 'year':
     case 'yrs':
     case 'yr':
     case 'y':
-      return n * y
+      return n * y;
     case 'days':
     case 'day':
     case 'd':
-      return n * d
+      return n * d;
     case 'hours':
     case 'hour':
     case 'hrs':
     case 'hr':
     case 'h':
-      return n * h
+      return n * h;
     case 'minutes':
     case 'minute':
     case 'mins':
     case 'min':
     case 'm':
-      return n * m
+      return n * m;
     case 'seconds':
     case 'second':
     case 'secs':
     case 'sec':
     case 's':
-      return n * s
+      return n * s;
     case 'milliseconds':
     case 'millisecond':
     case 'msecs':
     case 'msec':
     case 'ms':
-      return n
+      return n;
     default:
-      return undefined
+      return undefined;
   }
 }
 
@@ -24253,18 +17725,18 @@ function parse(str) {
 
 function fmtShort(ms) {
   if (ms >= d) {
-    return Math.round(ms / d) + 'd'
+    return Math.round(ms / d) + 'd';
   }
   if (ms >= h) {
-    return Math.round(ms / h) + 'h'
+    return Math.round(ms / h) + 'h';
   }
   if (ms >= m) {
-    return Math.round(ms / m) + 'm'
+    return Math.round(ms / m) + 'm';
   }
   if (ms >= s) {
-    return Math.round(ms / s) + 's'
+    return Math.round(ms / s) + 's';
   }
-  return ms + 'ms'
+  return ms + 'ms';
 }
 
 /**
@@ -24280,7 +17752,7 @@ function fmtLong(ms) {
     plural(ms, h, 'hour') ||
     plural(ms, m, 'minute') ||
     plural(ms, s, 'second') ||
-    ms + ' ms'
+    ms + ' ms';
 }
 
 /**
@@ -24289,15 +17761,15 @@ function fmtLong(ms) {
 
 function plural(ms, n, name) {
   if (ms < n) {
-    return
+    return;
   }
   if (ms < n * 1.5) {
-    return Math.floor(ms / n) + ' ' + name
+    return Math.floor(ms / n) + ' ' + name;
   }
-  return Math.ceil(ms / n) + ' ' + name + 's'
+  return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],637:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 'use strict';
 
 var is = require('is');
@@ -24342,7 +17814,7 @@ function toMs(num) {
   return num;
 }
 
-},{"./milliseconds":638,"./seconds":639,"@segment/isodate":597,"is":629}],638:[function(require,module,exports){
+},{"./milliseconds":163,"./seconds":164,"@segment/isodate":165,"is":153}],163:[function(require,module,exports){
 'use strict';
 
 /**
@@ -24374,7 +17846,7 @@ exports.parse = function(millis) {
   return new Date(millis);
 };
 
-},{}],639:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 'use strict';
 
 /**
@@ -24406,9 +17878,87 @@ exports.parse = function(seconds) {
   return new Date(millis);
 };
 
-},{}],640:[function(require,module,exports){
-arguments[4][176][0].apply(exports,arguments)
-},{"_process":647,"dup":176}],641:[function(require,module,exports){
+},{}],165:[function(require,module,exports){
+'use strict';
+
+/**
+ * Matcher, slightly modified from:
+ *
+ * https://github.com/csnover/js-iso8601/blob/lax/iso8601.js
+ */
+
+var matcher = /^(\d{4})(?:-?(\d{2})(?:-?(\d{2}))?)?(?:([ T])(\d{2}):?(\d{2})(?::?(\d{2})(?:[,\.](\d{1,}))?)?(?:(Z)|([+\-])(\d{2})(?::?(\d{2}))?)?)?$/;
+
+/**
+ * Convert an ISO date string to a date. Fallback to native `Date.parse`.
+ *
+ * https://github.com/csnover/js-iso8601/blob/lax/iso8601.js
+ *
+ * @param {String} iso
+ * @return {Date}
+ */
+
+exports.parse = function(iso) {
+  var numericKeys = [1, 5, 6, 7, 11, 12];
+  var arr = matcher.exec(iso);
+  var offset = 0;
+
+  // fallback to native parsing
+  if (!arr) {
+    return new Date(iso);
+  }
+
+  /* eslint-disable no-cond-assign */
+  // remove undefined values
+  for (var i = 0, val; val = numericKeys[i]; i++) {
+    arr[val] = parseInt(arr[val], 10) || 0;
+  }
+  /* eslint-enable no-cond-assign */
+
+  // allow undefined days and months
+  arr[2] = parseInt(arr[2], 10) || 1;
+  arr[3] = parseInt(arr[3], 10) || 1;
+
+  // month is 0-11
+  arr[2]--;
+
+  // allow abitrary sub-second precision
+  arr[8] = arr[8] ? (arr[8] + '00').substring(0, 3) : 0;
+
+  // apply timezone if one exists
+  if (arr[4] === ' ') {
+    offset = new Date().getTimezoneOffset();
+  } else if (arr[9] !== 'Z' && arr[10]) {
+    offset = arr[11] * 60 + arr[12];
+    if (arr[10] === '+') {
+      offset = 0 - offset;
+    }
+  }
+
+  var millis = Date.UTC(arr[1], arr[2], arr[3], arr[5], arr[6] + offset, arr[7], arr[8]);
+  return new Date(millis);
+};
+
+
+/**
+ * Checks whether a `string` is an ISO date string. `strict` mode requires that
+ * the date string at least have a year, month and date.
+ *
+ * @param {String} string
+ * @param {Boolean} strict
+ * @return {Boolean}
+ */
+
+exports.is = function(string, strict) {
+  if (strict && (/^\d{4}-\d{2}-\d{2}/).test(string) === false) {
+    return false;
+  }
+  return matcher.test(string);
+};
+
+},{}],166:[function(require,module,exports){
+arguments[4][81][0].apply(exports,arguments)
+},{"_process":170,"dup":81,"timers":187}],167:[function(require,module,exports){
 
 var identity = function(_){ return _; };
 
@@ -24562,7 +18112,7 @@ function isFunction(val) {
   return typeof val === 'function';
 }
 
-},{}],642:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 
 /**
  * HOP ref.
@@ -24647,89 +18197,7 @@ exports.length = function(obj){
 exports.isEmpty = function(obj){
   return 0 == exports.length(obj);
 };
-},{}],643:[function(require,module,exports){
-/**
- * Expose `omit`.
- */
-
-module.exports = omit;
-
-/**
- * Return a copy of the object without the specified keys.
- *
- * @param {Array} keys
- * @param {Object} object
- * @return {Object}
- */
-
-function omit(keys, object){
-  var ret = {};
-
-  for (var item in object) {
-    ret[item] = object[item];
-  }
-
-  for (var i = 0; i < keys.length; i++) {
-    delete ret[keys[i]];
-  }
-  return ret;
-}
-},{}],644:[function(require,module,exports){
-
-
-/**
- * Cache whether `<body>` exists.
- */
-
-var body = false;
-
-
-/**
- * Callbacks to call when the body exists.
- */
-
-var callbacks = [];
-
-
-/**
- * Export a way to add handlers to be invoked once the body exists.
- *
- * @param {Function} callback  A function to call when the body exists.
- */
-
-module.exports = function onBody (callback) {
-  if (body) {
-    call(callback);
-  } else {
-    callbacks.push(callback);
-  }
-};
-
-
-/**
- * Set an interval to check for `document.body`.
- */
-
-var interval = setInterval(function () {
-  if (!document.body) return;
-  body = true;
-  for (var i = 0; i < callbacks.length; i++) {
-    call(callbacks[i]);
-  }
-  clearInterval(interval);
-}, 5);
-
-
-/**
- * Call a callback, passing it the body.
- *
- * @param {Function} callback  The callback to call.
- */
-
-function call (callback) {
-  callback(document.body);
-}
-},{}],645:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 var each = require('each');
 
 
@@ -24783,33 +18251,7 @@ var interval = setInterval(function () {
 function call (callback) {
   callback(document.body);
 }
-},{"each":611}],646:[function(require,module,exports){
-
-/**
- * Expose `pick`.
- */
-
-module.exports = pick;
-
-/**
- * Pick keys from an `obj`.
- *
- * @param {Object} obj
- * @param {Strings} keys...
- * @return {Object}
- */
-
-function pick(obj){
-  var keys = [].slice.call(arguments, 1);
-  var ret = {};
-
-  for (var i = 0, key; key = keys[i]; i++) {
-    if (key in obj) ret[key] = obj[key];
-  }
-
-  return ret;
-}
-},{}],647:[function(require,module,exports){
+},{"each":132}],170:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -24980,6 +18422,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -24991,7 +18437,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],648:[function(require,module,exports){
+},{}],171:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -25094,7 +18540,7 @@ function compact(value){
   return null == value;
 }
 
-},{"type-component":670}],649:[function(require,module,exports){
+},{"type-component":195}],172:[function(require,module,exports){
 
 // https://github.com/thirdpartyjs/thirdpartyjs-code/blob/master/examples/templates/02/loading-files/index.html
 
@@ -25149,18 +18595,15 @@ function attach(el, fn){
   });
 }
 
-},{}],650:[function(require,module,exports){
+},{}],173:[function(require,module,exports){
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var get = require('obj-case');
 
 /**
  * Add address getters to `proto`.
  *
+ * @ignore
  * @param {Function} proto
  */
 module.exports = function(proto) {
@@ -25188,12 +18631,8 @@ module.exports = function(proto) {
   }
 };
 
-},{"obj-case":641}],651:[function(require,module,exports){
+},{"obj-case":167}],174:[function(require,module,exports){
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var inherit = require('./utils').inherit;
 var Facade = require('./facade');
@@ -25201,25 +18640,21 @@ var Facade = require('./facade');
 /**
  * Initialize a new `Alias` facade with a `dictionary` of arguments.
  *
- * @param {Object} dictionary
- *   @property {string} from
- *   @property {string} to
- *   @property {Object} options
- * @param {Object} opts
- *   @property {boolean|undefined} clone
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.from] - The previous ID of the user.
+ * @param {string} [dictionary.to] - The new ID of the user.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Facade
  */
 function Alias(dictionary, opts) {
   Facade.call(this, dictionary, opts);
 }
 
-/**
- * Inherit from `Facade`.
- */
-
 inherit(Alias, Facade);
 
 /**
- * Return type of facade.
+ * Return the type of facade this is. This will always return `"alias"`.
  *
  * @return {string}
  */
@@ -25227,39 +18662,91 @@ Alias.prototype.action = function() {
   return 'alias';
 };
 
+/**
+ * An alias for {@link Alias#action}.
+ *
+ * @function
+ * @return {string}
+ */
 Alias.prototype.type = Alias.prototype.action;
 
 /**
- * Get `previousId`.
+ * Get the user's previous ID from `previousId` or `from`.
  *
- * @api public
- * @return {*}
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Alias.prototype.previousId = function() {
   return this.field('previousId') || this.field('from');
 };
 
+/**
+ * An alias for {@link Alias#previousId}.
+ *
+ * @function
+ * @return {string}
+ */
 Alias.prototype.from = Alias.prototype.previousId;
 
 /**
- * Get `userId`.
+ * Get the user's new ID from `userId` or `to`.
  *
- * @api public
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
  * @return {string}
  */
 Alias.prototype.userId = function() {
   return this.field('userId') || this.field('to');
 };
 
-Alias.prototype.to = Alias.prototype.userId;
-
 /**
- * Exports.
+ * An alias for {@link Alias#userId}.
+ *
+ * @function
+ * @return {string}
  */
+Alias.prototype.to = Alias.prototype.userId;
 
 module.exports = Alias;
 
-},{"./facade":652,"./utils":660}],652:[function(require,module,exports){
+},{"./facade":176,"./utils":184}],175:[function(require,module,exports){
+'use strict';
+
+var inherit = require('./utils').inherit;
+var Facade = require('./facade');
+
+/**
+ * Initialize a new `Delete` facade with a `dictionary` of arguments.
+ *
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.category] - The delete category.
+ * @param {string} [dictionary.name] - The delete name.
+ * @param {string} [dictionary.properties] - The delete properties.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Facade
+ */
+function Delete(dictionary, opts) {
+  Facade.call(this, dictionary, opts);
+}
+
+inherit(Delete, Facade);
+
+/**
+ * Return the type of facade this is. This will always return `"delete"`.
+ *
+ * @return {string}
+ */
+Delete.prototype.type = function() {
+  return 'delete';
+};
+
+module.exports = Delete;
+
+},{"./facade":176,"./utils":184}],176:[function(require,module,exports){
 'use strict';
 
 var address = require('./address');
@@ -25271,10 +18758,30 @@ var traverse = require('@segment/isodate-traverse');
 var type = require('./utils').type;
 
 /**
- * Initialize a new `Facade` with an `obj` of arguments.
+ * A *Facade* is an object meant for creating convience wrappers around
+ * objects. When developing integrations, you probably want to look at its
+ * subclasses, such as {@link Track} or {@link Identify}, rather than this
+ * general-purpose class.
  *
- * @param {Object} obj
- * @param {Object} opts
+ * This constructor will initialize a new `Facade` with an `obj` of arguments.
+ *
+ * If the inputted `obj` doesn't have a `timestamp` property, one will be added
+ * with the value `new Date()`. Otherwise, the `timestamp` property will be
+ * converted to a Date using the `new-date` package.
+ *
+ * By default, the inputted object will be defensively copied, and all ISO
+ * strings present in the string will be converted into Dates.
+ *
+ * @param {Object} obj - The object to wrap.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ * @param {boolean} [opts.clone=true] - Whether to make defensive clones. If enabled,
+ * the inputted object will be cloned, and any objects derived from this facade
+ * will be cloned before being returned.
+ * @param {boolean} [opts.traverse=true] - Whether to perform ISODate-Traverse
+ * on the inputted object.
+ *
+ * @see {@link https://github.com/segmentio/new-date|new-date}
+ * @see {@link https://github.com/segmentio/isodate-traverse|isodate-traverse}
  */
 function Facade(obj, opts) {
   opts = opts || {};
@@ -25289,19 +18796,26 @@ function Facade(obj, opts) {
 }
 
 /**
- * Mixin address traits.
- */
-
-address(Facade.prototype);
-
-/**
- * Return a proxy function for a `field` that will attempt to first use methods,
- * and fallback to accessing the underlying object directly. You can specify
- * deeply nested fields too like:
+ * Get a potentially-nested field in this facade. `field` should be a
+ * period-separated sequence of properties.
  *
- *   this.proxy('options.Librato');
+ * If the first field passed in points to a function (e.g. the `field` passed
+ * in is `a.b.c` and this facade's `obj.a` is a function), then that function
+ * will be called, and then the deeper fields will be fetched (using obj-case)
+ * from what that function returns. If the first field isn't a function, then
+ * this function works just like obj-case.
  *
- * @param {string} field
+ * Because this function uses obj-case, the camel- or snake-case of the input
+ * is irrelevant.
+ *
+ * @example
+ * YourClass.prototype.height = function() {
+ *   return this.proxy('getDimensions.height') ||
+ *     this.proxy('props.size.side_length');
+ * }
+ * @param {string} field - A sequence of properties, joined by periods (`.`).
+ * @return {*} - A property of the inputted object.
+ * @see {@link https://github.com/segmentio/obj-case|obj-case}
  */
 Facade.prototype.proxy = function(field) {
   var fields = field.split('.');
@@ -25318,8 +18832,9 @@ Facade.prototype.proxy = function(field) {
 };
 
 /**
- * Directly access a specific `field` from the underlying object, returning a
- * clone so outsiders don't mess with stuff.
+ * Directly access a specific `field` from the underlying object. Only
+ * "top-level" fields will work with this function. "Nested" fields *will not
+ * work* with this function.
  *
  * @param {string} field
  * @return {*}
@@ -25330,10 +18845,11 @@ Facade.prototype.field = function(field) {
 };
 
 /**
- * Utility method to always proxy a particular `field`. You can specify deeply
- * nested fields too like:
+ * Utility method to always proxy a particular `field`. In other words, it
+ * returns a function that will always return `this.proxy(field)`.
  *
- *   Facade.proxy('options.Librato');
+ * @example
+ * MyClass.prototype.height = Facade.proxy('options.dimensions.height');
  *
  * @param {string} field
  * @return {Function}
@@ -25345,7 +18861,8 @@ Facade.proxy = function(field) {
 };
 
 /**
- * Utility method to directly access a `field`.
+ * Utility method to always access a `field`. In other words, it returns a
+ * function that will always return `this.field(field)`.
  *
  * @param {string} field
  * @return {Function}
@@ -25357,10 +18874,18 @@ Facade.field = function(field) {
 };
 
 /**
- * Proxy multiple `path`.
+ * Create a helper function for fetching a "plural" thing.
+ *
+ * The generated method will take the inputted `path` and append an "s" to it
+ * and calls `this.proxy` with this "pluralized" path. If that produces an
+ * array, that will be returned. Otherwise, a one-element array containing
+ * `this.proxy(path)` will be returned.
+ *
+ * @example
+ * MyClass.prototype.birds = Facade.multi('animals.bird');
  *
  * @param {string} path
- * @return {Array}
+ * @return {Function}
  */
 Facade.multi = function(path) {
   return function() {
@@ -25373,10 +18898,19 @@ Facade.multi = function(path) {
 };
 
 /**
- * Proxy one `path`.
+ * Create a helper function for getting a "singular" thing.
+ *
+ * The generated method will take the inputted path and call
+ * `this.proxy(path)`. If a truthy thing is produced, it will be returned.
+ * Otherwise, `this.proxy(path + 's')` will be called, and if that produces an
+ * array the first element of that array will be returned. Otherwise,
+ * `undefined` is returned.
+ *
+ * @example
+ * MyClass.prototype.bird = Facade.one('animals.bird');
  *
  * @param {string} path
- * @return {*}
+ * @return {Function}
  */
 Facade.one = function(path) {
   return function() {
@@ -25388,7 +18922,10 @@ Facade.one = function(path) {
 };
 
 /**
- * Get the basic json object of this facade.
+ * Gets the underlying object this facade wraps around.
+ *
+ * If this facade has a property `type`, it will be invoked as a function and
+ * will be assigned as the property `type` of the outputted object.
  *
  * @return {Object}
  */
@@ -25399,12 +18936,16 @@ Facade.prototype.json = function() {
 };
 
 /**
- * Get the options of a call (formerly called "context"). If you pass an
- * integration name, it will get the options for that specific integration, or
- * undefined if the integration is not enabled.
+ * Get the options of a call. If an integration is passed, only the options for
+ * that integration are included. If the integration is not enabled, then
+ * `undefined` is returned.
  *
- * @param {string} [integration]
- * @return {Object or Null}
+ * Options are taken from the `options` property of the underlying object,
+ * falling back to the object's `context` or simply `{}`.
+ *
+ * @param {string} integration - The name of the integration to get settings
+ * for. Casing does not matter.
+ * @return {Object|undefined}
  */
 Facade.prototype.options = function(integration) {
   var obj = this.obj.options || this.obj.context || {};
@@ -25417,10 +18958,29 @@ Facade.prototype.options = function(integration) {
   return typeof value === 'object' ? value : {};
 };
 
+/**
+ * An alias for {@link Facade#options}.
+ */
 Facade.prototype.context = Facade.prototype.options;
 
 /**
  * Check whether an integration is enabled.
+ *
+ * Basically, this method checks whether this integration is explicitly
+ * enabled. If it isn'texplicitly mentioned, it checks whether it has been
+ * enabled at the global level. Some integrations (e.g. Salesforce), cannot
+ * enabled by these global event settings.
+ *
+ * More concretely, the deciding factors here are:
+ *
+ * 1. If `this.integrations()` has the integration set to `true`, return `true`.
+ * 2. If `this.integrations().providers` has the integration set to `true`, return `true`.
+ * 3. If integrations are set to default-disabled via global parameters (i.e.
+ * `options.providers.all`, `options.all`, or `integrations.all`), then return
+ * false.
+ * 4. If the integration is one of the special default-deny integrations
+ * (currently, only Salesforce), then return false.
+ * 5. Else, return true.
  *
  * @param {string} integration
  * @return {boolean}
@@ -25457,7 +19017,7 @@ Facade.prototype.enabled = function(integration) {
 /**
  * Get all `integration` options.
  *
- * @api private
+ * @ignore
  * @param {string} integration
  * @return {Object}
  */
@@ -25479,28 +19039,50 @@ Facade.prototype.active = function() {
 /**
  * Get `sessionId / anonymousId`.
  *
- * @api public
  * @return {*}
  */
 Facade.prototype.anonymousId = function() {
   return this.field('anonymousId') || this.field('sessionId');
 };
 
+/**
+ * An alias for {@link Facade#anonymousId}.
+ *
+ * @function
+ * @return {string}
+ */
 Facade.prototype.sessionId = Facade.prototype.anonymousId;
 
 /**
  * Get `groupId` from `context.groupId`.
  *
- * @api public
+ * @function
  * @return {string}
  */
 Facade.prototype.groupId = Facade.proxy('options.groupId');
 
 /**
- * Get the call's "super properties" which are just traits that have been
- * passed in as if from an identify call.
+ * Get the call's "traits". All event types can pass in traits, though {@link
+ * Identify} and {@link Group} override this implementation.
  *
- * @param {Object} aliases
+ * Traits are gotten from `options.traits`, augmented with a property `id` with
+ * the event's `userId`.
+ *
+ * The parameter `aliases` is meant to transform keys in `options.traits` into
+ * new keys. Each alias like `{ "xxx": "yyy" }` will take whatever is at `xxx`
+ * in the traits, and move it to `yyy`. If `xxx` is a method of this facade,
+ * it'll be called as a function instead of treated as a key into the traits.
+ *
+ * @example
+ * var obj = { options: { traits: { foo: "bar" } }, anonymousId: "xxx" }
+ * var facade = new Facade(obj)
+ *
+ * facade.traits() // { "foo": "bar" }
+ * facade.traits({ "foo": "asdf" }) // { "asdf": "bar" }
+ * facade.traits({ "sessionId": "rofl" }) // { "rofl": "xxx" }
+ *
+ * @param {Object} aliases - A mapping from keys to the new keys they should be
+ * transformed to.
  * @return {Object}
  */
 Facade.prototype.traits = function(aliases) {
@@ -25521,7 +19103,12 @@ Facade.prototype.traits = function(aliases) {
 };
 
 /**
- * Add a convenient way to get the library name and version
+ * The library and version of the client used to produce the message.
+ *
+ * If the library name cannot be determined, it is set to `"unknown"`. If the
+ * version cannot be determined, it is set to `null`.
+ *
+ * @return {{name: string, version: string}}
  */
 Facade.prototype.library = function() {
   var library = this.proxy('options.library');
@@ -25531,9 +19118,12 @@ Facade.prototype.library = function() {
 };
 
 /**
- * Return the device information or an empty object
+ * Return the device information, falling back to an empty object.
  *
- * @return {Object}
+ * Interesting values of `type` are `"ios"` and `"android"`, but other values
+ * are possible if the client is doing something unusual with `context.device`.
+ *
+ * @return {{type: string}}
  */
 Facade.prototype.device = function() {
   var device = this.proxy('context.device');
@@ -25547,19 +19137,152 @@ Facade.prototype.device = function() {
 };
 
 /**
- * Set up some basic proxies.
+ * Get the User-Agent from `context.userAgent`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return string
+ */
+Facade.prototype.userAgent = Facade.proxy('context.userAgent');
+
+/**
+ * Get the timezone from `context.timezone`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return string
+ */
+Facade.prototype.timezone = Facade.proxy('context.timezone');
+
+/**
+ * Get the timestamp from `context.timestamp`.
+ *
+ * @function
+ * @return string
+ */
+Facade.prototype.timestamp = Facade.field('timestamp');
+
+/**
+ * Get the channel from `channel`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return string
+ */
+Facade.prototype.channel = Facade.field('channel');
+
+/**
+ * Get the IP address from `context.ip`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return string
+ */
+Facade.prototype.ip = Facade.proxy('context.ip');
+
+/**
+ * Get the user ID from `userId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return string
+ */
+Facade.prototype.userId = Facade.field('userId');
+
+/**
+ * Get the ZIP/Postal code from `traits`, `traits.address`, `properties`, or
+ * `properties.address`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @name zip
+ * @function
+ * @memberof Facade.prototype
+ * @return {string}
  */
 
-Facade.prototype.userAgent = Facade.proxy('context.userAgent');
-Facade.prototype.timezone = Facade.proxy('context.timezone');
-Facade.prototype.timestamp = Facade.field('timestamp');
-Facade.prototype.channel = Facade.field('channel');
-Facade.prototype.ip = Facade.proxy('context.ip');
-Facade.prototype.userId = Facade.field('userId');
+/**
+ * Get the country from `traits`, `traits.address`, `properties`, or
+ * `properties.address`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @name country
+ * @function
+ * @memberof Facade.prototype
+ * @return {string}
+ */
+
+/**
+ * Get the street from `traits`, `traits.address`, `properties`, or
+ * `properties.address`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @name street
+ * @function
+ * @memberof Facade.prototype
+ * @return {string}
+ */
+
+/**
+ * Get the state from `traits`, `traits.address`, `properties`, or
+ * `properties.address`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @name state
+ * @function
+ * @memberof Facade.prototype
+ * @return {string}
+ */
+
+/**
+ * Get the city from `traits`, `traits.address`, `properties`, or
+ * `properties.address`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @name city
+ * @function
+ * @memberof Facade.prototype
+ * @return {string}
+ */
+
+/**
+ * Get the region from `traits`, `traits.address`, `properties`, or
+ * `properties.address`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @name region
+ * @function
+ * @memberof Facade.prototype
+ * @return {string}
+ */
+
+address(Facade.prototype);
 
 /**
  * Return the cloned and traversed object
  *
+ * @ignore
  * @param {*} obj
  * @return {*}
  */
@@ -25567,18 +19290,10 @@ function transform(obj) {
   return clone(obj);
 }
 
-/**
- * Exports.
- */
-
 module.exports = Facade;
 
-},{"./address":650,"./is-enabled":656,"./utils":660,"@segment/isodate-traverse":596,"new-date":637,"obj-case":641}],653:[function(require,module,exports){
+},{"./address":173,"./is-enabled":180,"./utils":184,"@segment/isodate-traverse":105,"new-date":162,"obj-case":167}],177:[function(require,module,exports){
 'use strict';
-
-/**
- * Module dependencies.
- */
 
 var inherit = require('./utils').inherit;
 var isEmail = require('is-email');
@@ -25588,40 +19303,50 @@ var Facade = require('./facade');
 /**
  * Initialize a new `Group` facade with a `dictionary` of arguments.
  *
- * @param {Object} dictionary
- *   @param {string} userId
- *   @param {string} groupId
- *   @param {Object} properties
- *   @param {Object} options
- * @param {Object} opts
- *   @property {boolean|undefined} clone
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.userId] - The user to add to the group.
+ * @param {string} [dictionary.groupId] - The ID of the group.
+ * @param {Object} [dictionary.traits] - The traits of the group.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Facade
  */
 function Group(dictionary, opts) {
   Facade.call(this, dictionary, opts);
 }
 
-/**
- * Inherit from `Facade`
- */
-
 inherit(Group, Facade);
 
 /**
- * Get the facade's action.
+ * Return the type of facade this is. This will always return `"group"`.
+ *
+ * @return {string}
  */
 Group.prototype.action = function() {
   return 'group';
 };
 
+/**
+ * An alias for {@link Group#action}.
+ *
+ * @function
+ * @return {string}
+ */
 Group.prototype.type = Group.prototype.action;
 
 /**
- * Setup some basic proxies.
+ * Get the group ID from `groupId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Group.prototype.groupId = Facade.field('groupId');
 
 /**
- * Get created or createdAt.
+ * Get the time of creation of the group from `traits.createdAt`,
+ * `traits.created`, `properties.createdAt`, or `properties.created`.
  *
  * @return {Date}
  */
@@ -25635,7 +19360,8 @@ Group.prototype.created = function() {
 };
 
 /**
- * Get the group's email, falling back to the group ID if it's a valid email.
+ * Get the group's email from `traits.email`, falling back to `groupId` only if
+ * it looks like a valid email.
  *
  * @return {string}
  */
@@ -25647,9 +19373,27 @@ Group.prototype.email = function() {
 };
 
 /**
- * Get the group's traits.
+ * Get the group's traits. This is identical to how {@link Facade#traits}
+ * works, except it looks at `traits.*` instead of `options.traits.*`.
  *
- * @param {Object} aliases
+ * Traits are gotten from `traits`, augmented with a property `id` with
+ * the event's `groupId`.
+ *
+ * The parameter `aliases` is meant to transform keys in `traits` into new
+ * keys. Each alias like `{ "xxx": "yyy" }` will take whatever is at `xxx` in
+ * the traits, and move it to `yyy`. If `xxx` is a method of this facade, it'll
+ * be called as a function instead of treated as a key into the traits.
+ *
+ * @example
+ * var obj = { traits: { foo: "bar" }, anonymousId: "xxx" }
+ * var group = new Group(obj)
+ *
+ * group.traits() // { "foo": "bar" }
+ * group.traits({ "foo": "asdf" }) // { "asdf": "bar" }
+ * group.traits({ "sessionId": "rofl" }) // { "rofl": "xxx" }
+ *
+ * @param {Object} aliases - A mapping from keys to the new keys they should be
+ * transformed to.
  * @return {Object}
  */
 Group.prototype.traits = function(aliases) {
@@ -25670,31 +19414,52 @@ Group.prototype.traits = function(aliases) {
 };
 
 /**
- * Special traits.
+ * Get the group's name from `traits.name`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
-
 Group.prototype.name = Facade.proxy('traits.name');
+
+/**
+ * Get the group's industry from `traits.industry`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
 Group.prototype.industry = Facade.proxy('traits.industry');
+
+/**
+ * Get the group's employee count from `traits.employees`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {number}
+ */
 Group.prototype.employees = Facade.proxy('traits.employees');
 
 /**
- * Get traits or properties.
- *
- * TODO: remove me
+ * Get the group's properties from `traits` or `properties`, falling back to
+ * simply an empty object.
  *
  * @return {Object}
  */
 Group.prototype.properties = function() {
+  // TODO remove this function
   return this.field('traits') || this.field('properties') || {};
 };
 
-/**
- * Exports.
- */
-
 module.exports = Group;
 
-},{"./facade":652,"./utils":660,"is-email":628,"new-date":637}],654:[function(require,module,exports){
+},{"./facade":176,"./utils":184,"is-email":152,"new-date":162}],178:[function(require,module,exports){
 'use strict';
 
 var Facade = require('./facade');
@@ -25708,37 +19473,59 @@ var type = require('./utils').type;
 /**
  * Initialize a new `Identify` facade with a `dictionary` of arguments.
  *
- * @param {Object} dictionary
- *   @param {string} userId
- *   @param {string} sessionId
- *   @param {Object} traits
- *   @param {Object} options
- * @param {Object} opts
- *   @property {boolean|undefined} clone
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.userId] - The ID of the user.
+ * @param {string} [dictionary.anonymousId] - The anonymous ID of the user.
+ * @param {string} [dictionary.traits] - The user's traits.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Facade
  */
 function Identify(dictionary, opts) {
   Facade.call(this, dictionary, opts);
 }
 
-/**
- * Inherit from `Facade`.
- */
-
 inherit(Identify, Facade);
 
 /**
- * Get the facade's action.
+ * Return the type of facade this is. This will always return `"identify"`.
+ *
+ * @return {string}
  */
 Identify.prototype.action = function() {
   return 'identify';
 };
 
+/**
+ * An alias for {@link Identify#action}.
+ *
+ * @function
+ * @return {string}
+ */
 Identify.prototype.type = Identify.prototype.action;
 
 /**
- * Get the user's traits.
+ * Get the user's traits. This is identical to how {@link Facade#traits} works,
+ * except it looks at `traits.*` instead of `options.traits.*`.
  *
- * @param {Object} aliases
+ * Traits are gotten from `traits`, augmented with a property `id` with
+ * the event's `userId`.
+ *
+ * The parameter `aliases` is meant to transform keys in `traits` into new
+ * keys. Each alias like `{ "xxx": "yyy" }` will take whatever is at `xxx` in
+ * the traits, and move it to `yyy`. If `xxx` is a method of this facade, it'll
+ * be called as a function instead of treated as a key into the traits.
+ *
+ * @example
+ * var obj = { traits: { foo: "bar" }, anonymousId: "xxx" }
+ * var identify = new Identify(obj)
+ *
+ * identify.traits() // { "foo": "bar" }
+ * identify.traits({ "foo": "asdf" }) // { "asdf": "bar" }
+ * identify.traits({ "sessionId": "rofl" }) // { "rofl": "xxx" }
+ *
+ * @param {Object} aliases - A mapping from keys to the new keys they should be
+ * transformed to.
  * @return {Object}
  */
 Identify.prototype.traits = function(aliases) {
@@ -25759,7 +19546,11 @@ Identify.prototype.traits = function(aliases) {
 };
 
 /**
- * Get the user's email, falling back to their user ID if it's a valid email.
+ * Get the user's email from `traits.email`, falling back to `userId` only if
+ * it looks like a valid email.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
  * @return {string}
  */
@@ -25772,10 +19563,10 @@ Identify.prototype.email = function() {
 };
 
 /**
- * Get the user's created date, optionally looking for `createdAt` since lots of
- * people do that instead.
+ * Get the time of creation of the user from `traits.created` or
+ * `traits.createdAt`.
  *
- * @return {Date|undefined}
+ * @return {Date}
  */
 Identify.prototype.created = function() {
   var created = this.proxy('traits.created') || this.proxy('traits.createdAt');
@@ -25783,9 +19574,10 @@ Identify.prototype.created = function() {
 };
 
 /**
- * Get the company created date.
+ * Get the time of creation of the user's company from `traits.company.created`
+ * or `traits.company.createdAt`.
  *
- * @return {Date|undefined}
+ * @return {Date}
  */
 Identify.prototype.companyCreated = function() {
   var created = this.proxy('traits.company.created') || this.proxy('traits.company.createdAt');
@@ -25796,10 +19588,25 @@ Identify.prototype.companyCreated = function() {
 };
 
 /**
- * Get the user's name, optionally combining a first and last name if that's all
- * that was provided.
+ * Get the user's company name from `traits.company.name`.
  *
- * @return {string|undefined}
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
+Identify.prototype.companyName = function() {
+  return this.proxy('traits.company.name');
+};
+
+/**
+ * Get the user's name `traits.name`, falling back to combining {@link
+ * Identify#firstName} and {@link Identify#lastName} if possible.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Identify.prototype.name = function() {
   var name = this.proxy('traits.name');
@@ -25815,10 +19622,16 @@ Identify.prototype.name = function() {
 };
 
 /**
- * Get the user's first name, optionally splitting it out of a single name if
- * that's all that was provided.
+ * Get the user's first name from `traits.firstName`, optionally splitting it
+ * out of a the full name if that's all that was provided.
  *
- * @return {string|undefined}
+ * Splitting the full name works on the assumption that the full name is of the
+ * form "FirstName LastName"; it will not work for non-Western names.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Identify.prototype.firstName = function() {
   var firstName = this.proxy('traits.firstName');
@@ -25833,10 +19646,16 @@ Identify.prototype.firstName = function() {
 };
 
 /**
- * Get the user's last name, optionally splitting it out of a single name if
- * that's all that was provided.
+ * Get the user's last name from `traits.lastName`, optionally splitting it out
+ * of a the full name if that's all that was provided.
  *
- * @return {string|undefined}
+ * Splitting the full name works on the assumption that the full name is of the
+ * form "FirstName LastName"; it will not work for non-Western names.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Identify.prototype.lastName = function() {
   var lastName = this.proxy('traits.lastName');
@@ -25858,16 +19677,23 @@ Identify.prototype.lastName = function() {
 };
 
 /**
- * Get the user's unique id.
+ * Get the user's "unique id" from `userId`, `traits.username`, or
+ * `traits.email`.
  *
- * @return {string|undefined}
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Identify.prototype.uid = function() {
   return this.userId() || this.username() || this.email();
 };
 
 /**
- * Get description.
+ * Get the user's description from `traits.description` or `traits.background`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
  * @return {string}
  */
@@ -25876,11 +19702,8 @@ Identify.prototype.description = function() {
 };
 
 /**
- * Get the age.
- *
- * If the age is not explicitly set
- * the method will compute it from `.birthday()`
- * if possible.
+ * Get the user's age from `traits.age`, falling back to computing it from
+ * `traits.birthday` and the current time.
  *
  * @return {number}
  */
@@ -25894,14 +19717,13 @@ Identify.prototype.age = function() {
 };
 
 /**
- * Get the avatar.
+ * Get the URL of the user's avatar from `traits.avatar`, `traits.photoUrl`, or
+ * `traits.avatarUrl`.
  *
- * .photoUrl needed because help-scout
- * implementation uses `.avatar || .photoUrl`.
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
- * .avatarUrl needed because trakio uses it.
- *
- * @return {*}
+ * @return {string}
  */
 Identify.prototype.avatar = function() {
   var traits = this.traits();
@@ -25909,11 +19731,12 @@ Identify.prototype.avatar = function() {
 };
 
 /**
- * Get the position.
+ * Get the user's job position from `traits.position` or `traits.jobTitle`.
  *
- * .jobTitle needed because some integrations use it.
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
- * @return {*}
+ * @return {string}
  */
 Identify.prototype.position = function() {
   var traits = this.traits();
@@ -25921,32 +19744,105 @@ Identify.prototype.position = function() {
 };
 
 /**
- * Setup sme basic "special" trait proxies.
+ * Get the user's username from `traits.username`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
-
 Identify.prototype.username = Facade.proxy('traits.username');
-Identify.prototype.website = Facade.one('traits.website');
-Identify.prototype.websites = Facade.multi('traits.website');
-Identify.prototype.phone = Facade.one('traits.phone');
-Identify.prototype.phones = Facade.multi('traits.phone');
-Identify.prototype.address = Facade.proxy('traits.address');
-Identify.prototype.gender = Facade.proxy('traits.gender');
-Identify.prototype.birthday = Facade.proxy('traits.birthday');
 
 /**
- * Exports.
+ * Get the user's website from `traits.website`, or if there are multiple in
+ * `traits.websites`, return the first one.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
+Identify.prototype.website = Facade.one('traits.website');
+
+/**
+ * Get the user's websites from `traits.websites`, or if there is only one in
+ * `traits.website`, then wrap it in an array.
+ *
+ * This *should* be an array of strings, but may not be if the client isn't
+ * adhering to the spec.
+ *
+ * @function
+ * @return {array}
+ */
+Identify.prototype.websites = Facade.multi('traits.website');
+
+/**
+ * Get the user's phone number from `traits.phone`, or if there are multiple in
+ * `traits.phones`, return the first one.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
+Identify.prototype.phone = Facade.one('traits.phone');
+
+/**
+ * Get the user's phone numbers from `traits.phones`, or if there is only one
+ * in `traits.phone`, then wrap it in an array.
+ *
+ * This *should* be an array of strings, but may not be if the client isn't
+ * adhering to the spec.
+ *
+ * @function
+ * @return {array}
+ */
+Identify.prototype.phones = Facade.multi('traits.phone');
+
+/**
+ * Get the user's address from `traits.address`.
+ *
+ * This *should* be an object, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {object}
+ */
+Identify.prototype.address = Facade.proxy('traits.address');
+
+/**
+ * Get the user's gender from `traits.gender`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
+Identify.prototype.gender = Facade.proxy('traits.gender');
+
+/**
+ * Get the user's birthday from `traits.birthday`.
+ *
+ * This *should* be a Date if `opts.traverse` was enabled (it is by default)
+ * when constructing this Identify. Otherwise, it should be a string. But it
+ * may be neither if the client isn't adhering to the spec.
+ * spec.
+ *
+ * @function
+ * @return {object}
+ */
+Identify.prototype.birthday = Facade.proxy('traits.birthday');
 
 module.exports = Identify;
 
-},{"./facade":652,"./utils":660,"is-email":628,"new-date":637,"obj-case":641,"trim":669}],655:[function(require,module,exports){
+},{"./facade":176,"./utils":184,"is-email":152,"new-date":162,"obj-case":167,"trim":194}],179:[function(require,module,exports){
 'use strict';
 
 var Facade = require('./facade');
-
-/**
- * Expose specific-method facades.
- */
 
 Facade.Alias = require('./alias');
 Facade.Group = require('./group');
@@ -25954,21 +19850,15 @@ Facade.Identify = require('./identify');
 Facade.Track = require('./track');
 Facade.Page = require('./page');
 Facade.Screen = require('./screen');
-
-/**
- * Exports.
- */
+Facade.Delete = require('./delete');
 
 module.exports = Facade;
 
-},{"./alias":651,"./facade":652,"./group":653,"./identify":654,"./page":657,"./screen":658,"./track":659}],656:[function(require,module,exports){
+},{"./alias":174,"./delete":175,"./facade":176,"./group":177,"./identify":178,"./page":181,"./screen":182,"./track":183}],180:[function(require,module,exports){
 'use strict';
 
-/**
- * A few integrations are disabled by default. They must be explicitly
- * enabled by setting options[Provider] = true.
- */
-
+// A few integrations are disabled by default. They must be explicitly enabled
+// by setting options[Provider] = true.
 var disabled = {
   Salesforce: true
 };
@@ -25976,15 +19866,15 @@ var disabled = {
 /**
  * Check whether an integration should be enabled by default.
  *
+ * @ignore
  * @param {string} integration
  * @return {boolean}
  */
-
 module.exports = function(integration) {
   return !disabled[integration];
 };
 
-},{}],657:[function(require,module,exports){
+},{}],181:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -25993,29 +19883,24 @@ var Track = require('./track');
 var isEmail = require('is-email');
 
 /**
- * Initialize new `Page` facade with `dictionary`.
+ * Initialize a new `Page` facade with a `dictionary` of arguments.
  *
- * @param {Object} dictionary
- *   @param {string} category
- *   @param {string} name
- *   @param {Object} traits
- *   @param {Object} options
- * @param {Object} opts
- *   @property {Boolean|Undefined} clone
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.category] - The page category.
+ * @param {string} [dictionary.name] - The page name.
+ * @param {string} [dictionary.properties] - The page properties.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Facade
  */
-
 function Page(dictionary, opts) {
   Facade.call(this, dictionary, opts);
 }
 
-/**
- * Inherit from `Facade`
- */
-
 inherit(Page, Facade);
 
 /**
- * Get the facade's action.
+ * Return the type of facade this is. This will always return `"page"`.
  *
  * @return {string}
  */
@@ -26023,25 +19908,72 @@ Page.prototype.action = function() {
   return 'page';
 };
 
+/**
+ * An alias for {@link Page#action}.
+ *
+ * @function
+ * @return {string}
+ */
 Page.prototype.type = Page.prototype.action;
 
 /**
- * Fields
+ * Get the page category from `category`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
-
 Page.prototype.category = Facade.field('category');
+
+/**
+ * Get the page name from `name`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Page.prototype.name = Facade.field('name');
 
 /**
- * Proxies.
+ * Get the page title from `properties.title`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
-
 Page.prototype.title = Facade.proxy('properties.title');
+
+/**
+ * Get the page path from `properties.path`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Page.prototype.path = Facade.proxy('properties.path');
+
+/**
+ * Get the page URL from `properties.url`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Page.prototype.url = Facade.proxy('properties.url');
 
 /**
- * Referrer.
+ * Get the HTTP referrer from `context.referrer.url`, `context.page.referrer`,
+ * or `properties.referrer`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
 Page.prototype.referrer = function() {
   return this.proxy('context.referrer.url')
@@ -26050,9 +19982,27 @@ Page.prototype.referrer = function() {
 };
 
 /**
- * Get the page properties mixing `category` and `name`.
+ * Get the page's properties. This is identical to how {@link Facade#traits}
+ * works, except it looks at `properties.*` instead of `options.traits.*`.
  *
- * @param {Object} aliases
+ * Properties are gotten from `properties`, augmented with the page's `name`
+ * and `category`.
+ *
+ * The parameter `aliases` is meant to transform keys in `properties` into new
+ * keys. Each alias like `{ "xxx": "yyy" }` will take whatever is at `xxx` in
+ * the traits, and move it to `yyy`. If `xxx` is a method of this facade, it'll
+ * be called as a function instead of treated as a key into the traits.
+ *
+ * @example
+ * var obj = { properties: { foo: "bar" }, anonymousId: "xxx" }
+ * var page = new Page(obj)
+ *
+ * page.traits() // { "foo": "bar" }
+ * page.traits({ "foo": "asdf" }) // { "asdf": "bar" }
+ * page.traits({ "sessionId": "rofl" }) // { "rofl": "xxx" }
+ *
+ * @param {Object} aliases - A mapping from keys to the new keys they should be
+ * transformed to.
  * @return {Object}
  */
 Page.prototype.properties = function(aliases) {
@@ -26077,7 +20027,11 @@ Page.prototype.properties = function(aliases) {
 };
 
 /**
- * Get the user's email, falling back to their user ID if it's a valid email.
+ * Get the user's email from `context.traits.email` or `properties.email`,
+ * falling back to `userId` if it's a valid email.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
  * @return {string}
  */
@@ -26090,7 +20044,11 @@ Page.prototype.email = function() {
 };
 
 /**
- * Get the page fullName.
+ * Get the page fullName. This is `$category $name` if both are present, and
+ * just `name` otherwiser.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
  * @return {string}
  */
@@ -26103,8 +20061,10 @@ Page.prototype.fullName = function() {
 };
 
 /**
- * Get event with `name`.
+ * Get an event name from this page call. If `name` is present, this will be
+ * `Viewed $name Page`; otherwise, it will be `Loaded a Page`.
  *
+ * @param {string} name - The name of this page.
  * @return {string}
  */
 Page.prototype.event = function(name) {
@@ -26114,7 +20074,8 @@ Page.prototype.event = function(name) {
 };
 
 /**
- * Convert this Page to a Track facade with `name`.
+ * Convert this Page to a {@link Track} facade. The inputted `name` will be
+ * converted to the Track's event name via {@link Page#event}.
  *
  * @param {string} name
  * @return {Track}
@@ -26127,13 +20088,9 @@ Page.prototype.track = function(name) {
   return new Track(json, this.opts);
 };
 
-/**
- * Exports.
- */
-
 module.exports = Page;
 
-},{"./facade":652,"./track":659,"./utils":660,"is-email":628}],658:[function(require,module,exports){
+},{"./facade":176,"./track":183,"./utils":184,"is-email":152}],182:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -26141,43 +20098,47 @@ var Page = require('./page');
 var Track = require('./track');
 
 /**
- * Initialize new `Screen` facade with `dictionary`.
+ * Initialize a new `Screen` facade with a `dictionary` of arguments.
  *
- * @param {Object} dictionary
- *   @param {string} category
- *   @param {string} name
- *   @param {Object} traits
- *   @param {Object} options
- * @param {Object} opts
- *   @property {boolean|undefined} clone
+ * Note that this class extends {@link Page}, so its methods are available to
+ * instances of this class as well.
+ *
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.category] - The page category.
+ * @param {string} [dictionary.name] - The page name.
+ * @param {string} [dictionary.properties] - The page properties.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Page
  */
 function Screen(dictionary, opts) {
   Page.call(this, dictionary, opts);
 }
 
-/**
- * Inherit from `Page`
- */
-
 inherit(Screen, Page);
 
 /**
- * Get the facade's action.
+ * Return the type of facade this is. This will always return `"screen"`.
  *
- * @api public
  * @return {string}
  */
 Screen.prototype.action = function() {
   return 'screen';
 };
 
+/**
+ * An alias for {@link Screen#action}.
+ *
+ * @function
+ * @return {string}
+ */
 Screen.prototype.type = Screen.prototype.action;
 
 /**
- * Get event with `name`.
+ * Get an event name from this screen call. If `name` is present, this will be
+ * `Viewed $name Screen`; otherwise, it will be `Loaded a Screen`.
  *
- * @api public
- * @param {string} name
+ * @param {string} name - The name of this screen.
  * @return {string}
  */
 Screen.prototype.event = function(name) {
@@ -26185,9 +20146,9 @@ Screen.prototype.event = function(name) {
 };
 
 /**
- * Convert this Screen.
+ * Convert this Screen to a {@link Track} facade. The inputted `name` will be
+ * converted to the Track's event name via {@link Screen#event}.
  *
- * @api public
  * @param {string} name
  * @return {Track}
  */
@@ -26199,13 +20160,9 @@ Screen.prototype.track = function(name) {
   return new Track(json, this.opts);
 };
 
-/**
- * Exports.
- */
-
 module.exports = Screen;
 
-},{"./page":657,"./track":659,"./utils":660}],659:[function(require,module,exports){
+},{"./page":181,"./track":183,"./utils":184}],183:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -26218,85 +20175,186 @@ var get = require('obj-case');
 /**
  * Initialize a new `Track` facade with a `dictionary` of arguments.
  *
- * @param {object} dictionary
- *   @property {string} event
- *   @property {string} userId
- *   @property {string} sessionId
- *   @property {Object} properties
- *   @property {Object} options
- * @param {Object} opts
- *   @property {boolean|undefined} clone
+ * @param {Object} dictionary - The object to wrap.
+ * @param {string} [dictionary.event] - The name of the event being tracked.
+ * @param {string} [dictionary.userId] - The ID of the user being tracked.
+ * @param {string} [dictionary.anonymousId] - The anonymous ID of the user.
+ * @param {string} [dictionary.properties] - Properties of the track event.
+ * @param {Object} opts - Options about what kind of Facade to create.
+ *
+ * @augments Facade
  */
-
 function Track(dictionary, opts) {
   Facade.call(this, dictionary, opts);
 }
 
-/**
- * Inherit from `Facade`.
- */
-
 inherit(Track, Facade);
 
 /**
- * Return the facade's action.
+ * Return the type of facade this is. This will always return `"track"`.
  *
  * @return {string}
  */
-
 Track.prototype.action = function() {
   return 'track';
 };
 
+/**
+ * An alias for {@link Track#action}.
+ *
+ * @function
+ * @return {string}
+ */
 Track.prototype.type = Track.prototype.action;
 
 /**
- * Setup some basic proxies.
+ * Get the event name from `event`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
-
 Track.prototype.event = Facade.field('event');
+
+/**
+ * Get the event value, usually the monetary value, from `properties.value`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
 Track.prototype.value = Facade.proxy('properties.value');
 
 /**
- * Misc
+ * Get the event cateogry from `properties.category`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
-
 Track.prototype.category = Facade.proxy('properties.category');
 
 /**
- * Ecommerce
+ * Get the event ID from `properties.id`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
+Track.prototype.id = Facade.proxy('properties.id');
 
 /**
- * ids
+ * Get the product ID from `properties.productId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
-
-Track.prototype.id = Facade.proxy('properties.id');
 Track.prototype.productId = function() {
   return this.proxy('properties.product_id') || this.proxy('properties.productId');
 };
+
+/**
+ * Get the promotion ID from `properties.promotionId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.promotionId = function() {
   return this.proxy('properties.promotion_id') || this.proxy('properties.promotionId');
 };
+
+/**
+ * Get the cart ID from `properties.cartId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.cartId = function() {
   return this.proxy('properties.cart_id') || this.proxy('properties.cartId');
 };
+
+/**
+ * Get the checkout ID from `properties.checkoutId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.checkoutId = function() {
   return this.proxy('properties.checkout_id') || this.proxy('properties.checkoutId');
 };
+
+/**
+ * Get the payment ID from `properties.paymentId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.paymentId = function() {
   return this.proxy('properties.payment_id') || this.proxy('properties.paymentId');
 };
+
+/**
+ * Get the coupon ID from `properties.couponId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.couponId = function() {
   return this.proxy('properties.coupon_id') || this.proxy('properties.couponId');
 };
+
+/**
+ * Get the wishlist ID from `properties.wishlistId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.wishlistId = function() {
   return this.proxy('properties.wishlist_id') || this.proxy('properties.wishlistId');
 };
+
+/**
+ * Get the review ID from `properties.reviewId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.reviewId = function() {
   return this.proxy('properties.review_id') || this.proxy('properties.reviewId');
 };
 
+/**
+ * Get the order ID from `properties.id` or `properties.orderId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.orderId = function() {
   // doesn't follow above convention since this fallback order was how it used to be
   return this.proxy('properties.id')
@@ -26304,60 +20362,185 @@ Track.prototype.orderId = function() {
     || this.proxy('properties.orderId');
 };
 
+/**
+ * Get the SKU from `properties.sku`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
 Track.prototype.sku = Facade.proxy('properties.sku');
+
+/**
+ * Get the amount of tax for this purchase from `properties.tax`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {number}
+ */
 Track.prototype.tax = Facade.proxy('properties.tax');
+
+/**
+ * Get the name of this event from `properties.name`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
 Track.prototype.name = Facade.proxy('properties.name');
+
+/**
+ * Get the price of this purchase from `properties.price`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {number}
+ */
 Track.prototype.price = Facade.proxy('properties.price');
+
+/**
+ * Get the total for this purchase from `properties.total`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {number}
+ */
 Track.prototype.total = Facade.proxy('properties.total');
+
+/**
+ * Whether this is a repeat purchase from `properties.repeat`.
+ *
+ * This *should* be a boolean, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {boolean}
+ */
 Track.prototype.repeat = Facade.proxy('properties.repeat');
+
+/**
+ * Get the coupon for this purchase from `properties.coupon`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
+ */
 Track.prototype.coupon = Facade.proxy('properties.coupon');
+
+/**
+ * Get the shipping for this purchase from `properties.shipping`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {number}
+ */
 Track.prototype.shipping = Facade.proxy('properties.shipping');
+
+/**
+ * Get the discount for this purchase from `properties.discount`.
+ *
+ * This *should* be a number, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {number}
+ */
 Track.prototype.discount = Facade.proxy('properties.discount');
 
+/**
+ * Get the shipping method for this purchase from `properties.shippingMethod`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.shippingMethod = function() {
   return this.proxy('properties.shipping_method') || this.proxy('properties.shippingMethod');
 };
 
+/**
+ * Get the payment method for this purchase from `properties.paymentMethod`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
+ */
 Track.prototype.paymentMethod = function() {
   return this.proxy('properties.payment_method') || this.proxy('properties.paymentMethod');
 };
 
 /**
- * Description
+ * Get a description for this event from `properties.description`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
-
 Track.prototype.description = Facade.proxy('properties.description');
 
 /**
- * Plan
+ * Get a plan, as in the plan the user is on, for this event from
+ * `properties.plan`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string}
  */
-
 Track.prototype.plan = Facade.proxy('properties.plan');
 
 /**
- * Get subtotal.
+ * Get the subtotal for this purchase from `properties.subtotal`.
+ *
+ * If `properties.subtotal` isn't available, then fall back to computing the
+ * total from `properties.total` or `properties.revenue`, and then subtracting
+ * tax, shipping, and discounts.
+ *
+ * If neither subtotal, total, nor revenue are available, then return 0.
  *
  * @return {number}
  */
 Track.prototype.subtotal = function() {
   var subtotal = get(this.properties(), 'subtotal');
-  var total = this.total();
+  var total = this.total() || this.revenue();
 
   if (subtotal) return subtotal;
   if (!total) return 0;
 
-  var n = this.tax();
-  if (n) total -= n;
-  n = this.shipping();
-  if (n) total -= n;
-  n = this.discount();
-  if (n) total += n;
+  if (this.total()) {
+    var n = this.tax();
+    if (n) total -= n;
+    n = this.shipping();
+    if (n) total -= n;
+    n = this.discount();
+    if (n) total += n;
+  }
 
   return total;
 };
 
 /**
- * Get products.
+ * Get the products for this event from `properties.products` if it's an
+ * array, falling back to an empty array.
  *
  * @return {Array}
  */
@@ -26368,7 +20551,8 @@ Track.prototype.products = function() {
 };
 
 /**
- * Get quantity.
+ * Get the quantity for this event from `properties.quantity`, falling back to
+ * a quantity of one.
  *
  * @return {number}
  */
@@ -26378,7 +20562,8 @@ Track.prototype.quantity = function() {
 };
 
 /**
- * Get currency.
+ * Get the currency for this event from `properties.currency`, falling back to
+ * "USD".
  *
  * @return {string}
  */
@@ -26388,21 +20573,53 @@ Track.prototype.currency = function() {
 };
 
 /**
- * BACKWARDS COMPATIBILITY: should probably re-examine where these come from.
+ * Get the referrer for this event from `context.referrer.url`,
+ * `context.page.referrer`, or `properties.referrer`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @return {string}
  */
-
 Track.prototype.referrer = function() {
+  // TODO re-examine whether this function is necessary
   return this.proxy('context.referrer.url')
     || this.proxy('context.page.referrer')
     || this.proxy('properties.referrer');
 };
 
+/**
+ * Get the query for this event from `options.query`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
+ *
+ * @function
+ * @return {string|object}
+ */
 Track.prototype.query = Facade.proxy('options.query');
 
 /**
- * Get the call's properties.
+ * Get the page's properties. This is identical to how {@link Facade#traits}
+ * works, except it looks at `properties.*` instead of `options.traits.*`.
  *
- * @param {Object} aliases
+ * Properties are gotten from `properties`.
+ *
+ * The parameter `aliases` is meant to transform keys in `properties` into new
+ * keys. Each alias like `{ "xxx": "yyy" }` will take whatever is at `xxx` in
+ * the traits, and move it to `yyy`. If `xxx` is a method of this facade, it'll
+ * be called as a function instead of treated as a key into the traits.
+ *
+ * @example
+ * var obj = { properties: { foo: "bar" }, anonymousId: "xxx" }
+ * var track = new Track(obj)
+ *
+ * track.traits() // { "foo": "bar" }
+ * track.traits({ "foo": "asdf" }) // { "asdf": "bar" }
+ * track.traits({ "sessionId": "rofl" }) // { "rofl": "xxx" }
+ *
+ * @param {Object} aliases - A mapping from keys to the new keys they should be
+ * transformed to.
  * @return {Object}
  */
 Track.prototype.properties = function(aliases) {
@@ -26420,7 +20637,11 @@ Track.prototype.properties = function(aliases) {
 };
 
 /**
- * Get the call's username.
+ * Get the username of the user for this event from `traits.username`,
+ * `properties.username`, `userId`, or `anonymousId`.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
  * @return {string|undefined}
  */
@@ -26432,7 +20653,12 @@ Track.prototype.username = function() {
 };
 
 /**
- * Get the call's email, using an the user ID if it's a valid email.
+ * Get the email of the user for this event from `trais.email`,
+ * `properties.email`, or `options.traits.email`, falling back to `userId` if
+ * it looks like a valid email.
+ *
+ * This *should* be a string, but may not be if the client isn't adhering to
+ * the spec.
  *
  * @return {string|undefined}
  */
@@ -26447,20 +20673,14 @@ Track.prototype.email = function() {
 };
 
 /**
- * Get the call's revenue, parsing it from a string with an optional leading
- * dollar sign.
+ * Get the revenue for this event.
  *
- * For products/services that don't have shipping and are not directly taxed,
- * they only care about tracking `revenue`. These are things like
- * SaaS companies, who sell monthly subscriptions. The subscriptions aren't
- * taxed directly, and since it's a digital product, it has no shipping.
+ * If this is an "Order Completed" event, this will be the `properties.total`
+ * falling back to the `properties.revenue`. For all other events, this is
+ * simply taken from `properties.revenue`.
  *
- * The only case where there's a difference between `revenue` and `total`
- * (in the context of analytics) is on ecommerce platforms, where they want
- * the `revenue` function to actually return the `total` (which includes
- * tax and shipping, total = subtotal + tax + shipping). This is probably
- * because on their backend they assume tax and shipping has been applied to
- * the value, and so can get the revenue on their own.
+ * If there are dollar signs in these properties, they will be removed. The
+ * result will be parsed into a number.
  *
  * @return {number}
  */
@@ -26478,7 +20698,9 @@ Track.prototype.revenue = function() {
 };
 
 /**
- * Get cents.
+ * Get the revenue for this event in "cents" -- in other words, multiply the
+ * {@link Track#revenue} by 100, or return 0 if there isn't a numerical revenue
+ * for this event.
  *
  * @return {number}
  */
@@ -26488,14 +20710,16 @@ Track.prototype.cents = function() {
 };
 
 /**
- * A utility to turn the pieces of a track call into an identify. Used for
- * integrations with super properties or rate limits.
+ * Convert this event into an {@link Identify} facade.
  *
- * TODO: remove me.
+ * This works by taking this event's underlying object and creating an Identify
+ * from it. This event's traits, taken from `options.traits`, will be used as
+ * the Identify's traits.
  *
- * @return {Facade}
+ * @return {Identify}
  */
 Track.prototype.identify = function() {
+  // TODO: remove me.
   var json = this.json();
   json.traits = this.traits();
   return new Identify(json, this.opts);
@@ -26504,6 +20728,7 @@ Track.prototype.identify = function() {
 /**
  * Get float from currency value.
  *
+ * @ignore
  * @param {*} val
  * @return {number}
  */
@@ -26524,20 +20749,16 @@ function currency(val) {
   }
 }
 
-/**
- * Exports.
- */
-
 module.exports = Track;
 
-},{"./facade":652,"./identify":654,"./utils":660,"is-email":628,"obj-case":641}],660:[function(require,module,exports){
+},{"./facade":176,"./identify":178,"./utils":184,"is-email":152,"obj-case":167}],184:[function(require,module,exports){
 'use strict';
 
 exports.inherit = require('inherits');
 exports.clone = require('@ndhoule/clone');
 exports.type = require('type-component');
 
-},{"@ndhoule/clone":5,"inherits":627,"type-component":670}],661:[function(require,module,exports){
+},{"@ndhoule/clone":5,"inherits":151,"type-component":195}],185:[function(require,module,exports){
 
 /**
  * Generate a slug from the given `str`.
@@ -26562,7 +20783,7 @@ module.exports = function (str, options) {
     .replace(/ +/g, options.separator || '-')
 };
 
-},{}],662:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 (function (factory) {
     if (typeof exports === 'object') {
         // Node/CommonJS
@@ -27267,39 +21488,109 @@ module.exports = function (str, options) {
     return SparkMD5;
 }));
 
-},{}],663:[function(require,module,exports){
+},{}],187:[function(require,module,exports){
+(function (setImmediate,clearImmediate){
+var nextTick = require('process/browser.js').nextTick;
+var apply = Function.prototype.apply;
+var slice = Array.prototype.slice;
+var immediateIds = {};
+var nextImmediateId = 0;
 
-/**
- * Module exports.
- */
+// DOM APIs, for completeness
 
-module.exports = throttle;
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) { timeout.close(); };
 
-/**
- * Returns a new function that, when invoked, invokes `func` at most one time per
- * `wait` milliseconds.
- *
- * @param {Function} func The `Function` instance to wrap.
- * @param {Number} wait The minimum number of milliseconds that must elapse in between `func` invokations.
- * @return {Function} A new function that wraps the `func` function passed in.
- * @api public
- */
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
 
-function throttle (func, wait) {
-  var rtn; // return value
-  var last = 0; // last invokation timestamp
-  return function throttled () {
-    var now = new Date().getTime();
-    var delta = now - last;
-    if (delta >= wait) {
-      rtn = func.apply(this, arguments);
-      last = now;
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// That's not how node.js implements it but the exposed api is the same.
+exports.setImmediate = typeof setImmediate === "function" ? setImmediate : function(fn) {
+  var id = nextImmediateId++;
+  var args = arguments.length < 2 ? false : slice.call(arguments, 1);
+
+  immediateIds[id] = true;
+
+  nextTick(function onNextTick() {
+    if (immediateIds[id]) {
+      // fn.call() is faster so we optimize for the common use-case
+      // @see http://jsperf.com/call-apply-segu
+      if (args) {
+        fn.apply(null, args);
+      } else {
+        fn.call(null);
+      }
+      // Prevent ids from leaking
+      exports.clearImmediate(id);
     }
-    return rtn;
-  };
+  });
+
+  return id;
+};
+
+exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
+  delete immediateIds[id];
+};
+}).call(this,require("timers").setImmediate,require("timers").clearImmediate)
+},{"process/browser.js":170,"timers":187}],188:[function(require,module,exports){
+
+var space = require('to-space-case')
+
+/**
+ * Export.
+ */
+
+module.exports = toCamelCase
+
+/**
+ * Convert a `string` to camel case.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function toCamelCase(string) {
+  return space(string).replace(/\s(\w)/g, function (matches, letter) {
+    return letter.toUpperCase()
+  })
 }
 
-},{}],664:[function(require,module,exports){
+},{"to-space-case":192}],189:[function(require,module,exports){
 
 /**
  * Module Dependencies
@@ -27453,7 +21744,79 @@ function stripNested (prop, str, val) {
   });
 }
 
-},{"component-props":615,"props":615}],665:[function(require,module,exports){
+},{"component-props":137,"props":137}],190:[function(require,module,exports){
+
+/**
+ * Expose `toNoCase`.
+ */
+
+module.exports = toNoCase;
+
+
+/**
+ * Test whether a string is camel-case.
+ */
+
+var hasSpace = /\s/;
+var hasSeparator = /[\W_]/;
+
+
+/**
+ * Remove any starting case from a `string`, like camel or snake, but keep
+ * spaces and punctuation that may be important otherwise.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function toNoCase (string) {
+  if (hasSpace.test(string)) return string.toLowerCase();
+  if (hasSeparator.test(string)) return (unseparate(string) || string).toLowerCase();
+  return uncamelize(string).toLowerCase();
+}
+
+
+/**
+ * Separator splitter.
+ */
+
+var separatorSplitter = /[\W_]+(.|$)/g;
+
+
+/**
+ * Un-separate a `string`.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function unseparate (string) {
+  return string.replace(separatorSplitter, function (m, next) {
+    return next ? ' ' + next : '';
+  });
+}
+
+
+/**
+ * Camelcase splitter.
+ */
+
+var camelSplitter = /(.)([A-Z]+)/g;
+
+
+/**
+ * Un-camelcase a `string`.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function uncamelize (string) {
+  return string.replace(camelSplitter, function (m, previous, uppers) {
+    return previous + ' ' + uppers.toLowerCase().split('').join(' ');
+  });
+}
+},{}],191:[function(require,module,exports){
 
 var toSpace = require('to-space-case')
 
@@ -27474,9 +21837,7 @@ function toSnakeCase(string) {
   return toSpace(string).replace(/\s/g, '_')
 }
 
-},{"to-space-case":667}],666:[function(require,module,exports){
-arguments[4][389][0].apply(exports,arguments)
-},{"dup":389}],667:[function(require,module,exports){
+},{"to-space-case":192}],192:[function(require,module,exports){
 
 var clean = require('to-no-case')
 
@@ -27499,27 +21860,76 @@ function toSpaceCase(string) {
   }).trim()
 }
 
-},{"to-no-case":666}],668:[function(require,module,exports){
-'use strict';
+},{"to-no-case":193}],193:[function(require,module,exports){
 
 /**
- * Convert a `date` into a Unix timestamp.
- *
- * @param {Date}
- * @return {Number}
+ * Export.
  */
 
-function toUnixTimestamp(date) {
-  return Math.floor(new Date(date).getTime() / 1000);
+module.exports = toNoCase
+
+/**
+ * Test whether a string is camel-case.
+ */
+
+var hasSpace = /\s/
+var hasSeparator = /(_|-|\.|:)/
+var hasCamel = /([a-z][A-Z]|[A-Z][a-z])/
+
+/**
+ * Remove any starting case from a `string`, like camel or snake, but keep
+ * spaces and punctuation that may be important otherwise.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function toNoCase(string) {
+  if (hasSpace.test(string)) return string.toLowerCase()
+  if (hasSeparator.test(string)) return (unseparate(string) || string).toLowerCase()
+  if (hasCamel.test(string)) return uncamelize(string).toLowerCase()
+  return string.toLowerCase()
 }
 
 /**
- * Exports.
+ * Separator splitter.
  */
 
-module.exports = toUnixTimestamp;
+var separatorSplitter = /[\W_]+(.|$)/g
 
-},{}],669:[function(require,module,exports){
+/**
+ * Un-separate a `string`.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function unseparate(string) {
+  return string.replace(separatorSplitter, function (m, next) {
+    return next ? ' ' + next : ''
+  })
+}
+
+/**
+ * Camelcase splitter.
+ */
+
+var camelSplitter = /(.)([A-Z]+)/g
+
+/**
+ * Un-camelcase a `string`.
+ *
+ * @param {String} string
+ * @return {String}
+ */
+
+function uncamelize(string) {
+  return string.replace(camelSplitter, function (m, previous, uppers) {
+    return previous + ' ' + uppers.toLowerCase().split('').join(' ')
+  })
+}
+
+},{}],194:[function(require,module,exports){
 
 exports = module.exports = trim;
 
@@ -27535,7 +21945,7 @@ exports.right = function(str){
   return str.replace(/\s*$/, '');
 };
 
-},{}],670:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 
 /**
  * toString ref.
@@ -27567,18 +21977,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],671:[function(require,module,exports){
-
-
-/**
- * Converts a date to a unix time stamp
- */
-
-module.exports = function (date) {
-  date = new Date(date);
-  return Math.floor(date.getTime() / 1000);
-}
-},{}],672:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 
 /**
  * Protocol.
@@ -27616,7 +22015,7 @@ function check () {
     location.protocol == 'chrome-extension:'
   );
 }
-},{}],673:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 module.exports = encode;
 
 function encode(string) {
@@ -27644,7 +22043,228 @@ function encode(string) {
 
     return utftext;
 }
-},{}],674:[function(require,module,exports){
+},{}],198:[function(require,module,exports){
+(function (global){
+
+var rng;
+
+var crypto = global.crypto || global.msCrypto; // for IE 11
+if (crypto && crypto.getRandomValues) {
+  // WHATWG crypto-based RNG - http://wiki.whatwg.org/wiki/Crypto
+  // Moderately fast, high quality
+  var _rnds8 = new Uint8Array(16);
+  rng = function whatwgRNG() {
+    crypto.getRandomValues(_rnds8);
+    return _rnds8;
+  };
+}
+
+if (!rng) {
+  // Math.random()-based (RNG)
+  //
+  // If all else fails, use Math.random().  It's fast, but is of unspecified
+  // quality.
+  var  _rnds = new Array(16);
+  rng = function() {
+    for (var i = 0, r; i < 16; i++) {
+      if ((i & 0x03) === 0) r = Math.random() * 0x100000000;
+      _rnds[i] = r >>> ((i & 0x03) << 3) & 0xff;
+    }
+
+    return _rnds;
+  };
+}
+
+module.exports = rng;
+
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],199:[function(require,module,exports){
+//     uuid.js
+//
+//     Copyright (c) 2010-2012 Robert Kieffer
+//     MIT License - http://opensource.org/licenses/mit-license.php
+
+// Unique ID creation requires a high quality random # generator.  We feature
+// detect to determine the best RNG source, normalizing to a function that
+// returns 128-bits of randomness, since that's what's usually required
+var _rng = require('./rng');
+
+// Maps for number <-> hex string conversion
+var _byteToHex = [];
+var _hexToByte = {};
+for (var i = 0; i < 256; i++) {
+  _byteToHex[i] = (i + 0x100).toString(16).substr(1);
+  _hexToByte[_byteToHex[i]] = i;
+}
+
+// **`parse()` - Parse a UUID into it's component bytes**
+function parse(s, buf, offset) {
+  var i = (buf && offset) || 0, ii = 0;
+
+  buf = buf || [];
+  s.toLowerCase().replace(/[0-9a-f]{2}/g, function(oct) {
+    if (ii < 16) { // Don't overflow!
+      buf[i + ii++] = _hexToByte[oct];
+    }
+  });
+
+  // Zero out remaining bytes if string was short
+  while (ii < 16) {
+    buf[i + ii++] = 0;
+  }
+
+  return buf;
+}
+
+// **`unparse()` - Convert UUID byte array (ala parse()) into a string**
+function unparse(buf, offset) {
+  var i = offset || 0, bth = _byteToHex;
+  return  bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] + '-' +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]] +
+          bth[buf[i++]] + bth[buf[i++]];
+}
+
+// **`v1()` - Generate time-based UUID**
+//
+// Inspired by https://github.com/LiosK/UUID.js
+// and http://docs.python.org/library/uuid.html
+
+// random #'s we need to init node and clockseq
+var _seedBytes = _rng();
+
+// Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+var _nodeId = [
+  _seedBytes[0] | 0x01,
+  _seedBytes[1], _seedBytes[2], _seedBytes[3], _seedBytes[4], _seedBytes[5]
+];
+
+// Per 4.2.2, randomize (14 bit) clockseq
+var _clockseq = (_seedBytes[6] << 8 | _seedBytes[7]) & 0x3fff;
+
+// Previous uuid creation time
+var _lastMSecs = 0, _lastNSecs = 0;
+
+// See https://github.com/broofa/node-uuid for API details
+function v1(options, buf, offset) {
+  var i = buf && offset || 0;
+  var b = buf || [];
+
+  options = options || {};
+
+  var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // UUID timestamps are 100 nano-second units since the Gregorian epoch,
+  // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
+  // time is handled internally as 'msecs' (integer milliseconds) and 'nsecs'
+  // (100-nanoseconds offset from msecs) since unix epoch, 1970-01-01 00:00.
+  var msecs = options.msecs !== undefined ? options.msecs : new Date().getTime();
+
+  // Per 4.2.1.2, use count of uuid's generated during the current clock
+  // cycle to simulate higher resolution clock
+  var nsecs = options.nsecs !== undefined ? options.nsecs : _lastNSecs + 1;
+
+  // Time since last uuid creation (in msecs)
+  var dt = (msecs - _lastMSecs) + (nsecs - _lastNSecs)/10000;
+
+  // Per 4.2.1.2, Bump clockseq on clock regression
+  if (dt < 0 && options.clockseq === undefined) {
+    clockseq = clockseq + 1 & 0x3fff;
+  }
+
+  // Reset nsecs if clock regresses (new clockseq) or we've moved onto a new
+  // time interval
+  if ((dt < 0 || msecs > _lastMSecs) && options.nsecs === undefined) {
+    nsecs = 0;
+  }
+
+  // Per 4.2.1.2 Throw error if too many uuids are requested
+  if (nsecs >= 10000) {
+    throw new Error('uuid.v1(): Can\'t create more than 10M uuids/sec');
+  }
+
+  _lastMSecs = msecs;
+  _lastNSecs = nsecs;
+  _clockseq = clockseq;
+
+  // Per 4.1.4 - Convert from unix epoch to Gregorian epoch
+  msecs += 12219292800000;
+
+  // `time_low`
+  var tl = ((msecs & 0xfffffff) * 10000 + nsecs) % 0x100000000;
+  b[i++] = tl >>> 24 & 0xff;
+  b[i++] = tl >>> 16 & 0xff;
+  b[i++] = tl >>> 8 & 0xff;
+  b[i++] = tl & 0xff;
+
+  // `time_mid`
+  var tmh = (msecs / 0x100000000 * 10000) & 0xfffffff;
+  b[i++] = tmh >>> 8 & 0xff;
+  b[i++] = tmh & 0xff;
+
+  // `time_high_and_version`
+  b[i++] = tmh >>> 24 & 0xf | 0x10; // include version
+  b[i++] = tmh >>> 16 & 0xff;
+
+  // `clock_seq_hi_and_reserved` (Per 4.2.2 - include variant)
+  b[i++] = clockseq >>> 8 | 0x80;
+
+  // `clock_seq_low`
+  b[i++] = clockseq & 0xff;
+
+  // `node`
+  var node = options.node || _nodeId;
+  for (var n = 0; n < 6; n++) {
+    b[i + n] = node[n];
+  }
+
+  return buf ? buf : unparse(b);
+}
+
+// **`v4()` - Generate random UUID**
+
+// See https://github.com/broofa/node-uuid for API details
+function v4(options, buf, offset) {
+  // Deprecated - 'format' argument, as supported in v1.2
+  var i = buf && offset || 0;
+
+  if (typeof(options) == 'string') {
+    buf = options == 'binary' ? new Array(16) : null;
+    options = null;
+  }
+  options = options || {};
+
+  var rnds = options.random || (options.rng || _rng)();
+
+  // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+  rnds[6] = (rnds[6] & 0x0f) | 0x40;
+  rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+  // Copy bytes to buffer, if provided
+  if (buf) {
+    for (var ii = 0; ii < 16; ii++) {
+      buf[i + ii] = rnds[ii];
+    }
+  }
+
+  return buf || unparse(rnds);
+}
+
+// Export public API
+var uuid = v4;
+uuid.v1 = v1;
+uuid.v4 = v4;
+uuid.parse = parse;
+uuid.unparse = unparse;
+
+module.exports = uuid;
+
+},{"./rng":198}],200:[function(require,module,exports){
 
 /**
  * dependencies.
@@ -27739,7 +22359,7 @@ function all(){
   return ret;
 }
 
-},{"each":611,"unserialize":675}],675:[function(require,module,exports){
+},{"each":132,"unserialize":201}],201:[function(require,module,exports){
 
 /**
  * Unserialize the given "stringified" javascript.
@@ -27756,11 +22376,11 @@ module.exports = function(val){
   }
 };
 
-},{}],676:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 module.exports={
   "name": "@segment/analytics.js",
   "author": "Segment.io <friends@segment.io>",
-  "version": "2.11.0-si-6",
+  "version": "2.11.0-si-7",
   "license": "MIT",
   "description": "The hassle-free way to integrate analytics into any web application.",
   "keywords": [
@@ -27790,96 +22410,22 @@ module.exports={
     "@segment/analytics.js-integration": "^3.1.0",
     "@segment/analytics.js-integration-adroll": "git+https://github.com/segment-integrations/analytics.js-integration-adroll.git",
     "@segment/analytics.js-integration-adwords": "git+https://github.com/segment-integrations/analytics.js-integration-adwords.git",
-    "@segment/analytics.js-integration-alexa": "git+https://github.com/segment-integrations/analytics.js-integration-alexa.git",
-    "@segment/analytics.js-integration-amplitude": "git+https://github.com/segment-integrations/analytics.js-integration-amplitude.git",
-    "@segment/analytics.js-integration-appcues": "git+https://github.com/segment-integrations/analytics.js-integration-appcues.git",
-    "@segment/analytics.js-integration-atatus": "git+https://github.com/segment-integrations/analytics.js-integration-atatus.git",
-    "@segment/analytics.js-integration-autosend": "git+https://github.com/segment-integrations/analytics.js-integration-autosend.git",
-    "@segment/analytics.js-integration-awesm": "git+https://github.com/segment-integrations/analytics.js-integration-awesm.git",
-    "@segment/analytics.js-integration-bing-ads": "git+https://github.com/segment-integrations/analytics.js-integration-bing-ads.git",
-    "@segment/analytics.js-integration-blueshift": "git+https://github.com/segment-integrations/analytics.js-integration-blueshift.git",
-    "@segment/analytics.js-integration-boomtrain": "git+https://github.com/segment-integrations/analytics.js-integration-boomtrain.git",
     "@segment/analytics.js-integration-bronto": "git+https://github.com/segment-integrations/analytics.js-integration-bronto.git",
-    "@segment/analytics.js-integration-bugherd": "git+https://github.com/segment-integrations/analytics.js-integration-bugherd.git",
-    "@segment/analytics.js-integration-bugsnag": "git+https://github.com/segment-integrations/analytics.js-integration-bugsnag.git",
-    "@segment/analytics.js-integration-chameleon": "git+https://github.com/segment-integrations/analytics.js-integration-chameleon.git",
     "@segment/analytics.js-integration-chartbeat": "git+https://github.com/segment-integrations/analytics.js-integration-chartbeat.git",
-    "@segment/analytics.js-integration-clicky": "git+https://github.com/segment-integrations/analytics.js-integration-clicky.git",
-    "@segment/analytics.js-integration-comscore": "git+https://github.com/segment-integrations/analytics.js-integration-comscore.git",
-    "@segment/analytics.js-integration-crazy-egg": "git+https://github.com/segment-integrations/analytics.js-integration-crazy-egg.git",
-    "@segment/analytics.js-integration-curebit": "git+https://github.com/segment-integrations/analytics.js-integration-curebit.git",
-    "@segment/analytics.js-integration-customerio": "git+https://github.com/segment-integrations/analytics.js-integration-customerio.git",
-    "@segment/analytics.js-integration-drift": "git+https://github.com/segment-integrations/analytics.js-integration-drift.git",
     "@segment/analytics.js-integration-drip": "git+https://github.com/segment-integrations/analytics.js-integration-drip.git",
-    "@segment/analytics.js-integration-elevio": "git+https://github.com/segment-integrations/analytics.js-integration-elevio.git",
-    "@segment/analytics.js-integration-errorception": "git+https://github.com/segment-integrations/analytics.js-integration-errorception.git",
-    "@segment/analytics.js-integration-evergage": "git+https://github.com/segment-integrations/analytics.js-integration-evergage.git",
-    "@segment/analytics.js-integration-extole": "git+https://github.com/segment-integrations/analytics.js-integration-extole.git",
     "@segment/analytics.js-integration-facebook-conversion-tracking": "git+https://github.com/segment-integrations/analytics.js-integration-facebook-conversion-tracking.git",
     "@segment/analytics.js-integration-facebook-custom-audiences": "git+https://github.com/segment-integrations/analytics.js-integration-facebook-custom-audiences.git",
     "@segment/analytics.js-integration-facebook-pixel": "git+https://github.com/segment-integrations/analytics.js-integration-facebook-pixel.git",
-    "@segment/analytics.js-integration-foxmetrics": "git+https://github.com/segment-integrations/analytics.js-integration-foxmetrics.git",
-    "@segment/analytics.js-integration-frontleaf": "git+https://github.com/segment-integrations/analytics.js-integration-frontleaf.git",
-    "@segment/analytics.js-integration-gauges": "git+https://github.com/segment-integrations/analytics.js-integration-gauges.git",
-    "@segment/analytics.js-integration-get-satisfaction": "git+https://github.com/segment-integrations/analytics.js-integration-get-satisfaction.git",
     "@segment/analytics.js-integration-google-analytics": "git+https://github.com/segment-integrations/analytics.js-integration-google-analytics.git",
     "@segment/analytics.js-integration-google-tag-manager": "git+https://github.com/segment-integrations/analytics.js-integration-google-tag-manager.git",
-    "@segment/analytics.js-integration-gosquared": "git+https://github.com/segment-integrations/analytics.js-integration-gosquared.git",
-    "@segment/analytics.js-integration-heap": "git+https://github.com/segment-integrations/analytics.js-integration-heap.git",
-    "@segment/analytics.js-integration-hellobar": "git+https://github.com/segment-integrations/analytics.js-integration-hellobar.git",
-    "@segment/analytics.js-integration-hittail": "git+https://github.com/segment-integrations/analytics.js-integration-hittail.git",
     "@segment/analytics.js-integration-hubspot": "git+https://github.com/segment-integrations/analytics.js-integration-hubspot.git",
-    "@segment/analytics.js-integration-improvely": "git+https://github.com/segment-integrations/analytics.js-integration-improvely.git",
-    "@segment/analytics.js-integration-inspectlet": "git+https://github.com/segment-integrations/analytics.js-integration-inspectlet.git",
     "@segment/analytics.js-integration-intercom": "git+https://github.com/segment-integrations/analytics.js-integration-intercom.git",
-    "@segment/analytics.js-integration-keen-io": "git+https://github.com/segment-integrations/analytics.js-integration-keen-io.git",
-    "@segment/analytics.js-integration-kenshoo": "git+https://github.com/segment-integrations/analytics.js-integration-kenshoo.git",
     "@segment/analytics.js-integration-kissmetrics": "git+https://github.com/segment-integrations/analytics.js-integration-kissmetrics.git",
     "@segment/analytics.js-integration-klaviyo": "git+https://github.com/segment-integrations/analytics.js-integration-klaviyo.git",
-    "@segment/analytics.js-integration-livechat": "git+https://github.com/segment-integrations/analytics.js-integration-livechat.git",
-    "@segment/analytics.js-integration-lucky-orange": "git+https://github.com/segment-integrations/analytics.js-integration-lucky-orange.git",
-    "@segment/analytics.js-integration-lytics": "git+https://github.com/segment-integrations/analytics.js-integration-lytics.git",
-    "@segment/analytics.js-integration-madkudu": "git+https://github.com/segment-integrations/analytics.js-integration-madkudu.git",
     "@segment/analytics.js-integration-mixpanel": "git+https://github.com/segment-integrations/analytics.js-integration-mixpanel.git",
-    "@segment/analytics.js-integration-mojn": "git+https://github.com/segment-integrations/analytics.js-integration-mojn.git",
-    "@segment/analytics.js-integration-mouseflow": "git+https://github.com/segment-integrations/analytics.js-integration-mouseflow.git",
-    "@segment/analytics.js-integration-mousestats": "git+https://github.com/segment-integrations/analytics.js-integration-mousestats.git",
-    "@segment/analytics.js-integration-navilytics": "git+https://github.com/segment-integrations/analytics.js-integration-navilytics.git",
-    "@segment/analytics.js-integration-nudgespot": "git+https://github.com/segment-integrations/analytics.js-integration-nudgespot.git",
-    "@segment/analytics.js-integration-olark": "git+https://github.com/segment-integrations/analytics.js-integration-olark.git",
     "@segment/analytics.js-integration-optimizely": "git+https://github.com/segment-integrations/analytics.js-integration-optimizely.git",
-    "@segment/analytics.js-integration-outbound": "git+https://github.com/segment-integrations/analytics.js-integration-outbound.git",
-    "@segment/analytics.js-integration-parsely": "git+https://github.com/segment-integrations/analytics.js-integration-parsely.git",
-    "@segment/analytics.js-integration-perfect-audience": "git+https://github.com/segment-integrations/analytics.js-integration-perfect-audience.git",
-    "@segment/analytics.js-integration-pingdom": "git+https://github.com/segment-integrations/analytics.js-integration-pingdom.git",
-    "@segment/analytics.js-integration-piwik": "git+https://github.com/segment-integrations/analytics.js-integration-piwik.git",
-    "@segment/analytics.js-integration-preact": "git+https://github.com/segment-integrations/analytics.js-integration-preact.git",
-    "@segment/analytics.js-integration-qualaroo": "git+https://github.com/segment-integrations/analytics.js-integration-qualaroo.git",
-    "@segment/analytics.js-integration-quantcast": "git+https://github.com/segment-integrations/analytics.js-integration-quantcast.git",
-    "@segment/analytics.js-integration-quanticmind": "git+https://github.com/segment-integrations/analytics.js-integration-quanticmind.git",
-    "@segment/analytics.js-integration-ramen": "git+https://github.com/segment-integrations/analytics.js-integration-ramen.git",
-    "@segment/analytics.js-integration-rollbar": "git+https://github.com/segment-integrations/analytics.js-integration-rollbar.git",
-    "@segment/analytics.js-integration-route": "git+https://github.com/segment-integrations/analytics.js-integration-route.git",
-    "@segment/analytics.js-integration-saasquatch": "git+https://github.com/segment-integrations/analytics.js-integration-saasquatch.git",
-    "@segment/analytics.js-integration-satismeter": "git+https://github.com/segment-integrations/analytics.js-integration-satismeter.git",
     "@segment/analytics.js-integration-segmentio": "git+https://github.com/segment-integrations/analytics.js-integration-segmentio.git",
-    "@segment/analytics.js-integration-sentry": "git+https://github.com/segment-integrations/analytics.js-integration-sentry.git",
-    "@segment/analytics.js-integration-simplereach": "git+https://github.com/segment-integrations/analytics.js-integration-simplereach.git",
-    "@segment/analytics.js-integration-snapengage": "git+https://github.com/segment-integrations/analytics.js-integration-snapengage.git",
-    "@segment/analytics.js-integration-spinnakr": "git+https://github.com/segment-integrations/analytics.js-integration-spinnakr.git",
-    "@segment/analytics.js-integration-supporthero": "git+https://github.com/segment-integrations/analytics.js-integration-supporthero.git",
-    "@segment/analytics.js-integration-taplytics": "git+https://github.com/segment-integrations/analytics.js-integration-taplytics.git",
-    "@segment/analytics.js-integration-tapstream": "git+https://github.com/segment-integrations/analytics.js-integration-tapstream.git",
-    "@segment/analytics.js-integration-trakio": "git+https://github.com/segment-integrations/analytics.js-integration-trakio.git",
-    "@segment/analytics.js-integration-twitter-ads": "git+https://github.com/segment-integrations/analytics.js-integration-twitter-ads.git",
-    "@segment/analytics.js-integration-userlike": "git+https://github.com/segment-integrations/analytics.js-integration-userlike.git",
-    "@segment/analytics.js-integration-uservoice": "git+https://github.com/segment-integrations/analytics.js-integration-uservoice.git",
-    "@segment/analytics.js-integration-vero": "git+https://github.com/segment-integrations/analytics.js-integration-vero.git",
-    "@segment/analytics.js-integration-visual-website-optimizer": "git+https://github.com/segment-integrations/analytics.js-integration-visual-website-optimizer.git",
-    "@segment/analytics.js-integration-webengage": "git+https://github.com/segment-integrations/analytics.js-integration-webengage.git",
-    "@segment/analytics.js-integration-woopra": "git+https://github.com/segment-integrations/analytics.js-integration-woopra.git",
-    "@segment/analytics.js-integration-wootric": "git+https://github.com/segment-integrations/analytics.js-integration-wootric.git",
-    "@segment/analytics.js-integration-yandex-metrica": "git+https://github.com/segment-integrations/analytics.js-integration-yandex-metrica.git"
+    "@segment/analytics.js-integration-twitter-ads": "git+https://github.com/segment-integrations/analytics.js-integration-twitter-ads.git"
   },
   "devDependencies": {
     "@segment/eslint-config": "^3.1.1",
