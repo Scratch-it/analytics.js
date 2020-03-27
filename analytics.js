@@ -9731,7 +9731,7 @@ ScratchIt.prototype.initialize = function() {
       return null;
     }
 
-    window._ScratchIt = new window.ScratchItAnalytics(self.options.trkId, { url: self.options.url });
+    window._ScratchIt = new window.ScratchItAnalytics(self.options.trkId, { url: self.options.url, mstrId: self.options.mstrId });
     self.ready();
   });
 };
@@ -22380,7 +22380,7 @@ module.exports = function(val){
 module.exports={
   "name": "@segment/analytics.js",
   "author": "Segment.io <friends@segment.io>",
-  "version": "2.11.0-si-7",
+  "version": "2.11.0-si-10",
   "license": "MIT",
   "description": "The hassle-free way to integrate analytics into any web application.",
   "keywords": [
@@ -22405,7 +22405,7 @@ module.exports={
   },
   "homepage": "https://github.com/segmentio/analytics.js#readme",
   "dependencies": {
-    "@segment/analytics.js-integration-scratch-it": "git+https://github.com/Scratch-it/analytics.js-integration-scratch-it#1.0.2",
+    "@segment/analytics.js-integration-scratch-it": "git+https://github.com/Scratch-it/analytics.js-integration-scratch-it#1.0.3",
     "@segment/analytics.js-core": "^3.0.0",
     "@segment/analytics.js-integration": "^3.1.0",
     "@segment/analytics.js-integration-adroll": "git+https://github.com/segment-integrations/analytics.js-integration-adroll.git",
