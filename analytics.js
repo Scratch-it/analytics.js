@@ -19688,7 +19688,7 @@ module.exports = function(val){
 module.exports={
   "name": "@segment/analytics.js",
   "author": "Segment.io <friends@segment.io>",
-  "version": "2.11.0-si-10",
+  "version": "2.11.0-si-12",
   "license": "SEE LICENSE IN LICENSE",
   "description": "The hassle-free way to integrate analytics into any web application.",
   "keywords": [
