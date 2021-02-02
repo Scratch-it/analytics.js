@@ -35,7 +35,7 @@ Object.keys(Integrations).forEach(function(name) {
   analytics.use(Integrations[name]);
 });
 
-},{"../package.json":202,"./integrations":2,"@segment/analytics.js-core":24}],2:[function(require,module,exports){
+},{"../package.json":151,"./integrations":2,"@segment/analytics.js-core":22}],2:[function(require,module,exports){
 /* eslint quote-props: off */
 'use strict';
 
@@ -45,28 +45,18 @@ Object.keys(Integrations).forEach(function(name) {
  Make sure the integrations added are also installed and saved in the package.json
  */
 module.exports = {
-  'adroll': require('@segment/analytics.js-integration-adroll'),
-  'adwords': require('@segment/analytics.js-integration-adwords'),
   'bronto': require('@segment/analytics.js-integration-bronto'),
-  'chartbeat': require('@segment/analytics.js-integration-chartbeat'),
-  'drip': require('@segment/analytics.js-integration-drip'),
-  'facebook-conversion-tracking': require('@segment/analytics.js-integration-facebook-conversion-tracking'),
-  'facebook-custom-audiences': require('@segment/analytics.js-integration-facebook-custom-audiences'),
   'facebook-pixel': require('@segment/analytics.js-integration-facebook-pixel'),
   'google-analytics': require('@segment/analytics.js-integration-google-analytics'),
-  'google-tag-manager': require('@segment/analytics.js-integration-google-tag-manager'),
   'hubspot': require('@segment/analytics.js-integration-hubspot'),
   'intercom': require('@segment/analytics.js-integration-intercom'),
-  'kissmetrics': require('@segment/analytics.js-integration-kissmetrics'),
   'klaviyo': require('@segment/analytics.js-integration-klaviyo'),
-  'mixpanel': require('@segment/analytics.js-integration-mixpanel'),
-  'optimizely': require('@segment/analytics.js-integration-optimizely'),
   'segmentio': require('@segment/analytics.js-integration-segmentio'),
   'twitter-ads': require('@segment/analytics.js-integration-twitter-ads'),
   'scratch-it': require('@segment/analytics.js-integration-scratch-it')
 };
 
-},{"@segment/analytics.js-integration-adroll":32,"@segment/analytics.js-integration-adwords":33,"@segment/analytics.js-integration-bronto":40,"@segment/analytics.js-integration-chartbeat":41,"@segment/analytics.js-integration-drip":42,"@segment/analytics.js-integration-facebook-conversion-tracking":43,"@segment/analytics.js-integration-facebook-custom-audiences":50,"@segment/analytics.js-integration-facebook-pixel":51,"@segment/analytics.js-integration-google-analytics":52,"@segment/analytics.js-integration-google-tag-manager":53,"@segment/analytics.js-integration-hubspot":54,"@segment/analytics.js-integration-intercom":55,"@segment/analytics.js-integration-kissmetrics":62,"@segment/analytics.js-integration-klaviyo":69,"@segment/analytics.js-integration-mixpanel":70,"@segment/analytics.js-integration-optimizely":77,"@segment/analytics.js-integration-scratch-it":86,"@segment/analytics.js-integration-segmentio":87,"@segment/analytics.js-integration-twitter-ads":94}],3:[function(require,module,exports){
+},{"@segment/analytics.js-integration-bronto":30,"@segment/analytics.js-integration-facebook-pixel":31,"@segment/analytics.js-integration-google-analytics":32,"@segment/analytics.js-integration-hubspot":33,"@segment/analytics.js-integration-intercom":34,"@segment/analytics.js-integration-klaviyo":41,"@segment/analytics.js-integration-scratch-it":42,"@segment/analytics.js-integration-segmentio":43,"@segment/analytics.js-integration-twitter-ads":50}],3:[function(require,module,exports){
 'use strict';
 
 /*
@@ -358,7 +348,7 @@ var clone = function clone(obj) {
 
 module.exports = clone;
 
-},{"component-type":140}],6:[function(require,module,exports){
+},{"component-type":94}],6:[function(require,module,exports){
 'use strict';
 
 /*
@@ -1254,44 +1244,6 @@ module.exports = rest;
  * Module dependencies.
  */
 
-var keys = require('@ndhoule/keys');
-
-/**
- * Returns an array containing all enumerable values from a `source` object.
- *
- * @name values
- * @api public
- * @category Object
- * @param {Object} source The object to retrieve values from.
- * @return {Array} An array of all the `source` object's values.
- * @example
- * values({ a: 1, b: 2, c: 3 });
- * //=> [1, 2, 3]
- */
-var values = function values(source) {
-  var ks = keys(source);
-  var results = new Array(ks.length);
-
-  for (var i = 0; i < ks.length; i += 1) {
-    results[i] = source[ks[i]];
-  }
-
-  return results;
-};
-
-/*
- * Exports.
- */
-
-module.exports = values;
-
-},{"@ndhoule/keys":13}],18:[function(require,module,exports){
-'use strict';
-
-/*
- * Module dependencies.
- */
-
 var parse = require('component-querystring').parse;
 
 /**
@@ -1332,66 +1284,7 @@ function ads(query) {
 
 module.exports = ads;
 
-},{"component-querystring":138}],19:[function(require,module,exports){
-
-var type = require('component-type');
-var clone = require('component-clone');
-
-
-/**
- * Expose `alias`.
- */
-
-module.exports = alias;
-
-
-/**
- * Alias an `object`.
- *
- * @param {Object} obj
- * @param {Mixed} method
- */
-
-function alias (obj, method) {
-  switch (type(method)) {
-    case 'object': return aliasByDictionary(clone(obj), method);
-    case 'function': return aliasByFunction(clone(obj), method);
-  }
-}
-
-
-/**
- * Convert the keys in an `obj` using a dictionary of `aliases`.
- *
- * @param {Object} obj
- * @param {Object} aliases
- */
-
-function aliasByDictionary (obj, aliases) {
-  for (var key in aliases) {
-    if (undefined === obj[key]) continue;
-    obj[aliases[key]] = obj[key];
-    delete obj[key];
-  }
-  return obj;
-}
-
-
-/**
- * Convert the keys in an `obj` using a `convert` function.
- *
- * @param {Object} obj
- * @param {Function} convert
- */
-
-function aliasByFunction (obj, convert) {
-  // have to create another object so that ie8 won't infinite loop on keys
-  var output = {};
-  for (var key in obj) output[convert(key)] = obj[key];
-  return output;
-}
-
-},{"component-clone":127,"component-type":140}],20:[function(require,module,exports){
+},{"component-querystring":92}],18:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2252,7 +2145,7 @@ module.exports.store = store;
 module.exports.metrics = metrics;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./cookie":21,"./group":23,"./memory":25,"./metrics":26,"./normalize":27,"./pageDefaults":28,"./store":29,"./user":30,"@ndhoule/after":3,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/pick":15,"@segment/is-meta":104,"@segment/prevent-default":117,"bind-all":125,"component-emitter":134,"component-event":135,"component-querystring":138,"component-type":140,"debug":143,"extend":146,"is":153,"next-tick":166,"segmentio-facade":179}],21:[function(require,module,exports){
+},{"./cookie":19,"./group":21,"./memory":23,"./metrics":24,"./normalize":25,"./pageDefaults":26,"./store":27,"./user":28,"@ndhoule/after":3,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/pick":15,"@segment/is-meta":60,"@segment/prevent-default":73,"bind-all":80,"component-emitter":89,"component-event":90,"component-querystring":92,"component-type":94,"debug":97,"extend":99,"is":106,"next-tick":117,"segmentio-facade":129}],19:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2380,7 +2273,7 @@ module.exports = bindAll(new Cookie());
 
 module.exports.Cookie = Cookie;
 
-},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@segment/top-domain":122,"bind-all":125,"component-cookie":128,"debug":143,"json3":156}],22:[function(require,module,exports){
+},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@segment/top-domain":77,"bind-all":80,"component-cookie":83,"debug":97,"json3":107}],20:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2618,7 +2511,7 @@ Entity.prototype.load = function() {
   this.traits(store.get(this._options.localStorage.key));
 };
 
-},{"./cookie":21,"./memory":25,"./store":29,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"@segment/isodate-traverse":105,"debug":143}],23:[function(require,module,exports){
+},{"./cookie":19,"./memory":23,"./store":27,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"@segment/isodate-traverse":61,"debug":97}],21:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2674,7 +2567,7 @@ module.exports = bindAll(new Group());
 
 module.exports.Group = Group;
 
-},{"./entity":22,"bind-all":125,"debug":143,"inherits":151}],24:[function(require,module,exports){
+},{"./entity":20,"bind-all":80,"debug":97,"inherits":104}],22:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2701,7 +2594,7 @@ analytics.VERSION = require('../package.json').version;
 
 module.exports = analytics;
 
-},{"../package.json":31,"./analytics":20}],25:[function(require,module,exports){
+},{"../package.json":29,"./analytics":18}],23:[function(require,module,exports){
 'use strict';
 
 /*
@@ -2767,7 +2660,7 @@ Memory.prototype.remove = function(key) {
   return true;
 };
 
-},{"@ndhoule/clone":5,"bind-all":125}],26:[function(require,module,exports){
+},{"@ndhoule/clone":5,"bind-all":80}],24:[function(require,module,exports){
 'use strict';
 
 var bindAll = require('bind-all');
@@ -2864,7 +2757,7 @@ module.exports = bindAll(new Metrics());
 
 module.exports.Metrics = Metrics;
 
-},{"@segment/send-json":119,"bind-all":125,"debug":143}],27:[function(require,module,exports){
+},{"@segment/send-json":75,"bind-all":80,"debug":97}],25:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2959,7 +2852,7 @@ function normalize(msg, list) {
   }
 }
 
-},{"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/includes":12,"@ndhoule/map":14,"component-type":140,"debug":143}],28:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/includes":12,"@ndhoule/map":14,"component-type":94,"debug":97}],26:[function(require,module,exports){
 'use strict';
 
 /*
@@ -3023,7 +2916,7 @@ function canonicalUrl(search) {
 
 module.exports = pageDefaults;
 
-},{"@ndhoule/includes":12,"@segment/canonical":101,"component-url":141}],29:[function(require,module,exports){
+},{"@ndhoule/includes":12,"@segment/canonical":57,"component-url":95}],27:[function(require,module,exports){
 'use strict';
 
 /*
@@ -3108,7 +3001,7 @@ module.exports = bindAll(new Store());
 
 module.exports.Store = Store;
 
-},{"@ndhoule/defaults":6,"@segment/store":120,"bind-all":125}],30:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@segment/store":76,"bind-all":80}],28:[function(require,module,exports){
 'use strict';
 
 /*
@@ -3281,7 +3174,7 @@ module.exports = bindAll(new User());
 
 module.exports.User = User;
 
-},{"./cookie":21,"./entity":22,"bind-all":125,"component-cookie":128,"debug":143,"inherits":151,"uuid":199}],31:[function(require,module,exports){
+},{"./cookie":19,"./entity":20,"bind-all":80,"component-cookie":83,"debug":97,"inherits":104,"uuid":148}],29:[function(require,module,exports){
 module.exports={
   "_args": [
     [
@@ -3776,1534 +3669,7 @@ module.exports={
   "version": "3.7.2"
 }
 
-},{}],32:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('@ndhoule/each');
-var foldl = require('@ndhoule/foldl');
-var integration = require('@segment/analytics.js-integration');
-var map = require('@ndhoule/map');
-var snake = require('to-snake-case');
-var useHttps = require('use-https');
-
-/**
- * Expose `AdRoll` integration.
- */
-
-var AdRoll = module.exports = integration('AdRoll')
-  .assumesPageview()
-  .global('__adroll')
-  .global('__adroll_loaded')
-  .global('adroll_adv_id')
-  .global('adroll_custom_data')
-  .global('adroll_email')
-  .global('adroll_pix_id')
-  .option('advId', '')
-  .option('pixId', '')
-  .option('_version', 2)
-  .tag('http', '<script src="http://a.adroll.com/j/roundtrip.js">')
-  .tag('https', '<script src="https://s.adroll.com/j/roundtrip.js">')
-  .mapping('events');
-
-/**
- * Initialize.
- *
- * http://support.adroll.com/getting-started-in-4-easy-steps/#step-one
- * http://support.adroll.com/enhanced-conversion-tracking/
- *
- * @api public
- */
-
-AdRoll.prototype.initialize = function() {
-  window.adroll_adv_id = this.options.advId;
-  window.adroll_pix_id = this.options.pixId;
-  window.__adroll_loaded = true;
-  var name = useHttps() ? 'https' : 'http';
-  this.load(name, this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-AdRoll.prototype.loaded = function() {
-  return !!window.__adroll;
-};
-
-/**
- * Page.
- *
- * http://support.adroll.com/segmenting-clicks/
- *
- * @api public
- * @param {Page} page
- */
-
-AdRoll.prototype.page = function(page) {
-  this.track(page.track(page.fullName()));
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-AdRoll.prototype.identify = function(identify) {
-  if (identify.email()) {
-    window.adroll_email = identify.email();
-    window.__adroll.record_adroll_email('segment');
-  }
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-AdRoll.prototype.track = function(track) {
-  var events = this.events(track.event());
-  var userId = this.analytics.user().id();
-  var data = formulateData(track, { revenue: 'adroll_conversion_value' });
-  // As of April 2015, Adroll no longer accepts segments by name, instead
-  // segmenting exclusively by segment ID, which will be present in events map
-  // TODO: Deprecate and remove this behavior
-  if (this.options._version === 1) {
-    // If this is an unmapped event, fall back on a snakeized event name
-    if (!events.length) events = [track.event()];
-    // legacy (v1) behavior is to snakeize all mapped `events` values
-    events = map(snake, events);
-  }
-
-  if (userId) data.user_id = userId;
-
-  sendConversion(events, data);
-};
-
-/**
- * Product Viewed/Added
- *
- * @api public
- * @param {Track} track
- */
-
-AdRoll.prototype.productViewed = AdRoll.prototype.productAdded = function(track) {
-  var events = this.events(track.event());
-  var userId = this.analytics.user().id();
-  var data = formulateData(track, {
-    id: 'product_id',
-    productId: 'product_id',
-    price: 'adroll_conversion_value'
-  });
-
-  if (this.options._version === 1) {
-    // If this is an unmapped event, fall back on a snakeized event name
-    if (!events.length) events = [track.event()];
-    // legacy (v1) behavior is to snakeize all mapped `events` values
-    events = map(snake, events);
-  }
-
-  if (userId) data.user_id = userId;
-
-  sendConversion(events, data);
-};
-
-/**
- * Order Completed
- *
- * @api public
- * @param {Track} track
- */
-
-AdRoll.prototype.orderCompleted = function(track) {
-  var events = this.events(track.event());
-  var userId = this.analytics.user().id();
-  var data = formulateData(track, {
-    orderId: 'order_id',
-    revenue: 'adroll_conversion_value'
-  });
-
-  if (track.properties().currency) {
-    data.adroll_currency = track.properties().currency;
-    delete data.currency;
-  }
-
-  if (this.options._version === 1) {
-    // If this is an unmapped event, fall back on a snakeized event name
-    if (!events.length) events = [track.event()];
-    // legacy (v1) behavior is to snakeize all mapped `events` values
-    events = map(snake, events);
-  }
-
-  if (userId) data.user_id = userId;
-
-  sendConversion(events, data);
-};
-
-/**
- * Send conversion events
- *
- * @params {Object, Object} events, data
- * @api private
- */
-
-function sendConversion(events, data) {
-  each(function(segmentId) {
-    data.adroll_segments = segmentId;
-    window.__adroll.record_user(data);
-  }, events);
-}
-
-/**
- * Format data payload
- *
- * @params {Object, Object} track, alias
- * @api private
- */
-
-function formulateData(track, alias) {
-  var aliases = alias || {};
-  var ret = foldl(function(props, val, key) {
-    props[snake(key)] = val;
-    return props;
-  }, track.properties(aliases));
-
-  return ret;
-}
-
-},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/map":14,"@segment/analytics.js-integration":95,"to-snake-case":191,"use-https":196}],33:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var when = require('do-when');
-
-/**
- * Expose `AdWords`.
- */
-
-var AdWords = module.exports = integration('AdWords')
-  .option('conversionId', '')
-  .option('pageRemarketing', false)
-  .option('eventMappings', [])
-  .tag('<script src="//www.googleadservices.com/pagead/conversion_async.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-AdWords.prototype.initialize = function() {
-  var loaded = this.loaded;
-  var ready = this.ready;
-  this.load(function() {
-    when(loaded, ready);
-  });
-};
-
-/**
- * Loaded.
- *
- * @api private
- * @return {boolean}
- */
-
-AdWords.prototype.loaded = function() {
-  return !!(document.body && window.google_trackConversion);
-};
-
-/**
- * Page.
- *
- * https://support.google.com/adwords/answer/3111920#standard_parameters
- * https://support.google.com/adwords/answer/3103357
- * https://developers.google.com/adwords-remarketing-tag/asynchronous/
- * https://developers.google.com/adwords-remarketing-tag/parameters
- *
- * @api public
- * @param {Page} page
- */
-
-AdWords.prototype.page = function(page) {
-  // Remarketing option can support both Adwords' "static" or "dynamic" remarketing tags
-  // Difference is static you don't need to send props under `google_custom_params`
-  var remarketing = this.options.pageRemarketing;
-  var id = this.options.conversionId;
-  var props = page.properties();
-
-  // Conversion tag
-  window.google_trackConversion({
-    google_conversion_id: id,
-    google_custom_params: {},
-    google_remarketing_only: false // this ensures that this is a conversion tag
-  });
-
-  // Remarketing tag (must be sent in _addition_ to any conversion tags)
-  // https://developers.google.com/adwords-remarketing-tag/
-  if (remarketing) {
-    window.google_trackConversion({
-      google_conversion_id: id,
-      google_custom_params: props,
-      google_remarketing_only: true // this ensures that this is a remarketing tag
-    });
-  }
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track}
- */
-
-AdWords.prototype.track = function(track) {
-  var self = this;
-  var props = track.properties();
-  var eventMappings = this.options.eventMappings;
-  var revenue = track.revenue() || 0;
-
-  eventMappings.forEach(function(mapping) {
-    if (mapping.value) {
-      if (mapping.value.eventName.toLowerCase() !== track.event().toLowerCase()) return;
-      var id = mapping.value.conversionId ||  self.options.conversionId;  // customer can either specify one global conversion id or one per  mapping
-  
-      // Fire conversion tag
-      if (mapping.value.label !== '') {
-        delete props.revenue;
-      
-        window.google_trackConversion({
-          google_conversion_id: id,
-          google_custom_params: props,
-          google_conversion_language: 'en',
-          google_conversion_format: '3',
-          google_conversion_color: 'ffffff',
-          google_conversion_label: mapping.value.label,
-          google_conversion_value: revenue,
-          google_remarketing_only: false // ensure this is a conversion tag
-        });
-      }
-  
-      // Fire remarketing tag
-      if (mapping.value.remarketing) {
-        window.google_trackConversion({
-          google_conversion_id: id,
-          google_custom_params: props, // do not send PII here!
-          google_remarketing_only: true // ensure this is a remarketing tag
-        });
-      }
-    } else {
-      if (mapping.eventName.toLowerCase() !== track.event().toLowerCase()) return;
-      id = mapping.conversionId ||  self.options.conversionId;  // customer can either specify one global conversion id or one per  mapping
-  
-      // Fire conversion tag
-      if (mapping.label !== '') {
-        delete props.revenue;
-      
-        window.google_trackConversion({
-          google_conversion_id: id,
-          google_custom_params: props,
-          google_conversion_language: 'en',
-          google_conversion_format: '3',
-          google_conversion_color: 'ffffff',
-          google_conversion_label: mapping.label,
-          google_conversion_value: revenue,
-          google_remarketing_only: false // ensure this is a conversion tag
-        });
-      }
-  
-      // Fire remarketing tag
-      if (mapping.remarketing) {
-        window.google_trackConversion({
-          google_conversion_id: id,
-          google_custom_params: props, // do not send PII here!
-          google_remarketing_only: true // ensure this is a remarketing tag
-        });
-      }
-    }
-  });
-};
-
-},{"@segment/analytics.js-integration":34,"do-when":144}],34:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var bind = require('component-bind');
-var clone = require('@ndhoule/clone');
-var debug = require('debug');
-var defaults = require('@ndhoule/defaults');
-var extend = require('@ndhoule/extend');
-var slug = require('slug-component');
-var protos = require('./protos');
-var statics = require('./statics');
-
-/**
- * Create a new `Integration` constructor.
- *
- * @constructs Integration
- * @param {string} name
- * @return {Function} Integration
- */
-
-function createIntegration(name) {
-  /**
-   * Initialize a new `Integration`.
-   *
-   * @class
-   * @param {Object} options
-   */
-
-  function Integration(options) {
-    if (options && options.addIntegration) {
-      // plugin
-      return options.addIntegration(Integration);
-    }
-    this.debug = debug('analytics:integration:' + slug(name));
-    this.options = defaults(clone(options) || {}, this.defaults);
-    this._queue = [];
-    this.once('ready', bind(this, this.flush));
-
-    Integration.emit('construct', this);
-    this.ready = bind(this, this.ready);
-    this._wrapInitialize();
-    this._wrapPage();
-    this._wrapTrack();
-  }
-
-  Integration.prototype.defaults = {};
-  Integration.prototype.globals = [];
-  Integration.prototype.templates = {};
-  Integration.prototype.name = name;
-  extend(Integration, statics);
-  extend(Integration.prototype, protos);
-
-  return Integration;
-}
-
-/**
- * Exports.
- */
-
-module.exports = createIntegration;
-
-},{"./protos":35,"./statics":36,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":38,"slug-component":185}],35:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Emitter = require('component-emitter');
-var after = require('@ndhoule/after');
-var each = require('@ndhoule/each');
-var events = require('analytics-events');
-var every = require('@ndhoule/every');
-var fmt = require('@segment/fmt');
-var foldl = require('@ndhoule/foldl');
-var is = require('is');
-var loadIframe = require('load-iframe');
-var loadScript = require('@segment/load-script');
-var nextTick = require('next-tick');
-var normalize = require('to-no-case');
-
-/**
- * hasOwnProperty reference.
- */
-
-var has = Object.prototype.hasOwnProperty;
-
-/**
- * No operation.
- */
-
-var noop = function noop() {};
-
-/**
- * Window defaults.
- */
-
-var onerror = window.onerror;
-var onload = null;
-
-/**
- * Mixin emitter.
- */
-
-/* eslint-disable new-cap */
-Emitter(exports);
-/* eslint-enable new-cap */
-
-/**
- * Initialize.
- */
-
-exports.initialize = function() {
-  var ready = this.ready;
-  nextTick(ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-exports.loaded = function() {
-  return false;
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-/* eslint-disable no-unused-vars */
-exports.page = function(page) {};
-/* eslint-enable no-unused-vars */
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-/* eslint-disable no-unused-vars */
-exports.track = function(track) {};
-/* eslint-enable no-unused-vars */
-
-/**
- * Get values from items in `options` that are mapped to `key`.
- * `options` is an integration setting which is a collection
- * of type 'map', 'array', or 'mixed'
- *
- * Use cases include mapping events to pixelIds (map), sending generic
- * conversion pixels only for specific events (array), or configuring dynamic
- * mappings of event properties to query string parameters based on event (mixed)
- *
- * @api public
- * @param {Object|Object[]|String[]} options An object, array of objects, or
- * array of strings pulled from settings.mapping.
- * @param {string} key The name of the item in options whose metadata
- * we're looking for.
- * @return {Array} An array of settings that match the input `key` name.
- * @example
- *
- * // 'Map'
- * var events = { my_event: 'a4991b88' };
- * .map(events, 'My Event');
- * // => ["a4991b88"]
- * .map(events, 'whatever');
- * // => []
- *
- * // 'Array'
- * * var events = ['Completed Order', 'My Event'];
- * .map(events, 'My Event');
- * // => ["My Event"]
- * .map(events, 'whatever');
- * // => []
- *
- * // 'Mixed'
- * var events = [{ key: 'my event', value: '9b5eb1fa' }];
- * .map(events, 'my_event');
- * // => ["9b5eb1fa"]
- * .map(events, 'whatever');
- * // => []
- */
-
-exports.map = function(options, key) {
-  var normalizedComparator = normalize(key);
-  var mappingType = getMappingType(options);
-
-  if (mappingType === 'unknown') {
-    return [];
-  }
-
-  return foldl(function(matchingValues, val, key) {
-    var compare;
-    var result;
-
-    if (mappingType === 'map') {
-      compare = key;
-      result = val;
-    }
-
-    if (mappingType === 'array') {
-      compare = val;
-      result = val;
-    }
-
-    if (mappingType === 'mixed') {
-      compare = val.key;
-      result = val.value;
-    }
-
-    if (normalize(compare) === normalizedComparator) {
-      matchingValues.push(result);
-    }
-
-    return matchingValues;
-  }, [], options);
-};
-
-/**
- * Invoke a `method` that may or may not exist on the prototype with `args`,
- * queueing or not depending on whether the integration is "ready". Don't
- * trust the method call, since it contains integration party code.
- *
- * @api private
- * @param {string} method
- * @param {...*} args
- */
-
-exports.invoke = function(method) {
-  if (!this[method]) return;
-  var args = Array.prototype.slice.call(arguments, 1);
-  if (!this._ready) return this.queue(method, args);
-
-  this.debug('%s with %o', method, args);
-  return this[method].apply(this, args);
-};
-
-/**
- * Queue a `method` with `args`. If the integration assumes an initial
- * pageview, then let the first call to `page` pass through.
- *
- * @api private
- * @param {string} method
- * @param {Array} args
- */
-
-exports.queue = function(method, args) {
-  if (method === 'page' && this._assumesPageview && !this._initialized) {
-    return this.page.apply(this, args);
-  }
-
-  this._queue.push({ method: method, args: args });
-};
-
-/**
- * Flush the internal queue.
- *
- * @api private
- */
-
-exports.flush = function() {
-  this._ready = true;
-  var self = this;
-
-  each(function(call) {
-    self[call.method].apply(self, call.args);
-  }, this._queue);
-
-  // Empty the queue.
-  this._queue.length = 0;
-};
-
-/**
- * Reset the integration, removing its global variables.
- *
- * @api private
- */
-
-exports.reset = function() {
-  for (var i = 0; i < this.globals.length; i++) {
-    window[this.globals[i]] = undefined;
-  }
-
-  window.onerror = onerror;
-  window.onload = onload;
-};
-
-/**
- * Load a tag by `name`.
- *
- * @param {string} name The name of the tag.
- * @param {Object} locals Locals used to populate the tag's template variables
- * (e.g. `userId` in '<img src="https://whatever.com/{{ userId }}">').
- * @param {Function} [callback=noop] A callback, invoked when the tag finishes
- * loading.
- */
-
-exports.load = function(name, locals, callback) {
-  // Argument shuffling
-  if (typeof name === 'function') { callback = name; locals = null; name = null; }
-  if (name && typeof name === 'object') { callback = locals; locals = name; name = null; }
-  if (typeof locals === 'function') { callback = locals; locals = null; }
-
-  // Default arguments
-  name = name || 'library';
-  locals = locals || {};
-
-  locals = this.locals(locals);
-  var template = this.templates[name];
-  if (!template) throw new Error(fmt('template "%s" not defined.', name));
-  var attrs = render(template, locals);
-  callback = callback || noop;
-  var self = this;
-  var el;
-
-  switch (template.type) {
-  case 'img':
-    attrs.width = 1;
-    attrs.height = 1;
-    el = loadImage(attrs, callback);
-    break;
-  case 'script':
-    el = loadScript(attrs, function(err) {
-      if (!err) return callback();
-      self.debug('error loading "%s" error="%s"', self.name, err);
-    });
-      // TODO: hack until refactoring load-script
-    delete attrs.src;
-    each(function(val, key) {
-      el.setAttribute(key, val);
-    }, attrs);
-    break;
-  case 'iframe':
-    el = loadIframe(attrs, callback);
-    break;
-  default:
-      // No default case
-  }
-
-  return el;
-};
-
-/**
- * Locals for tag templates.
- *
- * By default it includes a cache buster and all of the options.
- *
- * @param {Object} [locals]
- * @return {Object}
- */
-
-exports.locals = function(locals) {
-  locals = locals || {};
-  var cache = Math.floor(new Date().getTime() / 3600000);
-  if (!locals.hasOwnProperty('cache')) locals.cache = cache;
-  each(function(val, key) {
-    if (!locals.hasOwnProperty(key)) locals[key] = val;
-  }, this.options);
-  return locals;
-};
-
-/**
- * Simple way to emit ready.
- *
- * @api public
- */
-
-exports.ready = function() {
-  this.emit('ready');
-};
-
-/**
- * Wrap the initialize method in an exists check, so we don't have to do it for
- * every single integration.
- *
- * @api private
- */
-
-exports._wrapInitialize = function() {
-  var initialize = this.initialize;
-  this.initialize = function() {
-    this.debug('initialize');
-    this._initialized = true;
-    var ret = initialize.apply(this, arguments);
-    this.emit('initialize');
-    return ret;
-  };
-
-  if (this._assumesPageview) this.initialize = after(2, this.initialize);
-};
-
-/**
- * Wrap the page method to call `initialize` instead if the integration assumes
- * a pageview.
- *
- * @api private
- */
-
-exports._wrapPage = function() {
-  var page = this.page;
-  this.page = function() {
-    if (this._assumesPageview && !this._initialized) {
-      return this.initialize.apply(this, arguments);
-    }
-
-    return page.apply(this, arguments);
-  };
-};
-
-/**
- * Wrap the track method to call other ecommerce methods if available depending
- * on the `track.event()`.
- *
- * @api private
- */
-
-exports._wrapTrack = function() {
-  var t = this.track;
-  this.track = function(track) {
-    var event = track.event();
-    var called;
-    var ret;
-
-    for (var method in events) {
-      if (has.call(events, method)) {
-        var regexp = events[method];
-        if (!this[method]) continue;
-        if (!regexp.test(event)) continue;
-        ret = this[method].apply(this, arguments);
-        called = true;
-        break;
-      }
-    }
-
-    if (!called) ret = t.apply(this, arguments);
-    return ret;
-  };
-};
-
-/**
- * Determine the type of the option passed to `#map`
- *
- * @api private
- * @param {Object|Object[]} mapping
- * @return {String} mappingType
- */
-
-function getMappingType(mapping) {
-  if (is.array(mapping)) {
-    return every(isMixed, mapping) ? 'mixed' : 'array';
-  }
-  if (is.object(mapping)) return 'map';
-  return 'unknown';
-}
-
-/**
- * Determine if item in mapping array is a valid "mixed" type value
- *
- * Must be an object with properties "key" (of type string)
- * and "value" (of any type)
- *
- * @api private
- * @param {*} item
- * @return {Boolean}
- */
-
-function isMixed(item) {
-  if (!is.object(item)) return false;
-  if (!is.string(item.key)) return false;
-  if (!has.call(item, 'value')) return false;
-  return true;
-}
-
-/**
- * TODO: Document me
- *
- * @api private
- * @param {Object} attrs
- * @param {Function} fn
- * @return {Image}
- */
-
-function loadImage(attrs, fn) {
-  fn = fn || function() {};
-  var img = new Image();
-  img.onerror = error(fn, 'failed to load pixel', img);
-  img.onload = function() { fn(); };
-  img.src = attrs.src;
-  img.width = 1;
-  img.height = 1;
-  return img;
-}
-
-/**
- * TODO: Document me
- *
- * @api private
- * @param {Function} fn
- * @param {string} message
- * @param {Element} img
- * @return {Function}
- */
-
-function error(fn, message, img) {
-  return function(e) {
-    e = e || window.event;
-    var err = new Error(message);
-    err.event = e;
-    err.source = img;
-    fn(err);
-  };
-}
-
-/**
- * Render template + locals into an `attrs` object.
- *
- * @api private
- * @param {Object} template
- * @param {Object} locals
- * @return {Object}
- */
-
-function render(template, locals) {
-  return foldl(function(attrs, val, key) {
-    attrs[key] = val.replace(/\{\{\ *(\w+)\ *\}\}/g, function(_, $1) {
-      return locals[$1];
-    });
-    return attrs;
-  }, {}, template.attrs);
-}
-
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":37,"component-emitter":134,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],36:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var Emitter = require('component-emitter');
-var domify = require('domify');
-var each = require('@ndhoule/each');
-var includes = require('@ndhoule/includes');
-
-/**
- * Mix in emitter.
- */
-
-/* eslint-disable new-cap */
-Emitter(exports);
-/* eslint-enable new-cap */
-
-/**
- * Add a new option to the integration by `key` with default `value`.
- *
- * @api public
- * @param {string} key
- * @param {*} value
- * @return {Integration}
- */
-
-exports.option = function(key, value) {
-  this.prototype.defaults[key] = value;
-  return this;
-};
-
-/**
- * Add a new mapping option.
- *
- * This will create a method `name` that will return a mapping for you to use.
- *
- * @api public
- * @param {string} name
- * @return {Integration}
- * @example
- * Integration('My Integration')
- *   .mapping('events');
- *
- * new MyIntegration().track('My Event');
- *
- * .track = function(track){
- *   var events = this.events(track.event());
- *   each(send, events);
- *  };
- */
-
-exports.mapping = function(name) {
-  this.option(name, []);
-  this.prototype[name] = function(key) {
-    return this.map(this.options[name], key);
-  };
-  return this;
-};
-
-/**
- * Register a new global variable `key` owned by the integration, which will be
- * used to test whether the integration is already on the page.
- *
- * @api public
- * @param {string} key
- * @return {Integration}
- */
-
-exports.global = function(key) {
-  this.prototype.globals.push(key);
-  return this;
-};
-
-/**
- * Mark the integration as assuming an initial pageview, so to defer loading
- * the script until the first `page` call, noop the first `initialize`.
- *
- * @api public
- * @return {Integration}
- */
-
-exports.assumesPageview = function() {
-  this.prototype._assumesPageview = true;
-  return this;
-};
-
-/**
- * Mark the integration as being "ready" once `load` is called.
- *
- * @api public
- * @return {Integration}
- */
-
-exports.readyOnLoad = function() {
-  this.prototype._readyOnLoad = true;
-  return this;
-};
-
-/**
- * Mark the integration as being "ready" once `initialize` is called.
- *
- * @api public
- * @return {Integration}
- */
-
-exports.readyOnInitialize = function() {
-  this.prototype._readyOnInitialize = true;
-  return this;
-};
-
-/**
- * Define a tag to be loaded.
- *
- * @api public
- * @param {string} [name='library'] A nicename for the tag, commonly used in
- * #load. Helpful when the integration has multiple tags and you need a way to
- * specify which of the tags you want to load at a given time.
- * @param {String} str DOM tag as string or URL.
- * @return {Integration}
- */
-
-exports.tag = function(name, tag) {
-  if (tag == null) {
-    tag = name;
-    name = 'library';
-  }
-  this.prototype.templates[name] = objectify(tag);
-  return this;
-};
-
-/**
- * Given a string, give back DOM attributes.
- *
- * Do it in a way where the browser doesn't load images or iframes. It turns
- * out domify will load images/iframes because whenever you construct those
- * DOM elements, the browser immediately loads them.
- *
- * @api private
- * @param {string} str
- * @return {Object}
- */
-
-function objectify(str) {
-  // replace `src` with `data-src` to prevent image loading
-  str = str.replace(' src="', ' data-src="');
-
-  var el = domify(str);
-  var attrs = {};
-
-  each(function(attr) {
-    // then replace it back
-    var name = attr.name === 'data-src' ? 'src' : attr.name;
-    if (!includes(attr.name + '=', str)) return;
-    attrs[name] = attr.value;
-  }, el.attributes);
-
-  return {
-    type: el.tagName.toLowerCase(),
-    attrs: attrs
-  };
-}
-
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145}],37:[function(require,module,exports){
-
-module.exports = {
-  // Promotions
-  promotionViewed: /^[ _]?promotion[ _]?viewed?[ _]?$/i,
-  viewedPromotion: /^[ _]?viewed[ _]?promotion?[ _]?$/i,
-  promotionClicked: /^[ _]?promotion[ _]?clicked?[ _]?$/i,
-  clickedPromotion: /^[ _]?clicked[ _]?promotion?[ _]?$/i,
-  // Browsing
-  productsSearched: /^[ _]?products[ _]?searched[ _]?$/i,
-  productListViewed: /^[ _]?product[ _]?list[ _]?viewed[ _]?$/i,
-  productListFiltered: /^[ _]?product[ _]?list[ _]?filtered[ _]?$/i,
-  viewedProductCategory: /^[ _]?viewed[ _]?product[ _]?category[ _]?$/i,
-  viewedProductDetails: /^[ _]?viewed[ _]?product[ _]?details?[ _]?$/i,
-  // Core Ordering
-  productClicked: /^[ _]?product[ _]?clicked[ _]?$/i,
-  clickedProduct: /^[ _]?clicked[ _]?product[ _]?$/i,
-  productViewed: /^[ _]?product[ _]?viewed[ _]?$/i,
-  viewedProduct: /^[ _]?viewed[ _]?product[ _]?$/i,
-  productAdded: /^[ _]?product[ _]?added[ _]?$/i,
-  addedProduct: /^[ _]?added[ _]?product[ _]?$/i,
-  productRemoved: /^[ _]?product[ _]?removed[ _]?$/i,
-  removedProduct: /^[ _]?removed[ _]?product[ _]?$/i,
-  cartViewed: /^[ _]?cart[ _]?viewed[ _]?$/i,
-  orderStarted: /^[ _]?order[ _]?started[ _]?$/i,
-  startedOrder: /^[ _]?started[ _]?order[ _]?$/i,
-  orderUpdated: /^[ _]?order[ _]?updated[ _]?$/i,
-  updatedOrder: /^[ _]?updated[ _]?order[ _]?$/i,
-  orderCompleted: /^[ _]?order[ _]?completed[ _]?$/i,
-  completedOrder: /^[ _]?completed[ _]?order[ _]?$/i,
-  orderRefunded: /^[ _]?order[ _]?refunded[ _]?$/i,
-  refundedOrder: /^[ _]?refunded[ _]?order[ _]?$/i,
-  orderCancelled: /^[ _]?order[ _]?cancelled[ _]?$/i,
-  paymentInfoAdded: /^[ _]?payment[ _]?info[ _]?added[ _]?$/i,
-  checkoutStarted: /^[ _]?checkout[ _]?started[ _]?$/i,
-  checkoutStepViewed: /^[ _]?checkout[ _]?step[ _]?viewed[ _]?$/i,
-  viewedCheckoutStep: /^[ _]?viewed[ _]?checkout[ _]?step[ _]?$/i,
-  checkoutStepCompleted: /^[ _]?checkout[ _]?step[ _]?completed[ _]?$/i,
-  completedCheckoutStep: /^[ _]?completed[ _]?checkout[ _]?step[ _]?$/i,
-  // Coupons
-  couponEntered: /^[ _]?coupon[ _]?entered[ _]?$/i,
-  couponApplied: /^[ _]?coupon[ _]?applied[ _]?$/i,
-  couponDenied: /^[ _]?coupon[ _]?denied[ _]?$/i,
-  couponRemoved: /^[ _]?coupon[ _]?removed[ _]?$/i,
-  // Wishlisting
-  productAddedToWishlist: /^[ _]?product[ _]?added[ _]?to[ _]?wishlist[ _]?$/i,
-  wishlistProductRemoved: /^[ _]?wishlist[ _]?product[ _]?removed[ _]?$/i,
-  wishlistProductAddedToCart: /^[ _]?wishlist[ _]?product[ _]?added[ _]?to[ _]?cart[ _]?$/i,
-  // Sharing
-  productShared: /^[ _]?product[ _]?shared[ _]?$/i,
-  cartShared: /^[ _]?cart[ _]?shared[ _]?$/i,
-  // Reviewing
-  productRemoved: /^[ _]?product[ _]?removed[ _]?$/i,
-  // App Lifecycle
-  applicationInstalled: /^[ _]?application[ _]?installed[ _]?$/i,
-  applicationUpdated: /^[ _]?application[ _]?updated[ _]?$/i,
-  applicationOpened: /^[ _]?application[ _]?opened[ _]?$/i,
-  applicationBackgrounded: /^[ _]?application[ _]?backgrounded[ _]?$/i,
-  applicationUninstalled: /^[ _]?application[ _]?uninstalled[ _]?$/i,
-  // App Campaign and Referral Events
-  installAttributed: /^[ _]?install[ _]?attributed[ _]?$/i,
-  deepLinkOpened: /^[ _]?deep[ _]?link[ _]?opened[ _]?$/i,
-  pushNotificationReceived: /^[ _]?push[ _]?notification[ _]?received[ _]?$/i,
-  pushNotificationTapped: /^[ _]?push[ _]?notification[ _]?received[ _]?$/i,
-  pushNotificationBounced: /^[ _]?push[ _]?notification[ _]?bounced[ _]?$/i
-};
-
-},{}],38:[function(require,module,exports){
-(function (process){
-/**
- * This is the web browser implementation of `debug()`.
- *
- * Expose `debug()` as the module.
- */
-
-exports = module.exports = require('./debug');
-exports.log = log;
-exports.formatArgs = formatArgs;
-exports.save = save;
-exports.load = load;
-exports.useColors = useColors;
-exports.storage = 'undefined' != typeof chrome
-               && 'undefined' != typeof chrome.storage
-                  ? chrome.storage.local
-                  : localstorage();
-
-/**
- * Colors.
- */
-
-exports.colors = [
-  'lightseagreen',
-  'forestgreen',
-  'goldenrod',
-  'dodgerblue',
-  'darkorchid',
-  'crimson'
-];
-
-/**
- * Currently only WebKit-based Web Inspectors, Firefox >= v31,
- * and the Firebug extension (any Firefox version) are known
- * to support "%c" CSS customizations.
- *
- * TODO: add a `localStorage` variable to explicitly enable/disable colors
- */
-
-function useColors() {
-  // NB: In an Electron preload script, document will be defined but not fully
-  // initialized. Since we know we're in Chrome, we'll just detect this case
-  // explicitly
-  if (typeof window !== 'undefined' && window.process && window.process.type === 'renderer') {
-    return true;
-  }
-
-  // is webkit? http://stackoverflow.com/a/16459606/376773
-  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
-  return (typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance) ||
-    // is firebug? http://stackoverflow.com/a/398120/376773
-    (typeof window !== 'undefined' && window.console && (window.console.firebug || (window.console.exception && window.console.table))) ||
-    // is firefox >= v31?
-    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
-    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31) ||
-    // double check webkit in userAgent just in case we are in a worker
-    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
-}
-
-/**
- * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
- */
-
-exports.formatters.j = function(v) {
-  try {
-    return JSON.stringify(v);
-  } catch (err) {
-    return '[UnexpectedJSONParseError]: ' + err.message;
-  }
-};
-
-
-/**
- * Colorize log arguments if enabled.
- *
- * @api public
- */
-
-function formatArgs(args) {
-  var useColors = this.useColors;
-
-  args[0] = (useColors ? '%c' : '')
-    + this.namespace
-    + (useColors ? ' %c' : ' ')
-    + args[0]
-    + (useColors ? '%c ' : ' ')
-    + '+' + exports.humanize(this.diff);
-
-  if (!useColors) return;
-
-  var c = 'color: ' + this.color;
-  args.splice(1, 0, c, 'color: inherit')
-
-  // the final "%c" is somewhat tricky, because there could be other
-  // arguments passed either before or after the %c, so we need to
-  // figure out the correct index to insert the CSS into
-  var index = 0;
-  var lastC = 0;
-  args[0].replace(/%[a-zA-Z%]/g, function(match) {
-    if ('%%' === match) return;
-    index++;
-    if ('%c' === match) {
-      // we only are interested in the *last* %c
-      // (the user may have provided their own)
-      lastC = index;
-    }
-  });
-
-  args.splice(lastC, 0, c);
-}
-
-/**
- * Invokes `console.log()` when available.
- * No-op when `console.log` is not a "function".
- *
- * @api public
- */
-
-function log() {
-  // this hackery is required for IE8/9, where
-  // the `console.log` function doesn't have 'apply'
-  return 'object' === typeof console
-    && console.log
-    && Function.prototype.apply.call(console.log, console, arguments);
-}
-
-/**
- * Save `namespaces`.
- *
- * @param {String} namespaces
- * @api private
- */
-
-function save(namespaces) {
-  try {
-    if (null == namespaces) {
-      exports.storage.removeItem('debug');
-    } else {
-      exports.storage.debug = namespaces;
-    }
-  } catch(e) {}
-}
-
-/**
- * Load `namespaces`.
- *
- * @return {String} returns the previously persisted debug modes
- * @api private
- */
-
-function load() {
-  var r;
-  try {
-    r = exports.storage.debug;
-  } catch(e) {}
-
-  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
-  if (!r && typeof process !== 'undefined' && 'env' in process) {
-    r = process.env.DEBUG;
-  }
-
-  return r;
-}
-
-/**
- * Enable namespaces listed in `localStorage.debug` initially.
- */
-
-exports.enable(load());
-
-/**
- * Localstorage attempts to return the localstorage.
- *
- * This is necessary because safari throws
- * when a user disables cookies/localstorage
- * and you attempt to access it.
- *
- * @return {LocalStorage}
- * @api private
- */
-
-function localstorage() {
-  try {
-    return window.localStorage;
-  } catch (e) {}
-}
-
-}).call(this,require('_process'))
-},{"./debug":39,"_process":170}],39:[function(require,module,exports){
-
-/**
- * This is the common logic for both the Node.js and web browser
- * implementations of `debug()`.
- *
- * Expose `debug()` as the module.
- */
-
-exports = module.exports = createDebug.debug = createDebug['default'] = createDebug;
-exports.coerce = coerce;
-exports.disable = disable;
-exports.enable = enable;
-exports.enabled = enabled;
-exports.humanize = require('ms');
-
-/**
- * The currently active debug mode names, and names to skip.
- */
-
-exports.names = [];
-exports.skips = [];
-
-/**
- * Map of special "%n" handling functions, for the debug "format" argument.
- *
- * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
- */
-
-exports.formatters = {};
-
-/**
- * Previous log timestamp.
- */
-
-var prevTime;
-
-/**
- * Select a color.
- * @param {String} namespace
- * @return {Number}
- * @api private
- */
-
-function selectColor(namespace) {
-  var hash = 0, i;
-
-  for (i in namespace) {
-    hash  = ((hash << 5) - hash) + namespace.charCodeAt(i);
-    hash |= 0; // Convert to 32bit integer
-  }
-
-  return exports.colors[Math.abs(hash) % exports.colors.length];
-}
-
-/**
- * Create a debugger with the given `namespace`.
- *
- * @param {String} namespace
- * @return {Function}
- * @api public
- */
-
-function createDebug(namespace) {
-
-  function debug() {
-    // disabled?
-    if (!debug.enabled) return;
-
-    var self = debug;
-
-    // set `diff` timestamp
-    var curr = +new Date();
-    var ms = curr - (prevTime || curr);
-    self.diff = ms;
-    self.prev = prevTime;
-    self.curr = curr;
-    prevTime = curr;
-
-    // turn the `arguments` into a proper Array
-    var args = new Array(arguments.length);
-    for (var i = 0; i < args.length; i++) {
-      args[i] = arguments[i];
-    }
-
-    args[0] = exports.coerce(args[0]);
-
-    if ('string' !== typeof args[0]) {
-      // anything else let's inspect with %O
-      args.unshift('%O');
-    }
-
-    // apply any `formatters` transformations
-    var index = 0;
-    args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
-      // if we encounter an escaped % then don't increase the array index
-      if (match === '%%') return match;
-      index++;
-      var formatter = exports.formatters[format];
-      if ('function' === typeof formatter) {
-        var val = args[index];
-        match = formatter.call(self, val);
-
-        // now we need to remove `args[index]` since it's inlined in the `format`
-        args.splice(index, 1);
-        index--;
-      }
-      return match;
-    });
-
-    // apply env-specific formatting (colors, etc.)
-    exports.formatArgs.call(self, args);
-
-    var logFn = debug.log || exports.log || console.log.bind(console);
-    logFn.apply(self, args);
-  }
-
-  debug.namespace = namespace;
-  debug.enabled = exports.enabled(namespace);
-  debug.useColors = exports.useColors();
-  debug.color = selectColor(namespace);
-
-  // env-specific initialization logic for debug instances
-  if ('function' === typeof exports.init) {
-    exports.init(debug);
-  }
-
-  return debug;
-}
-
-/**
- * Enables a debug mode by namespaces. This can include modes
- * separated by a colon and wildcards.
- *
- * @param {String} namespaces
- * @api public
- */
-
-function enable(namespaces) {
-  exports.save(namespaces);
-
-  exports.names = [];
-  exports.skips = [];
-
-  var split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
-  var len = split.length;
-
-  for (var i = 0; i < len; i++) {
-    if (!split[i]) continue; // ignore empty strings
-    namespaces = split[i].replace(/\*/g, '.*?');
-    if (namespaces[0] === '-') {
-      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
-    } else {
-      exports.names.push(new RegExp('^' + namespaces + '$'));
-    }
-  }
-}
-
-/**
- * Disable debug output.
- *
- * @api public
- */
-
-function disable() {
-  exports.enable('');
-}
-
-/**
- * Returns true if the given mode name is enabled, false otherwise.
- *
- * @param {String} name
- * @return {Boolean}
- * @api public
- */
-
-function enabled(name) {
-  var i, len;
-  for (i = 0, len = exports.skips.length; i < len; i++) {
-    if (exports.skips[i].test(name)) {
-      return false;
-    }
-  }
-  for (i = 0, len = exports.names.length; i < len; i++) {
-    if (exports.names[i].test(name)) {
-      return true;
-    }
-  }
-  return false;
-}
-
-/**
- * Coerce `val`.
- *
- * @param {Mixed} val
- * @return {Mixed}
- * @api private
- */
-
-function coerce(val) {
-  if (val instanceof Error) return val.stack || val.message;
-  return val;
-}
-
-},{"ms":161}],40:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5405,467 +3771,7 @@ Bronto.prototype.orderCompleted = function(track) {
   });
 };
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":95,"component-querystring":138,"segmentio-facade":179}],41:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var defaults = require('@ndhoule/defaults');
-var integration = require('@segment/analytics.js-integration');
-var onBody = require('on-body');
-
-/**
- * Expose `Chartbeat` integration.
- */
-
-var Chartbeat = module.exports = integration('Chartbeat')
-  .global('_sf_async_config')
-  .global('_sf_endpt')
-  .global('pSUPERFLY')
-  .option('domain', '')
-  .option('uid', null)
-  .option('video', false)
-  .option('sendNameAndCategoryAsTitle', false)
-  .option('subscriberEngagementKeys', [])
-
-  .tag('<script src="//static.chartbeat.com/js/{{ script }}">');
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Chartbeat.prototype.loaded = function() {
-  return !!window.pSUPERFLY;
-};
-
-Chartbeat.prototype.initialize = function() {
-  this.pageCalledYet = false;
-  this._ready = true; // temporarily switch ready to true so that a single page call can fire
-};
-
-/**
- * Page.
- *
- * http://chartbeat.com/docs/handling_virtual_page_changes/
- *
- * @api public
- * @param {Page} page
- */
-
-Chartbeat.prototype.page = function(page) {
-  this.updateConfig(page);
-
-  // since chartbeat automatically calls a page when it loads, don't load chartbeat script until
-  // first Segment page call comes in and configures global config vars using its props
-  if (!this.pageCalledYet) {
-    this._ready = false;  // switch ready to false so that no pages after the first one can fire until _initialize has loaded chartbeat script
-    this.pageCalledYet = true;
-    this._initialize();
-  } else {
-    var props = page.properties();
-    window.pSUPERFLY.virtualPage(props.path);
-  }
-};
-
-// update chartbeat global config vars
-Chartbeat.prototype.updateConfig = function(page) {
-  var category = page.category();
-  var author = page.proxy('properties.author');
-  var props = page.properties();
-
-  // Chartbeat expects the document.title (props.title) to populate as title
-  // This maintains legacy behavior for existing users,
-  // defaults new users to the correct behavior,
-  // and allows current users to opt-in to the correct behavior.
-  // http://support.chartbeat.com/docs/#titles
-  var title;
-  if (this.options.sendNameAndCategoryAsTitle) {
-    title = page.fullName() || props.title;
-  } else {
-    title = props.title;
-  }
-
-  // update general config
-  window._sf_async_config = window._sf_async_config || {};
-
-  if (category) window._sf_async_config.sections = category;
-  if (author) window._sf_async_config.authors = author;
-  if (title) window._sf_async_config.title = title;
-
-  // update subscriber engagement
-  var _cbq = window._cbq = window._cbq || [];
-
-  for (var key in props) {
-    if (!props.hasOwnProperty(key)) continue;
-    if (this.options.subscriberEngagementKeys.indexOf(key) > -1) {
-      _cbq.push([key, props[key]]);
-    }
-  }
-};
-
-// sets global vars and loads Chartbeat script
-Chartbeat.prototype._initialize = function() {
-  var self = this;
-  var script = this.options.video ? 'chartbeat_video.js' : 'chartbeat.js';
-
-  window._sf_async_config.useCanonical = true;
-  defaults(window._sf_async_config, {
-    domain: this.options.domain,
-    uid: this.options.uid
-  });
-
-  onBody(function() {
-    window._sf_endpt = new Date().getTime();
-    // Note: Chartbeat depends on document.body existing so the script does
-    // not load until that is confirmed. Otherwise it may trigger errors.
-    self.load({ script: script }, self.ready);  // switch ready to true for real once the script has loaded
-  });
-};
-
-},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":95,"on-body":169}],42:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var isObject = require('isobject');
-var push = require('global-queue')('_dcq');
-var each = require('@ndhoule/each');
-var find = require('obj-case').find;
-
-/**
- * Expose `Drip` integration.
- */
-
-var Drip = module.exports = integration('Drip')
-  .global('_dc')
-  .global('_dcq')
-  .global('_dcqi')
-  .global('_dcs')
-  .option('account', '')
-  .tag('<script src="//tag.getdrip.com/{{ account }}.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-Drip.prototype.initialize = function() {
-  window._dcq = window._dcq || [];
-  window._dcs = window._dcs || {};
-  window._dcs.account = this.options.account;
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Drip.prototype.loaded = function() {
-  return isObject(window._dc);
-};
-
-/**
- * Track.
- *
- * @api public
- * @param {Track} track
- */
-
-Drip.prototype.track = function(track) {
-  var props = format(track.properties());
-  var cents = Math.round(track.revenue() * 100);
-  if (cents) props.value = cents;
-
-  // removes redundant data
-  delete props.revenue;
-  push('track', track.event(), props);
-};
-
-/**
- * Identify.
- *
- * @api public
- * @param {Identify} identify
- */
-
-Drip.prototype.identify = function(identify) {
-  // minimum required trait to identify a user in Drip
-  if (!identify.email()) return;
-
-  push('identify', format(identify.traits()));
-
-  // default can be configured in your UI settings
-  var dripCampaignId = find(identify.options(this.name), 'campaignId') || this.options.campaignId;
-
-  // you can subscribe users to specific campaigns in Drip
-  // https://www.getdrip.com/docs/js-api#subscribe
-  if (dripCampaignId) push('subscribe', { campaign_id: dripCampaignId, fields: identify.traits() });
-};
-
-/**
- * Format
- * Replaces spaces with underscores
- *
- * @api public
- * @param {Object} obj
- *
- */
-
-function format(obj) {
-  var ret = {};
-  each(function(value, key) {
-    var formattedKey = key.replace(/\s/g, '_');
-    ret[formattedKey] = value;
-  }, obj);
-
-  return ret;
-}
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":95,"global-queue":147,"isobject":155,"obj-case":167}],43:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_fbq');
-
-/**
- * Expose `Facebook`
- */
-
-var Facebook = module.exports = integration('Facebook Conversion Tracking')
-  .global('_fbq')
-  .option('currency', 'USD')
-  .tag('<script src="//connect.facebook.net/en_US/fbds.js">')
-  .mapping('events');
-
-/**
- * Initialize Facebook Conversion Tracking
- *
- * https://developers.facebook.com/docs/ads-for-websites/conversion-pixel-code-migration
- *
- * @api public
- */
-
-Facebook.prototype.initialize = function() {
-  window._fbq = window._fbq || [];
-  this.load(this.ready);
-  window._fbq.loaded = true;
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Facebook.prototype.loaded = function() {
-  return !!(window._fbq && window._fbq.loaded);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-Facebook.prototype.page = function(page) {
-  this.track(page.track(page.fullName()));
-};
-
-/**
- * Track.
- *
- * https://developers.facebook.com/docs/reference/ads-api/custom-audience-website-faq/#fbpixel
- *
- * @api public
- * @param {Track} track
- */
-
-Facebook.prototype.track = function(track) {
-  var event = track.event();
-  var events = this.events(event);
-  var revenue = track.revenue() || 0;
-  var self = this;
-
-  each(function(event) {
-    push('track', event, {
-      currency: self.options.currency,
-      value: revenue.toFixed(2)
-    });
-  }, events);
-};
-
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":44,"global-queue":147}],44:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"./protos":45,"./statics":46,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":48,"dup":34,"slug-component":185}],45:[function(require,module,exports){
-arguments[4][35][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":47,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],46:[function(require,module,exports){
-arguments[4][36][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],47:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"dup":37}],48:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":49,"_process":170,"dup":38}],49:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],50:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('_fbq');
-var foldl = require('@ndhoule/foldl');
-var Track = require('segmentio-facade').Track;
-
-/**
- * Expose `FacebookCustomAudiences`.
- */
-
-var FacebookCustomAudiences = module.exports = integration('Facebook Custom Audiences')
-  .global('_fbds')
-  .global('_fbq')
-  .option('pixelId', '')
-  .option('currency', 'USD')
-  .mapping('events')
-  .tag('<script src="//connect.facebook.net/en_US/fbds.js">');
-
-/**
- * Initialize.
- *
- * @api public
- */
-
-FacebookCustomAudiences.prototype.initialize = function() {
-  var pixelId = this.options.pixelId;
-  window._fbds = window._fbds || {};
-  window._fbds.pixelId = pixelId;
-  window._fbq = window._fbq || [];
-  window._fbq.push(['track', 'PixelInitialized', {}]);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api public
- * @return {boolean}
- */
-
-FacebookCustomAudiences.prototype.loaded = function() {
-  return !!(window._fbq && Array.prototype.push !== window._fbq.push);
-};
-
-/**
- * Track.
- *
- * https://developers.facebook.com/docs/reference/ads-api/custom-audience-website#tagapi
- *
- * @api public
- * @param {Track} track
- */
-
-FacebookCustomAudiences.prototype.track = function(track) {
-  var event = track.event();
-  var properties = track.properties();
-
-  // Track event
-  window._fbq.push(['track', event, properties]);
-};
-
-/**
- * Product list viewed.
- *
- * @api private
- * @param {Track} track category
- */
-
-FacebookCustomAudiences.prototype.productListViewed = function(track) {
-  push('track', 'ViewContent', {
-    content_ids: [String(track.category() || '')],
-    content_type: 'product_group'
-  });
-};
-
-/**
- * Product viewed.
- *
- * @api private
- * @param {Track} track
- */
-
-FacebookCustomAudiences.prototype.productViewed = function(track) {
-  push('track', 'ViewContent', {
-    content_ids: [String(track.productId() || track.id() || track.sku() || '')],
-    content_type: 'product',
-    content_name: String(track.name()),
-    content_category: String(track.category()),
-    currency: String(track.currency()),
-    value: Number(track.value())
-  });
-};
-
-/**
- * Product added.
- *
- * @api private
- * @param {Track} track
- */
-
-FacebookCustomAudiences.prototype.productAdded = function(track) {
-  push('track', 'AddToCart', {
-    content_ids: [String(track.productId() || track.id() || track.sku() || '')],
-    content_type: 'product',
-    content_name: String(track.name()),
-    content_category: String(track.category()),
-    currency: String(track.currency()),
-    value: Number(track.value())
-  });
-};
-
-/**
- * Order Completed.
- *
- * @api private
- * @param {Track} track
- */
-
-FacebookCustomAudiences.prototype.orderCompleted = function(track) {
-  var content_ids = foldl(function(ret, product) {
-    var item = new Track({ properties: product });
-    var id = item.productId() || item.id() || item.sku() || '';
-    ret.push(id);
-    return ret;
-  }, [], track.products());
-
-  push('track', 'Purchase', {
-    content_ids: content_ids,
-    content_type: 'product',
-    currency: String(track.currency()),
-    value: Number(track.value())
-  });
-};
-
-},{"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"global-queue":147,"segmentio-facade":179}],51:[function(require,module,exports){
+},{"@ndhoule/each":8,"@segment/analytics.js-integration":51,"component-querystring":92,"segmentio-facade":129}],31:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6213,7 +4119,7 @@ function formatTraits(analytics) {
   });
 }
 
-},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"dateformat":142,"is":153,"reject":171,"segmentio-facade":179,"to-camel-case":188}],52:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@segment/analytics.js-integration":51,"dateformat":96,"is":106,"reject":121,"segmentio-facade":129,"to-camel-case":138}],32:[function(require,module,exports){
 'use strict';
 
 /**
@@ -7308,108 +5214,7 @@ function createProductTrack(track, properties) {
   return new Track({ properties: properties });
 }
 
-},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":95,"component-each":132,"extend":146,"global-queue":147,"is":153,"obj-case":167,"object-component":168,"reject":171,"segmentio-facade":179,"use-https":196}],53:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('dataLayer', { wrap: false });
-
-/**
- * Expose `GTM`.
- */
-
-var GTM = module.exports = integration('Google Tag Manager')
-  .global('dataLayer')
-  .global('google_tag_manager')
-  .option('containerId', '')
-  .option('environment', '')
-  .option('trackNamedPages', true)
-  .option('trackCategorizedPages', true)
-  .tag('no-env', '<script src="//www.googletagmanager.com/gtm.js?id={{ containerId }}&l=dataLayer">')
-  .tag('with-env', '<script src="//www.googletagmanager.com/gtm.js?id={{ containerId }}&l=dataLayer&gtm_preview={{ environment }}">');
-
-/**
- * Initialize.
- *
- * https://developers.google.com/tag-manager
- *
- * @api public
- */
-
-GTM.prototype.initialize = function() {
-  push({ 'gtm.start': Number(new Date()), event: 'gtm.js' });
-
-  if (this.options.environment.length) {
-    this.load('with-env', this.options, this.ready);
-  } else {
-    this.load('no-env', this.options, this.ready);
-  }
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-GTM.prototype.loaded = function() {
-  return !!(window.dataLayer && Array.prototype.push !== window.dataLayer.push);
-};
-
-/**
- * Page.
- *
- * @api public
- * @param {Page} page
- */
-
-GTM.prototype.page = function(page) {
-  var category = page.category();
-  var name = page.fullName();
-  var opts = this.options;
-
-  // all
-  if (opts.trackAllPages) {
-    this.track(page.track());
-  }
-
-  // categorized
-  if (category && opts.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-
-  // named
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-};
-
-/**
- * Track.
- *
- * https://developers.google.com/tag-manager/devguide#events
- *
- * @api public
- * @param {Track} track
- */
-
-GTM.prototype.track = function(track) {
-  var props = track.properties();
-  var userId = this.analytics.user().id();
-  var anonymousId = this.analytics.user().anonymousId();
-  if (userId) props.userId = userId;
-  if (anonymousId) props.segmentAnonymousId = anonymousId;
-  props.event = track.event();
-
-  push(props);
-};
-
-},{"@segment/analytics.js-integration":95,"global-queue":147}],54:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@segment/analytics.js-integration":51,"component-each":87,"extend":99,"global-queue":100,"is":106,"obj-case":118,"object-component":119,"reject":121,"segmentio-facade":129,"use-https":145}],33:[function(require,module,exports){
 'use strict';
 
 /**
@@ -7550,7 +5355,7 @@ function formatTraits(traits) {
   return ret;
 }
 
-},{"@ndhoule/each":8,"@segment/analytics.js-integration":95,"@segment/convert-dates":102,"global-queue":147,"segmentio-facade":179}],55:[function(require,module,exports){
+},{"@ndhoule/each":8,"@segment/analytics.js-integration":51,"@segment/convert-dates":58,"global-queue":100,"segmentio-facade":129}],34:[function(require,module,exports){
 'use strict';
 
 /**
@@ -7859,380 +5664,1173 @@ function hideDefaultLauncher(options) {
   return ret;
 }
 
-},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/extend":10,"@ndhoule/pick":15,"@segment/analytics.js-integration":56,"@segment/convert-dates":102,"is":153,"obj-case":167}],56:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"./protos":57,"./statics":58,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":60,"dup":34,"slug-component":185}],57:[function(require,module,exports){
-arguments[4][35][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":59,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],58:[function(require,module,exports){
-arguments[4][36][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],59:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"dup":37}],60:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":61,"_process":170,"dup":38}],61:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],62:[function(require,module,exports){
+},{"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/each":8,"@ndhoule/extend":10,"@ndhoule/pick":15,"@segment/analytics.js-integration":35,"@segment/convert-dates":58,"is":106,"obj-case":118}],35:[function(require,module,exports){
 'use strict';
 
 /**
  * Module dependencies.
  */
 
-var each = require('component-each');
-var integration = require('@segment/analytics.js-integration');
-var is = require('is');
-var push = require('global-queue')('_kmq');
+var bind = require('component-bind');
+var clone = require('@ndhoule/clone');
+var debug = require('debug');
+var defaults = require('@ndhoule/defaults');
 var extend = require('@ndhoule/extend');
-var del = require('obj-case').del;
+var slug = require('slug-component');
+var protos = require('./protos');
+var statics = require('./statics');
 
 /**
- * Expose `KISSmetrics` integration.
- */
-
-var KISSmetrics = module.exports = integration('KISSmetrics')
-  .global('KM')
-  .global('_kmil')
-  .global('_kmq')
-  .option('apiKey', '')
-  .option('prefixProperties', true)
-  .option('trackCategorizedPages', true)
-  .option('trackNamedPages', true)
-  .tag('library', '<script src="//scripts.kissmetrics.com/{{ apiKey }}.2.js">');
-
-/**
- * Check if browser is mobile, for kissmetrics.
+ * Create a new `Integration` constructor.
  *
- * http://support.kissmetrics.com/how-tos/browser-detection.html#mobile-vs-non-mobile
+ * @constructs Integration
+ * @param {string} name
+ * @return {Function} Integration
  */
 
-exports.isMobile = navigator.userAgent.match(/Android/i)
-  || navigator.userAgent.match(/BlackBerry/i)
-  || navigator.userAgent.match(/IEMobile/i)
-  || navigator.userAgent.match(/Opera Mini/i)
-  || navigator.userAgent.match(/iPad/i)
-  || navigator.userAgent.match(/iPhone|iPod/i);
+function createIntegration(name) {
+  /**
+   * Initialize a new `Integration`.
+   *
+   * @class
+   * @param {Object} options
+   */
+
+  function Integration(options) {
+    if (options && options.addIntegration) {
+      // plugin
+      return options.addIntegration(Integration);
+    }
+    this.debug = debug('analytics:integration:' + slug(name));
+    this.options = defaults(clone(options) || {}, this.defaults);
+    this._queue = [];
+    this.once('ready', bind(this, this.flush));
+
+    Integration.emit('construct', this);
+    this.ready = bind(this, this.ready);
+    this._wrapInitialize();
+    this._wrapPage();
+    this._wrapTrack();
+  }
+
+  Integration.prototype.defaults = {};
+  Integration.prototype.globals = [];
+  Integration.prototype.templates = {};
+  Integration.prototype.name = name;
+  extend(Integration, statics);
+  extend(Integration.prototype, protos);
+
+  return Integration;
+}
+
+/**
+ * Exports.
+ */
+
+module.exports = createIntegration;
+
+},{"./protos":36,"./statics":37,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":81,"debug":39,"slug-component":135}],36:[function(require,module,exports){
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+
+var Emitter = require('component-emitter');
+var after = require('@ndhoule/after');
+var each = require('@ndhoule/each');
+var events = require('analytics-events');
+var every = require('@ndhoule/every');
+var fmt = require('@segment/fmt');
+var foldl = require('@ndhoule/foldl');
+var is = require('is');
+var loadIframe = require('load-iframe');
+var loadScript = require('@segment/load-script');
+var nextTick = require('next-tick');
+var normalize = require('to-no-case');
+
+/**
+ * hasOwnProperty reference.
+ */
+
+var has = Object.prototype.hasOwnProperty;
+
+/**
+ * No operation.
+ */
+
+var noop = function noop() {};
+
+/**
+ * Window defaults.
+ */
+
+var onerror = window.onerror;
+var onload = null;
+
+/**
+ * Mixin emitter.
+ */
+
+/* eslint-disable new-cap */
+Emitter(exports);
+/* eslint-enable new-cap */
 
 /**
  * Initialize.
- *
- * http://support.kissmetrics.com/apis/javascript
  */
 
-KISSmetrics.prototype.initialize = function() {
-  window._kmq = window._kmq || [];
-  if (exports.isMobile) push('set', { 'Mobile Session': 'Yes' });
-  this.load('library', this.ready);
+exports.initialize = function() {
+  var ready = this.ready;
+  nextTick(ready);
 };
 
 /**
  * Loaded?
  *
- * @return {Boolean}
+ * @api private
+ * @return {boolean}
  */
 
-KISSmetrics.prototype.loaded = function() {
-  return is.object(window.KM);
+exports.loaded = function() {
+  return false;
 };
 
 /**
  * Page.
  *
+ * @api public
  * @param {Page} page
  */
 
-KISSmetrics.prototype.page = function(page) {
-  if (!window.KM_SKIP_PAGE_VIEW) {
-    push('record', 'Page View', {
-      'Viewed URL': page.url(),
-      Referrer: page.referrer() || 'Direct'
-    });
-  }
-  this.trackPage(page);
-};
-
-/**
- * Track page.
- *
- * @param {Page} page
- */
-
-KISSmetrics.prototype.trackPage = function(page) {
-  var category = page.category();
-  var name = page.fullName();
-  var opts = this.options;
-
-  var e;
-  // categorized pages
-  if (opts.trackCategorizedPages && category) {
-    e = page.category();
-  }
-  // named pages
-  if (opts.trackNamedPages && name) {
-    e = page.name();
-  }
-  if (!e) {
-    return;
-  }
-
-
-  var event = 'Viewed ' + e + ' Page';
-  var properties = prefix('Page', page.properties());
-  push('record', event, properties);
-};
-
-/**
- * Identify.
- *
- * @param {Identify} identify
- */
-
-KISSmetrics.prototype.identify = function(identify) {
-  var traits = clean(identify.traits());
-  var id = identify.userId();
-  if (id) push('identify', id);
-  if (traits) push('set', traits);
-};
+/* eslint-disable no-unused-vars */
+exports.page = function(page) {};
+/* eslint-enable no-unused-vars */
 
 /**
  * Track.
  *
+ * @api public
  * @param {Track} track
  */
 
-KISSmetrics.prototype.track = function(track) {
-  var mapping = { revenue: 'Billing Amount' };
-  var event = track.event();
-  var properties = clean(track.properties(mapping));
-  var revenue = track.revenue();
-  if (revenue) {
-    // legacy: client side integration used to only send 'Billing Amount', but
-    // our server side sent both 'revenue' and 'Billing Amount'. From the docs,
-    // http://support.kissmetrics.com/tools/revenue-report.html, ther is no
-    // reason to send it as 'Billing Amount', but we don't want to break reports
-    // so we send it as 'revenue' and 'Billing Amount' for consistency across
-    // platforms.
-    properties.revenue = revenue;
+/* eslint-disable no-unused-vars */
+exports.track = function(track) {};
+/* eslint-enable no-unused-vars */
+
+/**
+ * Get values from items in `options` that are mapped to `key`.
+ * `options` is an integration setting which is a collection
+ * of type 'map', 'array', or 'mixed'
+ *
+ * Use cases include mapping events to pixelIds (map), sending generic
+ * conversion pixels only for specific events (array), or configuring dynamic
+ * mappings of event properties to query string parameters based on event (mixed)
+ *
+ * @api public
+ * @param {Object|Object[]|String[]} options An object, array of objects, or
+ * array of strings pulled from settings.mapping.
+ * @param {string} key The name of the item in options whose metadata
+ * we're looking for.
+ * @return {Array} An array of settings that match the input `key` name.
+ * @example
+ *
+ * // 'Map'
+ * var events = { my_event: 'a4991b88' };
+ * .map(events, 'My Event');
+ * // => ["a4991b88"]
+ * .map(events, 'whatever');
+ * // => []
+ *
+ * // 'Array'
+ * * var events = ['Completed Order', 'My Event'];
+ * .map(events, 'My Event');
+ * // => ["My Event"]
+ * .map(events, 'whatever');
+ * // => []
+ *
+ * // 'Mixed'
+ * var events = [{ key: 'my event', value: '9b5eb1fa' }];
+ * .map(events, 'my_event');
+ * // => ["9b5eb1fa"]
+ * .map(events, 'whatever');
+ * // => []
+ */
+
+exports.map = function(options, key) {
+  var normalizedComparator = normalize(key);
+  var mappingType = getMappingType(options);
+
+  if (mappingType === 'unknown') {
+    return [];
   }
-  if (this.options.prefixProperties) properties = prefix(event, properties);
-  push('record', event, properties);
+
+  return foldl(function(matchingValues, val, key) {
+    var compare;
+    var result;
+
+    if (mappingType === 'map') {
+      compare = key;
+      result = val;
+    }
+
+    if (mappingType === 'array') {
+      compare = val;
+      result = val;
+    }
+
+    if (mappingType === 'mixed') {
+      compare = val.key;
+      result = val.value;
+    }
+
+    if (normalize(compare) === normalizedComparator) {
+      matchingValues.push(result);
+    }
+
+    return matchingValues;
+  }, [], options);
 };
 
 /**
- * Alias.
+ * Invoke a `method` that may or may not exist on the prototype with `args`,
+ * queueing or not depending on whether the integration is "ready". Don't
+ * trust the method call, since it contains integration party code.
  *
- * @param {Alias} to
+ * @api private
+ * @param {string} method
+ * @param {...*} args
  */
 
-KISSmetrics.prototype.alias = function(alias) {
-  push('alias', alias.to(), alias.from());
+exports.invoke = function(method) {
+  if (!this[method]) return;
+  var args = Array.prototype.slice.call(arguments, 1);
+  if (!this._ready) return this.queue(method, args);
+
+  this.debug('%s with %o', method, args);
+  return this[method].apply(this, args);
 };
 
 /**
- * Group.
+ * Queue a `method` with `args`. If the integration assumes an initial
+ * pageview, then let the first call to `page` pass through.
  *
- * @param {Group} to
+ * @api private
+ * @param {string} method
+ * @param {Array} args
  */
 
-KISSmetrics.prototype.group = function(group) {
-  push('set', prefix('Group', group.traits()));
+exports.queue = function(method, args) {
+  if (method === 'page' && this._assumesPageview && !this._initialized) {
+    return this.page.apply(this, args);
+  }
+
+  this._queue.push({ method: method, args: args });
 };
 
 /**
- * Completed order.
+ * Flush the internal queue.
  *
- * @param {Track} track
  * @api private
  */
 
-KISSmetrics.prototype.completedOrder = function(track) {
-  var opts = this.options;
-  var event = track.event();
-  var products = track.products();
-  var timestamp = toUnixTimestamp(track.timestamp() || new Date());
-  var properties = track.properties();
-  // since we send product data separately and KM doesn't serialize it anyway (shows up as '[object Object]')
-  // we're going to delete the property
-  del(properties, 'products');
-  if (opts.prefixProperties) properties = prefix(event, properties);
+exports.flush = function() {
+  this._ready = true;
+  var self = this;
 
-  // transaction
-  push('record', event, properties);
+  each(function(call) {
+    self[call.method].apply(self, call.args);
+  }, this._queue);
 
-  // items
-  window._kmq.push(function() {
-    each(products, function(product, i) {
-      var item = product;
-      if (opts) item = prefix(event, item);
-      item._t = timestamp + i;
-      item._d = 1;
-      window.KM.set(item);
+  // Empty the queue.
+  this._queue.length = 0;
+};
+
+/**
+ * Reset the integration, removing its global variables.
+ *
+ * @api private
+ */
+
+exports.reset = function() {
+  for (var i = 0; i < this.globals.length; i++) {
+    window[this.globals[i]] = undefined;
+  }
+
+  window.onerror = onerror;
+  window.onload = onload;
+};
+
+/**
+ * Load a tag by `name`.
+ *
+ * @param {string} name The name of the tag.
+ * @param {Object} locals Locals used to populate the tag's template variables
+ * (e.g. `userId` in '<img src="https://whatever.com/{{ userId }}">').
+ * @param {Function} [callback=noop] A callback, invoked when the tag finishes
+ * loading.
+ */
+
+exports.load = function(name, locals, callback) {
+  // Argument shuffling
+  if (typeof name === 'function') { callback = name; locals = null; name = null; }
+  if (name && typeof name === 'object') { callback = locals; locals = name; name = null; }
+  if (typeof locals === 'function') { callback = locals; locals = null; }
+
+  // Default arguments
+  name = name || 'library';
+  locals = locals || {};
+
+  locals = this.locals(locals);
+  var template = this.templates[name];
+  if (!template) throw new Error(fmt('template "%s" not defined.', name));
+  var attrs = render(template, locals);
+  callback = callback || noop;
+  var self = this;
+  var el;
+
+  switch (template.type) {
+  case 'img':
+    attrs.width = 1;
+    attrs.height = 1;
+    el = loadImage(attrs, callback);
+    break;
+  case 'script':
+    el = loadScript(attrs, function(err) {
+      if (!err) return callback();
+      self.debug('error loading "%s" error="%s"', self.name, err);
     });
-  });
+      // TODO: hack until refactoring load-script
+    delete attrs.src;
+    each(function(val, key) {
+      el.setAttribute(key, val);
+    }, attrs);
+    break;
+  case 'iframe':
+    el = loadIframe(attrs, callback);
+    break;
+  default:
+      // No default case
+  }
+
+  return el;
 };
 
 /**
- * Prefix properties with the event name.
+ * Locals for tag templates.
  *
- * @param {String} event
- * @param {Object} properties
- * @return {Object} prefixed
- * @api private
- */
-
-function prefix(event, properties) {
-  var prefixed = {};
-  each(properties, function(key, val) {
-    if (key === 'Billing Amount') {
-      prefixed[key] = val;
-    } else if (key === 'revenue') {
-      prefixed[event + ' - ' + key] = val;
-      prefixed['Billing Amount'] = val;
-    } else {
-      prefixed[event + ' - ' + key] = val;
-    }
-  });
-  return prefixed;
-}
-
-function toUnixTimestamp(date) {
-  date = new Date(date);
-  return Math.floor(date.getTime() / 1000);
-}
-
-/**
- * Clean all nested objects and arrays.
+ * By default it includes a cache buster and all of the options.
  *
- * @param {Object} obj
+ * @param {Object} [locals]
  * @return {Object}
- * @api private
  */
 
-function clean(obj) {
-  var ret = {};
-
-  for (var k in obj) {
-    if (obj.hasOwnProperty(k)) {
-      var value = obj[k];
-      if (value === null || typeof value === 'undefined') continue;
-
-      // convert date to unix
-      if (is.date(value)) {
-        ret[k] = toUnixTimestamp(value);
-        continue;
-      }
-
-      // leave boolean as is
-      if (is.bool(value)) {
-        ret[k] = value;
-        continue;
-      }
-
-      // leave  numbers as is
-      if (is.number(value)) {
-        ret[k] = value;
-        continue;
-      }
-
-      // convert non objects to strings
-      if (value.toString() !== '[object Object]') {
-        ret[k] = value.toString();
-        continue;
-      }
-
-      // json
-      // must flatten including the name of the original trait/property
-      var nestedObj = {};
-      nestedObj[k] = value;
-      var flattenedObj = flatten(nestedObj, { safe: true });
-
-      // stringify arrays inside nested object to be consistent with top level behavior of arrays
-      for (var key in flattenedObj) {
-        if (is.array(flattenedObj[key])) {
-          flattenedObj[key] = flattenedObj[key].toString();
-        }
-      }
-
-      ret = extend(ret, flattenedObj);
-      delete ret[k];
-    }
-  }
-  return ret;
-}
+exports.locals = function(locals) {
+  locals = locals || {};
+  var cache = Math.floor(new Date().getTime() / 3600000);
+  if (!locals.hasOwnProperty('cache')) locals.cache = cache;
+  each(function(val, key) {
+    if (!locals.hasOwnProperty(key)) locals[key] = val;
+  }, this.options);
+  return locals;
+};
 
 /**
- * Flatten nested objects
- * taken from https://www.npmjs.com/package/flat
- * @param {Object} obj
- * @return {Object} obj
+ * Simple way to emit ready.
+ *
  * @api public
  */
 
-function flatten(target, opts) {
-  opts = opts || {};
+exports.ready = function() {
+  this.emit('ready');
+};
 
-  var delimiter = opts.delimiter || '.';
-  var maxDepth = opts.maxDepth;
-  var currentDepth = 1;
-  var output = {};
+/**
+ * Wrap the initialize method in an exists check, so we don't have to do it for
+ * every single integration.
+ *
+ * @api private
+ */
 
-//   for (var key in p) {
-//   if (p.hasOwnProperty(key)) {
-//     alert(key + " -> " + p[key]);
-//   }
-// }
+exports._wrapInitialize = function() {
+  var initialize = this.initialize;
+  this.initialize = function() {
+    this.debug('initialize');
+    this._initialized = true;
+    var ret = initialize.apply(this, arguments);
+    this.emit('initialize');
+    return ret;
+  };
 
+  if (this._assumesPageview) this.initialize = after(2, this.initialize);
+};
 
-  function step(object, prev) {
-    for (var key in object) {
-      if (object.hasOwnProperty(key)) {
-        var value = object[key];
-        var isarray = opts.safe && is.array(value);
-        var type = Object.prototype.toString.call(value);
-        var isobject = type === '[object Object]' || type === '[object Array]';
-        var arr = [];
+/**
+ * Wrap the page method to call `initialize` instead if the integration assumes
+ * a pageview.
+ *
+ * @api private
+ */
 
-        var newKey = prev
-          ? prev + delimiter + key
-          : key;
+exports._wrapPage = function() {
+  var page = this.page;
+  this.page = function() {
+    if (this._assumesPageview && !this._initialized) {
+      return this.initialize.apply(this, arguments);
+    }
 
-        if (!opts.maxDepth) {
-          maxDepth = currentDepth + 1;
-        }
+    return page.apply(this, arguments);
+  };
+};
 
-        for (var keys in value) {
-          if (value.hasOwnProperty(keys)) {
-            arr.push(keys);
-          }
-        }
+/**
+ * Wrap the track method to call other ecommerce methods if available depending
+ * on the `track.event()`.
+ *
+ * @api private
+ */
 
-        if (!isarray && isobject && arr.length && currentDepth < maxDepth) {
-          ++currentDepth;
-          return step(value, newKey);
-        }
+exports._wrapTrack = function() {
+  var t = this.track;
+  this.track = function(track) {
+    var event = track.event();
+    var called;
+    var ret;
 
-        output[newKey] = value;
+    for (var method in events) {
+      if (has.call(events, method)) {
+        var regexp = events[method];
+        if (!this[method]) continue;
+        if (!regexp.test(event)) continue;
+        ret = this[method].apply(this, arguments);
+        called = true;
+        break;
       }
     }
+
+    if (!called) ret = t.apply(this, arguments);
+    return ret;
+  };
+};
+
+/**
+ * Determine the type of the option passed to `#map`
+ *
+ * @api private
+ * @param {Object|Object[]} mapping
+ * @return {String} mappingType
+ */
+
+function getMappingType(mapping) {
+  if (is.array(mapping)) {
+    return every(isMixed, mapping) ? 'mixed' : 'array';
   }
-
-  step(target);
-
-  return output;
+  if (is.object(mapping)) return 'map';
+  return 'unknown';
 }
 
-},{"@ndhoule/extend":10,"@segment/analytics.js-integration":63,"component-each":132,"global-queue":147,"is":153,"obj-case":167}],63:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"./protos":64,"./statics":65,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":67,"dup":34,"slug-component":185}],64:[function(require,module,exports){
-arguments[4][35][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":66,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],65:[function(require,module,exports){
-arguments[4][36][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],66:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"dup":37}],67:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":68,"_process":170,"dup":38}],68:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],69:[function(require,module,exports){
+/**
+ * Determine if item in mapping array is a valid "mixed" type value
+ *
+ * Must be an object with properties "key" (of type string)
+ * and "value" (of any type)
+ *
+ * @api private
+ * @param {*} item
+ * @return {Boolean}
+ */
+
+function isMixed(item) {
+  if (!is.object(item)) return false;
+  if (!is.string(item.key)) return false;
+  if (!has.call(item, 'value')) return false;
+  return true;
+}
+
+/**
+ * TODO: Document me
+ *
+ * @api private
+ * @param {Object} attrs
+ * @param {Function} fn
+ * @return {Image}
+ */
+
+function loadImage(attrs, fn) {
+  fn = fn || function() {};
+  var img = new Image();
+  img.onerror = error(fn, 'failed to load pixel', img);
+  img.onload = function() { fn(); };
+  img.src = attrs.src;
+  img.width = 1;
+  img.height = 1;
+  return img;
+}
+
+/**
+ * TODO: Document me
+ *
+ * @api private
+ * @param {Function} fn
+ * @param {string} message
+ * @param {Element} img
+ * @return {Function}
+ */
+
+function error(fn, message, img) {
+  return function(e) {
+    e = e || window.event;
+    var err = new Error(message);
+    err.event = e;
+    err.source = img;
+    fn(err);
+  };
+}
+
+/**
+ * Render template + locals into an `attrs` object.
+ *
+ * @api private
+ * @param {Object} template
+ * @param {Object} locals
+ * @return {Object}
+ */
+
+function render(template, locals) {
+  return foldl(function(attrs, val, key) {
+    attrs[key] = val.replace(/\{\{\ *(\w+)\ *\}\}/g, function(_, $1) {
+      return locals[$1];
+    });
+    return attrs;
+  }, {}, template.attrs);
+}
+
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":59,"@segment/load-script":63,"analytics-events":38,"component-emitter":89,"is":106,"load-iframe":111,"next-tick":117,"to-no-case":140}],37:[function(require,module,exports){
+'use strict';
+
+/**
+ * Module dependencies.
+ */
+
+var Emitter = require('component-emitter');
+var domify = require('domify');
+var each = require('@ndhoule/each');
+var includes = require('@ndhoule/includes');
+
+/**
+ * Mix in emitter.
+ */
+
+/* eslint-disable new-cap */
+Emitter(exports);
+/* eslint-enable new-cap */
+
+/**
+ * Add a new option to the integration by `key` with default `value`.
+ *
+ * @api public
+ * @param {string} key
+ * @param {*} value
+ * @return {Integration}
+ */
+
+exports.option = function(key, value) {
+  this.prototype.defaults[key] = value;
+  return this;
+};
+
+/**
+ * Add a new mapping option.
+ *
+ * This will create a method `name` that will return a mapping for you to use.
+ *
+ * @api public
+ * @param {string} name
+ * @return {Integration}
+ * @example
+ * Integration('My Integration')
+ *   .mapping('events');
+ *
+ * new MyIntegration().track('My Event');
+ *
+ * .track = function(track){
+ *   var events = this.events(track.event());
+ *   each(send, events);
+ *  };
+ */
+
+exports.mapping = function(name) {
+  this.option(name, []);
+  this.prototype[name] = function(key) {
+    return this.map(this.options[name], key);
+  };
+  return this;
+};
+
+/**
+ * Register a new global variable `key` owned by the integration, which will be
+ * used to test whether the integration is already on the page.
+ *
+ * @api public
+ * @param {string} key
+ * @return {Integration}
+ */
+
+exports.global = function(key) {
+  this.prototype.globals.push(key);
+  return this;
+};
+
+/**
+ * Mark the integration as assuming an initial pageview, so to defer loading
+ * the script until the first `page` call, noop the first `initialize`.
+ *
+ * @api public
+ * @return {Integration}
+ */
+
+exports.assumesPageview = function() {
+  this.prototype._assumesPageview = true;
+  return this;
+};
+
+/**
+ * Mark the integration as being "ready" once `load` is called.
+ *
+ * @api public
+ * @return {Integration}
+ */
+
+exports.readyOnLoad = function() {
+  this.prototype._readyOnLoad = true;
+  return this;
+};
+
+/**
+ * Mark the integration as being "ready" once `initialize` is called.
+ *
+ * @api public
+ * @return {Integration}
+ */
+
+exports.readyOnInitialize = function() {
+  this.prototype._readyOnInitialize = true;
+  return this;
+};
+
+/**
+ * Define a tag to be loaded.
+ *
+ * @api public
+ * @param {string} [name='library'] A nicename for the tag, commonly used in
+ * #load. Helpful when the integration has multiple tags and you need a way to
+ * specify which of the tags you want to load at a given time.
+ * @param {String} str DOM tag as string or URL.
+ * @return {Integration}
+ */
+
+exports.tag = function(name, tag) {
+  if (tag == null) {
+    tag = name;
+    name = 'library';
+  }
+  this.prototype.templates[name] = objectify(tag);
+  return this;
+};
+
+/**
+ * Given a string, give back DOM attributes.
+ *
+ * Do it in a way where the browser doesn't load images or iframes. It turns
+ * out domify will load images/iframes because whenever you construct those
+ * DOM elements, the browser immediately loads them.
+ *
+ * @api private
+ * @param {string} str
+ * @return {Object}
+ */
+
+function objectify(str) {
+  // replace `src` with `data-src` to prevent image loading
+  str = str.replace(' src="', ' data-src="');
+
+  var el = domify(str);
+  var attrs = {};
+
+  each(function(attr) {
+    // then replace it back
+    var name = attr.name === 'data-src' ? 'src' : attr.name;
+    if (!includes(attr.name + '=', str)) return;
+    attrs[name] = attr.value;
+  }, el.attributes);
+
+  return {
+    type: el.tagName.toLowerCase(),
+    attrs: attrs
+  };
+}
+
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":89,"domify":98}],38:[function(require,module,exports){
+
+module.exports = {
+  // Promotions
+  promotionViewed: /^[ _]?promotion[ _]?viewed?[ _]?$/i,
+  viewedPromotion: /^[ _]?viewed[ _]?promotion?[ _]?$/i,
+  promotionClicked: /^[ _]?promotion[ _]?clicked?[ _]?$/i,
+  clickedPromotion: /^[ _]?clicked[ _]?promotion?[ _]?$/i,
+  // Browsing
+  productsSearched: /^[ _]?products[ _]?searched[ _]?$/i,
+  productListViewed: /^[ _]?product[ _]?list[ _]?viewed[ _]?$/i,
+  productListFiltered: /^[ _]?product[ _]?list[ _]?filtered[ _]?$/i,
+  viewedProductCategory: /^[ _]?viewed[ _]?product[ _]?category[ _]?$/i,
+  viewedProductDetails: /^[ _]?viewed[ _]?product[ _]?details?[ _]?$/i,
+  // Core Ordering
+  productClicked: /^[ _]?product[ _]?clicked[ _]?$/i,
+  clickedProduct: /^[ _]?clicked[ _]?product[ _]?$/i,
+  productViewed: /^[ _]?product[ _]?viewed[ _]?$/i,
+  viewedProduct: /^[ _]?viewed[ _]?product[ _]?$/i,
+  productAdded: /^[ _]?product[ _]?added[ _]?$/i,
+  addedProduct: /^[ _]?added[ _]?product[ _]?$/i,
+  productRemoved: /^[ _]?product[ _]?removed[ _]?$/i,
+  removedProduct: /^[ _]?removed[ _]?product[ _]?$/i,
+  cartViewed: /^[ _]?cart[ _]?viewed[ _]?$/i,
+  orderStarted: /^[ _]?order[ _]?started[ _]?$/i,
+  startedOrder: /^[ _]?started[ _]?order[ _]?$/i,
+  orderUpdated: /^[ _]?order[ _]?updated[ _]?$/i,
+  updatedOrder: /^[ _]?updated[ _]?order[ _]?$/i,
+  orderCompleted: /^[ _]?order[ _]?completed[ _]?$/i,
+  completedOrder: /^[ _]?completed[ _]?order[ _]?$/i,
+  orderRefunded: /^[ _]?order[ _]?refunded[ _]?$/i,
+  refundedOrder: /^[ _]?refunded[ _]?order[ _]?$/i,
+  orderCancelled: /^[ _]?order[ _]?cancelled[ _]?$/i,
+  paymentInfoAdded: /^[ _]?payment[ _]?info[ _]?added[ _]?$/i,
+  checkoutStarted: /^[ _]?checkout[ _]?started[ _]?$/i,
+  checkoutStepViewed: /^[ _]?checkout[ _]?step[ _]?viewed[ _]?$/i,
+  viewedCheckoutStep: /^[ _]?viewed[ _]?checkout[ _]?step[ _]?$/i,
+  checkoutStepCompleted: /^[ _]?checkout[ _]?step[ _]?completed[ _]?$/i,
+  completedCheckoutStep: /^[ _]?completed[ _]?checkout[ _]?step[ _]?$/i,
+  // Coupons
+  couponEntered: /^[ _]?coupon[ _]?entered[ _]?$/i,
+  couponApplied: /^[ _]?coupon[ _]?applied[ _]?$/i,
+  couponDenied: /^[ _]?coupon[ _]?denied[ _]?$/i,
+  couponRemoved: /^[ _]?coupon[ _]?removed[ _]?$/i,
+  // Wishlisting
+  productAddedToWishlist: /^[ _]?product[ _]?added[ _]?to[ _]?wishlist[ _]?$/i,
+  wishlistProductRemoved: /^[ _]?wishlist[ _]?product[ _]?removed[ _]?$/i,
+  wishlistProductAddedToCart: /^[ _]?wishlist[ _]?product[ _]?added[ _]?to[ _]?cart[ _]?$/i,
+  // Sharing
+  productShared: /^[ _]?product[ _]?shared[ _]?$/i,
+  cartShared: /^[ _]?cart[ _]?shared[ _]?$/i,
+  // Reviewing
+  productRemoved: /^[ _]?product[ _]?removed[ _]?$/i,
+  // App Lifecycle
+  applicationInstalled: /^[ _]?application[ _]?installed[ _]?$/i,
+  applicationUpdated: /^[ _]?application[ _]?updated[ _]?$/i,
+  applicationOpened: /^[ _]?application[ _]?opened[ _]?$/i,
+  applicationBackgrounded: /^[ _]?application[ _]?backgrounded[ _]?$/i,
+  applicationUninstalled: /^[ _]?application[ _]?uninstalled[ _]?$/i,
+  // App Campaign and Referral Events
+  installAttributed: /^[ _]?install[ _]?attributed[ _]?$/i,
+  deepLinkOpened: /^[ _]?deep[ _]?link[ _]?opened[ _]?$/i,
+  pushNotificationReceived: /^[ _]?push[ _]?notification[ _]?received[ _]?$/i,
+  pushNotificationTapped: /^[ _]?push[ _]?notification[ _]?received[ _]?$/i,
+  pushNotificationBounced: /^[ _]?push[ _]?notification[ _]?bounced[ _]?$/i
+};
+
+},{}],39:[function(require,module,exports){
+(function (process){
+/**
+ * This is the web browser implementation of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = require('./debug');
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = 'undefined' != typeof chrome
+               && 'undefined' != typeof chrome.storage
+                  ? chrome.storage.local
+                  : localstorage();
+
+/**
+ * Colors.
+ */
+
+exports.colors = [
+  'lightseagreen',
+  'forestgreen',
+  'goldenrod',
+  'dodgerblue',
+  'darkorchid',
+  'crimson'
+];
+
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */
+
+function useColors() {
+  // NB: In an Electron preload script, document will be defined but not fully
+  // initialized. Since we know we're in Chrome, we'll just detect this case
+  // explicitly
+  if (typeof window !== 'undefined' && window.process && window.process.type === 'renderer') {
+    return true;
+  }
+
+  // is webkit? http://stackoverflow.com/a/16459606/376773
+  // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+  return (typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance) ||
+    // is firebug? http://stackoverflow.com/a/398120/376773
+    (typeof window !== 'undefined' && window.console && (window.console.firebug || (window.console.exception && window.console.table))) ||
+    // is firefox >= v31?
+    // https://developer.mozilla.org/en-US/docs/Tools/Web_Console#Styling_messages
+    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/) && parseInt(RegExp.$1, 10) >= 31) ||
+    // double check webkit in userAgent just in case we are in a worker
+    (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/));
+}
+
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */
+
+exports.formatters.j = function(v) {
+  try {
+    return JSON.stringify(v);
+  } catch (err) {
+    return '[UnexpectedJSONParseError]: ' + err.message;
+  }
+};
+
+
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */
+
+function formatArgs(args) {
+  var useColors = this.useColors;
+
+  args[0] = (useColors ? '%c' : '')
+    + this.namespace
+    + (useColors ? ' %c' : ' ')
+    + args[0]
+    + (useColors ? '%c ' : ' ')
+    + '+' + exports.humanize(this.diff);
+
+  if (!useColors) return;
+
+  var c = 'color: ' + this.color;
+  args.splice(1, 0, c, 'color: inherit')
+
+  // the final "%c" is somewhat tricky, because there could be other
+  // arguments passed either before or after the %c, so we need to
+  // figure out the correct index to insert the CSS into
+  var index = 0;
+  var lastC = 0;
+  args[0].replace(/%[a-zA-Z%]/g, function(match) {
+    if ('%%' === match) return;
+    index++;
+    if ('%c' === match) {
+      // we only are interested in the *last* %c
+      // (the user may have provided their own)
+      lastC = index;
+    }
+  });
+
+  args.splice(lastC, 0, c);
+}
+
+/**
+ * Invokes `console.log()` when available.
+ * No-op when `console.log` is not a "function".
+ *
+ * @api public
+ */
+
+function log() {
+  // this hackery is required for IE8/9, where
+  // the `console.log` function doesn't have 'apply'
+  return 'object' === typeof console
+    && console.log
+    && Function.prototype.apply.call(console.log, console, arguments);
+}
+
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */
+
+function save(namespaces) {
+  try {
+    if (null == namespaces) {
+      exports.storage.removeItem('debug');
+    } else {
+      exports.storage.debug = namespaces;
+    }
+  } catch(e) {}
+}
+
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */
+
+function load() {
+  var r;
+  try {
+    r = exports.storage.debug;
+  } catch(e) {}
+
+  // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+  if (!r && typeof process !== 'undefined' && 'env' in process) {
+    r = process.env.DEBUG;
+  }
+
+  return r;
+}
+
+/**
+ * Enable namespaces listed in `localStorage.debug` initially.
+ */
+
+exports.enable(load());
+
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */
+
+function localstorage() {
+  try {
+    return window.localStorage;
+  } catch (e) {}
+}
+
+}).call(this,require('_process'))
+},{"./debug":40,"_process":120}],40:[function(require,module,exports){
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ *
+ * Expose `debug()` as the module.
+ */
+
+exports = module.exports = createDebug.debug = createDebug['default'] = createDebug;
+exports.coerce = coerce;
+exports.disable = disable;
+exports.enable = enable;
+exports.enabled = enabled;
+exports.humanize = require('ms');
+
+/**
+ * The currently active debug mode names, and names to skip.
+ */
+
+exports.names = [];
+exports.skips = [];
+
+/**
+ * Map of special "%n" handling functions, for the debug "format" argument.
+ *
+ * Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+ */
+
+exports.formatters = {};
+
+/**
+ * Previous log timestamp.
+ */
+
+var prevTime;
+
+/**
+ * Select a color.
+ * @param {String} namespace
+ * @return {Number}
+ * @api private
+ */
+
+function selectColor(namespace) {
+  var hash = 0, i;
+
+  for (i in namespace) {
+    hash  = ((hash << 5) - hash) + namespace.charCodeAt(i);
+    hash |= 0; // Convert to 32bit integer
+  }
+
+  return exports.colors[Math.abs(hash) % exports.colors.length];
+}
+
+/**
+ * Create a debugger with the given `namespace`.
+ *
+ * @param {String} namespace
+ * @return {Function}
+ * @api public
+ */
+
+function createDebug(namespace) {
+
+  function debug() {
+    // disabled?
+    if (!debug.enabled) return;
+
+    var self = debug;
+
+    // set `diff` timestamp
+    var curr = +new Date();
+    var ms = curr - (prevTime || curr);
+    self.diff = ms;
+    self.prev = prevTime;
+    self.curr = curr;
+    prevTime = curr;
+
+    // turn the `arguments` into a proper Array
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+
+    args[0] = exports.coerce(args[0]);
+
+    if ('string' !== typeof args[0]) {
+      // anything else let's inspect with %O
+      args.unshift('%O');
+    }
+
+    // apply any `formatters` transformations
+    var index = 0;
+    args[0] = args[0].replace(/%([a-zA-Z%])/g, function(match, format) {
+      // if we encounter an escaped % then don't increase the array index
+      if (match === '%%') return match;
+      index++;
+      var formatter = exports.formatters[format];
+      if ('function' === typeof formatter) {
+        var val = args[index];
+        match = formatter.call(self, val);
+
+        // now we need to remove `args[index]` since it's inlined in the `format`
+        args.splice(index, 1);
+        index--;
+      }
+      return match;
+    });
+
+    // apply env-specific formatting (colors, etc.)
+    exports.formatArgs.call(self, args);
+
+    var logFn = debug.log || exports.log || console.log.bind(console);
+    logFn.apply(self, args);
+  }
+
+  debug.namespace = namespace;
+  debug.enabled = exports.enabled(namespace);
+  debug.useColors = exports.useColors();
+  debug.color = selectColor(namespace);
+
+  // env-specific initialization logic for debug instances
+  if ('function' === typeof exports.init) {
+    exports.init(debug);
+  }
+
+  return debug;
+}
+
+/**
+ * Enables a debug mode by namespaces. This can include modes
+ * separated by a colon and wildcards.
+ *
+ * @param {String} namespaces
+ * @api public
+ */
+
+function enable(namespaces) {
+  exports.save(namespaces);
+
+  exports.names = [];
+  exports.skips = [];
+
+  var split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+  var len = split.length;
+
+  for (var i = 0; i < len; i++) {
+    if (!split[i]) continue; // ignore empty strings
+    namespaces = split[i].replace(/\*/g, '.*?');
+    if (namespaces[0] === '-') {
+      exports.skips.push(new RegExp('^' + namespaces.substr(1) + '$'));
+    } else {
+      exports.names.push(new RegExp('^' + namespaces + '$'));
+    }
+  }
+}
+
+/**
+ * Disable debug output.
+ *
+ * @api public
+ */
+
+function disable() {
+  exports.enable('');
+}
+
+/**
+ * Returns true if the given mode name is enabled, false otherwise.
+ *
+ * @param {String} name
+ * @return {Boolean}
+ * @api public
+ */
+
+function enabled(name) {
+  var i, len;
+  for (i = 0, len = exports.skips.length; i < len; i++) {
+    if (exports.skips[i].test(name)) {
+      return false;
+    }
+  }
+  for (i = 0, len = exports.names.length; i < len; i++) {
+    if (exports.names[i].test(name)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Coerce `val`.
+ *
+ * @param {Mixed} val
+ * @return {Mixed}
+ * @api private
+ */
+
+function coerce(val) {
+  if (val instanceof Error) return val.stack || val.message;
+  return val;
+}
+
+},{"ms":112}],41:[function(require,module,exports){
 'use strict';
 
 /**
@@ -8522,1184 +7120,7 @@ function reject(obj) {
   }, {}, obj);
 }
 
-},{"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"global-queue":147,"next-tick":166,"obj-case":167,"segmentio-facade":179}],70:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var alias = require('@segment/alias');
-var dates = require('@segment/convert-dates');
-var del = require('obj-case').del;
-var includes = require('@ndhoule/includes');
-var integration = require('@segment/analytics.js-integration');
-var iso = require('@segment/to-iso-string');
-var pick = require('@ndhoule/pick');
-var is = require('is');
-var indexOf = require('component-indexof');
-
-/**
- * Expose `Mixpanel` integration.
- */
-
-var Mixpanel = module.exports = integration('Mixpanel')
-  .global('mixpanel')
-  .option('eventIncrements', [])
-  .option('propIncrements', [])
-  .option('peopleProperties', [])
-  .option('superProperties', [])
-  .option('cookieName', '')
-  .option('crossSubdomainCookie', false)
-  .option('secureCookie', false)
-  .option('persistence', 'cookie')
-  .option('nameTag', true)
-  .option('pageview', false)
-  .option('people', false)
-  .option('token', '')
-  .option('setAllTraitsByDefault', true)
-  .option('consolidatedPageCalls', true)
-  .option('trackAllPages', false)
-  .option('trackNamedPages', false)
-  .option('trackCategorizedPages', false)
-  .option('sourceName', '')
-  .tag('<script src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js">');
-
-/**
- * Options aliases.
- */
-
-var optionsAliases = {
-  cookieName: 'cookie_name',
-  crossSubdomainCookie: 'cross_subdomain_cookie',
-  secureCookie: 'secure_cookie'
-};
-
-/**
- * Initialize.
- *
- * https://mixpanel.com/help/reference/javascript#installing
- * https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.init
- *
- * @api public
- */
-
-Mixpanel.prototype.initialize = function() {
-  /* eslint-disable */
-  (function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
-0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;}})(document,window.mixpanel||[]);
-  /* eslint-enable */
-  this.options.eventIncrements = lowercase(this.options.eventIncrements);
-  this.options.propIncrements = lowercase(this.options.propIncrements);
-  var options = alias(this.options, optionsAliases);
-  // tag ajs requests with Segment by request from Mixpanel team for better mutual debugging
-  options.loaded = function(mixpanel) {
-    mixpanel.register({ mp_lib: 'Segment: web' });
-  };
-  window.mixpanel.init(options.token, options);
-  this.load(this.ready);
-};
-
-/**
- * Loaded?
- *
- * @api private
- * @return {boolean}
- */
-
-Mixpanel.prototype.loaded = function() {
-  return !!(window.mixpanel && window.mixpanel.config);
-};
-
-/**
- * Page.
- *
- * https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.track_pageview
- *
- * @api public
- * @param {Page} page
- */
-
-Mixpanel.prototype.page = function(page) {
-  var category = page.category();
-  var name = page.name();
-  var opts = this.options;
-
-  // consolidated Page Calls
-  if (opts.consolidatedPageCalls) {
-    this.track(page.track());
-    return;
-  }
-
-  // all pages
-  if (opts.trackAllPages) {
-    this.track(page.track());
-    return;
-  }
-
-  // categorized pages
-  if (opts.trackCategorizedPages && category) {
-    // If this option is checked and name was also passed, used the full name which includes both category & name
-    if (name) {
-      this.track(page.track(page.fullName()));
-      return;
-    }
-    this.track(page.track(category));
-    return;
-  }
-
-  // named pages
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-};
-
-/**
- * Trait aliases.
- */
-
-var traitAliases = {
-  created: '$created',
-  email: '$email',
-  firstName: '$first_name',
-  lastName: '$last_name',
-  lastSeen: '$last_seen',
-  name: '$name',
-  username: '$username',
-  phone: '$phone'
-};
-
-/**
- * Identify.
- *
- * https://mixpanel.com/help/reference/javascript#super-properties
- * https://mixpanel.com/help/reference/javascript#user-identity
- * https://mixpanel.com/help/reference/javascript#storing-user-profiles
- *
- * @api public
- * @param {Identify} identify
- */
-
-Mixpanel.prototype.identify = function(identify) {
-  var username = identify.username();
-  var email = identify.email();
-  var id = identify.userId();
-  var setAllTraitsByDefault = this.options.setAllTraitsByDefault;
-  var people = this.options.people;
-  var peopleProperties = extendTraits(this.options.peopleProperties);
-  var superProperties = this.options.superProperties;
-
-  // id
-  if (id) window.mixpanel.identify(id);
-
-  // name tag
-  var nametag = email || username || id;
-  if (nametag) window.mixpanel.name_tag(nametag);
-
-  var traits = identify.traits(traitAliases);
-  if (traits.$created) del(traits, 'createdAt');
-  traits = dates(traits, iso);
-
-  // determine which traits to union to existing properties and which to set as new properties
-  var traitsToUnion = {};
-  var traitsToSet = {};
-  for (var key in traits) {
-    if (!traits.hasOwnProperty(key)) continue;
-
-    var trait = traits[key];
-    if (Array.isArray(trait) && trait.length > 0) {
-      traitsToUnion[key] = trait;
-      // since mixpanel doesn't offer a union method for super properties we have to do it manually by retrieving the existing list super property
-      // from mixpanel and manually unioning to it ourselves
-      var existingTrait = window.mixpanel.get_property(key);
-      if (existingTrait && Array.isArray(existingTrait)) {
-        traits[key] = unionArrays(existingTrait, trait);
-      }
-    } else {
-      traitsToSet[key] = trait;
-    }
-  }
-
-  if (setAllTraitsByDefault) {
-    window.mixpanel.register(traits);
-    if (people) {
-      window.mixpanel.people.set(traitsToSet);
-      window.mixpanel.people.union(traitsToUnion);
-    }
-  } else {
-    // explicitly set select traits as people and super properties
-    var mappedSuperProps = mapTraits(superProperties);
-    var superProps = pick(mappedSuperProps || [], traits);
-    if (!is.empty(superProps)) window.mixpanel.register(superProps);
-    if (people) {
-      var mappedPeopleProps = mapTraits(peopleProperties);
-      var peoplePropsToSet = pick(mappedPeopleProps || [], traitsToSet);
-      var peoplePropsToUnion = pick(mappedPeopleProps || [], traitsToUnion);
-      if (!is.empty(peoplePropsToSet)) window.mixpanel.people.set(peoplePropsToSet);
-      if (!is.empty(peoplePropsToUnion)) window.mixpanel.people.union(peoplePropsToUnion);
-    }
-  }
-};
-
-/**
- * Track.
- *
- * https://mixpanel.com/help/reference/javascript#sending-events
- * https://mixpanel.com/help/reference/javascript#tracking-revenue
- *
- * @api public
- * @param {Track} track
- */
-
-Mixpanel.prototype.track = function(track) {
-  var eventIncrements = this.options.eventIncrements || this.options.increments; // TODO: remove settings.increments check, it's only here as we cutover from increments to eventIncrements
-  var propIncrements = this.options.propIncrements;
-  var eventLowercase = track.event().toLowerCase();
-  var people = this.options.people;
-  var props = track.properties();
-  var revenue = track.revenue();
-  // Don't map traits, clients should use identify instead.
-  var superProps = pick(this.options.superProperties, props);
-  var sourceName = this.options.sourceName;
-
-  if (sourceName) props.segment_source_name = sourceName;
-
-  // delete mixpanel's reserved properties, so they don't conflict
-  delete props.distinct_id;
-  delete props.ip;
-  delete props.mp_name_tag;
-  delete props.mp_note;
-  delete props.token;
-
-  props = dates(props, iso);
-  invertObjectArrays(props);
-
-  // Mixpanel People operations
-  if (people) {
-    // increment event count
-    if (includes(eventLowercase, eventIncrements)) {
-      window.mixpanel.people.increment(track.event());
-      window.mixpanel.people.set('Last ' + track.event(), new Date());
-    }
-    // increment property counts
-    for (var key in props) {
-      if (!Object.prototype.hasOwnProperty.call(props, key)) {
-        continue;
-      }
-      var prop = props[key];
-      if (includes(key.toLowerCase(), propIncrements)) {
-        window.mixpanel.people.increment(key, prop);
-      }
-    }
-    // track revenue
-    if (revenue) {
-      window.mixpanel.people.track_charge(revenue);
-    }
-  }
-
-  // track the event
-  var query;
-  if (props.link_query) {
-    query = props.link_query; // DOM query
-    delete props.link_query;
-    window.mixpanel.track_links(query, track.event(), props);
-  } else if (props.form_query) {  // DOM query
-    query = props.form_query;
-    delete props.form_query;
-    window.mixpanel.track_forms(query, track.event(), props);
-  } else {
-    window.mixpanel.track(track.event(), props);
-  }
-
-  // register super properties if present in context.mixpanel.superProperties
-  if (!is.empty(superProps)) {
-    window.mixpanel.register(superProps);
-  }
-};
-
-/**
- * Alias.
- *
- * https://mixpanel.com/help/reference/javascript#user-identity
- * https://mixpanel.com/help/reference/javascript-full-api-reference#mixpanel.alias
- *
- * @api public
- * @param {Alias} alias
- */
-
-Mixpanel.prototype.alias = function(alias) {
-  var mp = window.mixpanel;
-  var to = alias.to();
-  if (mp.get_distinct_id && mp.get_distinct_id() === to) return;
-  // HACK: internal mixpanel API to ensure we don't overwrite
-  if (mp.get_property && mp.get_property('$people_distinct_id') === to) return;
-  // although undocumented, mixpanel takes an optional original id
-  mp.alias(to, alias.from());
-};
-
-/**
- * Lowercase the given `arr`.
- *
- * @api private
- * @param {Array} arr
- * @return {Array}
- */
-
-function lowercase(arr) {
-  var ret = new Array(arr.length);
-
-  for (var i = 0; i < arr.length; ++i) {
-    ret[i] = String(arr[i]).toLowerCase();
-  }
-
-  return ret;
-}
-
-/**
- * Map Special traits in the given `arr`.
- * From the TraitAliases for Mixpanel's special props
- *
- * @api private
- * @param {Array} arr
- * @return {Array}
- */
-
-function mapTraits(arr) {
-  var ret = new Array(arr.length);
-
-  for (var i = 0; i < arr.length; ++i) {
-    if (traitAliases.hasOwnProperty(arr[i])) {
-      ret.push(traitAliases[arr[i]]);
-    } else {
-      ret.push(arr[i]);
-    }
-  }
-
-  return ret;
-}
-
-/**
- * extend Mixpanel's special trait keys in the given `arr`.
- *
- * @api private
- * @param {Array} arr
- * @return {Array}
- */
-
-function extendTraits(arr) {
-  var keys = [];
-
-  for (var key in traitAliases) {
-    if (traitAliases.hasOwnProperty(key)) {
-      keys.push(key);
-    }
-  }
-
-  for (var i = 0; i < keys.length; ++i) {
-    if (indexOf(arr, keys[i]) < 0) {
-      arr.push(keys[i]);
-    }
-  }
-
-  return arr;
-}
-
-/**
- * Since Mixpanel doesn't support lists of objects, invert each list of objects to a set of lists of object properties.
- * Treats list transformation atomically, e.g. will only transform if EVERY item in list is an object
- *
- * @api private
- * @param {Object} props
- * @example
- * input: {products: [{sku: 32, revenue: 99}, {sku:2, revenue: 103}]}
- * output: {products_skus: [32, 2], products_revenues: [99, 103]}
- */
-
-function invertObjectArrays(props) {
-  for (var propName in props) {  // eslint-disable-line
-    var propValue = props[propName];
-    if (!props.hasOwnProperty(propName) || !Array.isArray(propValue)) {
-      continue;
-    }
-
-    var invertedArrays = invertObjectArray(propName, propValue);
-    if (Object.keys(invertedArrays).length !== 0) { // make sure obj isn't empty
-      mergeArraysIntoObj(props, invertedArrays);
-      delete props[propName];
-    }
-  }
-}
-
-// Example:
-// input: 'products', [{sku: 32, revenue: 99}, {sku:2, revenue: 103}]
-// output: {products_skus: [32, 2], products_revenues: [99, 103]}
-function invertObjectArray(propName, arr) {
-  var invertedArrays = {};
-
-  // invert object lists and collect into invertedLists
-  for (var i=0; i<arr.length; i++) {
-    var elem = arr[i];
-
-    // abort operation if non-object encountered in array
-    if (typeof elem !== 'object') {
-      return {};
-    }
-    for (var key in elem) {
-      if (!elem.hasOwnProperty(key)) {
-        continue;
-      }
-      var attrKey = propName+'_'+key+'s';  // e.g. products_skus
-
-      // append to list if it exists or create new one if not
-      if (attrKey in invertedArrays) {
-        invertedArrays[attrKey].push(elem[key]);
-      } else {
-        invertedArrays[attrKey] = [elem[key]];
-      }
-    }
-  }
-  return invertedArrays;
-}
-
-function mergeArraysIntoObj(destination, source) {
-  for (var arrayName in source) {
-    if (source.hasOwnProperty(arrayName)) {
-      var arr = source[arrayName];
-      destination[arrayName] = arrayName in destination ? destination[arrayName].concat(arr) : arr;
-    }
-  }
-}
-
-
-/**
- * Return union of two arrays
- * Pulled from https://stackoverflow.com/a/3629861
- *
- * @param {Array} x
- * @param {Array} y
- * @return {Array} res
- * @api private
- */
-
-function unionArrays(x, y) {
-  var obj = {};
-  // store items of each array as keys/values of obj, implicitly overwriting duplicates
-  var i;
-  for (i = 0; i < x.length; i++) {
-    obj[x[i]] = x[i];
-  }
-  for (i = 0; i < y.length; i++) {
-    obj[y[i]] = y[i];
-  }
-  return Object.keys(obj);
-}
-
-},{"@ndhoule/includes":12,"@ndhoule/pick":15,"@segment/alias":19,"@segment/analytics.js-integration":71,"@segment/convert-dates":102,"@segment/to-iso-string":121,"component-indexof":136,"is":153,"obj-case":167}],71:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"./protos":72,"./statics":73,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":75,"dup":34,"slug-component":185}],72:[function(require,module,exports){
-arguments[4][35][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":74,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],73:[function(require,module,exports){
-arguments[4][36][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],74:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"dup":37}],75:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":76,"_process":170,"dup":38}],76:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],77:[function(require,module,exports){
-'use strict';
-
-/**
- * Module dependencies.
- */
-
-var keys = require('@ndhoule/keys');
-var values = require('@ndhoule/values');
-var foldl = require('@ndhoule/foldl');
-var each = require('@ndhoule/each');
-var integration = require('@segment/analytics.js-integration');
-var push = require('global-queue')('optimizely', { wrap: false });
-var tick = require('next-tick');
-
-/**
- * Expose `Optimizely` integration.
- */
-
-var Optimizely = module.exports = integration('Optimizely')
-  .option('trackCategorizedPages', true)
-  .option('trackNamedPages', true)
-  .option('variations', false) // send data via `.identify()`
-  .option('listen', true) // send data via `.track()`
-  .option('nonInteraction', false)
-  .option('sendRevenueOnlyForOrderCompleted', true);
-
-/**
- * The name and version for this integration.
- */
-
-var optimizelyContext = {
-  name: 'optimizely',
-  version: '2.0.0'
-};
-
-/**
- * Initialize.
- *
- * https://www.optimizely.com/docs/api#function-calls
- * https://jsfiddle.net/ushmw723/ <- includes optimizely snippets for capturing campaign and experiment data
- *
- * @api public
- */
-
-Optimizely.prototype.initialize = function() {
-  var self = this;
-  // Flag source of integration (requested by Optimizely)
-  push({
-    type: 'integration',
-    OAuthClientId: '5360906403'
-  });
-  // Initialize listeners for both Classic and New Optimizely
-  // crazying binding because that's just how javascript works
-  // We're caling this on the next tick to be safe so we don't hold up
-  // initializing the integration even though the function below is designed to be async,
-  // just want to be extra safe
-  tick(function() {
-    Optimizely.initOptimizelyIntegration({
-      referrerOverride: self.setEffectiveReferrer.bind(self),
-      sendExperimentData: self.sendClassicDataToSegment.bind(self),
-      sendCampaignData: self.sendNewDataToSegment.bind(self)
-    });
-  });
-
-  this.ready();
-};
-
-/**
- * Track. The Optimizely X Web event API accepts a single payload object.
- *        It works with Classic Optimizely as well.
- *
- * Optimizely X:  https://developers.optimizely.com/x/solutions/javascript/reference/index.html#function_setevent
- *
- * The new-style X API is forward compatible from Optimizely Classic to Optimizely X.
- *   - Classic will correctly consume the tags object to identify the revenue
- *   - In bundled mode, it will be forwarded along to the X API with the entire payload
- *
- * If the Optimizely X Fullstack JavaScript SDK is being used we should pass along
- * the event to it. Any properties in the track object will be passed along as event tags.
- * If the userId is not passed into the options object of the track call, we'll
- * attempt to use the userId of the track event, which is set using the analytics.identify call.
- *
- * https://developers.optimizely.com/x/solutions/sdks/reference/?language=javascript#tracking
- *
- * @api public
- * @param {Track} track
- */
-
-Optimizely.prototype.track = function(track) {
-  var opts = this.options;
-  var eventProperties = track.properties();
-
-  // Optimizely expects revenue only passed through Order Completed events
-  if (eventProperties.revenue && opts.sendRevenueOnlyForOrderCompleted) {
-    if (track.event() === 'Order Completed') {
-      eventProperties.revenue = Math.round(eventProperties.revenue * 100);
-    } else if (track.event() !== 'Order Completed') {
-      delete eventProperties.revenue;
-    }
-    // This is legacy Segment-Optimizely behavior, 
-    // which passes revenue whenever it is present
-  } else if (opts.sendRevenueOnlyForOrderCompleted === false && eventProperties.revenue) {
-    eventProperties.revenue = Math.round(eventProperties.revenue * 100);
-  }
-
-  // Use the new-style API (which is compatible with Classic and X)
-  var eventName = track.event().replace(/:/g, '_'); // can't have colons so replacing with underscores
-  var payload = {
-    type: 'event',
-    eventName: eventName,
-    tags: eventProperties
-  };
-
-  push(payload);
-
-  var optimizelyClientInstance = window.optimizelyClientInstance;
-  if (optimizelyClientInstance && optimizelyClientInstance.track) {
-    var optimizelyOptions = track.options('Optimizely');
-    var userId = optimizelyOptions.userId || track.userId() || this.analytics.user().id();
-    var attributes = optimizelyOptions.attributes || track.traits() || this.analytics.user().traits();
-    if (userId) {
-      optimizelyClientInstance.track(eventName, userId, attributes, payload.tags);
-    }
-  }
-};
-
-/**
- * Page.
- *
- * https://www.optimizely.com/docs/api#track-event
- *
- * @api public
- * @param {Page} page
- */
-
-Optimizely.prototype.page = function(page) {
-  var category = page.category();
-  var name = page.fullName();
-  var opts = this.options;
-
-  // categorized pages
-  if (category && opts.trackCategorizedPages) {
-    this.track(page.track(category));
-  }
-
-  // named pages
-  if (name && opts.trackNamedPages) {
-    this.track(page.track(name));
-  }
-};
-
-/**
- * sendClassicDataToSegment (Optimizely Classic)
- *
- * This function is executed for each experiment created in Classic Optimizely that is running on the page.
- * This function will also be executed for any experiments activated at a later stage since initOptimizelyIntegration
- * attached listeners on the page
- *
- * @api private
- * @param {Object} experimentState: contains all information regarding experiments
- * @param {Object} experimentState.experiment: the experiment running on the page
- * @param {String} experimentState.experiment.name: name of the experiment
- * @param {String} experimentState.experiment.id: ID of the experiment
- * @param {String} experimentState.experiment.referrer: available if effective referrer if experiment is a redirect
- * @param {Array} experimentState.variations: the variations the current user on page is seeing
- * @param {String} experimentState.variations[].name: the name of the variation
- * @param {String} experimentState.variations[].id: the ID of the variation
- * @param {Object} experimentState.sections: the sections for the experiment (only defined for multivariate experiments) keyed by sectionId
- * @param {String} experimentState.sections[sectionId].name: the name of section
- * @param {Array} experimentState.sections[sectionId].variation_ids: the IDs of the variations in the section
- *
- */
-
-Optimizely.prototype.sendClassicDataToSegment = function(experimentState) {
-  var experiment = experimentState.experiment;
-  var variations = experimentState.variations;
-  var sections = experimentState.sections;
-  var context = { integration: optimizelyContext }; // backward compatibility
-
-  // Reformatting this data structure into hash map so concatenating variation ids and names is easier later
-  var variationsMap = foldl(function(results, variation) {
-    results[variation.id] = variation.name;
-    return results;
-  }, {}, variations);
-
-  // Sorting for consistency across browsers
-  var variationIds = keys(variationsMap).sort();
-  var variationNames = values(variationsMap).sort();
-
-  // Send data via `.track()`
-  if (this.options.listen) {
-    var props = {
-      experimentId: experiment.id,
-      experimentName: experiment.name,
-      variationId: variationIds.join(), // eg. '123' or '123,455'
-      variationName: variationNames.join(', ') // eg. 'Variation X' or 'Variation 1, Variation 2'
-    };
-
-    // If this was a redirect experiment and the effective referrer is different from document.referrer,
-    // this value is made available. So if a customer came in via google.com/ad -> tb12.com -> redirect experiment -> Belichickgoat.com
-    // `experiment.referrer` would be google.com/ad here NOT `tb12.com`.
-    if (experiment.referrer) {
-      props.referrer = experiment.referrer;
-      context.page = { referrer: experiment.referrer };
-    }
-
-    // When there is a multivariate experiment
-    if (sections) {
-      // Since `sections` include all the possible sections on the page, we need to find the names of the sections
-      // if any of its variations were used. Experiments could display variations from multiple sections.
-      // The global optimizely data object does not expose a mapping between which section(s) were involved within an experiment.
-      // So we will build our own mapping to quickly get the section name(s) and id(s) for any displayed variation.
-      var activeSections = {};
-      var variationIdsToSectionsMap = foldl(function(results, section, sectionId) {
-        each(function(variationId) {
-          results[variationId] = { id: sectionId, name: section.name };
-        }, section.variation_ids);
-        return results;
-      }, {}, sections);
-      for (var j = 0; j < variationIds.length; j++) {
-        var activeVariation = variationIds[j];
-        var activeSection = variationIdsToSectionsMap[activeVariation];
-        if (activeSection) activeSections[activeSection.id] = activeSection.name;
-      }
-
-      // Sorting for consistency across browsers
-      props.sectionId = keys(activeSections).sort().join(); // Not adding space for backward compat/consistency reasons since all IDs we've never had spaces
-      props.sectionName = values(activeSections).sort().join(', ');
-    }
-
-    // For Google's nonInteraction flag
-    if (this.options.nonInteraction) props.nonInteraction = 1;
-
-    // Send to Segment
-    this.analytics.track('Experiment Viewed', props, context);
-  }
-
-  // Send data via `.identify()` (not recommended!)
-  // TODO: deprecate this feature
-  if (this.options.variations) {
-    // Note: The only "breaking" behavior is that now there will be an `.identify()` call per active experiment
-    // Legacy behavior was that we would look up all active experiments on the page after init and send one `.identify()` call
-    // with all experiment/variation data as traits.
-    // New behavior will call `.identify()` per active experiment with isolated experiment/variation data for that single experiment
-    // However, since traits are cached, subsequent experiments that trigger `.identify()` calls will likely contain previous experiment data
-    var traits = {};
-    traits['Experiment: ' + experiment.name] = variationNames.join(', '); // eg. 'Variation X' or 'Variation 1, Variation 2'
-
-    // Send to Segment
-    this.analytics.identify(traits);
-  }
-};
-
-/**
- * sendNewDataToSegment (Optimizely X)
- *
- * This function is called for each experiment created in New Optimizely that are running on the page.
- * New Optimizely added a dimension called "Campaigns" that encapsulate over the Experiments. So a campaign can have multiple experiments.
- * Multivariate experiments are no longer supported in New Optimizely.
- * This function will also be executed for any experiments activated at a later stage since initOptimizelyIntegration
- * attached listeners on the page
- *
- * @api private
- * @param {Object} campaignState: contains all information regarding experiments and campaign
- * @param {String} campaignState.id: the ID of the campaign
- * @param {String} campaignState.campaignName: the name of the campaign
- * @param {Array} campaignState.audiences: "Audiences" the visitor is considered part of related to this campaign
- * @param {String} campaignState.audiences[].id: the id of the Audience
- * @param {String} campaignState.audiences[].name: the name of the Audience
- * @param {Object} campaignState.experiment: the experiment the visitor is seeing
- * @param {String} campaignState.experiment.id: the id of the experiment
- * @param {String} campaignState.experiment.name: the name of the experiment
- * @param {String} campaignState.experiment.referrer: the effective referrer of the experiment (only defined for redirect)
- * @param {Object} campaignState.variation: the variation the visitor is seeing
- * @param {String} campaignState.variation.id: the id of the variation
- * @param {String} campaignState.variation.name: the name of the variation
- * @param {String} campaignState.isInCampaignHoldback: whether the visitor is in the Campaign holdback 
- */
-
-Optimizely.prototype.sendNewDataToSegment = function(campaignState) {
-  var experiment = campaignState.experiment;
-  var variation = campaignState.variation;
-  var context = { integration: optimizelyContext }; // backward compatibility
-
-  // Reformatting this data structure into hash map so concatenating variation ids and names is easier later
-  var audiencesMap = foldl(function(results, audience) {
-    results[audience.id] = audience.name;
-    return results;
-  }, {}, campaignState.audiences);
-
-  // Sorting for consistency across browsers
-  var audienceIds = keys(audiencesMap).sort().join(); // Not adding space for backward compat/consistency reasons since all IDs we've never had spaces
-  var audienceNames = values(audiencesMap).sort().join(', ');
-
-  // Send data via `.track()`
-  if (this.options.listen) {
-    var props = {
-      campaignName: campaignState.campaignName,
-      campaignId: campaignState.id,
-      experimentId: experiment.id,
-      experimentName: experiment.name,
-      variationName: variation.name,
-      variationId: variation.id,
-      audienceId: audienceIds, // eg. '7527562222,7527111138'
-      audienceName: audienceNames, // eg. 'Peaky Blinders, Trust Tree'
-      isInCampaignHoldback: campaignState.isInCampaignHoldback
-    };
-
-    // If this was a redirect experiment and the effective referrer is different from document.referrer,
-    // this value is made available. So if a customer came in via google.com/ad -> tb12.com -> redirect experiment -> Belichickgoat.com
-    // `experiment.referrer` would be google.com/ad here NOT `tb12.com`.
-    if (experiment.referrer) {
-      props.referrer = experiment.referrer;
-      context.page = { referrer: experiment.referrer };
-    }
-
-    // For Google's nonInteraction flag
-    if (this.options.nonInteraction) props.nonInteraction = 1;
-
-    // Send to Segment
-    this.analytics.track('Experiment Viewed', props, context);
-  }
-
-  // Send data via `.identify()` (not recommended!)
-  // TODO: deprecate this feature
-  if (this.options.variations) {
-    // Legacy: We never sent any experiment Id or variation Id
-    // Note: The only "breaking" behavior is that now there will be an `.identify()` per active experiment
-    // Legacy behavior was that we would look up all active experiments on the page after init and send one `.identify()` call
-    // with all experiment/variation data as traits.
-    // New behavior will call `.identify()` per active experiment with isolated experiment/variation data for that single experiment
-    var traits = {};
-    traits['Experiment: ' + experiment.name] = variation.name;
-
-    // Send to Segment
-    this.analytics.identify(traits);
-  }
-};
-
-/**
- * setEffectiveReferrer
- *
- * This function is called when a redirect experiment changed the effective referrer value where it is different from the `document.referrer`.
- * This is a documented caveat for any mutual customers that are using redirect experiments.
- * We will set this global variable that Segment customers can lookup and pass down in their initial `.page()` call inside
- * their Segment snippet.
- *
- * @apr private
- * @param {string} referrer
- */
-
-Optimizely.prototype.setEffectiveReferrer = function(referrer) {
-  if (referrer) return window.optimizelyEffectiveReferrer = referrer;
-};
-
-/**
- * initOptimizelyIntegration(handlers)
- *
- * This function was provided by Optimizely's Engineering team. The function below once initialized can detect which version of
- * Optimizely a customer is using and call the appropriate callback functions when an experiment runs on the page.
- * Instead of Segment looking up the experiment data, we can now just bind Segment APIs to their experiment listener/handlers!
- *
- * @api private
- * @param {Object} handlers
- * @param {Function} referrerOverride: called if the effective refferer value differs from the current `document.referrer` due to a
- * invocation of a redirect experiment on the page
- * @param {Function} sendExperimentData: called for every running experiment on the page (Classic)
- * @param {Function} sendCampaignData: called for every running campaign on the page (New)
- */
-
-Optimizely.initOptimizelyIntegration = function(handlers) {
-  /**
-   * `initClassicOptimizelyIntegration` fetches all the experiment data from the classic Optimizely client
-   * and calls the functions provided in the arguments with the data that needs to
-   * be used for sending information. It is recommended to leave this function as is
-   * and to create your own implementation of the functions referrerOverride and
-   * sendExperimentData.
-   *
-   * @param {Function} referrerOverride - This function is called if the effective referrer value differs from
-   *   the current document.referrer value. The only argument provided is the effective referrer value.
-   * @param {Function} sendExperimentData - This function is called for every running experiment on the page.
-   *   The function is called with all the relevant ids and names.
-   */
-  var initClassicOptimizelyIntegration = function(referrerOverride, sendExperimentData) {
-    var data = window.optimizely && window.optimizely.data;
-    var state = data && data.state;
-    if (state) {
-      var activeExperiments = state.activeExperiments;
-      if (state.redirectExperiment) {
-        var redirectExperimentId = state.redirectExperiment.experimentId;
-        var index = -1;
-        for (var i = 0; i < state.activeExperiments.length; i++) {
-          if (state.activeExperiments[i] === redirectExperimentId) {
-            index = i;
-            break;
-          }
-        }
-        if (index === -1) {
-          activeExperiments.push(redirectExperimentId);
-        }
-        referrerOverride(state.redirectExperiment.referrer);
-      }
-
-      for (var k = 0; k < activeExperiments.length; k++) {
-        var currentExperimentId = activeExperiments[k];
-        var activeExperimentState = {
-          experiment: {
-            id: currentExperimentId,
-            name: data.experiments[currentExperimentId].name
-          },
-          variations: [],
-          /** Segment added code */
-          // we need to send sectionName for multivariate experiments
-          sections: data.sections
-          /**/
-        };
-
-        /** Segment added code */
-        // for backward compatability since we send referrer with the experiment properties
-        if (state.redirectExperiment && currentExperimentId === redirectExperimentId && state.redirectExperiment.referrer) {
-          activeExperimentState.experiment.referrer = state.redirectExperiment.referrer;
-        }
-        /**/
-
-        var variationIds = state.variationIdsMap[activeExperimentState.experiment.id];
-        for (var j = 0; j < variationIds.length; j++) {
-          var id = variationIds[j];
-          var name = data.variations[id].name;
-          activeExperimentState.variations.push({
-            id: id,
-            name: name
-          });
-        }
-        sendExperimentData(activeExperimentState);
-      }
-    }
-  };
-
-  /**
-   * This function fetches all the campaign data from the new Optimizely client
-   * and calls the functions provided in the arguments with the data that needs to
-   * be used for sending information. It is recommended to leave this function as is
-   * and to create your own implementation of the functions referrerOverride and
-   * sendCampaignData.
-   *
-   * @param {Function} referrerOverride - This function is called if the effective referrer value differs from
-   *   the current document.referrer value. The only argument provided is the effective referrer value.
-   * @param {Function} sendCampaignData - This function is called for every running campaign on the page.
-   *   The function is called with the campaignState for the activated campaign
-   */
-  var initNewOptimizelyIntegration = function(referrerOverride, sendCampaignData) {
-    var newActiveCampaign = function(id, referrer) {
-      var state = window.optimizely.get && window.optimizely.get('state');
-      if (state) {
-        var activeCampaigns = state.getCampaignStates({
-          isActive: true
-        });
-        var campaignState = activeCampaigns[id];
-        // Segment added code: in case this is a redirect experiment
-        if (referrer) campaignState.experiment.referrer = referrer;
-        sendCampaignData(campaignState);
-      }
-    };
-
-    var checkReferrer = function() {
-      var state = window.optimizely.get && window.optimizely.get('state');
-      if (state) {
-        var referrer = state.getRedirectInfo() && state.getRedirectInfo().referrer;
-
-        if (referrer) {
-          referrerOverride(referrer);
-          return referrer; // Segment added code: so I can pass this referrer value in cb
-        }
-      }
-    };
-
-    /**
-     * At any moment, a new campaign can be activated (manual or conditional activation).
-     * This function registers a listener that listens to newly activated campaigns and
-     * handles them.
-     */
-    var registerFutureActiveCampaigns = function() {
-      window.optimizely = window.optimizely || [];
-      window.optimizely.push({
-        type: 'addListener',
-        filter: {
-          type: 'lifecycle',
-          name: 'campaignDecided'
-        },
-        handler: function(event) {
-          var id = event.data.campaign.id;
-          newActiveCampaign(id);
-        }
-      });
-    };
-
-    /**
-     * If this code is running after Optimizely on the page, there might already be
-     * some campaigns active. This function makes sure all those campaigns are
-     * handled.
-     */
-    var registerCurrentlyActiveCampaigns = function() {
-      window.optimizely = window.optimizely || [];
-      var state = window.optimizely.get && window.optimizely.get('state');
-      if (state) {
-        var referrer = checkReferrer();
-        var activeCampaigns = state.getCampaignStates({
-          isActive: true
-        });
-        for (var id in activeCampaigns) {
-          if ({}.hasOwnProperty.call(activeCampaigns, id)) {
-            // Segment modified code: need to pass down referrer in the cb for backward compat reasons
-            referrer ? newActiveCampaign(id, referrer) : newActiveCampaign(id);
-          }
-        }
-      } else {
-        window.optimizely.push({
-          type: 'addListener',
-          filter: {
-            type: 'lifecycle',
-            name: 'initialized'
-          },
-          handler: function() {
-            checkReferrer();
-          }
-        });
-      }
-    };
-    registerCurrentlyActiveCampaigns();
-    registerFutureActiveCampaigns();
-  };
-
-  initClassicOptimizelyIntegration(handlers.referrerOverride, handlers.sendExperimentData);
-  initNewOptimizelyIntegration(handlers.referrerOverride, handlers.sendCampaignData);
-};
-
-},{"@ndhoule/each":8,"@ndhoule/foldl":11,"@ndhoule/keys":13,"@ndhoule/values":17,"@segment/analytics.js-integration":78,"global-queue":147,"next-tick":85}],78:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"./protos":79,"./statics":80,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":83,"dup":34,"slug-component":185}],79:[function(require,module,exports){
-arguments[4][35][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":82,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":81,"to-no-case":190}],80:[function(require,module,exports){
-arguments[4][36][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],81:[function(require,module,exports){
-(function (process,setImmediate){
-'use strict';
-
-var callable, byObserver;
-
-callable = function (fn) {
-	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
-	return fn;
-};
-
-byObserver = function (Observer) {
-	var node = document.createTextNode(''), queue, i = 0;
-	new Observer(function () {
-		var data;
-		if (!queue) return;
-		data = queue;
-		queue = null;
-		if (typeof data === 'function') {
-			data();
-			return;
-		}
-		data.forEach(function (fn) { fn(); });
-	}).observe(node, { characterData: true });
-	return function (fn) {
-		callable(fn);
-		if (queue) {
-			if (typeof queue === 'function') queue = [queue, fn];
-			else queue.push(fn);
-			return;
-		}
-		queue = fn;
-		node.data = (i = ++i % 2);
-	};
-};
-
-module.exports = (function () {
-	// Node.js
-	if ((typeof process !== 'undefined') && process &&
-			(typeof process.nextTick === 'function')) {
-		return process.nextTick;
-	}
-
-	// MutationObserver=
-	if ((typeof document === 'object') && document) {
-		if (typeof MutationObserver === 'function') {
-			return byObserver(MutationObserver);
-		}
-		if (typeof WebKitMutationObserver === 'function') {
-			return byObserver(WebKitMutationObserver);
-		}
-	}
-
-	// W3C Draft
-	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
-	if (typeof setImmediate === 'function') {
-		return function (cb) { setImmediate(callable(cb)); };
-	}
-
-	// Wide available standard
-	if (typeof setTimeout === 'function') {
-		return function (cb) { setTimeout(callable(cb), 0); };
-	}
-
-	return null;
-}());
-
-}).call(this,require('_process'),require("timers").setImmediate)
-},{"_process":170,"timers":187}],82:[function(require,module,exports){
-arguments[4][37][0].apply(exports,arguments)
-},{"dup":37}],83:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":84,"_process":170,"dup":38}],84:[function(require,module,exports){
-arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],85:[function(require,module,exports){
-(function (process,setImmediate){
-'use strict';
-
-var callable, byObserver;
-
-callable = function (fn) {
-	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
-	return fn;
-};
-
-byObserver = function (Observer) {
-	var node = document.createTextNode(''), queue, currentQueue, i = 0;
-	new Observer(function () {
-		var callback;
-		if (!queue) {
-			if (!currentQueue) return;
-			queue = currentQueue;
-		} else if (currentQueue) {
-			queue = currentQueue.concat(queue);
-		}
-		currentQueue = queue;
-		queue = null;
-		if (typeof currentQueue === 'function') {
-			callback = currentQueue;
-			currentQueue = null;
-			callback();
-			return;
-		}
-		node.data = (i = ++i % 2); // Invoke other batch, to handle leftover callbacks in case of crash
-		while (currentQueue) {
-			callback = currentQueue.shift();
-			if (!currentQueue.length) currentQueue = null;
-			callback();
-		}
-	}).observe(node, { characterData: true });
-	return function (fn) {
-		callable(fn);
-		if (queue) {
-			if (typeof queue === 'function') queue = [queue, fn];
-			else queue.push(fn);
-			return;
-		}
-		queue = fn;
-		node.data = (i = ++i % 2);
-	};
-};
-
-module.exports = (function () {
-	// Node.js
-	if ((typeof process === 'object') && process && (typeof process.nextTick === 'function')) {
-		return process.nextTick;
-	}
-
-	// MutationObserver
-	if ((typeof document === 'object') && document) {
-		if (typeof MutationObserver === 'function') return byObserver(MutationObserver);
-		if (typeof WebKitMutationObserver === 'function') return byObserver(WebKitMutationObserver);
-	}
-
-	// W3C Draft
-	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
-	if (typeof setImmediate === 'function') {
-		return function (cb) { setImmediate(callable(cb)); };
-	}
-
-	// Wide available standard
-	if ((typeof setTimeout === 'function') || (typeof setTimeout === 'object')) {
-		return function (cb) { setTimeout(callable(cb), 0); };
-	}
-
-	return null;
-}());
-
-}).call(this,require('_process'),require("timers").setImmediate)
-},{"_process":170,"timers":187}],86:[function(require,module,exports){
+},{"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":51,"global-queue":100,"next-tick":117,"obj-case":118,"segmentio-facade":129}],42:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -9800,7 +7221,7 @@ ScratchIt.prototype.identify = function(identify) {
   }
 };
 
-},{"@segment/analytics.js-integration":95,"is":153,"obj-case":167}],87:[function(require,module,exports){
+},{"@segment/analytics.js-integration":51,"is":106,"obj-case":118}],43:[function(require,module,exports){
 'use strict';
 
 /**
@@ -10386,19 +7807,19 @@ function getTld(domain) {
   return domain.split('.').splice(-2).join('.');
 }
 
-},{"@ndhoule/extend":10,"@ndhoule/keys":13,"@segment/ad-params":18,"@segment/analytics.js-integration":88,"@segment/localstorage-retry":109,"@segment/protocol":118,"@segment/send-json":119,"@segment/top-domain":122,"@segment/utm-params":123,"component-clone":127,"component-cookie":128,"json3":156,"spark-md5":186,"uuid":199,"yields-store":200}],88:[function(require,module,exports){
-arguments[4][34][0].apply(exports,arguments)
-},{"./protos":89,"./statics":90,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":126,"debug":92,"dup":34,"slug-component":185}],89:[function(require,module,exports){
+},{"@ndhoule/extend":10,"@ndhoule/keys":13,"@segment/ad-params":17,"@segment/analytics.js-integration":44,"@segment/localstorage-retry":65,"@segment/protocol":74,"@segment/send-json":75,"@segment/top-domain":77,"@segment/utm-params":78,"component-clone":82,"component-cookie":83,"json3":107,"spark-md5":136,"uuid":148,"yields-store":149}],44:[function(require,module,exports){
 arguments[4][35][0].apply(exports,arguments)
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":91,"component-emitter":134,"dup":35,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],90:[function(require,module,exports){
+},{"./protos":45,"./statics":46,"@ndhoule/clone":5,"@ndhoule/defaults":6,"@ndhoule/extend":10,"component-bind":81,"debug":48,"dup":35,"slug-component":135}],45:[function(require,module,exports){
 arguments[4][36][0].apply(exports,arguments)
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145,"dup":36}],91:[function(require,module,exports){
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":59,"@segment/load-script":63,"analytics-events":47,"component-emitter":89,"dup":36,"is":106,"load-iframe":111,"next-tick":117,"to-no-case":140}],46:[function(require,module,exports){
 arguments[4][37][0].apply(exports,arguments)
-},{"dup":37}],92:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":89,"domify":98,"dup":37}],47:[function(require,module,exports){
 arguments[4][38][0].apply(exports,arguments)
-},{"./debug":93,"_process":170,"dup":38}],93:[function(require,module,exports){
+},{"dup":38}],48:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],94:[function(require,module,exports){
+},{"./debug":49,"_process":120,"dup":39}],49:[function(require,module,exports){
+arguments[4][40][0].apply(exports,arguments)
+},{"dup":40,"ms":112}],50:[function(require,module,exports){
 'use strict';
 
 /**
@@ -10733,7 +8154,7 @@ function setStatus(properties) {
   return properties.status ? { status: properties.status } : {};
 }
 
-},{"@ndhoule/defaults":6,"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":95,"component-each":132,"obj-case":167,"segmentio-facade":179}],95:[function(require,module,exports){
+},{"@ndhoule/defaults":6,"@ndhoule/extend":10,"@ndhoule/foldl":11,"@segment/analytics.js-integration":51,"component-each":87,"obj-case":118,"segmentio-facade":129}],51:[function(require,module,exports){
 'use strict';
 
 /**
@@ -10799,7 +8220,7 @@ function createIntegration(name) {
 
 module.exports = createIntegration;
 
-},{"./protos":96,"./statics":97,"@ndhoule/defaults":6,"component-bind":126,"debug":98,"extend":146,"slug-component":185}],96:[function(require,module,exports){
+},{"./protos":52,"./statics":53,"@ndhoule/defaults":6,"component-bind":81,"debug":54,"extend":99,"slug-component":135}],52:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11262,7 +8683,7 @@ function render(template, locals) {
   }, {}, template.attrs);
 }
 
-},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":103,"@segment/load-script":107,"analytics-events":124,"component-emitter":134,"is":153,"load-iframe":160,"next-tick":166,"to-no-case":190}],97:[function(require,module,exports){
+},{"@ndhoule/after":3,"@ndhoule/each":8,"@ndhoule/every":9,"@ndhoule/foldl":11,"@segment/fmt":59,"@segment/load-script":63,"analytics-events":79,"component-emitter":89,"is":106,"load-iframe":111,"next-tick":117,"to-no-case":140}],53:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11427,11 +8848,11 @@ function objectify(str) {
   };
 }
 
-},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":134,"domify":145}],98:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":99,"_process":170,"dup":38}],99:[function(require,module,exports){
+},{"@ndhoule/each":8,"@ndhoule/includes":12,"component-emitter":89,"domify":98}],54:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],100:[function(require,module,exports){
+},{"./debug":55,"_process":120,"dup":39}],55:[function(require,module,exports){
+arguments[4][40][0].apply(exports,arguments)
+},{"dup":40,"ms":112}],56:[function(require,module,exports){
 var utf8Encode = require('utf8-encode');
 var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
 
@@ -11468,7 +8889,7 @@ function encode(input) {
 
     return output;
 }
-},{"utf8-encode":197}],101:[function(require,module,exports){
+},{"utf8-encode":146}],57:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11492,7 +8913,7 @@ function canonical() {
 
 module.exports = canonical;
 
-},{}],102:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 'use strict';
 
 /*
@@ -11529,7 +8950,7 @@ function convertDates(obj, convert) {
 
 module.exports = convertDates;
 
-},{"@ndhoule/clone":5,"@ndhoule/each":8,"component-type":140}],103:[function(require,module,exports){
+},{"@ndhoule/clone":5,"@ndhoule/each":8,"component-type":94}],59:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -11564,7 +8985,7 @@ fmt.d = parseInt;
 module.exports = fmt;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],104:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 'use strict';
 
 function isMeta(e) {
@@ -11592,7 +9013,7 @@ function isMeta(e) {
 
 module.exports = isMeta;
 
-},{}],105:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 'use strict';
 
 var type = require('component-type');
@@ -11669,7 +9090,7 @@ function array(arr, strict) {
   return arr;
 }
 
-},{"@segment/isodate":106,"component-each":132,"component-type":140}],106:[function(require,module,exports){
+},{"@segment/isodate":62,"component-each":87,"component-type":94}],62:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11750,7 +9171,7 @@ exports.is = function(string, strict) {
   return matcher.test(string);
 };
 
-},{}],107:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 'use strict';
 
 /*
@@ -11822,7 +9243,7 @@ function loadScript(options, cb) {
 
 module.exports = loadScript;
 
-},{"component-type":140,"next-tick":166,"script-onload":172}],108:[function(require,module,exports){
+},{"component-type":94,"next-tick":117,"script-onload":122}],64:[function(require,module,exports){
 'use strict';
 
 var keys = require('@ndhoule/keys');
@@ -11887,7 +9308,7 @@ module.exports.defaultEngine = pickStorage();
 // Expose the in-memory store explicitly for testing
 module.exports.inMemoryEngine = inMemoryStore;
 
-},{"@ndhoule/keys":13,"uuid":112}],109:[function(require,module,exports){
+},{"@ndhoule/keys":13,"uuid":68}],65:[function(require,module,exports){
 'use strict';
 
 var uuid = require('uuid').v4;
@@ -12237,7 +9658,7 @@ Queue.prototype._reclaim = function(id) {
 
 module.exports = Queue;
 
-},{"./schedule":110,"./store":111,"@ndhoule/each":8,"component-emitter":134,"debug":143,"uuid":112}],110:[function(require,module,exports){
+},{"./schedule":66,"./store":67,"@ndhoule/each":8,"component-emitter":89,"debug":97,"uuid":68}],66:[function(require,module,exports){
 'use strict';
 
 var each = require('@ndhoule/each');
@@ -12299,7 +9720,7 @@ Schedule.resetClock = function() {
 
 module.exports = Schedule;
 
-},{"@ndhoule/each":8}],111:[function(require,module,exports){
+},{"@ndhoule/each":8}],67:[function(require,module,exports){
 'use strict';
 
 var defaultEngine = require('./engine').defaultEngine;
@@ -12426,7 +9847,7 @@ function isQuotaExceeded(e) {
   return quotaExceeded;
 }
 
-},{"./engine":108,"@ndhoule/each":8,"@ndhoule/keys":13,"json3":156}],112:[function(require,module,exports){
+},{"./engine":64,"@ndhoule/each":8,"@ndhoule/keys":13,"json3":107}],68:[function(require,module,exports){
 var v1 = require('./v1');
 var v4 = require('./v4');
 
@@ -12436,7 +9857,7 @@ uuid.v4 = v4;
 
 module.exports = uuid;
 
-},{"./v1":115,"./v4":116}],113:[function(require,module,exports){
+},{"./v1":71,"./v4":72}],69:[function(require,module,exports){
 /**
  * Convert array of 16 byte values to UUID string format of the form:
  * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -12462,7 +9883,7 @@ function bytesToUuid(buf, offset) {
 
 module.exports = bytesToUuid;
 
-},{}],114:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 // Unique ID creation requires a high quality random # generator.  In the
 // browser this is a little complicated due to unknown quality of Math.random()
 // and inconsistent support for the `crypto` API.  We do the best we can via
@@ -12498,7 +9919,7 @@ if (getRandomValues) {
   };
 }
 
-},{}],115:[function(require,module,exports){
+},{}],71:[function(require,module,exports){
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -12609,7 +10030,7 @@ function v1(options, buf, offset) {
 
 module.exports = v1;
 
-},{"./lib/bytesToUuid":113,"./lib/rng":114}],116:[function(require,module,exports){
+},{"./lib/bytesToUuid":69,"./lib/rng":70}],72:[function(require,module,exports){
 var rng = require('./lib/rng');
 var bytesToUuid = require('./lib/bytesToUuid');
 
@@ -12640,7 +10061,7 @@ function v4(options, buf, offset) {
 
 module.exports = v4;
 
-},{"./lib/bytesToUuid":113,"./lib/rng":114}],117:[function(require,module,exports){
+},{"./lib/bytesToUuid":69,"./lib/rng":70}],73:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12665,7 +10086,7 @@ function preventDefault(e) {
 
 module.exports = preventDefault;
 
-},{}],118:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12750,7 +10171,7 @@ function set(protocol) {
   }
 }
 
-},{}],119:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 'use strict';
 
 /*
@@ -12868,7 +10289,7 @@ function encode(obj) {
   return encodeURIComponent(str);
 }
 
-},{"@segment/base64-encode":100,"has-cors":150,"json3":156,"jsonp":157}],120:[function(require,module,exports){
+},{"@segment/base64-encode":56,"has-cors":103,"json3":107,"jsonp":108}],76:[function(require,module,exports){
 (function (global){
 "use strict"
 
@@ -13041,46 +10462,7 @@ module.exports = (function() {
 }())
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"json3":156}],121:[function(require,module,exports){
-'use strict';
-
-/**
- * Pad a `number` with a ten's place zero.
- *
- * @param {number} number
- * @return {string}
- */
-function pad(number) {
-  var n = number.toString();
-  return n.length === 1 ? '0' + n : n;
-}
-
-/**
- * Turn a `date` into an ISO string.
- *
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
- *
- * @param {Date} date
- * @return {string}
- */
-function toISOString(date) {
-  return date.getUTCFullYear()
-    + '-' + pad(date.getUTCMonth() + 1)
-    + '-' + pad(date.getUTCDate())
-    + 'T' + pad(date.getUTCHours())
-    + ':' + pad(date.getUTCMinutes())
-    + ':' + pad(date.getUTCSeconds())
-    + '.' + String((date.getUTCMilliseconds()/1000).toFixed(3)).slice(2, 5)
-    + 'Z';
-}
-
-/*
- * Exports.
- */
-
-module.exports = toISOString;
-
-},{}],122:[function(require,module,exports){
+},{"json3":107}],77:[function(require,module,exports){
 'use strict';
 
 /**
@@ -13180,7 +10562,7 @@ domain.cookie = cookie;
 
 exports = module.exports = domain;
 
-},{"component-cookie":128,"component-url":141}],123:[function(require,module,exports){
+},{"component-cookie":83,"component-url":95}],78:[function(require,module,exports){
 'use strict';
 
 /**
@@ -13259,7 +10641,7 @@ function strict(query) {
 module.exports = utm;
 module.exports.strict = strict;
 
-},{"@ndhoule/foldl":11,"component-querystring":138}],124:[function(require,module,exports){
+},{"@ndhoule/foldl":11,"component-querystring":92}],79:[function(require,module,exports){
 'use strict';
 
 /**
@@ -13581,7 +10963,7 @@ module.exports = foldl(function transform(ret, pairs, method) {
   return ret;
 }, {}, eventMap);
 
-},{"@ndhoule/foldl":11,"@ndhoule/map":14}],125:[function(require,module,exports){
+},{"@ndhoule/foldl":11,"@ndhoule/map":14}],80:[function(require,module,exports){
 'use strict';
 
 var bind = require('component-bind');
@@ -13599,7 +10981,7 @@ function bindAll(obj) {
 
 module.exports = bindAll;
 
-},{"component-bind":126}],126:[function(require,module,exports){
+},{"component-bind":81}],81:[function(require,module,exports){
 /**
  * Slice reference.
  */
@@ -13624,7 +11006,7 @@ module.exports = function(obj, fn){
   }
 };
 
-},{}],127:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -13683,7 +11065,7 @@ function clone(obj){
   }
 }
 
-},{"component-type":140,"type":140}],128:[function(require,module,exports){
+},{"component-type":94,"type":94}],83:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -13816,7 +11198,7 @@ function decode(value) {
   }
 }
 
-},{"debug":129}],129:[function(require,module,exports){
+},{"debug":84}],84:[function(require,module,exports){
 
 /**
  * This is the web browser implementation of `debug()`.
@@ -13986,7 +11368,7 @@ function localstorage(){
   } catch (e) {}
 }
 
-},{"./debug":130}],130:[function(require,module,exports){
+},{"./debug":85}],85:[function(require,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -14185,7 +11567,7 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":131}],131:[function(require,module,exports){
+},{"ms":86}],86:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -14312,7 +11694,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],132:[function(require,module,exports){
+},{}],87:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -14403,7 +11785,7 @@ function array(obj, fn, ctx) {
   }
 }
 
-},{"component-type":133,"to-function":189,"type":133}],133:[function(require,module,exports){
+},{"component-type":88,"to-function":139,"type":88}],88:[function(require,module,exports){
 
 /**
  * toString ref.
@@ -14437,7 +11819,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],134:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -14602,7 +11984,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],135:[function(require,module,exports){
+},{}],90:[function(require,module,exports){
 var bind = window.addEventListener ? 'addEventListener' : 'attachEvent',
     unbind = window.removeEventListener ? 'removeEventListener' : 'detachEvent',
     prefix = bind !== 'addEventListener' ? 'on' : '';
@@ -14638,15 +12020,7 @@ exports.unbind = function(el, type, fn, capture){
   el[unbind](prefix + type, fn, capture || false);
   return fn;
 };
-},{}],136:[function(require,module,exports){
-module.exports = function(arr, obj){
-  if (arr.indexOf) return arr.indexOf(obj);
-  for (var i = 0; i < arr.length; ++i) {
-    if (arr[i] === obj) return i;
-  }
-  return -1;
-};
-},{}],137:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 /**
  * Global Names
  */
@@ -14733,7 +12107,7 @@ function prefixed(str) {
   };
 }
 
-},{}],138:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -14840,7 +12214,7 @@ exports.stringify = function(obj){
   return pairs.join('&');
 };
 
-},{"trim":194,"type":139}],139:[function(require,module,exports){
+},{"trim":143,"type":93}],93:[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -14876,7 +12250,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],140:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -14924,7 +12298,7 @@ function isBuffer(obj) {
     ))
 }
 
-},{}],141:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 
 /**
  * Parse the given `url`.
@@ -15008,7 +12382,7 @@ function port (protocol){
   }
 }
 
-},{}],142:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 /*
  * Date Format 1.2.3
  * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
@@ -15236,7 +12610,7 @@ function kindOf(val) {
   }
 })(this);
 
-},{}],143:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 
 /**
  * Expose `debug()` as the module.
@@ -15375,41 +12749,7 @@ try {
   if (window.localStorage) debug.enable(localStorage.debug);
 } catch(e){}
 
-},{}],144:[function(require,module,exports){
-/**
- * Module dependencies.
- */
-
-var nextTick = require('next-tick');
-
-/**
- * Loop on a short interval until `condition()` is true, then call `fn`.
- *
- * @param {Function} condition
- * @param {Function} fn
- * @param {number} [interval=10]
- */
-
-function when(condition, fn, interval) {
-  if (typeof condition !== 'function') throw new Error('condition must be a function');
-  if (typeof fn !== 'function') throw new Error('fn must be a function');
-
-  if (condition()) return nextTick(fn);
-
-  var ref = setInterval(function () {
-    if (!condition()) return;
-    nextTick(fn);
-    clearInterval(ref);
-  }, interval || 10);
-}
-
-/**
- * Exports.
- */
-
-module.exports = when;
-
-},{"next-tick":166}],145:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 
 /**
  * Expose `parse`.
@@ -15523,7 +12863,7 @@ function parse(html, doc) {
   return fragment;
 }
 
-},{}],146:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 'use strict';
 
 var hasOwn = Object.prototype.hasOwnProperty;
@@ -15611,7 +12951,7 @@ module.exports = function extend() {
 	return target;
 };
 
-},{}],147:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -15648,11 +12988,11 @@ function generate (name, options) {
   };
 }
 
-},{"debug":148}],148:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":149,"_process":170,"dup":38}],149:[function(require,module,exports){
+},{"debug":101}],101:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],150:[function(require,module,exports){
+},{"./debug":102,"_process":120,"dup":39}],102:[function(require,module,exports){
+arguments[4][40][0].apply(exports,arguments)
+},{"dup":40,"ms":112}],103:[function(require,module,exports){
 
 /**
  * Module exports.
@@ -15671,7 +13011,7 @@ try {
   module.exports = false;
 }
 
-},{}],151:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -15696,12 +13036,12 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],152:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 
 module.exports = function isEmail (string) {
     return (/.+\@.+\..+/).test(string);
 };
-},{}],153:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 /* globals window, HTMLElement */
 
 'use strict';
@@ -16521,30 +13861,7 @@ is.bigint = function (value) {
 
 module.exports = is;
 
-},{}],154:[function(require,module,exports){
-var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
-
-},{}],155:[function(require,module,exports){
-/*!
- * isobject <https://github.com/jonschlinkert/isobject>
- *
- * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License.
- */
-
-'use strict';
-
-var isArray = require('isarray');
-
-module.exports = function isObject(val) {
-  return val != null && typeof val === 'object' && isArray(val) === false;
-};
-
-},{"isarray":154}],156:[function(require,module,exports){
+},{}],107:[function(require,module,exports){
 (function (global){
 /*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 ;(function () {
@@ -17450,7 +14767,7 @@ module.exports = function isObject(val) {
 }).call(this);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],157:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 /**
  * Module dependencies
  */
@@ -17549,11 +14866,11 @@ function jsonp(url, opts, fn){
   return cancel;
 }
 
-},{"debug":158}],158:[function(require,module,exports){
-arguments[4][38][0].apply(exports,arguments)
-},{"./debug":159,"_process":170,"dup":38}],159:[function(require,module,exports){
+},{"debug":109}],109:[function(require,module,exports){
 arguments[4][39][0].apply(exports,arguments)
-},{"dup":39,"ms":161}],160:[function(require,module,exports){
+},{"./debug":110,"_process":120,"dup":39}],110:[function(require,module,exports){
+arguments[4][40][0].apply(exports,arguments)
+},{"dup":40,"ms":112}],111:[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -17615,7 +14932,7 @@ module.exports = function loadIframe(options, fn){
   return iframe;
 };
 
-},{"is":153,"next-tick":166,"script-onload":172}],161:[function(require,module,exports){
+},{"is":106,"next-tick":117,"script-onload":122}],112:[function(require,module,exports){
 /**
  * Helpers.
  */
@@ -17769,7 +15086,7 @@ function plural(ms, n, name) {
   return Math.ceil(ms / n) + ' ' + name + 's';
 }
 
-},{}],162:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 'use strict';
 
 var is = require('is');
@@ -17814,7 +15131,7 @@ function toMs(num) {
   return num;
 }
 
-},{"./milliseconds":163,"./seconds":164,"@segment/isodate":165,"is":153}],163:[function(require,module,exports){
+},{"./milliseconds":114,"./seconds":115,"@segment/isodate":116,"is":106}],114:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17846,7 +15163,7 @@ exports.parse = function(millis) {
   return new Date(millis);
 };
 
-},{}],164:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17878,7 +15195,7 @@ exports.parse = function(seconds) {
   return new Date(millis);
 };
 
-},{}],165:[function(require,module,exports){
+},{}],116:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17956,9 +15273,75 @@ exports.is = function(string, strict) {
   return matcher.test(string);
 };
 
-},{}],166:[function(require,module,exports){
-arguments[4][81][0].apply(exports,arguments)
-},{"_process":170,"dup":81,"timers":187}],167:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
+(function (process,setImmediate){
+'use strict';
+
+var callable, byObserver;
+
+callable = function (fn) {
+	if (typeof fn !== 'function') throw new TypeError(fn + " is not a function");
+	return fn;
+};
+
+byObserver = function (Observer) {
+	var node = document.createTextNode(''), queue, i = 0;
+	new Observer(function () {
+		var data;
+		if (!queue) return;
+		data = queue;
+		queue = null;
+		if (typeof data === 'function') {
+			data();
+			return;
+		}
+		data.forEach(function (fn) { fn(); });
+	}).observe(node, { characterData: true });
+	return function (fn) {
+		callable(fn);
+		if (queue) {
+			if (typeof queue === 'function') queue = [queue, fn];
+			else queue.push(fn);
+			return;
+		}
+		queue = fn;
+		node.data = (i = ++i % 2);
+	};
+};
+
+module.exports = (function () {
+	// Node.js
+	if ((typeof process !== 'undefined') && process &&
+			(typeof process.nextTick === 'function')) {
+		return process.nextTick;
+	}
+
+	// MutationObserver=
+	if ((typeof document === 'object') && document) {
+		if (typeof MutationObserver === 'function') {
+			return byObserver(MutationObserver);
+		}
+		if (typeof WebKitMutationObserver === 'function') {
+			return byObserver(WebKitMutationObserver);
+		}
+	}
+
+	// W3C Draft
+	// http://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
+	if (typeof setImmediate === 'function') {
+		return function (cb) { setImmediate(callable(cb)); };
+	}
+
+	// Wide available standard
+	if (typeof setTimeout === 'function') {
+		return function (cb) { setTimeout(callable(cb), 0); };
+	}
+
+	return null;
+}());
+
+}).call(this,require('_process'),require("timers").setImmediate)
+},{"_process":120,"timers":137}],118:[function(require,module,exports){
 
 var identity = function(_){ return _; };
 
@@ -18112,7 +15495,7 @@ function isFunction(val) {
   return typeof val === 'function';
 }
 
-},{}],168:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 
 /**
  * HOP ref.
@@ -18197,61 +15580,7 @@ exports.length = function(obj){
 exports.isEmpty = function(obj){
   return 0 == exports.length(obj);
 };
-},{}],169:[function(require,module,exports){
-var each = require('each');
-
-
-/**
- * Cache whether `<body>` exists.
- */
-
-var body = false;
-
-
-/**
- * Callbacks to call when the body exists.
- */
-
-var callbacks = [];
-
-
-/**
- * Export a way to add handlers to be invoked once the body exists.
- *
- * @param {Function} callback  A function to call when the body exists.
- */
-
-module.exports = function onBody (callback) {
-  if (body) {
-    call(callback);
-  } else {
-    callbacks.push(callback);
-  }
-};
-
-
-/**
- * Set an interval to check for `document.body`.
- */
-
-var interval = setInterval(function () {
-  if (!document.body) return;
-  body = true;
-  each(callbacks, call);
-  clearInterval(interval);
-}, 5);
-
-
-/**
- * Call a callback, passing it the body.
- *
- * @param {Function} callback  The callback to call.
- */
-
-function call (callback) {
-  callback(document.body);
-}
-},{"each":132}],170:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -18437,7 +15766,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],171:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -18540,7 +15869,7 @@ function compact(value){
   return null == value;
 }
 
-},{"type-component":195}],172:[function(require,module,exports){
+},{"type-component":144}],122:[function(require,module,exports){
 
 // https://github.com/thirdpartyjs/thirdpartyjs-code/blob/master/examples/templates/02/loading-files/index.html
 
@@ -18595,7 +15924,7 @@ function attach(el, fn){
   });
 }
 
-},{}],173:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 'use strict';
 
 var get = require('obj-case');
@@ -18631,7 +15960,7 @@ module.exports = function(proto) {
   }
 };
 
-},{"obj-case":167}],174:[function(require,module,exports){
+},{"obj-case":118}],124:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -18712,7 +16041,7 @@ Alias.prototype.to = Alias.prototype.userId;
 
 module.exports = Alias;
 
-},{"./facade":176,"./utils":184}],175:[function(require,module,exports){
+},{"./facade":126,"./utils":134}],125:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -18746,7 +16075,7 @@ Delete.prototype.type = function() {
 
 module.exports = Delete;
 
-},{"./facade":176,"./utils":184}],176:[function(require,module,exports){
+},{"./facade":126,"./utils":134}],126:[function(require,module,exports){
 'use strict';
 
 var address = require('./address');
@@ -19292,7 +16621,7 @@ function transform(obj) {
 
 module.exports = Facade;
 
-},{"./address":173,"./is-enabled":180,"./utils":184,"@segment/isodate-traverse":105,"new-date":162,"obj-case":167}],177:[function(require,module,exports){
+},{"./address":123,"./is-enabled":130,"./utils":134,"@segment/isodate-traverse":61,"new-date":113,"obj-case":118}],127:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -19459,7 +16788,7 @@ Group.prototype.properties = function() {
 
 module.exports = Group;
 
-},{"./facade":176,"./utils":184,"is-email":152,"new-date":162}],178:[function(require,module,exports){
+},{"./facade":126,"./utils":134,"is-email":105,"new-date":113}],128:[function(require,module,exports){
 'use strict';
 
 var Facade = require('./facade');
@@ -19839,7 +17168,7 @@ Identify.prototype.birthday = Facade.proxy('traits.birthday');
 
 module.exports = Identify;
 
-},{"./facade":176,"./utils":184,"is-email":152,"new-date":162,"obj-case":167,"trim":194}],179:[function(require,module,exports){
+},{"./facade":126,"./utils":134,"is-email":105,"new-date":113,"obj-case":118,"trim":143}],129:[function(require,module,exports){
 'use strict';
 
 var Facade = require('./facade');
@@ -19854,7 +17183,7 @@ Facade.Delete = require('./delete');
 
 module.exports = Facade;
 
-},{"./alias":174,"./delete":175,"./facade":176,"./group":177,"./identify":178,"./page":181,"./screen":182,"./track":183}],180:[function(require,module,exports){
+},{"./alias":124,"./delete":125,"./facade":126,"./group":127,"./identify":128,"./page":131,"./screen":132,"./track":133}],130:[function(require,module,exports){
 'use strict';
 
 // A few integrations are disabled by default. They must be explicitly enabled
@@ -19874,7 +17203,7 @@ module.exports = function(integration) {
   return !disabled[integration];
 };
 
-},{}],181:[function(require,module,exports){
+},{}],131:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -20090,7 +17419,7 @@ Page.prototype.track = function(name) {
 
 module.exports = Page;
 
-},{"./facade":176,"./track":183,"./utils":184,"is-email":152}],182:[function(require,module,exports){
+},{"./facade":126,"./track":133,"./utils":134,"is-email":105}],132:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -20162,7 +17491,7 @@ Screen.prototype.track = function(name) {
 
 module.exports = Screen;
 
-},{"./page":181,"./track":183,"./utils":184}],183:[function(require,module,exports){
+},{"./page":131,"./track":133,"./utils":134}],133:[function(require,module,exports){
 'use strict';
 
 var inherit = require('./utils').inherit;
@@ -20751,14 +18080,14 @@ function currency(val) {
 
 module.exports = Track;
 
-},{"./facade":176,"./identify":178,"./utils":184,"is-email":152,"obj-case":167}],184:[function(require,module,exports){
+},{"./facade":126,"./identify":128,"./utils":134,"is-email":105,"obj-case":118}],134:[function(require,module,exports){
 'use strict';
 
 exports.inherit = require('inherits');
 exports.clone = require('@ndhoule/clone');
 exports.type = require('type-component');
 
-},{"@ndhoule/clone":5,"inherits":151,"type-component":195}],185:[function(require,module,exports){
+},{"@ndhoule/clone":5,"inherits":104,"type-component":144}],135:[function(require,module,exports){
 
 /**
  * Generate a slug from the given `str`.
@@ -20783,7 +18112,7 @@ module.exports = function (str, options) {
     .replace(/ +/g, options.separator || '-')
 };
 
-},{}],186:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 (function (factory) {
     if (typeof exports === 'object') {
         // Node/CommonJS
@@ -21488,7 +18817,7 @@ module.exports = function (str, options) {
     return SparkMD5;
 }));
 
-},{}],187:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 (function (setImmediate,clearImmediate){
 var nextTick = require('process/browser.js').nextTick;
 var apply = Function.prototype.apply;
@@ -21567,7 +18896,7 @@ exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate :
   delete immediateIds[id];
 };
 }).call(this,require("timers").setImmediate,require("timers").clearImmediate)
-},{"process/browser.js":170,"timers":187}],188:[function(require,module,exports){
+},{"process/browser.js":120,"timers":137}],138:[function(require,module,exports){
 
 var space = require('to-space-case')
 
@@ -21590,7 +18919,7 @@ function toCamelCase(string) {
   })
 }
 
-},{"to-space-case":192}],189:[function(require,module,exports){
+},{"to-space-case":141}],139:[function(require,module,exports){
 
 /**
  * Module Dependencies
@@ -21744,7 +19073,7 @@ function stripNested (prop, str, val) {
   });
 }
 
-},{"component-props":137,"props":137}],190:[function(require,module,exports){
+},{"component-props":91,"props":91}],140:[function(require,module,exports){
 
 /**
  * Expose `toNoCase`.
@@ -21816,28 +19145,7 @@ function uncamelize (string) {
     return previous + ' ' + uppers.toLowerCase().split('').join(' ');
   });
 }
-},{}],191:[function(require,module,exports){
-
-var toSpace = require('to-space-case')
-
-/**
- * Export.
- */
-
-module.exports = toSnakeCase
-
-/**
- * Convert a `string` to snake case.
- *
- * @param {String} string
- * @return {String}
- */
-
-function toSnakeCase(string) {
-  return toSpace(string).replace(/\s/g, '_')
-}
-
-},{"to-space-case":192}],192:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 
 var clean = require('to-no-case')
 
@@ -21860,7 +19168,7 @@ function toSpaceCase(string) {
   }).trim()
 }
 
-},{"to-no-case":193}],193:[function(require,module,exports){
+},{"to-no-case":142}],142:[function(require,module,exports){
 
 /**
  * Export.
@@ -21929,7 +19237,7 @@ function uncamelize(string) {
   })
 }
 
-},{}],194:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 
 exports = module.exports = trim;
 
@@ -21945,7 +19253,7 @@ exports.right = function(str){
   return str.replace(/\s*$/, '');
 };
 
-},{}],195:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 
 /**
  * toString ref.
@@ -21977,7 +19285,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],196:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 
 /**
  * Protocol.
@@ -22015,7 +19323,7 @@ function check () {
     location.protocol == 'chrome-extension:'
   );
 }
-},{}],197:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 module.exports = encode;
 
 function encode(string) {
@@ -22043,7 +19351,7 @@ function encode(string) {
 
     return utftext;
 }
-},{}],198:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 (function (global){
 
 var rng;
@@ -22079,7 +19387,7 @@ module.exports = rng;
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],199:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 //     uuid.js
 //
 //     Copyright (c) 2010-2012 Robert Kieffer
@@ -22264,7 +19572,7 @@ uuid.unparse = unparse;
 
 module.exports = uuid;
 
-},{"./rng":198}],200:[function(require,module,exports){
+},{"./rng":147}],149:[function(require,module,exports){
 
 /**
  * dependencies.
@@ -22359,7 +19667,7 @@ function all(){
   return ret;
 }
 
-},{"each":132,"unserialize":201}],201:[function(require,module,exports){
+},{"each":87,"unserialize":150}],150:[function(require,module,exports){
 
 /**
  * Unserialize the given "stringified" javascript.
@@ -22376,12 +19684,12 @@ module.exports = function(val){
   }
 };
 
-},{}],202:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 module.exports={
   "name": "@segment/analytics.js",
   "author": "Segment.io <friends@segment.io>",
   "version": "2.11.0-si-10",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "description": "The hassle-free way to integrate analytics into any web application.",
   "keywords": [
     "analytics",
@@ -22399,7 +19707,6 @@ module.exports={
     "type": "git",
     "url": "https://github.com/segmentio/analytics.js.git"
   },
-  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/segmentio/analytics.js/issues"
   },
